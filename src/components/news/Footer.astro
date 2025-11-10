@@ -6,22 +6,23 @@ interface Props {
 const { theme = 'dark' } = Astro.props;
 
 const isDark = theme === 'dark';
-const bgColor = isDark ? 'bg-black' : 'bg-white';
-const textColor = isDark ? 'text-white' : 'text-[#262626]';
-const borderColor = isDark ? 'border-white' : 'border-[#262626]';
+const bgColor = isDark ? 'bg-secondary' : 'bg-white';
+const textColor = isDark ? 'text-white' : 'text-secondary';
+const textproduct = isDark ? 'text-secondary-200' : 'text-secondary-300';
+const borderColor = isDark ? 'border-white' : 'border-secondary';
 
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class={`${bgColor} w-full border-t-2 ${borderColor} relative`}>
-	<div class="py-8 px-16">
+	<div class="py-8">
 		<div class="flex items-center">
 			<!-- Sección izquierda: Textos y LinkedIn -->
-			<div class="flex flex-col flex-1">
+			<div class="flex flex-col flex-1  px-16">
 				<!-- Contenedor para "Living..." y LinkedIn -->
-				<div class="flex items-center gap-[120px]">
-					<p class={`${textColor} font-sans text-base font-medium`}>
-						Living, playing and creating in Madrid, Spain
+				<div class="flex justify-between items-center">
+					<p class={`${textColor} text-sb1 font-body font-semibold mb-0`}>
+						Designing digital things, enjoying analog life.
 					</p>
 					<!-- Icono LinkedIn -->
 					<a 
@@ -39,27 +40,21 @@ const currentYear = new Date().getFullYear();
 				
 				<!-- Textos restantes -->
 				<div class="flex flex-col">
-					<p class={`${textColor} font-sans text-sm`}>
+					<p class={`${textproduct} text-body-md font-body font-bold`}>
 						Product Designer
 					</p>
-					<p class={`${textColor} font-sans text-sm mt-[156px]`}>
+					<p class={`${textColor} text-sm mt-[156px] font-body`}>
 						Miriam Laina © {currentYear}
 					</p>
 				</div>
 			</div>
 
-			<!-- Espaciado antes del divider -->
-			<div class="w-[180px]"></div>
-
-			<!-- Espaciado entre divider y logo (80px) -->
-			<div class="w-20"></div>
-
 			<!-- Sección derecha: Logo -->
-			<div class="flex items-center">
+			<div class="flex items-center justify-center w-[382px] h-full">
 				<img 
 					src="/logo.svg" 
 					alt="Miriam Laina" 
-					class={`w-auto h-8 ${isDark ? 'brightness-0 invert' : ''}`}
+					class={`h-12 ${isDark ? 'brightness-0 invert' : ''}`}
 				/>
 			</div>
 		</div>
@@ -68,7 +63,7 @@ const currentYear = new Date().getFullYear();
 	<!-- Divider vertical de 2px que va desde el top hasta el primer divider horizontal -->
 	<div 
 		class={`absolute top-0 bottom-[calc(24px+16px+2px)] w-[2px] ${isDark ? 'bg-white' : 'bg-[#262626]'}`}
-		style="left: calc(64px + 180px);"
+		style="right: 382px;"
 	></div>
 
 	<!-- Dividers horizontales en la parte inferior -->

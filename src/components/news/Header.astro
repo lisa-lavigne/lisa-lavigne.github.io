@@ -16,7 +16,7 @@ const borderColor = isDark ? 'border-white' : 'border-[#262626]';
 	<div class="flex items-center ml-16">
 		<a href="/" class="flex items-center">
 			<img 
-				src="/logo.svg" 
+				src="/favicon.svg" 
 				alt="Miriam Laina" 
 				class={`w-auto h-8 ${isDark ? 'brightness-0 invert' : ''}`}
 			/>
@@ -32,10 +32,8 @@ const borderColor = isDark ? 'border-white' : 'border-[#262626]';
 		<nav class="flex items-center gap-16 mr-16">
 			<!-- Contenedor para Works con líneas decorativas -->
 			<div class="flex items-center">
-				<!-- Div con bordes laterales (48px de ancho con bordes de 2px) -->
-				<div class={`h-full w-12 border-l-2 border-r-2 ${borderColor}`}></div>
-				<!-- Espaciado entre div decorativo y Works (64px) -->
-				<div class="w-16"></div>
+				
+			<div class={`h-[78px] w-12 border-l-2 border-r-2 ${borderColor} mr-16`}></div>
 				<!-- Item Works -->
 				<a href="/works" class={`${textColor} font-sans text-base hover:opacity-70 transition-opacity`}>
 					Works

@@ -106,14 +106,7 @@ table {
 pre > code {
 	all: unset;
 }
-a {
-	color: var(--accent-dark);
-	text-decoration: none;
-}
 
-a:hover {
-	color: var(--accent);
-}
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;

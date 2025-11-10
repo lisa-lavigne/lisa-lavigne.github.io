@@ -2,9 +2,11 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		fontFamily: {
+			sans: ['Poppins', 'sans-serif'],
+		},
 		extend: {
 		  fontFamily: {
-			sans: ['Outfit', 'sans-serif'],
 			heading: ['Kalnia', 'serif'],
 			subheading: ['Poppins', 'sans-serif'],
 			body: ['Poppins', 'sans-serif']
