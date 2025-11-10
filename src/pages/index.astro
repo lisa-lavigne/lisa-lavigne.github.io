@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import NewsHeader from '../components/news/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
@@ -12,8 +13,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body class="bg-primary min-h-screen flex flex-col">
 		<!-- Noise overlay que está por encima de todo -->
-		<div class="noise-overlay"></div>
-		<Header />
+		<!--<div class="noise-overlay"></div> -->
+		<!-- Header con tema dark -->
+		<NewsHeader theme="dark" />
+		<!-- Header con tema light (para comparar) -->
+		<NewsHeader theme="light" />
 		<main class="w-full flex items-center justify-center px-0">
 			<section class="w-full flex flex-col gap-y-3 items-center">
 				<h2 class="md:text-5xl text-3xl font-sans text-accent text-center">hey!</h2>
