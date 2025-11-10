@@ -5,34 +5,42 @@ export default {
 		extend: {
 		  fontFamily: {
 			sans: ['Outfit', 'sans-serif'],
-			heading: ['Boldfinger', 'sans-serif']
+			heading: ['Kalnia', 'serif'],
+			subheading: ['Poppins', 'sans-serif'],
+			body: ['Poppins', 'sans-serif']
+		  },
+		  fontSize: {
+			'h1': '120px',
+			'h2': '56px',
+			'h3': '48px',
+			'h4': '40px',
+			'h5': '32px',
+			'sb1': '24px',
+			'body-sm': '14px',
+			'body-md': '16px'
 		  },
 		  colors: {
 			primary: {
-				DEFAULT: '#234852',
-				100: '#CFE6EC',
-				200: '#ADCBD3',
-				300: '#7CA2AC',
-				400: '#56818C',
-				500: '#234852',
+				DEFAULT: '#ffffff',
+				100: '#ffffff'
 			},
 			secondary: {
-				DEFAULT: '#540B0E',
-				100: '#E5BFC1',
-				200: '#CF999B',
-				300: '#A06063',
-				400: '#7E3235',
-				500: '#540B0E'
+				DEFAULT: '#0A0908',
+				100: '#E9E9E9',
+				200: '#B0AEAC',
+				300: '#5E5C5A',
+				400: '#32302E',
+				500: '#0A0908'
 			},
-			neutral: {
-				DEFAULT: '#E09F3E',
-				100: '#F9CA84',
-				200: '#ECB35F',
-				300: '#E09F3E'
+			tertiary: {
+				DEFAULT: '#A799EF',
+				100: '#E7E2FF',
+				200: '#D6CEFE',
+				300: '#A799EF'
 			},
 			accent: {
-				DEFAULT: '#FFF3B0',
-				100: '#FFF3B0'
+				DEFAULT: '#6F5AD7',
+				100: '#6F5AD7'
 			}
 		  }
 		}
