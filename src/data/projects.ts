@@ -15,6 +15,7 @@ export interface Project {
 	dataCards?: Array<{percentage: string, label: string}>;
 	galleryImages?: string[];
 	galleryTitle?: string;
+	tags?: string[];
 }
 
 export const projects: Project[] = [
@@ -38,7 +39,54 @@ export const projects: Project[] = [
 			{ percentage: '50%', label: 'Telco' },
 			{ percentage: '50%', label: 'Automotive' },
 			{ percentage: '50%', label: 'AI' }
-		]
+		],
+		tags: ['App']
+	},
+	{
+		slug: 'movistar-prosegur-alarms',
+		isSideProject: false,
+		title: 'Movistar Prosegur Alarms',
+		description: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		dateRange: '2023 - Present',
+		industry: 'Security & services',
+		services: 'UX/UI · Communication strategy · Data driven',
+		heroImage: '/placeholder-hero.jpg',
+		contentImage: '/placeholder-content.jpg',
+		overview: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		role: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		challenge: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		solution: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		dataCards: [
+			{ percentage: '50%', label: 'Security' },
+			{ percentage: '50%', label: 'Energy' },
+			{ percentage: '50%', label: 'Telco' },
+			{ percentage: '50%', label: 'Automotive' },
+			{ percentage: '50%', label: 'AI' }
+		],
+		tags: ['App']
+	},
+	{
+		slug: 'movistar-prosegur-alarms',
+		isSideProject: false,
+		title: 'Movistar Prosegur Alarms',
+		description: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		dateRange: '2023 - Present',
+		industry: 'Security & services',
+		services: 'UX/UI · Communication strategy · Data driven',
+		heroImage: '/placeholder-hero.jpg',
+		contentImage: '/placeholder-content.jpg',
+		overview: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		role: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		challenge: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		solution: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		dataCards: [
+			{ percentage: '50%', label: 'Security' },
+			{ percentage: '50%', label: 'Energy' },
+			{ percentage: '50%', label: 'Telco' },
+			{ percentage: '50%', label: 'Automotive' },
+			{ percentage: '50%', label: 'AI' }
+		],
+		tags: ['App']
 	},
 	{
 		slug: 'imagins-ai',

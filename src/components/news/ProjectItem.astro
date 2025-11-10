@@ -1,4 +1,6 @@
 ---
+import Chips from './Chips.astro';
+
 interface Props {
 	category: string;
 	tags: string[];
@@ -16,18 +18,16 @@ const { category, tags, title, description, slug } = Astro.props;
 		<div class="flex flex-col gap-6 max-w-[720px] py-6">
 			<div class="flex flex-col gap-3">
 				<!-- Categoría con tags -->
-				<div class="flex gap-3 items-start">
-					<h3 class="text-sb1 font-body font-semibold text-secondary-200 whitespace-nowrap">{category}</h3>
+				<div class="flex gap-3 items-center">
+					<h3 class="text-sb1 mb-0 font-sb1 font-semibold text-secondary-200 whitespace-nowrap">{category}</h3>
 					<div class="flex gap-3 items-center">
 						{tags.map((tag) => (
-							<div class="bg-tertiary-200 rounded-lg px-2 py-1 h-8 flex items-center">
-								<p class="text-body-sm font-body text-secondary-500 whitespace-nowrap">{tag}</p>
-							</div>
+							<Chips variant="filled" text={tag} />
 						))}
 					</div>
 				</div>
 				<!-- Título -->
-				<h3 class="text-h3 font-heading font-bold text-primary">{title}</h3>
+				<h3 class="text-h3 mb-0 font-body font-semibold text-secondary-100">{title}</h3>
 			</div>
 			<!-- Descripción -->
 			<p class="text-body-md font-body text-primary">

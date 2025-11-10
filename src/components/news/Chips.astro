@@ -7,20 +7,14 @@ interface Props {
 const { variant = 'outline', text = 'UX/UI' } = Astro.props;
 
 const isOutline = variant === 'outline';
-const borderColor = '#7F7FFF';
-const bgColor = '#D8D8FF';
 ---
 
 <span 
-	class={`inline-block rounded-lg text-center font-sans font-medium ${
+	class={`inline-block rounded-lg px-2 py-1 text-center font-body text-[12px] ${
 		isOutline 
-			? 'border-2 bg-transparent' 
-			: 'bg-[#D8D8FF] border-0'
+			? 'border border-accent text-accent bg-transparent' 
+			: 'bg-tertiary-200 text-secondary border-0'
 	}`}
-	style={isOutline 
-		? `border-color: ${borderColor}; color: ${borderColor}; padding: 8px; border-radius: 8px;`
-		: `background-color: ${bgColor}; color: black; padding: 8px; border-radius: 8px;`
-	}
 >
 	{text}
 </span>
