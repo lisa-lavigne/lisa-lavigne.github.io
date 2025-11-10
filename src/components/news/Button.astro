@@ -1,0 +1,17 @@
+---
+interface Props {
+	href?: string;
+	text?: string;
+}
+
+const { href = '#', text = 'Read about me' } = Astro.props;
+---
+
+<a 
+	href={href}
+	class="inline-block bg-[#6A4FFC] text-white font-sans font-semibold rounded-lg max-w-[210px] text-center hover:opacity-90 transition-opacity"
+	style="padding: 12px 24px;"
+>
+	{text}
+</a>
+
