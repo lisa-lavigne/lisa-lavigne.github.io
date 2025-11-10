@@ -9,46 +9,48 @@ interface Props {
 const { variant = 'icon', cardStyle = 'filled', title = 'Security', value = '50%' } = Astro.props;
 
 const isOutline = cardStyle === 'outline';
-const bgColor = isOutline ? '#FFFFFF' : '#E8E8FF'; // White for outline, light purple for filled
-const textColor = isOutline ? '#1A1A1A' : '#4A4A8F'; // Dark grey/black for outline, dark purple for filled
-const borderColor = '#1A1A1A'; // Dark grey/black for outline border
+const iconColor = isOutline ? '#1A1A1A' : '#6F5AD7';
+
+// Función para obtener la ruta del icono según el título
+function getIconSrc(title: string): string {
+	const titleLower = title.toLowerCase();
+	if (titleLower.includes('security')) {
+		return "/icons/security.svg";
+	} else if (titleLower.includes('energy')) {
+		return "/icons/energy.svg";
+	} else if (titleLower.includes('telco')) {
+		return "/icons/telco.svg";
+	} else if (titleLower.includes('automotive') || titleLower.includes('auto')) {
+		return "/icons/automative.svg";
+	} else if (titleLower.includes('ai')) {
+		return "/icons/ai.svg";
+	}
+	// Default: security
+	return "/icons/security.svg";
+}
+
+const iconSrc = getIconSrc(title);
 ---
 
 <div 
-	class={`rounded-lg p-4 text-center ${isOutline ? 'border-2' : ''}`}
-	style={isOutline 
-		? `background-color: ${bgColor}; color: ${textColor}; border-color: ${borderColor};`
-		: `background-color: ${bgColor}; color: ${textColor};`
-	}
+	class={`bg-tertiary-100 justify-start border-tertiary-300 rounded-2xl rounded-br-none p-4 flex flex-col gap-6 items-start w-[158px] h-[112] ${
+		isOutline ? 'bg-white border-2 border-secondary' : ''
+	}`}
 >
 	{variant === 'icon' ? (
 		<!-- Card con icono -->
-		<div class="flex flex-col items-center" style="gap: 16px;">
-			<!-- Icono shield con checkmark -->
-			<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path 
-					d="M12 2L4 5V11C4 16.55 7.16 21.74 12 23C16.84 21.74 20 16.55 20 11V5L12 2Z" 
-					stroke={isOutline ? borderColor : textColor} 
-					stroke-width="2" 
-					stroke-linecap="round" 
-					stroke-linejoin="round"
-				/>
-				<path 
-					d="M9 12L11 14L15 10" 
-					stroke={isOutline ? borderColor : textColor} 
-					stroke-width="2" 
-					stroke-linecap="round" 
-					stroke-linejoin="round"
-				/>
-			</svg>
-			<p class="font-sans font-medium">{title}</p>
-		</div>
+		<>
+			<div class="w-8 h-8 flex-shrink-0">
+				<img src={iconSrc} alt={title} class="w-full h-full" />
+			</div>
+			<p class="font-body font-semibold text-body-md text-accent">{title}</p>
+		</>
 	) : (
 		<!-- Card con texto -->
-		<div class="flex flex-col items-center" style="gap: 16px;">
-			<p class="text-4xl font-serif font-bold" style={`color: ${textColor};`}>{value}</p>
-			<p class="font-sans font-medium">{title}</p>
-		</div>
+		<>
+			<p class="text-h4 font-heading font-bold text-accent">{value}</p>
+			<p class="font-body font-semibold text-body-md text-accent">{title}</p>
+		</>
 	)}
 </div>
 
