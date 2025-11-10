@@ -40,13 +40,13 @@ export const projects: Project[] = [
 			{ percentage: '50%', label: 'Automotive' },
 			{ percentage: '50%', label: 'AI' }
 		],
-		tags: ['App']
+		tags: ['UX/UI', 'Performance analysis', 'Product strategy', 'Team management', 'Benchmarking', 'Communication strategy', 'Mentoring', 'Data driven', 'Design System']
 	},
 	{
-		slug: 'movistar-prosegur-alarms',
+		slug: 'selectra',
 		isSideProject: false,
-		title: 'Movistar Prosegur Alarms',
-		description: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		title: 'Selectra',
+		description: 'Colaboration in full cycle product design. From research and discovery to validation and go into production of MVPs optimizing performance.',
 		dateRange: '2023 - Present',
 		industry: 'Security & services',
 		services: 'UX/UI · Communication strategy · Data driven',
@@ -63,15 +63,15 @@ export const projects: Project[] = [
 			{ percentage: '50%', label: 'Automotive' },
 			{ percentage: '50%', label: 'AI' }
 		],
-		tags: ['App']
+		tags: ['UX/UI','Performance analysis','Communication strategy','Testing','Design System']
 	},
 	{
-		slug: 'movistar-prosegur-alarms',
+		slug: 'cupra-seat',
 		isSideProject: false,
-		title: 'Movistar Prosegur Alarms',
-		description: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
+		title: 'Cupra & SEAT',
+		description: 'Designed of systems for next generation radios, building scalable design foundations and visual languages that shaped future interfaces.',
 		dateRange: '2023 - Present',
-		industry: 'Security & services',
+		industry: 'Auto industry',
 		services: 'UX/UI · Communication strategy · Data driven',
 		heroImage: '/placeholder-hero.jpg',
 		contentImage: '/placeholder-content.jpg',
@@ -86,7 +86,7 @@ export const projects: Project[] = [
 			{ percentage: '50%', label: 'Automotive' },
 			{ percentage: '50%', label: 'AI' }
 		],
-		tags: ['App']
+		tags: ['UX/UI','Team management','Mentoring','Design System']
 	},
 	{
 		slug: 'imagins-ai',
