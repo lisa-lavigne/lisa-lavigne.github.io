@@ -1,0 +1,243 @@
+---
+import BaseHead from './BaseHead.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { SITE_TITLE } from '../consts';
+
+interface Props {
+	isSideProject?: boolean;
+	title: string;
+	description: string;
+	dateRange?: string;
+	industry?: string;
+	services?: string;
+	heroImage?: string;
+	contentImage?: string;
+	overview?: string;
+	role?: string;
+	challenge?: string;
+	solution?: string;
+	dataCards?: Array<{percentage: string, label: string}>;
+	galleryImages?: string[];
+	galleryTitle?: string;
+	sideProjects?: Array<{slug: string, title: string, description: string}>;
+}
+
+const { 
+	isSideProject = false,
+	title,
+	description,
+	dateRange,
+	industry,
+	services,
+	heroImage,
+	contentImage,
+	overview,
+	role,
+	challenge,
+	solution,
+	dataCards,
+	galleryImages,
+	galleryTitle,
+	sideProjects = []
+} = Astro.props;
+
+const bgColor = isSideProject ? 'bg-secondary' : 'bg-primary';
+const textColor = isSideProject ? 'text-primary' : 'text-secondary';
+const textSecondaryColor = isSideProject ? 'text-secondary-200' : 'text-secondary-300';
+const textTertiaryColor = isSideProject ? 'text-secondary-100' : 'text-secondary-400';
+const borderColor = isSideProject ? 'border-primary' : 'border-secondary';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} - ${SITE_TITLE}`} description={description} />
+	</head>
+	<body class={`${bgColor} min-h-screen flex flex-col`}>
+	<Header dark={isSideProject} />
+	
+	<main class="w-full flex flex-col">
+		<!-- Header Section -->
+		<section class={`w-full px-16 py-[120px] flex gap-12 items-start max-w-[1500px] mx-auto`}>
+			<div class="flex flex-col gap-6 w-[567px]">
+				<div class="flex items-start">
+					<h1 class={`text-h2 font-heading font-bold ${textTertiaryColor}`}>
+						{title.includes(' ') ? (
+							<>
+								{title.split(' ').slice(0, -1).join(' ')}<br />
+								{title.split(' ').slice(-1)[0]}
+							</>
+						) : (
+							title
+						)}
+					</h1>
+				</div>
+				<div class="flex flex-col gap-6 min-h-[376px] justify-between">
+					<div class="flex flex-col gap-6">
+						{dateRange && (
+							<span class={`border border-accent rounded-lg px-2 py-1 text-body-sm font-body ${isSideProject ? 'bg-tertiary-200 text-secondary' : 'text-accent'}`}>
+								{dateRange}
+							</span>
+						)}
+						<div class={`text-body-md font-body ${textSecondaryColor}`}>
+							{description.split('\n').map((para) => (
+								<p class="mb-0">{para}</p>
+							))}
+						</div>
+					</div>
+					<div class="flex flex-col gap-3">
+						{industry && (
+							<div class="flex flex-col gap-2">
+								<h3 class={`text-body-md font-body font-semibold ${isSideProject ? 'text-tertiary-300' : 'text-accent'}`}>Industry</h3>
+								<p class={`text-body-md font-body ${textSecondaryColor}`}>{industry}</p>
+							</div>
+						)}
+						{services && (
+							<div class="flex flex-col gap-2">
+								<h3 class={`text-body-md font-body font-semibold ${isSideProject ? 'text-tertiary-300' : 'text-accent'}`}>Services</h3>
+								<p class={`text-body-md font-body ${textSecondaryColor}`}>{services}</p>
+							</div>
+						)}
+					</div>
+				</div>
+			</div>
+			{heroImage && (
+				<div class="w-[534px] h-[534px] flex-shrink-0 rounded-xl bg-tertiary-100">
+					<img src={heroImage} alt={title} class="w-full h-full object-cover rounded-xl" />
+				</div>
+			)}
+		</section>
+
+		<!-- Content Section -->
+		{(contentImage || overview || role || challenge || solution) && (
+			<section class={`w-full px-16 py-[120px] flex gap-12 items-start justify-center`}>
+				{contentImage && (
+					<div class="flex-1 max-w-[537px]">
+						<div class="w-full h-[534px] rounded-xl bg-tertiary-100">
+							<img src={contentImage} alt={`${title} content`} class="w-full h-full object-cover rounded-xl" />
+						</div>
+					</div>
+				)}
+				<div class="flex flex-col gap-6 w-[567px]">
+					{overview && (
+						<div class="flex flex-col gap-6">
+							<h2 class={`text-sb1 font-body font-semibold ${textTertiaryColor}`}>Overview</h2>
+							<div class={`text-body-md font-body ${textSecondaryColor}`}>
+								{overview.split('\n').map((para) => (
+									<p class="mb-0">{para}</p>
+								))}
+							</div>
+						</div>
+					)}
+					{role && (
+						<div class="flex flex-col gap-6">
+							<h2 class={`text-sb1 font-body font-semibold ${textTertiaryColor}`}>Role</h2>
+							<div class={`text-body-md font-body ${textSecondaryColor}`}>
+								{role.split('\n').map((para) => (
+									<p class="mb-0">{para}</p>
+								))}
+							</div>
+						</div>
+					)}
+					{challenge && (
+						<div class="flex flex-col gap-6">
+							<h2 class={`text-sb1 font-body font-semibold ${textTertiaryColor}`}>Challenge</h2>
+							<div class={`text-body-md font-body ${textSecondaryColor}`}>
+								{challenge.split('\n').map((para) => (
+									<p class="mb-0">{para}</p>
+								))}
+							</div>
+						</div>
+					)}
+					{solution && (
+						<div class="flex flex-col gap-6">
+							<h2 class={`text-sb1 font-body font-semibold ${textTertiaryColor}`}>Solution</h2>
+							<div class={`text-body-md font-body ${textSecondaryColor}`}>
+								{solution.split('\n').map((para) => (
+									<p class="mb-0">{para}</p>
+								))}
+							</div>
+						</div>
+					)}
+				</div>
+			</section>
+		)}
+
+		<!-- Data Section -->
+		{dataCards && dataCards.length > 0 && (
+			<section class={`w-full ${bgColor} px-14 py-20 flex flex-col gap-16 items-center`}>
+				<h2 class={`text-h2 font-heading font-bold ${textColor} text-center w-full`}>Data</h2>
+				<div class="flex gap-6 flex-wrap justify-center">
+					{dataCards.map((card) => (
+						<div class="bg-tertiary-100 border border-tertiary-300 rounded-2xl p-4 flex flex-col gap-4 items-center justify-center w-[158px]">
+							<p class="text-h4 font-heading font-bold text-accent">{card.percentage}</p>
+							<p class="font-body font-semibold text-body-md text-accent">{card.label}</p>
+						</div>
+					))}
+				</div>
+			</section>
+		)}
+
+		<!-- Side Projects Section (solo en proyectos principales) -->
+		{!isSideProject && sideProjects && sideProjects.length > 0 && (
+			<section class="w-full bg-secondary px-16 py-[120px] flex flex-col md:flex-row gap-14">
+				<div class="flex flex-col gap-6 max-w-[548px]">
+					<h2 class="text-h2 font-heading font-bold text-primary">
+						SIDE<br/>PROJECTS
+					</h2>
+					<p class="text-body-md font-body text-secondary-200">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation — to learn, fail, and create without limits.</p>
+				</div>
+				<div class="flex-1 flex flex-col gap-0">
+					{sideProjects.map((sideProject, index) => (
+						<a 
+							href={`/works/${sideProject.slug}`}
+							class={`flex flex-col gap-6 py-4 hover:opacity-90 transition-opacity ${index < sideProjects.length - 1 ? 'border-b-2 border-secondary-400' : ''}`}
+						>
+							<div class="flex items-start justify-between gap-2">
+								<div class="flex flex-col gap-3">
+									<h3 class="text-sb1 font-body font-semibold text-secondary-100">{sideProject.title}</h3>
+									<p class="text-body-md font-body text-secondary-200">{sideProject.description}</p>
+								</div>
+								<div class="w-12 h-12 flex-shrink-0">
+									<svg class="w-full h-full text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+									</svg>
+								</div>
+							</div>
+						</a>
+					))}
+				</div>
+			</section>
+		)}
+
+		<!-- Gallery Section -->
+		{galleryImages && galleryImages.length > 0 && (
+			<section class={`w-full ${isSideProject ? 'bg-primary' : 'bg-primary'} border-t-2 ${borderColor}`}>
+				<div class={`px-16 py-0 flex items-center ${isSideProject ? 'justify-start' : 'justify-end'}`}>
+					<div class="flex items-center justify-between w-[635px] py-0">
+						{galleryTitle && (
+							<h2 class={`text-h2 font-heading font-bold ${isSideProject ? 'text-secondary' : 'text-secondary'} ${isSideProject ? 'text-left' : 'text-right'}`}>
+								{galleryTitle}
+							</h2>
+						)}
+						<div class="w-6 h-[153px] flex-shrink-0"></div>
+					</div>
+				</div>
+				<div class="w-full overflow-x-auto">
+					<div class="flex h-[376px] items-center">
+						{galleryImages.map((image, index) => (
+							<div class={`w-[382px] h-full flex-shrink-0 bg-secondary-100 ${index < galleryImages.length - 1 ? 'border-r-2 border-secondary' : ''}`}>
+								<img src={image} alt={`${title} gallery ${index + 1}`} class="w-full h-full object-cover" />
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+		)}
+	</main>
+
+	<Footer dark={isSideProject} />
+	</body>
+</html>
+

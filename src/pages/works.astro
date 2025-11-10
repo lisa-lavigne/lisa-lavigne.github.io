@@ -1,0 +1,128 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { projects } from '../data/projects';
+
+const mainProjects = projects.filter(p => !p.isSideProject);
+const sideProjects = projects.filter(p => p.isSideProject);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${SITE_TITLE} - Works`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-secondary min-h-screen flex flex-col">
+		<Header dark={true} />
+		
+		<main class="w-full flex flex-col">
+			<!-- Hero Section -->
+			<section class="w-full relative min-h-[605px] flex items-center px-16 py-20">
+				<div class="absolute left-0 top-[92px] w-[420px] h-[420px] flex-shrink-0">
+					<div class="w-full h-full rounded-full bg-primary border-2 border-primary relative overflow-hidden">
+						<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[209px] h-[211px] bg-secondary"></div>
+						<div class="absolute top-[calc(50%-3px)] left-1/2 -translate-x-1/2 w-[218px] h-[7px] bg-secondary"></div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-4 max-w-[477px] ml-auto">
+					<h1 class="text-h1 font-heading font-bold text-primary capitalize">Works</h1>
+					<div class="px-4">
+						<p class="text-body-md font-body text-primary">
+							Design isn't what I make.<br/>
+							It's how I think, how I solve, and how I care.<br/>
+							These are the outcomes of that mindset in action.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- In-house & client projects Section -->
+			<section class="w-full border-t-2 border-b-2 border-primary px-16 py-[120px] flex flex-col gap-10">
+				<div class="flex flex-col gap-3 mb-10">
+					<h2 class="text-h2 font-heading font-bold text-primary">In-house & client projects</h2>
+				</div>
+				
+				<div class="flex flex-col gap-0 max-w-[1152px]">
+					{mainProjects.map((project, index) => (
+						<>
+							<a href={`/works/${project.slug}`} class="bg-secondary flex flex-col gap-6 pt-6 hover:opacity-90 transition-opacity">
+								<div class="flex items-start justify-between pl-6 pr-0">
+									<div class="flex flex-col gap-6 max-w-[720px]">
+										<div class="flex flex-col gap-3">
+											<div class="flex gap-3 items-start">
+												{project.industry && (
+													<h3 class="text-sb1 font-body font-semibold text-secondary-200">{project.industry}</h3>
+												)}
+											</div>
+											<h3 class="text-h3 font-heading font-bold text-primary">{project.title}</h3>
+										</div>
+										<p class="text-body-md font-body text-primary">{project.description.split('\n')[0]}</p>
+									</div>
+									<div class="w-12 h-12 flex-shrink-0">
+										<svg class="w-full h-full text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+										</svg>
+									</div>
+								</div>
+							</a>
+							{index < mainProjects.length - 1 && <div class="h-px bg-primary w-full"></div>}
+						</>
+					))}
+				</div>
+			</section>
+
+			<!-- Side Projects Section -->
+			<section class="w-full bg-primary px-14 py-[120px] flex flex-col gap-14">
+				<h2 class="text-h2 font-heading font-bold text-secondary text-center">Side projects</h2>
+				
+				<div class="flex flex-col gap-14 items-center">
+					{sideProjects.map((project) => (
+						<a href={`/works/${project.slug}`} class="bg-tertiary-100 border-2 border-accent rounded-lg flex items-center h-[188px] w-full max-w-[1062px] hover:opacity-90 transition-opacity">
+							<div class="w-[273px] h-full flex-shrink-0 rounded-l-lg bg-secondary-100">
+								{project.heroImage && (
+									<img src={project.heroImage} alt={project.title} class="w-full h-full object-cover rounded-l-lg" />
+								)}
+							</div>
+							<div class="flex-1 flex items-center justify-center px-6 py-6">
+								<div class="flex flex-col gap-[22px] w-full">
+									<h3 class="text-h4 font-heading font-bold text-accent">{project.title}</h3>
+									<p class="text-body-md font-body text-accent">
+										{project.description.split('\n')[0]}
+									</p>
+								</div>
+							</div>
+							<div class="w-[61px] h-full flex items-end justify-end p-3">
+								<svg class="w-9 h-9 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+								</svg>
+							</div>
+						</a>
+					))}
+				</div>
+			</section>
+
+			<!-- Gallery Section: Interiorism -->
+			<section class="w-full bg-primary border-t-2 border-b-2 border-secondary">
+				<div class="px-16 py-0 flex items-center justify-end">
+					<div class="flex items-center justify-between w-[635px] py-0">
+						<h2 class="text-h2 font-heading font-bold text-secondary text-right">Interiorism</h2>
+						<div class="w-6 h-[153px] flex-shrink-0"></div>
+					</div>
+				</div>
+				<div class="w-full overflow-x-auto">
+					<div class="flex h-[376px] items-center">
+						<div class="w-[382px] h-full flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
+						<div class="w-[382px] h-full flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
+						<div class="w-[382px] h-full flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
+						<div class="w-[382px] h-full flex-shrink-0 bg-secondary-100"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<Footer dark={true} />
+	</body>
+</html>
+

@@ -12,21 +12,240 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body class="bg-primary min-h-screen flex flex-col">
 		<!-- Noise overlay que está por encima de todo -->
-		<div class="noise-overlay"></div>
+		<!-- <div class="noise-overlay"></div> -->
 		<Header />
-		<main class="w-full flex items-center justify-center px-0">
-			<section class="w-full flex flex-col gap-y-3 items-center">
-				<h2 class="md:text-5xl text-3xl font-sans text-accent text-center">hey!</h2>
-				<h1 class=" md:text-6xl text-[40px] font-heading text-accent text-center">i'm cooking up something new</h1>
-				<div class="w-full md:max-w-4xl">
-					<p class="text-accent md:text-lg text-base font-sans text-center">I'm designing my new portfolio and, like any good design, it takes time (and plenty of coffee).</p>
-					<p class="text-accent md:text-lg text-base font-sans text-center">Soon you'll be able to see my projects here, but in the meantime, <strong>feel free to connect with me on 
-						<a href="https://www.linkedin.com/in/miriam-laina-p%C3%A9rez-622956168/" target="_blank" class="text-neutral-300 hover:text-primary-300">LinkedIn</a>
-					or just imagine this site is already amazing.</strong></p>
+		
+		<main class="w-full max-w-8xl mx-auto flex flex-col">
+			<!-- Hero Section -->
+			<section class="w-full px-16 py-20 flex flex-col md:flex-row items-center justify-between gap-12 min-h-[758px]">
+				<div class="flex flex-col gap-[56px] max-w-[764px]">
+					<div class="flex flex-col gap-0">
+						<h2 class="text-h3 font-sans text-secondary">hey,</h2>
+						<h1 class="text-h1 font-heading font-bold text-secondary">welcome!</h1>
+					</div>
+					<div class="flex flex-col gap-4 text-body-md font-body text-secondary-300">
+						<p>I am Miriam. I believe great design begins with humility and curiosity understanding the problem deeply before crafting the solution. My work fuses creativity, strategy, and technology to craft products that not only stand out but truly improve people's lives.</p>
+						<p class="font-bold">This is a curated peek into my work and how I think.</p>
+					</div>
 				</div>
-				<img src="/logo.svg" alt="Miriam Laina" class="w-[140px] text-accent mt-[120px]" />
+				<div class="w-[420px] h-[420px] flex-shrink-0">
+					<div class="w-full h-full rounded-full bg-secondary border-2 border-secondary relative overflow-hidden">
+						<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[209px] h-[211px] bg-primary"></div>
+						<div class="absolute top-[calc(50%-3px)] left-1/2 -translate-x-1/2 w-[218px] h-[7px] bg-primary"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Image Grid Section -->
+			<section class="w-full border-t-2 border-b-2 border-secondary h-[284px] flex items-center overflow-hidden">
+				<div class="flex items-center h-full">
+					<div class="w-[380px] h-full flex-shrink-0 border-r-2 border-secondary bg-secondary-100"></div>
+					<div class="w-[380px] h-full flex-shrink-0 border-r-2 border-secondary bg-secondary-100"></div>
+					<div class="w-[380px] h-full flex-shrink-0 border-r-2 border-secondary bg-secondary-100"></div>
+					<div class="w-[380px] h-full flex-shrink-0 bg-secondary-100"></div>
+				</div>
+			</section>
+
+			<!-- Philosophy Section -->
+			<section class="w-full px-16 py-[120px] flex flex-col items-center gap-14">
+				<h2 class="text-h3 font-heading font-bold text-secondary text-center">PHILOSOPHY BEHIND THE PIXELS</h2>
+				<div class="flex flex-col gap-4 max-w-[1152px] text-body-md font-body text-secondary-300 text-center">
+					<p>I start from the real problem before falling in love with the visual solution, because design is never just about aesthetics.</p>
+					<p>It's about solving problems grounded in data, so others don't have to. It's about simplifying the complex and turning that simplicity into a guiding principle.</p>
+					<p>It's about creating experiences that stand out and stick with people, while feeling so seamless they're simply enjoyable to use.</p>
+					<p class="font-bold">Above all, it's about harnessing technology to make life better.</p>
+				</div>
+				<a href="/about" class="bg-accent text-primary px-6 py-3 rounded font-body font-semibold text-body-md hover:opacity-90 transition-opacity">
+					Read about me
+				</a>
+			</section>
+
+			<!-- Banner Section -->
+			<section class="w-full bg-tertiary-300 px-4 py-10 flex items-center justify-center gap-6">
+				<h2 class="text-h2 font-heading font-bold text-primary text-center whitespace-nowrap">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
+			</section>
+
+			<!-- Projects Section -->
+			<section class="w-full px-16 py-[120px] flex flex-col gap-12">
+				<h2 class="text-h3 font-heading font-bold text-secondary">Projects</h2>
+				
+				<div class="flex flex-col w-full">
+					<!-- Project 1: Movistar Prosegur Alarms -->
+					<div class="flex items-center border-t-2 border-secondary">
+						<div class="w-[512px] h-[445px] flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
+						<div class="flex-1 px-6 py-10 flex flex-col justify-between min-h-[445px]">
+							<div class="flex flex-col gap-6">
+								<div class="flex items-start justify-between gap-2">
+									<div class="flex flex-col gap-2">
+										<h3 class="text-sb1 font-body font-semibold text-secondary-200">Security sector</h3>
+										<h3 class="text-h4 font-heading font-bold text-secondary-400">Movistar Prosegur Alarms</h3>
+									</div>
+									<div class="w-12 h-12 flex-shrink-0">
+										<svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+										</svg>
+									</div>
+								</div>
+								<p class="text-body-md font-body text-secondary-300">Design products end-to-end, turning insights from real users and data into seamless experiences, from research and flows to launches and long term impact.</p>
+							</div>
+							<div class="flex flex-wrap gap-3">
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">UX/UI</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Performance analysis</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Testing</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Design system</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Benchmarking</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Product strategy</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Mentoring</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Team management</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 2: Selectra -->
+					<div class="flex items-center border-t-2 border-secondary">
+						<div class="w-[512px] h-[445px] flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
+						<div class="flex-1 px-6 py-10 flex flex-col justify-between min-h-[445px]">
+							<div class="flex flex-col gap-6">
+								<div class="flex items-start justify-between gap-2">
+									<div class="flex flex-col gap-2">
+										<h3 class="text-sb1 font-body font-semibold text-secondary-200">Energy & Telco</h3>
+										<h3 class="text-h4 font-heading font-bold text-secondary-400">Selectra</h3>
+									</div>
+									<div class="w-12 h-12 flex-shrink-0">
+										<svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+										</svg>
+									</div>
+								</div>
+								<p class="text-body-md font-body text-secondary-300">Colaboration in full cycle product design. From research and discovery to validation and go into production of MVPs optimizing performance.</p>
+							</div>
+							<div class="flex flex-wrap gap-3">
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">UX/UI</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Research</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">MVP</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Product strategy</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 3: Cupra & SEAT -->
+					<div class="flex items-center border-t-2 border-secondary">
+						<div class="w-[512px] h-[445px] flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
+						<div class="flex-1 px-6 py-10 flex flex-col justify-between min-h-[445px]">
+							<div class="flex flex-col gap-6">
+								<div class="flex items-start justify-between gap-2">
+									<div class="flex flex-col gap-2">
+										<h3 class="text-sb1 font-body font-semibold text-secondary-200">Auto industry</h3>
+										<h3 class="text-h4 font-heading font-bold text-secondary-400">Cupra & SEAT</h3>
+									</div>
+									<div class="w-12 h-12 flex-shrink-0">
+										<svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+										</svg>
+									</div>
+								</div>
+								<p class="text-body-md font-body text-secondary-300">Designed of systems for next generation radios, building scalable design foundations and visual languages that shaped future interfaces.</p>
+							</div>
+							<div class="flex flex-wrap gap-3">
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">UX/UI</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Team management</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Mentoring</span>
+								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Design system</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Industries Section -->
+			<section class="w-full bg-tertiary-300 px-14 py-[120px] flex flex-col items-center gap-16">
+				<h2 class="text-h2 font-heading font-bold text-tertiary-100 text-center">INDUSTRIES OF EXPERTISE</h2>
+				<div class="flex gap-6 flex-wrap justify-center">
+					<div class="bg-tertiary-100 border border-tertiary-300 rounded-2xl p-4 flex flex-col gap-6 w-[158px]">
+						<div class="w-8 h-8 flex-shrink-0">
+							<svg class="w-full h-full text-accent" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+							</svg>
+						</div>
+						<p class="font-body font-semibold text-body-md text-accent">Security</p>
+					</div>
+					<div class="bg-tertiary-100 border border-tertiary-300 rounded-2xl p-4 flex flex-col gap-6 w-[158px]">
+						<div class="w-8 h-8 flex-shrink-0">
+							<svg class="w-full h-full text-accent" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M13 3L4 14h7v7l9-11h-7V3z"/>
+							</svg>
+						</div>
+						<p class="font-body font-semibold text-body-md text-accent">Energy</p>
+					</div>
+					<div class="bg-tertiary-100 border border-tertiary-300 rounded-2xl p-4 flex flex-col gap-6 w-[158px]">
+						<div class="w-8 h-8 flex-shrink-0">
+							<svg class="w-full h-full text-accent" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M2 22h20V2z"/>
+							</svg>
+						</div>
+						<p class="font-body font-semibold text-body-md text-accent">Telco</p>
+					</div>
+					<div class="bg-tertiary-100 border border-tertiary-300 rounded-2xl p-4 flex flex-col gap-6 w-[158px]">
+						<div class="w-8 h-8 flex-shrink-0">
+							<svg class="w-full h-full text-accent" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+							</svg>
+						</div>
+						<p class="font-body font-semibold text-body-md text-accent">Automotive</p>
+					</div>
+					<div class="bg-tertiary-100 border border-tertiary-300 rounded-2xl p-4 flex flex-col gap-6 w-[158px]">
+						<div class="w-8 h-8 flex-shrink-0">
+							<svg class="w-full h-full text-accent" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+							</svg>
+						</div>
+						<p class="font-body font-semibold text-body-md text-accent">AI</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Side Projects Section -->
+			<section class="w-full bg-secondary px-16 py-[120px] flex flex-col md:flex-row gap-14">
+				<div class="flex flex-col gap-6 max-w-[548px]">
+					<h2 class="text-h2 font-heading font-bold text-primary">
+						SIDE<br/>PROJECTS
+					</h2>
+					<p class="text-body-md font-body text-secondary-200">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation — to learn, fail, and create without limits.</p>
+				</div>
+				<div class="flex-1 flex flex-col gap-0">
+					<!-- Side Project 1: Imagins AI -->
+					<div class="flex flex-col gap-6 py-4 border-b-2 border-secondary-400">
+						<div class="flex items-start justify-between gap-2">
+							<div class="flex flex-col gap-3">
+								<h3 class="text-sb1 font-body font-semibold text-secondary-100">Imagins AI</h3>
+								<p class="text-body-md font-body text-secondary-200">An AI-powered story generator that creates fully customizable illustrated books by combining text and image models. Designed to explore new ways of storytelling and visual expression.</p>
+							</div>
+							<div class="w-12 h-12 flex-shrink-0">
+								<svg class="w-full h-full text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+								</svg>
+							</div>
+						</div>
+					</div>
+
+					<!-- Side Project 2: Roam Rider -->
+					<div class="flex flex-col gap-6 py-4">
+						<div class="flex items-start justify-between gap-2">
+							<div class="flex flex-col gap-3">
+								<h3 class="text-sb1 font-body font-semibold text-secondary-100">Roam Rider</h3>
+								<p class="text-body-md font-body text-secondary-200">An app designed to give riders complete visibility and control over their journey — bringing every stage of the trip together in one seamless experience.</p>
+							</div>
+							<div class="w-12 h-12 flex-shrink-0">
+								<svg class="w-full h-full text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>

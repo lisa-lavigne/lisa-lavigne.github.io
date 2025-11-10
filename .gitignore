@@ -133,3 +133,6 @@ dist
 .vscode
 
 .astro/*
+.cursor/*
+
+pnpm-workspace.yaml

@@ -1,35 +1,48 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout
-	title="A propos de moi"
-	description="Consultante en business management"
-	pubDate={new Date('November 01 2024')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Je suis Lisa, consultante en business management,
-		passionnée par l'accompagnement des petites
-		entreprises.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-primary min-h-screen flex flex-col">
+		<Header />
+		
+		<main class="w-full flex flex-col">
+			<!-- Hero Section: Philosophy -->
+			<section class="w-full relative min-h-[758px] flex items-center justify-center px-16 py-[120px]">
+				<div class="flex flex-col gap-14 items-center max-w-[1152px]">
+					<h1 class="text-h3 font-heading font-bold text-secondary text-center">PHILOSOPHY BEHIND THE PIXELS</h1>
+					<div class="flex flex-col gap-4 text-body-md font-body text-secondary-300 text-center">
+						<p>
+							I start from the real problem before falling in love with the visual solution, because design is never just about aesthetics.
+							<br/>
+							It's about solving problems grounded in data, so others don't have to. It's about simplifying the complex and turning that simplicity into a guiding principle.
+						</p>
+						<p>It's about creating experiences that stand out and stick with people, while feeling so seamless they're simply enjoyable to use.</p>
+						<p class="font-bold">Above all, it's about harnessing technology to make life better.</p>
+					</div>
+				</div>
+				<!-- Decorative element at bottom -->
+				<div class="absolute bottom-0 left-0 w-full h-[153px] border-t-2 border-secondary"></div>
+			</section>
 
-	<p>
-		Ma mission ? Vous aider à retrouver votre cap, à
-		garder le gouvernail solide, même en pleine tempête, et
-		à profiter pleinement du voyage entrepreneurial.
-	</p>
+			<!-- Banner Section -->
+			<section class="w-full bg-tertiary-300 px-4 py-10 flex items-center justify-center gap-6">
+				<h2 class="text-h2 font-heading font-bold text-primary text-center whitespace-nowrap">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
+				<div class="w-12 h-12 flex-shrink-0">
+					<svg class="w-full h-full text-primary" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+					</svg>
+				</div>
+			</section>
+		</main>
 
-	<p>
-		Concrètement, j’optimise vos processus, maximise
-		votre efficacité et vous guide dans la gestion de votre
-		temps pour que vous vous concentriez sur ce qui
-		compte vraiment.
-	</p>
-
-	<p>
-		Vous êtes prêt à naviguer sereinement et atteindre
-		vos objectifs ? Ensemble, nous mettons le cap sur
-		votre succès.
-	</p>
-</Layout>
+		<Footer dark={true} locationText="Designing digital things, enjoying analog life." />
+	</body>
+</html>
