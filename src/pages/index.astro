@@ -2,6 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/news/Header.astro';
 import NewsHeader from '../components/news/Header.astro';
+import NewsButton from '../components/news/Button.astro';
+import DataItem from '../components/news/DataItem.astro';
 import Footer from '../components/Footer.astro';
 import ProjectLarge from '../components/news/ProjectLarge.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
@@ -54,9 +56,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<p>It's about creating experiences that stand out and stick with people, while feeling so seamless they're simply enjoyable to use.</p>
 					<p class="font-bold">Above all, it's about harnessing technology to make life better.</p>
 				</div>
-				<a href="/about" class="bg-accent text-primary px-6 py-3 rounded font-body font-semibold text-body-md hover:opacity-90 transition-opacity">
-					Read about me
-				</a>
+				<NewsButton href="/about" text="Read about me" />
 			</section>
 
 			<!-- Banner Section -->
@@ -71,13 +71,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<div class="flex flex-col w-full">
 					<!-- Project 1: Movistar Prosegur Alarms -->
 					<div class="border-t-2 border-secondary">
-						<ProjectLarge 
-							imageSrc="/placeholder-hero.jpg"
-							category="Security sector"
-							title="Movistar Prosegur Alarms"
-							description="Design products end-to-end, turning insights from real users and data into seamless experiences, from research and flows to launches and long term impact."
-							tags={["UX/UI", "Performance analysis", "Testing", "Design system", "Benchmarking", "Product strategy", "Mentoring", "Team management"]}
-							slug="movistar-prosegur-alarms"
+						<DataItem 
+							variant="icon"
+							cardStyle="filled"
+							title="Security sector"
 						/>
 					</div>
 

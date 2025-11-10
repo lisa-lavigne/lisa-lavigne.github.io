@@ -1,4 +1,6 @@
 ---
+import Chips from './Chips.astro';
+
 interface Props {
 	imageSrc: string;
 	category: string;
@@ -50,9 +52,7 @@ const { imageSrc, category, title, description, tags, slug } = Astro.props;
 		<!-- Tags/Chips -->
 		<div class="flex flex-wrap gap-3">
 			{tags.map((tag) => (
-				<div class="border border-accent rounded-lg px-2 py-1 h-8 flex items-center">
-					<p class="text-body-sm font-body text-accent whitespace-nowrap">{tag}</p>
-				</div>
+				<Chips variant="outline" text={tag} />
 			))}
 		</div>
 	</div>
