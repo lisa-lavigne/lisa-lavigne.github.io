@@ -16,6 +16,7 @@ export interface Project {
 	galleryImages?: string[];
 	galleryTitle?: string;
 	tags?: string[];
+	type?: string;
 }
 
 export const projects: Project[] = [
@@ -40,7 +41,8 @@ export const projects: Project[] = [
 			{ percentage: '50%', label: 'Automotive' },
 			{ percentage: '50%', label: 'AI' }
 		],
-		tags: ['UX/UI', 'Performance analysis', 'Product strategy', 'Team management', 'Benchmarking', 'Communication strategy', 'Mentoring', 'Data driven', 'Design System']
+		tags: ['UX/UI', 'Performance analysis', 'Product strategy', 'Team management', 'Benchmarking', 'Communication strategy', 'Mentoring', 'Data driven', 'Design System'],
+		type: 'App'
 	},
 	{
 		slug: 'selectra',
@@ -63,7 +65,8 @@ export const projects: Project[] = [
 			{ percentage: '50%', label: 'Automotive' },
 			{ percentage: '50%', label: 'AI' }
 		],
-		tags: ['UX/UI','Performance analysis','Communication strategy','Testing','Design System']
+		tags: ['UX/UI','Performance analysis','Communication strategy','Testing','Design System'],
+		type: 'Webapp'
 	},
 	{
 		slug: 'cupra-seat',
@@ -86,7 +89,8 @@ export const projects: Project[] = [
 			{ percentage: '50%', label: 'Automotive' },
 			{ percentage: '50%', label: 'AI' }
 		],
-		tags: ['UX/UI','Team management','Mentoring','Design System']
+		tags: ['UX/UI','Team management','Mentoring','Design System'],
+		type: 'Radio'
 	},
 	{
 		slug: 'imagins-ai',
@@ -110,7 +114,8 @@ export const projects: Project[] = [
 			{ percentage: '30%', label: 'AI' }
 		],
 		galleryImages: ['/placeholder-gallery-1.jpg', '/placeholder-gallery-2.jpg', '/placeholder-gallery-3.jpg', '/placeholder-gallery-4.jpg'],
-		galleryTitle: 'Interiorism'
+		galleryTitle: 'Interiorism',
+		type: 'Webapp'
 	},
 	{
 		slug: 'roam-rider',
@@ -132,7 +137,8 @@ export const projects: Project[] = [
 			{ percentage: '20%', label: 'Telco' },
 			{ percentage: '20%', label: 'Automotive' },
 			{ percentage: '20%', label: 'AI' }
-		]
+		],
+		type: 'App'
 	}
 ];
 

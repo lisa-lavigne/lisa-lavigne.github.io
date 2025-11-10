@@ -50,7 +50,7 @@ const { imageSrc, category, title, description, tags, slug } = Astro.props;
 		</div>
 		
 		<!-- Tags/Chips -->
-		<div class="flex flex-wrap gap-3">
+		<div class="flex flex-wrap gap-3 max-w-[600px]">
 			{tags.map((tag) => (
 				<Chips variant="outline" text={tag} />
 			))}
