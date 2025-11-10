@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import Header from '../components/news/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
@@ -11,7 +11,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={`About - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="bg-primary min-h-screen flex flex-col">
-		<Header />
+		<Header theme="light" />
 		
 		<main class="w-full flex flex-col">
 			<!-- Hero Section: Philosophy -->
