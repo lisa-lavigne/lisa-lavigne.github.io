@@ -2,6 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/news/Header.astro';
 import Footer from '../components/Footer.astro';
+import Cards from '../components/news/Cards.astro';
+import ProjectItem from '../components/news/ProjectItem.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { projects } from '../data/projects';
 
@@ -44,26 +46,13 @@ const sideProjects = projects.filter(p => p.isSideProject);
 				<div class="flex flex-col gap-0 max-w-[1152px]">
 					{mainProjects.map((project, index) => (
 						<>
-							<a href={`/works/${project.slug}`} class="bg-secondary flex flex-col gap-6 pt-6 hover:opacity-90 transition-opacity">
-								<div class="flex items-start justify-between pl-6 pr-0">
-									<div class="flex flex-col gap-6 max-w-[720px]">
-										<div class="flex flex-col gap-3">
-											<div class="flex gap-3 items-start">
-												{project.industry && (
-													<h3 class="text-sb1 font-body font-semibold text-secondary-200">{project.industry}</h3>
-												)}
-											</div>
-											<h3 class="text-h3 font-heading font-bold text-primary">{project.title}</h3>
-										</div>
-										<p class="text-body-md font-body text-primary">{project.description.split('\n')[0]}</p>
-									</div>
-									<div class="w-12 h-12 flex-shrink-0">
-										<svg class="w-full h-full text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-										</svg>
-									</div>
-								</div>
-							</a>
+							<ProjectItem 
+								category={project.industry || ''}
+								tags={[]}
+								title={project.title}
+								description={project.description.split('\n')[0]}
+								slug={project.slug}
+							/>
 							{index < mainProjects.length - 1 && <div class="h-px bg-primary w-full"></div>}
 						</>
 					))}
@@ -76,26 +65,14 @@ const sideProjects = projects.filter(p => p.isSideProject);
 				
 				<div class="flex flex-col gap-14 items-center">
 					{sideProjects.map((project) => (
-						<a href={`/works/${project.slug}`} class="bg-tertiary-100 border-2 border-accent rounded-lg flex items-center h-[188px] w-full max-w-[1062px] hover:opacity-90 transition-opacity">
-							<div class="w-[273px] h-full flex-shrink-0 rounded-l-lg bg-secondary-100">
-								{project.heroImage && (
-									<img src={project.heroImage} alt={project.title} class="w-full h-full object-cover rounded-l-lg" />
-								)}
-							</div>
-							<div class="flex-1 flex items-center justify-center px-6 py-6">
-								<div class="flex flex-col gap-[22px] w-full">
-									<h3 class="text-h4 font-heading font-bold text-accent">{project.title}</h3>
-									<p class="text-body-md font-body text-accent">
-										{project.description.split('\n')[0]}
-									</p>
-								</div>
-							</div>
-							<div class="w-[61px] h-full flex items-end justify-end p-3">
-								<svg class="w-9 h-9 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-								</svg>
-							</div>
-						</a>
+						<div class="w-full max-w-[1062px]">
+							<Cards 
+								imageSrc={project.heroImage || ''}
+								title={project.title}
+								description={project.description.split('\n')[0]}
+								slug={project.slug}
+							/>
+						</div>
 					))}
 				</div>
 			</section>

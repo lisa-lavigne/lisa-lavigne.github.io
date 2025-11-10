@@ -1,8 +1,9 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import Header from '../components/news/Header.astro';
 import NewsHeader from '../components/news/Header.astro';
 import Footer from '../components/Footer.astro';
+import ProjectLarge from '../components/news/ProjectLarge.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -14,7 +15,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body class="bg-primary min-h-screen flex flex-col">
 		<!-- Noise overlay que está por encima de todo -->
 		<!-- <div class="noise-overlay"></div> -->
-		<Header />
+		<Header theme="light" />
 		
 		<main class="w-full max-w-8xl mx-auto flex flex-col">
 			<!-- Hero Section -->
@@ -69,88 +70,39 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				
 				<div class="flex flex-col w-full">
 					<!-- Project 1: Movistar Prosegur Alarms -->
-					<div class="flex items-center border-t-2 border-secondary">
-						<div class="w-[512px] h-[445px] flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
-						<div class="flex-1 px-6 py-10 flex flex-col justify-between min-h-[445px]">
-							<div class="flex flex-col gap-6">
-								<div class="flex items-start justify-between gap-2">
-									<div class="flex flex-col gap-2">
-										<h3 class="text-sb1 font-body font-semibold text-secondary-200">Security sector</h3>
-										<h3 class="text-h4 font-heading font-bold text-secondary-400">Movistar Prosegur Alarms</h3>
-									</div>
-									<div class="w-12 h-12 flex-shrink-0">
-										<svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-										</svg>
-									</div>
-								</div>
-								<p class="text-body-md font-body text-secondary-300">Design products end-to-end, turning insights from real users and data into seamless experiences, from research and flows to launches and long term impact.</p>
-							</div>
-							<div class="flex flex-wrap gap-3">
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">UX/UI</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Performance analysis</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Testing</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Design system</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Benchmarking</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Product strategy</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Mentoring</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Team management</span>
-							</div>
-						</div>
+					<div class="border-t-2 border-secondary">
+						<ProjectLarge 
+							imageSrc="/placeholder-hero.jpg"
+							category="Security sector"
+							title="Movistar Prosegur Alarms"
+							description="Design products end-to-end, turning insights from real users and data into seamless experiences, from research and flows to launches and long term impact."
+							tags={["UX/UI", "Performance analysis", "Testing", "Design system", "Benchmarking", "Product strategy", "Mentoring", "Team management"]}
+							slug="movistar-prosegur-alarms"
+						/>
 					</div>
 
 					<!-- Project 2: Selectra -->
-					<div class="flex items-center border-t-2 border-secondary">
-						<div class="w-[512px] h-[445px] flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
-						<div class="flex-1 px-6 py-10 flex flex-col justify-between min-h-[445px]">
-							<div class="flex flex-col gap-6">
-								<div class="flex items-start justify-between gap-2">
-									<div class="flex flex-col gap-2">
-										<h3 class="text-sb1 font-body font-semibold text-secondary-200">Energy & Telco</h3>
-										<h3 class="text-h4 font-heading font-bold text-secondary-400">Selectra</h3>
-									</div>
-									<div class="w-12 h-12 flex-shrink-0">
-										<svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-										</svg>
-									</div>
-								</div>
-								<p class="text-body-md font-body text-secondary-300">Colaboration in full cycle product design. From research and discovery to validation and go into production of MVPs optimizing performance.</p>
-							</div>
-							<div class="flex flex-wrap gap-3">
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">UX/UI</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Research</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">MVP</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Product strategy</span>
-							</div>
-						</div>
+					<div class="border-t-2 border-secondary">
+						<ProjectLarge 
+							imageSrc="/placeholder-hero.jpg"
+							category="Energy & Telco"
+							title="Selectra"
+							description="Colaboration in full cycle product design. From research and discovery to validation and go into production of MVPs optimizing performance."
+							tags={["UX/UI", "Research", "MVP", "Product strategy"]}
+							slug="selectra"
+						/>
 					</div>
 
 					<!-- Project 3: Cupra & SEAT -->
-					<div class="flex items-center border-t-2 border-secondary">
-						<div class="w-[512px] h-[445px] flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
-						<div class="flex-1 px-6 py-10 flex flex-col justify-between min-h-[445px]">
-							<div class="flex flex-col gap-6">
-								<div class="flex items-start justify-between gap-2">
-									<div class="flex flex-col gap-2">
-										<h3 class="text-sb1 font-body font-semibold text-secondary-200">Auto industry</h3>
-										<h3 class="text-h4 font-heading font-bold text-secondary-400">Cupra & SEAT</h3>
-									</div>
-									<div class="w-12 h-12 flex-shrink-0">
-										<svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-											<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-										</svg>
-									</div>
-								</div>
-								<p class="text-body-md font-body text-secondary-300">Designed of systems for next generation radios, building scalable design foundations and visual languages that shaped future interfaces.</p>
-							</div>
-							<div class="flex flex-wrap gap-3">
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">UX/UI</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Team management</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Mentoring</span>
-								<span class="px-2 py-1 border border-accent rounded-lg text-body-sm font-body text-accent">Design system</span>
-							</div>
-						</div>
+					<div class="border-t-2 border-secondary">
+						<ProjectLarge 
+							imageSrc="/placeholder-hero.jpg"
+							category="Auto industry"
+							title="Cupra & SEAT"
+							description="Designed of systems for next generation radios, building scalable design foundations and visual languages that shaped future interfaces."
+							tags={["UX/UI", "Team management", "Mentoring", "Design system"]}
+							slug="cupra-seat"
+						/>
 					</div>
 				</div>
 			</section>
