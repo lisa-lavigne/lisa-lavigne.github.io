@@ -1,5 +1,6 @@
 export interface Project {
 	slug: string;
+	iconImage?: string;
 	isSideProject: boolean;
 	title: string;
 	description: string;
@@ -22,6 +23,7 @@ export interface Project {
 export const projects: Project[] = [
 	{
 		slug: 'movistar-prosegur-alarms',
+		iconImage: '/projects/prosegur/prosegur-icon.svg',
 		isSideProject: false,
 		title: 'Movistar Prosegur Alarms',
 		description: 'Redesigning Movistar Prosegur Alarms self-service experience to increase customer satisfaction and reduce support calls.\n\nI led e2e design initiatives, from identifying opportunities through data and app performance analysis to delivering new in-app features, defining user journeys, and orchestrating launch communication strategies that improved NPS and user adoption.',
@@ -46,6 +48,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'selectra',
+		iconImage: '/projects/selectra/selectra-icon.svg',
 		isSideProject: false,
 		title: 'Selectra',
 		description: 'Colaboration in full cycle product design. From research and discovery to validation and go into production of MVPs optimizing performance.',
@@ -70,6 +73,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'cupra-seat',
+		iconImage: '/projects/cupra/cupra-icon.svg',
 		isSideProject: false,
 		title: 'Cupra & SEAT',
 		description: 'Designed of systems for next generation radios, building scalable design foundations and visual languages that shaped future interfaces.',
@@ -94,6 +98,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'imagins-ai',
+		iconImage: '/projects/imagins/imagins-icon.svg',
 		isSideProject: true,
 		title: 'Imagins AI',
 		description: 'AI story generator, create highly customizable illustrated books with an image and text model.',
@@ -119,6 +124,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'roam-rider',
+		iconImage: '/projects/roamrider/roamrider-icon.svg',
 		isSideProject: true,
 		title: 'Roam Rider',
 		description: 'Designed to give riders complete visibility and control over their journey  in one seamless experience.',

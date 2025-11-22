@@ -116,6 +116,7 @@ const sideProjects = projects.filter(p => p.isSideProject);
 				<div class="flex-1 flex flex-col gap-0">
 					{sideProjects.map((project, index) => (
 						<SideProjectItem 
+							iconImage={project.iconImage || ''}
 							title={project.title}
 							description={project.description.split('\n')[0]}
 							slug={project.slug}

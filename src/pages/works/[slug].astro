@@ -24,7 +24,8 @@ const sideProjects = project.isSideProject
 		.map(p => ({
 			slug: p.slug,
 			title: p.title,
-			description: p.description.split('\n')[0]
+			description: p.description.split('\n')[0],
+			iconImage: p.iconImage
 		}));
 ---
 

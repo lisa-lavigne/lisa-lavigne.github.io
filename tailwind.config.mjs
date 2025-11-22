@@ -11,6 +11,9 @@ export default {
 			subheading: ['Poppins', 'sans-serif'],
 			body: ['Poppins', 'sans-serif']
 		  },
+		  letterSpacing: {
+			'heading': '-2px'
+		  },
 		  fontSize: {
 			'h1': '120px',
 			'h2': '56px',
