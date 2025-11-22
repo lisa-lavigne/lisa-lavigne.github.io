@@ -7,7 +7,7 @@ export default {
 		},
 		extend: {
 		  fontFamily: {
-			heading: ['Kalnia', 'serif'],
+			heading: ['NeueMontereal', 'sans-serif'],
 			subheading: ['Poppins', 'sans-serif'],
 			body: ['Poppins', 'sans-serif']
 		  },

@@ -136,3 +136,7 @@ dist
 .cursor/*
 
 pnpm-workspace.yaml
+
+
+.DS_Store
+**/.DS_Store

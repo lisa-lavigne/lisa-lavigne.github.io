@@ -7,6 +7,7 @@ import DataItem from '../components/news/DataItem.astro';
 import Footer from '../components/news/Footer.astro';
 import ProjectLarge from '../components/news/ProjectLarge.astro';
 import SideProjectItem from '../components/news/SideProjectItem.astro';
+import Chips from '../components/news/Chips.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { projects } from '../data/projects';
 
@@ -25,22 +26,23 @@ const sideProjects = projects.filter(p => p.isSideProject);
 		<Header theme="light" />
 		
 		<main class="w-full flex flex-col">
-			<!-- Hero Section -->
-			<section class="w-full px-16 py-20 flex flex-col md:flex-row items-center justify-between gap-12 min-h-[758px]">
-				<div class="flex flex-col gap-[56px] max-w-[764px]">
-					<div class="flex flex-col gap-0">
-						<h2 class="text-h3 font-sans text-secondary">hey,</h2>
-						<h1 class="text-h1 font-heading font-bold text-secondary">welcome!</h1>
+		<!-- Hero Section -->
+		<section class="w-full px-16 py-20 flex flex-col md:flex-row items-center justify-between gap-12 min-h-[758px]">
+			<div class="flex flex-col gap-[56px] max-w-[764px]">
+				<div class="flex flex-col gap-4">
+					<div class="w-[200px]">
+						<Chips variant="outline" text="Product Designer" />
 					</div>
-					<div class="flex flex-col gap-4 text-body-md font-body text-secondary-300">
-						<p>I am Miriam. I believe great design begins with humility and curiosity understanding the problem deeply before crafting the solution. My work fuses creativity, strategy, and technology to craft products that not only stand out but truly improve people's lives.</p>
-						<p class="font-bold">This is a curated peek into my work and how I think.</p>
-					</div>
+					<h2 class="text-h2 font-heading font-bold text-secondary">Merging design, strategy and technology to craft products.</h2>
 				</div>
-				<div class="w-[420px] h-[420px] flex-shrink-0">
-					<img src="/a.svg" alt="Image Grid" class="w-full h-full object-cover" />
+				<div class="flex flex-col gap-4 text-body-md font-sb text-secondary-300">
+					<p>Harnessing technology to make life better.</p>
 				</div>
-			</section>
+			</div>
+			<div class="w-[420px] h-[420px] flex-shrink-0">
+				<img src="/a.svg" alt="Image Grid" class="w-full h-full object-cover" />
+			</div>
+		</section>
 
 			<!-- Image Grid Section -->
 			<section class="w-full border-t-2 border-b-2 border-secondary h-[284px] flex items-center overflow-hidden">
@@ -52,22 +54,23 @@ const sideProjects = projects.filter(p => p.isSideProject);
 				</div>
 			</section>
 
-			<!-- Philosophy Section -->
-			<section class="w-full px-16 py-[120px] flex flex-col items-center gap-14">
-				<h2 class="text-h3 font-heading font-bold text-secondary text-center">PHILOSOPHY BEHIND THE PIXELS</h2>
-				<div class="flex flex-col gap-4 max-w-[1152px] text-body-md font-body text-secondary-300 text-center">
-					<p>I start from the real problem before falling in love with the visual solution, because design is never just about aesthetics.
-						<br/> It's about solving problems grounded in data, so others don't have to. It's about simplifying the complex and turning that simplicity into a guiding principle.
-						<br/> It's about creating experiences that stand out and stick with people, while feeling so seamless they're simply enjoyable to use.
-					</p>
-					<p class="font-bold font-body">Above all, it's about harnessing technology to make life better.</p>
-				</div>
-				<NewsButton href="/about" text="Read about me" />
-			</section>
 
 			<!-- Banner Section -->
 			<section class="w-full bg-tertiary-300 px-4 py-10 flex items-center justify-center gap-6">
 				<h2 class="text-h2 font-heading font-bold text-primary text-center whitespace-nowrap">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
+			</section>
+
+			<!-- Philosophy Section -->
+			<section class="w-full px-16 py-[120px] flex flex-col items-start gap-14">
+				<h2 class="text-h3 font-heading font-bold text-secondary text-start">Behind the pixels</h2>
+				<div class="flex flex-col gap-4 max-w-[1152px] text-body-md font-body text-secondary-300 text-start">
+					<p>
+						I always begin with the real problem before falling in love with the visual solution, because design isn’t just about aesthetics. It’s about solving challenges grounded in data so others don’t have to face the complexity. It’s about distilling the difficult into a clear guiding principle. 
+						<br/> 
+					</p>
+					<p class="font-bold font-body">It’s about creating memorable, distinctive experiences so seamless they’re simply enjoyable to use.</p>
+				</div>
+				<NewsButton href="/about" text="Read about me" />
 			</section>
 
 			<!-- Projects Section -->
@@ -76,7 +79,7 @@ const sideProjects = projects.filter(p => p.isSideProject);
 				
 				<div class="flex flex-col w-full border-b-2 border-secondary">
 					{mainProjects.map((project, index) => (
-						<div class="border-t-2 border-secondary">
+						<div class="border-t-2 border-secondary-200">
 							<ProjectLarge 
 								imageSrc={project.heroImage || '/placeholder-hero.jpg'}
 								category={project.industry || ''}
@@ -91,8 +94,8 @@ const sideProjects = projects.filter(p => p.isSideProject);
 			</section>
 
 			<!-- Industries Section -->
-			<section class="w-full bg-tertiary-300 px-14 py-[120px] flex flex-col items-center gap-16">
-				<h2 class="text-h2 font-heading font-bold text-tertiary-100 text-center">INDUSTRIES OF EXPERTISE</h2>
+			<section class="w-full bg-secondary px-14 py-[120px] flex flex-col items-center gap-16">
+				<h2 class="text-h2 font-heading font-bold text-primary text-center">INDUSTRIES OF EXPERTISE</h2>
 				<div class="flex gap-6 flex-wrap justify-center">
 					<DataItem variant="icon" cardStyle="filled" title="Security" />
 					<DataItem variant="icon" cardStyle="filled" title="Energy" />

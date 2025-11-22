@@ -10,10 +10,10 @@ const isOutline = variant === 'outline';
 ---
 
 <span 
-	class={`inline-block rounded-lg px-2 py-1 text-center font-body text-[12px] ${
+	class={`inline-flex items-center h-8 rounded-[8px] text-center font-body text-[12px] leading-normal whitespace-nowrap ${
 		isOutline 
-			? 'border border-accent text-accent bg-transparent' 
-			: 'bg-tertiary-200 text-secondary border-0'
+			? 'border border-accent-100 text-accent-100 bg-transparent px-2 py-1' 
+			: 'bg-tertiary-200 text-secondary border-0 px-2 py-1'
 	}`}
 >
 	{text}

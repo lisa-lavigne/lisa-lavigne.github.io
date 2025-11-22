@@ -13,47 +13,60 @@ interface Props {
 const { imageSrc, category, title, description, tags, slug } = Astro.props;
 ---
 
-<a href={`/works/${slug}`} class="flex items-center justify-between h-[445px] w-full hover:opacity-90 transition-opacity">
+<a href={`/works/${slug}`} class="flex gap-6 h-[445px] items-center w-full hover:opacity-90 transition-opacity py-10">
 	<!-- Imagen a la izquierda -->
-	<div class="w-[512px] h-full flex-shrink-0">
-		<img 
-			src={imageSrc} 
-			alt={title} 
-			class="w-full h-full object-cover"
-		/>
+	<div class="h-full relative rounded-2xl shrink-0 w-[512px] overflow-hidden">
+		<div aria-hidden="true" class="absolute inset-0 pointer-events-none rounded-2xl">
+			<div class="absolute bg-black/20 inset-0 rounded-2xl"></div>
+			<div class="absolute inset-0 overflow-hidden rounded-2xl">
+				<img 
+					src={imageSrc} 
+					alt={title} 
+					class="absolute h-full w-full max-w-none object-cover"
+				/>
+			</div>
+		</div>
 	</div>
 	
-	<!-- Separador vertical decorativo -->
-	<div class="h-full w-[2px] bg-secondary flex-shrink-0"></div>
-	
-	<!-- Contenido a la derecha -->
-	<div class="flex-1 flex flex-col justify-between h-full px-6 py-10">
-		<div class="flex flex-col gap-6 w-full">
-			<!-- Título con categoría y flecha -->
-			<div class="flex items-start justify-between gap-4">
-				<div class="flex flex-col gap-2">
-					<h3 class="text-sb1 font-body font-semibold text-secondary-200">{category}</h3>
-					<h3 class="text-h4 font-heading font-bold text-secondary-400">{title}</h3>
+	<!-- Contenido de texto a la derecha -->
+	<div class="flex-1 flex flex-col h-[445px] items-center justify-between pl-6 pr-10 py-10">
+		<div class="flex-1 flex flex-col items-start justify-between w-full">
+			<!-- Sección superior: Título y descripción -->
+			<div class="flex flex-col gap-6 items-start w-full">
+				<!-- Título con categoría y flecha -->
+				<div class="flex items-start justify-between gap-[10px] w-full">
+					<div class="flex flex-col gap-2 flex-1">
+						<h3 class="text-sb1 font-subheading font-semibold text-secondary-200 leading-normal">{category}</h3>
+						<div class=" font-heading font-bold text-secondary-400 leading-normal">
+							{title.split('\n').map((line) => (
+								<h3 class="block mb-0">{line}</h3>
+							))}
+						</div>
+					</div>
+					<!-- Ícono de flecha en esquina superior derecha (arrow-up-right) -->
+					<div class="w-12 h-12 flex-shrink-0">
+						<svg class="w-full h-full text-secondary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5L19.5 4.5M19.5 4.5H9M19.5 4.5V15" />
+						</svg>
+					</div>
 				</div>
-				<!-- Ícono de flecha en esquina superior derecha (arrow-up-right) -->
-				<div class="w-12 h-12 flex-shrink-0">
-					<svg class="w-full h-full text-secondary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5L19.5 4.5M19.5 4.5H9M19.5 4.5V15" />
-					</svg>
-				</div>
+				
+				<!-- Descripción -->
+				<p class="text-body-md font-body text-secondary-300 leading-normal w-full">
+					{description}
+				</p>
 			</div>
 			
-			<!-- Descripción -->
-			<p class="text-body-md font-body text-secondary-300">
-				{description}
-			</p>
-		</div>
-		
-		<!-- Tags/Chips -->
-		<div class="flex flex-wrap gap-3 max-w-[600px]">
-			{tags.map((tag) => (
-				<Chips variant="outline" text={tag} />
-			))}
+			<!-- Sección inferior: Tags/Chips -->
+			<div class="flex flex-col gap-6 items-start w-full">
+				<div class="flex gap-[10px] items-center w-full">
+					<div class="flex flex-wrap gap-3 items-start w-full">
+						{tags.map((tag) => (
+							<Chips variant="outline" text={tag} />
+						))}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </a>
