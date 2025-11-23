@@ -6,6 +6,8 @@ import SideProjectItem from '../components/news/SideProjectItem.astro';
 import ProjectItem from '../components/news/ProjectItem.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { projects } from '../data/projects';
+import BentoGrid from '../components/news/BentoGrid.astro';
+import BentoGridInteriorism from '../components/news/BentoGridInteriorism.astro';
 
 const mainProjects = projects.filter(p => !p.isSideProject);
 const sideProjects = projects.filter(p => p.isSideProject);
@@ -58,7 +60,12 @@ const sideProjects = projects.filter(p => p.isSideProject);
 						</>
 					))}
 				</div>
+
+
+				<!-- Bento Grid Section -->
+				<BentoGrid />
 			</section>
+
 
 			<section class="w-full bg-white px-16 py-[120px] flex flex-col md:flex-row gap-14 items-end">
 				<div class="flex flex-col gap-6 max-w-[548px]">
@@ -89,14 +96,9 @@ const sideProjects = projects.filter(p => p.isSideProject);
 						<div class="w-6 h-[153px] flex-shrink-0"></div>
 					</div>
 				</div>
-				<div class="w-full overflow-x-auto">
-					<div class="flex h-[376px] items-center">
-						<div class="w-[382px] h-full flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
-						<div class="w-[382px] h-full flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
-						<div class="w-[382px] h-full flex-shrink-0 bg-secondary-100 border-r-2 border-secondary"></div>
-						<div class="w-[382px] h-full flex-shrink-0 bg-secondary-100"></div>
-					</div>
-				</div>
+				
+				<!-- Bento Grid Section -->
+				<BentoGridInteriorism />
 			</section>
 		</main>
 

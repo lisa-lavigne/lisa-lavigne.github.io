@@ -8,6 +8,7 @@ import Footer from '../components/news/Footer.astro';
 import ProjectLarge from '../components/news/ProjectLarge.astro';
 import SideProjectItem from '../components/news/SideProjectItem.astro';
 import Chips from '../components/news/Chips.astro';
+import BentoGrid from '../components/news/BentoGrid.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { projects } from '../data/projects';
 
@@ -45,81 +46,7 @@ const sideProjects = projects.filter(p => p.isSideProject);
 		</section>
 
 		<!-- Bento Grid Section -->
-		<section class="w-full py-10 overflow-hidden">
-			<div class="bento-scroll-container">
-				<div class="bento-scroll-content">
-					<!-- Spacer for initial padding -->
-					<div class="w-8 flex-shrink-0"></div>
-					<!-- First set of images -->
-					<div class="flex gap-[18px] items-start flex-shrink-0">
-						<!-- Left large image -->
-						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[591px]">
-							<img src="/images/1.png" alt="Bento grid image 1" class="w-full h-full object-cover" />
-						</div>
-						
-						<!-- Middle column with 2 images -->
-						<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
-							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
-								<img src="/images/2.png" alt="Bento grid image 2" class="w-full h-full object-cover" />
-							</div>
-							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
-								<img src="/images/3.png" alt="Bento grid image 3" class="w-full h-full object-cover" />
-							</div>
-						</div>
-						
-						<!-- Right column with 2 images of different sizes -->
-						<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[290px]">
-							<div class="h-[292.5px] rounded-xl overflow-hidden w-full">
-								<img src="/images/4.png" alt="Bento grid image 4" class="w-full h-full object-cover" />
-							</div>
-							<div class="h-[130.9px] rounded-xl overflow-hidden w-full">
-								<img src="/images/5.png" alt="Bento grid image 5" class="w-full h-full object-cover" />
-							</div>
-						</div>
-						
-						<!-- Right large image -->
-						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px]">
-							<img src="/images/6.png" alt="Bento grid image 6" class="w-full h-full object-cover" />
-						</div>
-					</div>
-					
-					<!-- Spacer for seamless loop -->
-					<div class="w-16 flex-shrink-0"></div>
-					<!-- Duplicated set for seamless loop -->
-					<div class="flex gap-[18px] items-start flex-shrink-0">
-						<!-- Left large image -->
-						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[591px]">
-							<img src="/images/1.png" alt="Bento grid image 1" class="w-full h-full object-cover" />
-						</div>
-						
-						<!-- Middle column with 2 images -->
-						<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
-							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
-								<img src="/images/2.png" alt="Bento grid image 2" class="w-full h-full object-cover" />
-							</div>
-							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
-								<img src="/images/3.png" alt="Bento grid image 3" class="w-full h-full object-cover" />
-							</div>
-						</div>
-						
-						<!-- Right column with 2 images of different sizes -->
-						<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[290px]">
-							<div class="h-[292.5px] rounded-xl overflow-hidden w-full">
-								<img src="/images/4.png" alt="Bento grid image 4" class="w-full h-full object-cover" />
-							</div>
-							<div class="h-[130.9px] rounded-xl overflow-hidden w-full">
-								<img src="/images/5.png" alt="Bento grid image 5" class="w-full h-full object-cover" />
-							</div>
-						</div>
-						
-						<!-- Right large image -->
-						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px]">
-							<img src="/images/6.png" alt="Bento grid image 6" class="w-full h-full object-cover" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<BentoGrid />
 
 
 			<!-- Banner Section -->
