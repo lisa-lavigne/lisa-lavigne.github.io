@@ -10,6 +10,40 @@ interface Props {
 }
 
 const { category, type, title, description, slug } = Astro.props;
+
+// Función para parsear texto con negrita usando formato **texto**
+function parseBoldText(text: string) {
+	if (!text) return [];
+	
+	const parts: Array<{text: string, bold: boolean}> = [];
+	const regex = /\*\*(.*?)\*\*/g;
+	let lastIndex = 0;
+	let match;
+	
+	while ((match = regex.exec(text)) !== null) {
+		// Agregar texto antes del match
+		if (match.index > lastIndex) {
+			parts.push({ text: text.substring(lastIndex, match.index), bold: false });
+		}
+		// Agregar texto en negrita
+		parts.push({ text: match[1], bold: true });
+		lastIndex = regex.lastIndex;
+	}
+	
+	// Agregar texto restante
+	if (lastIndex < text.length) {
+		parts.push({ text: text.substring(lastIndex), bold: false });
+	}
+	
+	// Si no hay matches, devolver el texto completo
+	if (parts.length === 0) {
+		parts.push({ text, bold: false });
+	}
+	
+	return parts;
+}
+
+const descriptionParts = parseBoldText(description);
 ---
 
 <a href={`/works/${slug}`} class="bg-secondary-500 flex flex-col gap-6 pt-6 w-full hover:opacity-90 transition-opacity">
@@ -29,7 +63,13 @@ const { category, type, title, description, slug } = Astro.props;
 			</div>
 			<!-- Descripción -->
 			<p class="text-body-md font-body text-primary">
-				{description}
+				{descriptionParts.map((part, idx) => (
+					part.bold ? (
+						<span class="font-bold">{part.text}</span>
+					) : (
+						<span>{part.text}</span>
+					)
+				))}
 			</p>
 		</div>
 		
