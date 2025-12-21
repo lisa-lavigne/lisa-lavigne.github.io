@@ -17,7 +17,7 @@ const borderColor = isLight ? 'border-secondary-300' : 'border-secondary-100';
 
 // Si el tema es light, usar la versión -light.svg del icono
 const iconSrc = isLight && iconImage.endsWith('.svg') 
-	? iconImage.replace('.svg', '.svg')
+	? iconImage.replace('.svg', '-dark.svg')
 	: iconImage;
 
 // Función para parsear texto con negrita usando formato **texto**

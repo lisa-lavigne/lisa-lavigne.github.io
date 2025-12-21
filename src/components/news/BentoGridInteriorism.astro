@@ -1,40 +1,247 @@
 ---
+const images = [
+	{ src: '/images/interiorism/1.png', alt: 'Interiorism image 1' },
+	{ src: '/images/interiorism/2.png', alt: 'Interiorism image 2' },
+	{ src: '/images/interiorism/3.png', alt: 'Interiorism image 3' },
+	{ src: '/images/interiorism/4.png', alt: 'Interiorism image 4' },
+	{ src: '/images/interiorism/5.png', alt: 'Interiorism image 5' },
+	{ src: '/images/interiorism/6.png', alt: 'Interiorism image 6' },
+	{ src: '/images/interiorism/7.png', alt: 'Interiorism image 7' },
+	{ src: '/images/interiorism/8.png', alt: 'Interiorism image 8' },
+	{ src: '/images/interiorism/9.png', alt: 'Interiorism image 9' },
+];
+
 ---
+
 <section class="w-full py-10 overflow-hidden">
-	<div class="w-full flex justify-center">
-		<div class="w-full max-w-[1152px]">
+	<div class="w-full flex justify-center pl-[56px] pr-[56px] ">
+		<div class="w-full">
 			<!-- Spacer for initial padding -->
 			<div class="w-8 flex-shrink-0"></div>
 			<!-- First set of images -->
-			<div class="flex gap-[18px] items-start flex-shrink-0">
-				<!-- Left large image -->
-				<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[591px]">
-					<img src="/images/interiorism/1.png" alt="Bento grid image 1" class="w-full h-full object-cover" />
+			<div class="flex flex-col gap-[18px]">
+				<!-- First row -->
+				<div class="flex gap-[18px] items-start flex-shrink-0" id="gallery-grid">
+					<!-- Left large image -->
+					<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[591px] cursor-pointer hover:opacity-90 transition-opacity" data-image-index="0">
+						<img src={images[0].src} alt={images[0].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+					</div>
+					
+					<!-- Middle column with 2 images -->
+					<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
+						<div class="h-[212.5px] rounded-xl overflow-hidden w-full cursor-pointer hover:opacity-90 transition-opacity" data-image-index="1">
+							<img src={images[1].src} alt={images[1].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+						</div>
+						<div class="h-[212.5px] rounded-xl overflow-hidden w-full cursor-pointer hover:opacity-90 transition-opacity" data-image-index="2">
+							<img src={images[2].src} alt={images[2].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+						</div>
+					</div>
+					
+					<!-- Right column with 2 images of different sizes -->
+					<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[290px]">
+						<div class="h-[292.5px] rounded-xl overflow-hidden w-full cursor-pointer hover:opacity-90 transition-opacity" data-image-index="3">
+							<img src={images[3].src} alt={images[3].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+						</div>
+						<div class="h-[130.9px] rounded-xl overflow-hidden w-full cursor-pointer hover:opacity-90 transition-opacity" data-image-index="4">
+							<img src={images[4].src} alt={images[4].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+						</div>
+					</div>
+					<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[290px]">
+						<div class="h-[130.9px] rounded-xl overflow-hidden w-full cursor-pointer hover:opacity-90 transition-opacity" data-image-index="3">
+							<img src={images[5].src} alt={images[3].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+						</div>
+						<div class="h-[292.5px]  rounded-xl overflow-hidden w-full cursor-pointer hover:opacity-90 transition-opacity" data-image-index="4">
+							<img src={images[6].src} alt={images[4].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+						</div>
+					</div>
+					<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[290px]">
+						<div class="h-[292.5px] rounded-xl overflow-hidden w-full cursor-pointer hover:opacity-90 transition-opacity" data-image-index="3">
+							<img src={images[7].src} alt={images[3].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+						</div>
+						<div class="h-[130.9px] rounded-xl overflow-hidden w-full cursor-pointer hover:opacity-90 transition-opacity" data-image-index="4">
+							<img src={images[8].src} alt={images[4].alt} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+						</div>
+					</div>
 				</div>
-				
-				<!-- Middle column with 2 images -->
-				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
-					<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
-						<img src="/images/interiorism/2.png" alt="Bento grid image 2" class="w-full h-full object-cover" />
-					</div>
-					<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
-						<img src="/images/interiorism/3.png" alt="Bento grid image 3" class="w-full h-full object-cover" />
-					</div>
-				</div>
-				
-				<!-- Right column with 2 images of different sizes -->
-				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[290px]">
-					<div class="h-[292.5px] rounded-xl overflow-hidden w-full">
-						<img src="/images/interiorism/4.png" alt="Bento grid image 4" class="w-full h-full object-cover" />
-					</div>
-					<div class="h-[130.9px] rounded-xl overflow-hidden w-full">
-						<img src="/images/interiorism/5.png" alt="Bento grid image 5" class="w-full h-full object-cover" />
-					</div>
-				</div>
-			</div>
-			
 			</div>
 		</div>
 	</div>
 </section>
+
+<!-- Modal Gallery -->
+<div id="gallery-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-90">
+	<div class="relative w-full h-full flex items-center justify-center px-4">
+		<!-- Close button -->
+		<button 
+			id="close-modal" 
+			class="absolute top-4 right-4 text-white text-4xl font-bold hover:opacity-70 transition-opacity z-10"
+			aria-label="Cerrar galería"
+		>
+			&times;
+		</button>
+		
+		<!-- Previous button -->
+		<button 
+			id="prev-image" 
+			class="absolute left-4 text-white text-5xl font-bold hover:opacity-70 transition-opacity z-10"
+			aria-label="Imagen anterior"
+		>
+			&#8249;
+		</button>
+		
+		<!-- Next button -->
+		<button 
+			id="next-image" 
+			class="absolute right-4 text-white text-5xl font-bold hover:opacity-70 transition-opacity z-10"
+			aria-label="Imagen siguiente"
+		>
+			&#8250;
+		</button>
+		
+		<!-- Image container -->
+		<div class="max-w-7xl max-h-[calc(90vh-120px)] flex items-center justify-center mb-32">
+			<img 
+				id="modal-image" 
+				src="" 
+				alt="" 
+				class="max-w-full max-h-[calc(90vh-120px)] object-contain rounded-lg"
+			/>
+		</div>
+		
+		<!-- Thumbnails container -->
+		<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3 px-4" id="thumbnails-container">
+			{images.map((img, index) => (
+				<button
+					class="thumbnail-btn w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-white transition-all duration-200 opacity-60 hover:opacity-100"
+					data-thumb-index={index}
+					aria-label={`Ver imagen ${index + 1}`}
+				>
+					<img 
+						src={img.src} 
+						alt={img.alt} 
+						class="w-full h-full object-cover"
+					/>
+				</button>
+			))}
+		</div>
+	</div>
+</div>
+
+<script>
+	(function() {
+		const images = [
+			{ src: '/images/interiorism/1.png', alt: 'Interiorism image 1' },
+			{ src: '/images/interiorism/2.png', alt: 'Interiorism image 2' },
+			{ src: '/images/interiorism/3.png', alt: 'Interiorism image 3' },
+			{ src: '/images/interiorism/4.png', alt: 'Interiorism image 4' },
+			{ src: '/images/interiorism/5.png', alt: 'Interiorism image 5' },
+			{ src: '/images/interiorism/6.png', alt: 'Interiorism image 6' },
+			{ src: '/images/interiorism/7.png', alt: 'Interiorism image 7' },
+			{ src: '/images/interiorism/8.png', alt: 'Interiorism image 8' },
+			{ src: '/images/interiorism/9.png', alt: 'Interiorism image 9' },
+		];
+
+		let currentImageIndex = 0;
+		const modal = document.getElementById('gallery-modal');
+		const modalImage = document.getElementById('modal-image') as HTMLImageElement;
+		const closeBtn = document.getElementById('close-modal');
+		const prevBtn = document.getElementById('prev-image');
+		const nextBtn = document.getElementById('next-image');
+		const thumbnailButtons = document.querySelectorAll('.thumbnail-btn');
+		
+		// Get all image containers
+		const imageContainers = document.querySelectorAll('[data-image-index]');
+		
+		function updateThumbnailActive() {
+			thumbnailButtons.forEach((btn, index) => {
+				if (index === currentImageIndex) {
+					btn.classList.remove('opacity-60', 'border-transparent');
+					btn.classList.add('opacity-100', 'border-white');
+				} else {
+					btn.classList.remove('opacity-100', 'border-white');
+					btn.classList.add('opacity-60', 'border-transparent');
+				}
+			});
+		}
+		
+		function openModal(index: number) {
+			currentImageIndex = index;
+			updateModalImage();
+			updateThumbnailActive();
+			if (modal) {
+				modal.classList.remove('hidden');
+				modal.classList.add('flex');
+			}
+			document.body.style.overflow = 'hidden';
+		}
+		
+		function closeModal() {
+			if (modal) {
+				modal.classList.add('hidden');
+				modal.classList.remove('flex');
+			}
+			document.body.style.overflow = '';
+		}
+		
+		function updateModalImage() {
+			if (modalImage) {
+				modalImage.src = images[currentImageIndex].src;
+				modalImage.alt = images[currentImageIndex].alt;
+			}
+			updateThumbnailActive();
+		}
+		
+		function showNextImage() {
+			currentImageIndex = (currentImageIndex + 1) % images.length;
+			updateModalImage();
+		}
+		
+		function showPrevImage() {
+			currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+			updateModalImage();
+		}
+		
+		// Add click listeners to image containers
+		imageContainers.forEach((container) => {
+			container.addEventListener('click', (e) => {
+				const index = parseInt(container.getAttribute('data-image-index') || '0');
+				openModal(index);
+			});
+		});
+		
+		// Add click listeners to thumbnails
+		thumbnailButtons.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const index = parseInt(btn.getAttribute('data-thumb-index') || '0');
+				currentImageIndex = index;
+				updateModalImage();
+			});
+		});
+		
+		// Modal controls
+		closeBtn?.addEventListener('click', closeModal);
+		prevBtn?.addEventListener('click', showPrevImage);
+		nextBtn?.addEventListener('click', showNextImage);
+		
+		// Close on overlay click
+		modal?.addEventListener('click', (e) => {
+			if (e.target === modal) {
+				closeModal();
+			}
+		});
+		
+		// Keyboard navigation
+		document.addEventListener('keydown', (e) => {
+			if (!modal?.classList.contains('hidden')) {
+				if (e.key === 'Escape') {
+					closeModal();
+				} else if (e.key === 'ArrowLeft') {
+					showPrevImage();
+				} else if (e.key === 'ArrowRight') {
+					showNextImage();
+				}
+			}
+		});
+	})();
+</script>
 
