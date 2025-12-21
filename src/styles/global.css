@@ -154,10 +154,10 @@ hr {
 
 @keyframes scroll-bento {
 	0% {
-		transform: translateX(calc(-50% - 32px));
+		transform: translateX(0);
 	}
 	100% {
-		transform: translateX(calc(0% - 32px));
+		transform: translateX(calc(-50% - 36px));
 	}
 }
 
