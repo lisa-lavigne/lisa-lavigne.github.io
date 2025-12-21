@@ -17,6 +17,7 @@ if (!project) {
 }
 
 // Si es un proyecto principal, obtener todos los side projects para mostrar
+// Si es un side project, obtener todos los proyectos principales para mostrar
 const sideProjects = project.isSideProject 
 	? [] 
 	: projects
@@ -27,6 +28,17 @@ const sideProjects = project.isSideProject
 			description: p.description.split('\n')[0],
 			iconImage: p.iconImage
 		}));
+
+const mainProjects = project.isSideProject
+	? projects
+		.filter(p => !p.isSideProject)
+		.map(p => ({
+			slug: p.slug,
+			title: p.title,
+			description: p.description.split('\n')[0],
+			iconImage: p.iconImage
+		}))
+	: [];
 ---
 
 <Project 
@@ -36,8 +48,11 @@ const sideProjects = project.isSideProject
 	dateRange={project.dateRange}
 	industry={project.industry}
 	services={project.services}
+	link={project.link}
 	heroImage={project.heroImage}
-	contentImage={project.contentImage}
+	contentImages={project.contentImages}
+	learnings={project.learnings}
+	learningsImage={project.learningsImage}
 	overview={project.overview}
 	role={project.role}
 	challenge={project.challenge}
@@ -46,5 +61,6 @@ const sideProjects = project.isSideProject
 	galleryImages={project.galleryImages}
 	galleryTitle={project.galleryTitle}
 	sideProjects={sideProjects}
+	mainProjects={mainProjects}
 />
 
