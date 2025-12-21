@@ -8,6 +8,7 @@ export interface Project {
 	industry?: string;
 	services?: string;
 	link?: {text: string, url: string};
+	coverImage?: string;
 	heroImage?: string;
 	contentImages?: string[];
 	learnings?: string;
@@ -34,6 +35,7 @@ export const projects: Project[] = [
 		industry: 'Security',
 		services: 'UX/UI · Communication strategy · Data driven',
 		link: {text: 'App in market', url: 'https://play.google.com/store/apps/details?id=com.prosegur.alarmas'},
+		coverImage: '/projects/prosegur/mpa-cover.svg',
 		heroImage: '/projects/prosegur/mpa.svg',
 		contentImages: ['/projects/prosegur/mpa-content-1.svg', '/projects/prosegur/mpa-content-2.svg'],
 		learningsImage: '/projects/prosegur/mpa-learnings.svg',
@@ -61,6 +63,7 @@ export const projects: Project[] = [
 		industry: 'Energy & Telco',
 		services: 'UX/UI · Performance analysis · Data driven',
 		link: {text: 'Selectra', url: 'https://selectra.es'},
+		coverImage: '/projects/selectra/selectra-cover.svg',
 		heroImage: '/projects/selectra/selectra.svg',
 		contentImages: ['/projects/selectra/selectra-content-1.svg', '/projects/selectra/selectra-content-2.svg'],
 		learningsImage: '/projects/selectra/selectra-learnings.svg',
@@ -87,6 +90,7 @@ export const projects: Project[] = [
 		industry: 'Automative',
 		services: 'UI · Design system',
 		link: {text: 'Cupra · SEAT', url: 'https://www.cupra.com'},
+		coverImage: '/projects/cupra/cupra-cover.svg',
 		heroImage: '/projects/cupra/cupra.svg',
 		contentImages: ['/projects/cupra/cupra-content-1.svg', '/projects/cupra/cupra-content-2.svg'],
 		learningsImage: '/projects/cupra/cupra-learnings.gif',
@@ -113,6 +117,7 @@ export const projects: Project[] = [
 		industry: 'Artificial intelligence',
 		services: 'UX/UI · Product strategy · CPO',
 		link: {text: 'Imagins AI', url: 'https://imagins.ai'},
+		coverImage: '/projects/imagins/imagins-cover.svg',
 		heroImage: '/projects/imagins/imagins.svg',
 		contentImages: ['/projects/imagins/imagins-content-1.svg', '/projects/imagins/imagins-content-2.svg'],
 		learningsImage: '/projects/imagins/imagins-learnings.svg',
@@ -141,6 +146,7 @@ export const projects: Project[] = [
 		dateRange: '2024',
 		industry: 'Security',
 		services: 'UX/UI · Communication strategy · Data driven',
+		coverImage: '/projects/roamrider/roamrider-cover.svg',
 		heroImage: '/projects/roamrider/roamrider.svg',
 		contentImages: ['/projects/roamrider/roamrider-content-1.svg', '/projects/roamrider/roamrider-content-2.svg'],
 		learningsImage: '/projects/roamrider/roamrider-learnings.svg',

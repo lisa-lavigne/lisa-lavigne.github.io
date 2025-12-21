@@ -84,7 +84,7 @@ const sideProjects = projects.filter(p => p.isSideProject);
 					{mainProjects.map((project, index) => (
 						<div class="border-t-2 border-secondary-200">
 							<ProjectLarge 
-								imageSrc={project.heroImage || '/placeholder-hero.jpg'}
+								imageSrc={project.coverImage || '/placeholder-hero.jpg'}
 								category={project.industry || ''}
 								title={project.title}
 								description={project.description.split('\n')[0]}
