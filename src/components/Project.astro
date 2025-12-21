@@ -168,7 +168,7 @@ function parseBoldText(text: string) {
 				</div>
 			</div>
 			{heroImage && (
-				<div class="w-full h-[534px] rounded-xl bg-tertiary-100">
+				<div class="w-full rounded-xl bg-tertiary-100">
 					<img src={heroImage} alt={title} class="w-full h-full object-cover rounded-xl" />
 				</div>
 			)}
@@ -323,19 +323,19 @@ function parseBoldText(text: string) {
 				<!-- Images Section - Always 2 images -->
 				{contentImages && contentImages.length >= 2 ? (
 					<div class="w-full max-w-[1500px] flex gap-[48px]">
-						<div class="flex-1 h-[534px] rounded-xl bg-tertiary-100">
+						<div class="flex-1  rounded-xl bg-tertiary-100">
 							<img src={contentImages[0]} alt={`${title} content 1`} class="w-full h-full object-cover rounded-xl" />
 						</div>
-						<div class="flex-1 h-[534px] rounded-xl bg-tertiary-100">
+						<div class="flex-1  rounded-xl bg-tertiary-100">
 							<img src={contentImages[1]} alt={`${title} content 2`} class="w-full h-full object-cover rounded-xl" />
 						</div>
 					</div>
 				) : contentImages && contentImages.length === 1 ? (
 					<div class="w-full max-w-[1500px] flex gap-[48px]">
-						<div class="flex-1 h-[534px] rounded-xl bg-tertiary-100">
+						<div class="flex-1  rounded-xl bg-tertiary-100">
 							<img src={contentImages[0]} alt={`${title} content 1`} class="w-full h-full object-cover rounded-xl" />
 						</div>
-						<div class="flex-1 h-[534px] rounded-xl bg-tertiary-100">
+						<div class="flex-1  rounded-xl bg-tertiary-100">
 							<img src={contentImages[0]} alt={`${title} content 2`} class="w-full h-full object-cover rounded-xl" />
 						</div>
 					</div>
@@ -368,7 +368,7 @@ function parseBoldText(text: string) {
 						})}
 					</div>
 				</div>
-				<div class="flex-1 h-[534px] rounded-xl bg-secondary">
+				<div class="flex-1  rounded-xl bg-secondary">
 					{learningsImage ? (
 						<img src={learningsImage} alt={`${title} learnings`} class="w-full h-full object-cover rounded-xl" />
 					) : (
