@@ -149,8 +149,9 @@ hr {
 .bento-scroll-content {
 	display: flex;
 	width: fit-content;
-	animation: scroll-bento 30s linear infinite;
+	animation: scroll-bento 120s linear infinite;
 }
+
 
 @keyframes scroll-bento {
 	0% {
@@ -182,3 +183,9 @@ hr {
 	}
 }
 
+
+@media (max-width: 720px) {
+    main {
+        padding: 0;
+    }
+}

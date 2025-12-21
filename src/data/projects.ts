@@ -127,11 +127,10 @@ export const projects: Project[] = [
 		solution: 'I designed a flexible and modular interface that allowed users to generate, customize, and refine both stories and illustrations seamlessly. **Providing clear workflows that guided users from a simple prompt to fully personalized stories**, ensuring an intuitive experience despite the complexity of AI generated content.\n\nBy iterating closely with the founding team, I refined the MVP to balance creativity, usability, and technical feasibility, turning a blank canvas into a scalable product that encourages collaboration and imaginative storytelling.',
 		learnings: 'Building Imagins taught me **how to navigate entrepreneurship in an emerging AI market**, balancing technical possibilities with user needs.\n\n**I learned to iterate rapidly with minimal resources, align creative vision with technical constraints**, and manage product development in a collaborative, family and friends startup. It reinforced the value of strategy, user centric design, and adaptability when creating a product from a blank canvas.',
 		dataCards: [
-			{ percentage: '50%', label: 'Security' },
-			{ percentage: '50%', label: 'Energy' },
-			{ percentage: '50%', label: 'Telco' },
-			{ percentage: '50%', label: 'Automative' },
-			{ percentage: '50%', label: 'AI' }
+			{ percentage: '+210', label: 'Views per month' },
+			{ percentage: '+23', label: 'Countries' },
+			{ percentage: '+2k', label: 'Stories generated' },
+			{ percentage: '+620', label: 'Sign ups' }
 		],
 		galleryImages: ['/placeholder-gallery-1.jpg', '/placeholder-gallery-2.jpg', '/placeholder-gallery-3.jpg', '/placeholder-gallery-4.jpg'],
 		galleryTitle: 'Interiorism',

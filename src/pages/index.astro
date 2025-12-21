@@ -28,19 +28,19 @@ const sideProjects = projects.filter(p => p.isSideProject);
 		
 		<main class="w-full flex flex-col">
 		<!-- Hero Section -->
-		<section class="w-full px-16 py-20 flex flex-col md:flex-row items-center justify-between gap-12 min-h-[758px]">
-			<div class="flex flex-col gap-[56px] max-w-[764px]">
-				<div class="flex flex-col gap-4">
-					<div class="w-[200px]">
+		<section class="w-full px-4 md:px-16 py-8 md:py-20 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 min-h-[400px] md:min-h-[758px]">
+			<div class="flex flex-col gap-4 md:gap-6 max-w-[764px] w-full">
+				<div class="flex flex-col gap-4 md:gap-6">
+					<div class="w-full md:w-[200px]">
 						<Chips variant="outline" text="Product Designer" />
 					</div>
-					<h2 class="text-h2 font-heading font-bold text-secondary">Merging design, strategy and technology to craft products.</h2>
+					<h2 class="text-2xl md:text-h2 font-heading font-bold leading-tight md:leading-[1.2] text-secondary">Merging design, strategy and technology to craft products.</h2>
 				</div>
-				<div class="flex flex-col gap-4 text-body-md font-sb text-secondary-300">
+				<div class="flex flex-col font-bold text-base md:text-sb1 font-sb text-secondary-300">
 					<p>Harnessing technology to make life better.</p>
 				</div>
 			</div>
-			<div class="w-[420px] h-[420px] flex-shrink-0">
+			<div class="w-full md:w-[420px] h-[300px] md:h-[420px] flex-shrink-0">
 				<img src="/a.svg" alt="Image Grid" class="w-full h-full object-cover" />
 			</div>
 		</section>
@@ -48,37 +48,22 @@ const sideProjects = projects.filter(p => p.isSideProject);
 		<!-- Bento Grid Section -->
 		<BentoGrid />
 
-
-			<!-- Banner Section -->
-			<section class="w-full bg-tertiary-300 py-10 overflow-hidden">
-				<div class="banner-scroll-container">
-					<div class="banner-scroll-content">
-						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
-						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0"> * </h2>
-						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
-						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0"> * </h2>
-						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
-						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0"> * </h2>
-					</div>
-				</div>
-			</section>
-
 			<!-- Philosophy Section -->
-			<section class="w-full px-16 py-[120px] flex flex-col items-start gap-14">
-				<h2 class="text-h3 font-heading font-bold text-secondary text-start">Behind the pixels</h2>
-				<div class="flex flex-col gap-4 max-w-[1152px] text-body-md font-body text-secondary-300 text-start">
+			<section class="w-full px-4 md:px-16 py-12 md:py-[120px] flex flex-col items-start gap-8 md:gap-14">
+				<h2 class="text-2xl md:text-h2 font-heading font-bold text-secondary text-start">Create design from human for humans</h2>
+				<div class="flex flex-col gap-4 max-w-[1152px] text-sm md:text-body-md font-body text-secondary-300 text-start">
 					<p>
-						I always begin with the real problem before falling in love with the visual solution, because design isn’t just about aesthetics. It’s about solving challenges grounded in data so others don’t have to face the complexity. It’s about distilling the difficult into a clear guiding principle. 
+						<strong>Behind the pixels:</strong> I always begin with the real problem before falling in love with the visual solution, because design isn't just about aesthetics. It's about solving challenges grounded in data so others don't have to face the complexity. It's about distilling the difficult into a clear guiding principle. 
 						<br/> 
 					</p>
-					<p class="font-bold font-body">It’s about creating memorable, distinctive experiences so seamless they’re simply enjoyable to use.</p>
+					<p class="font-bold font-body">It's about creating memorable, distinctive experiences so seamless they're simply enjoyable to use.</p>
 				</div>
 				<NewsButton href="/about" text="Read about me" />
 			</section>
 
 			<!-- Projects Section -->
-			<section class="w-full pl-16 py-[120px] flex flex-col gap-12">
-				<h2 class="text-h3 font-heading font-bold text-secondary">Projects</h2>
+			<section class="w-full px-4 md:pl-16 py-12 md:py-[120px] flex flex-col gap-8 md:gap-12">
+				<h2 class="text-2xl md:text-h3 font-heading font-bold text-secondary">Projects</h2>
 				
 				<div class="flex flex-col w-full">
 					{mainProjects.map((project, index) => (
@@ -97,9 +82,9 @@ const sideProjects = projects.filter(p => p.isSideProject);
 			</section>
 
 			<!-- Industries Section -->
-			<section class="w-full bg-secondary px-14 py-[120px] flex flex-col items-center gap-16">
-				<h2 class="text-h2 font-heading font-bold text-primary text-center">INDUSTRIES OF EXPERTISE</h2>
-				<div class="flex gap-6 flex-wrap justify-center">
+			<section class="w-full bg-secondary px-4 md:px-14 py-12 md:py-[120px] flex flex-col items-center gap-8 md:gap-16">
+				<h2 class="text-xl md:text-h2 font-heading font-bold text-primary text-center">INDUSTRIES OF EXPERTISE</h2>
+				<div class="flex gap-4 md:gap-6 flex-wrap justify-center">
 					<DataItem variant="icon" cardStyle="filled" title="Security" />
 					<DataItem variant="icon" cardStyle="filled" title="Energy" />
 					<DataItem variant="icon" cardStyle="filled" title="Telco" />
@@ -109,14 +94,14 @@ const sideProjects = projects.filter(p => p.isSideProject);
 			</section>
 
 			<!-- Side Projects Section -->
-			<section class="w-full bg-secondary px-16 py-[120px] flex flex-col md:flex-row gap-14 items-end">
-				<div class="flex flex-col gap-6">
-					<h2 class="text-h2 font-heading font-bold text-primary">
+			<section class="w-full bg-secondary px-4 md:px-16 py-12 md:py-[120px] flex flex-col md:flex-row gap-8 md:gap-14 items-start md:items-end">
+				<div class="flex flex-col gap-4 md:gap-6 max-w-[750px] w-full">
+					<h2 class="text-2xl md:text-h2 font-heading font-bold leading-tight md:leading-[1.2] text-primary">
 						SIDE<br/>PROJECTS
 					</h2>
-					<p class="text-body-md font-body text-secondary-200 pb-4">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation — to learn, fail, and create without limits.</p>
+					<p class="text-sm md:text-body-md font-body text-secondary-200 pb-4">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation — to learn, fail, and create without limits.</p>
 				</div>
-				<div class="flex-1 flex flex-col gap-0 w-full md:w-[530px] lg:w-[730px] xl:w-[830px">
+				<div class="flex-1 flex flex-col gap-0 w-full md:w-[530px] lg:w-[730px] xl:w-[830px]">
 					{sideProjects.map((project, index) => (
 						<SideProjectItem 
 							iconImage={project.iconImage || ''}
