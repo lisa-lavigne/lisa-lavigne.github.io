@@ -104,10 +104,10 @@ function parseBoldText(text: string) {
 	
 	<main class="w-full flex flex-col">
 		<!-- Header Section -->
-		<section class={`w-full px-16 py-[120px] flex flex-col gap-14 items-start max-w-[1650px] mx-auto`}>
-			<div class="w-full flex items-start justify-between gap-12">
+		<section class={`w-full px-4 md:px-16 py-8 md:py-[120px] flex flex-col gap-6 md:gap-14 items-start max-w-[1650px] mx-auto`}>
+			<div class="w-full flex flex-col md:flex-row items-start md:justify-between gap-6 md:gap-12">
 				<div class="flex items-start">
-					<h1 class={`text-h2 font-heading font-bold ${textTertiaryColor}`}>
+					<h1 class={`text-2xl md:text-h2 font-heading font-bold ${textTertiaryColor}`}>
 						{title.includes(' ') ? (
 							<>
 								{title.split(' ').slice(0, -1).join(' ')}<br />
@@ -118,7 +118,7 @@ function parseBoldText(text: string) {
 						)}
 					</h1>
 				</div>
-				<div class="flex flex-col gap-12 w-[641px]">
+				<div class="flex flex-col gap-6 md:gap-12 w-full md:w-[641px]">
 					<div class="flex flex-col gap-6">
 						{dateRange && (
 							<div class="flex items-start">
@@ -143,7 +143,7 @@ function parseBoldText(text: string) {
 							})}
 						</div>
 					</div>
-					<div class="flex items-start justify-between">
+					<div class="flex flex-col md:flex-row items-start md:justify-between gap-4 md:gap-0">
 						{industry && (
 							<div class="flex flex-col gap-2">
 								<h3 class={`text-body-md font-body font-semibold text-accent`}>Industry</h3>
@@ -176,15 +176,15 @@ function parseBoldText(text: string) {
 
 		<!-- Content Section -->
 		{(overview || role || challenge || solution) && (
-			<section class={`w-full px-16 py-10 flex flex-col gap-[120px] items-center`}>
-				<div class="w-full max-w-[1500px] flex flex-col gap-12">
+			<section class={`w-full px-4 md:px-16 py-6 md:py-10 flex flex-col gap-12 md:gap-[120px] items-center`}>
+				<div class="w-full max-w-[1500px] flex flex-col gap-8 md:gap-12">
 					{overview && (
 						<>
-							<div class="flex gap-24 items-start w-full">
+							<div class="flex flex-col md:flex-row gap-6 md:gap-24 items-start w-full">
 								<div class="flex-1 flex justify-start">
-									<h2 class={`text-sb1 font-body font-semibold ${textTertiaryColor}`}>Overview</h2>
+									<h2 class={`text-xl md:text-sb1 font-body font-semibold ${textTertiaryColor}`}>Overview</h2>
 								</div>
-								<div class="flex flex-col gap-0 w-[641px]">
+								<div class="flex flex-col gap-0 w-full md:w-[641px]">
 									<div class={`text-body-md font-body ${textSecondaryColor}`}>
 										{overview.split('\n').map((para) => {
 											if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
@@ -213,11 +213,11 @@ function parseBoldText(text: string) {
 					)}
 					{role && (
 						<>
-							<div class="flex gap-24 items-start w-full">
+							<div class="flex flex-col md:flex-row gap-6 md:gap-24 items-start w-full">
 								<div class="flex-1 flex justify-start">
-									<h2 class={`text-sb1 font-body font-semibold ${textTertiaryColor}`}>Role</h2>
+									<h2 class={`text-xl md:text-sb1 font-body font-semibold ${textTertiaryColor}`}>Role</h2>
 								</div>
-								<div class="flex flex-col gap-0 w-[641px]">
+								<div class="flex flex-col gap-0 w-full md:w-[641px]">
 									<div class={`text-body-md font-body ${textSecondaryColor}`}>
 										{role.split('\n').map((para) => {
 											if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
@@ -262,11 +262,11 @@ function parseBoldText(text: string) {
 					)}
 					{challenge && (
 						<>
-							<div class="flex gap-24 items-start w-full">
+							<div class="flex flex-col md:flex-row gap-6 md:gap-24 items-start w-full">
 								<div class="flex-1 flex justify-start">
-									<h2 class={`text-sb1 font-body font-semibold ${textTertiaryColor}`}>Challenge</h2>
+									<h2 class={`text-xl md:text-sb1 font-body font-semibold ${textTertiaryColor}`}>Challenge</h2>
 								</div>
-								<div class="flex flex-col gap-0 w-[641px]">
+								<div class="flex flex-col gap-0 w-full md:w-[641px]">
 									<div class={`text-body-md font-body ${textSecondaryColor}`}>
 										{challenge.split('\n').map((para) => {
 											if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
@@ -294,11 +294,11 @@ function parseBoldText(text: string) {
 						</>
 					)}
 					{solution && (
-						<div class="flex gap-24 items-start w-full">
+						<div class="flex flex-col md:flex-row gap-6 md:gap-24 items-start w-full">
 							<div class="flex-1 flex justify-start">
-								<h2 class={`text-sb1 font-body font-semibold ${textTertiaryColor}`}>Solution</h2>
+								<h2 class={`text-xl md:text-sb1 font-body font-semibold ${textTertiaryColor}`}>Solution</h2>
 							</div>
-							<div class="flex flex-col gap-0 w-[641px]">
+							<div class="flex flex-col gap-0 w-full md:w-[641px]">
 								<div class={`text-body-md font-body ${textSecondaryColor}`}>
 									{solution.split('\n').map((para) => {
 										if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
@@ -322,20 +322,20 @@ function parseBoldText(text: string) {
 				</div>
 				<!-- Images Section - Always 2 images -->
 				{contentImages && contentImages.length >= 2 ? (
-					<div class="w-full max-w-[1500px] flex gap-[48px]">
-						<div class="flex-1  rounded-xl bg-tertiary-100">
+					<div class="w-full max-w-[1500px] flex flex-col md:flex-row gap-4 md:gap-[48px]">
+						<div class="flex-1 rounded-xl bg-tertiary-100">
 							<img src={contentImages[0]} alt={`${title} content 1`} class="w-full h-full object-cover rounded-xl" />
 						</div>
-						<div class="flex-1  rounded-xl bg-tertiary-100">
+						<div class="flex-1 rounded-xl bg-tertiary-100">
 							<img src={contentImages[1]} alt={`${title} content 2`} class="w-full h-full object-cover rounded-xl" />
 						</div>
 					</div>
 				) : contentImages && contentImages.length === 1 ? (
-					<div class="w-full max-w-[1500px] flex gap-[48px]">
-						<div class="flex-1  rounded-xl bg-tertiary-100">
+					<div class="w-full max-w-[1500px] flex flex-col md:flex-row gap-4 md:gap-[48px]">
+						<div class="flex-1 rounded-xl bg-tertiary-100">
 							<img src={contentImages[0]} alt={`${title} content 1`} class="w-full h-full object-cover rounded-xl" />
 						</div>
-						<div class="flex-1  rounded-xl bg-tertiary-100">
+						<div class="flex-1 rounded-xl bg-tertiary-100">
 							<img src={contentImages[0]} alt={`${title} content 2`} class="w-full h-full object-cover rounded-xl" />
 						</div>
 					</div>
@@ -345,10 +345,10 @@ function parseBoldText(text: string) {
 
 		<!-- Learnings Section -->
 		{learnings && (
-			<section class={`w-full px-16 pb-[120px] pt-[80px] flex gap-[56px] items-end max-w-[1500px] mx-auto`}>
-				<div class="flex flex-col gap-6 flex-1">
+			<section class={`w-full px-4 md:px-16 pb-12 md:pb-[120px] pt-8 md:pt-[80px] flex flex-col md:flex-row gap-6 md:gap-[56px] items-start md:items-end max-w-[1650px] mx-auto`}>
+				<div class="flex flex-col gap-4 md:gap-6 flex-1">
 					<div class="flex items-start">
-						<h2 class={`text-h4 font-heading font-bold ${textTertiaryColor}`}>Learnings</h2>
+						<h2 class={`text-2xl md:text-h4 font-heading font-bold ${textTertiaryColor}`}>Learnings</h2>
 					</div>
 					<div class={`text-body-md font-body ${textSecondaryColor}`}>
 						{learnings.split('\n').map((para) => {
@@ -368,7 +368,7 @@ function parseBoldText(text: string) {
 						})}
 					</div>
 				</div>
-				<div class="flex-1  rounded-xl bg-secondary">
+				<div class="flex-1  rounded-xl">
 					{learningsImage ? (
 						<img src={learningsImage} alt={`${title} learnings`} class="w-full h-full object-cover rounded-xl" />
 					) : (
@@ -380,12 +380,12 @@ function parseBoldText(text: string) {
 
 		<!-- Data Section -->
 		{dataCards && dataCards.length > 0 && (
-			<section class={`w-full ${bgColor} px-14 py-20 flex flex-col gap-16 items-center max-w-[1500px] mx-auto`}>
-				<div class="w-full flex gap-16 items-center justify-center">
-					<h2 class={`text-h2 font-heading font-bold ${textColor}`}>Data</h2>
-					<div class="flex gap-6 flex-wrap justify-center flex-1">
+			<section class={`w-full ${bgColor} px-4 md:px-14 py-8 md:py-20 flex flex-col gap-8 md:gap-16 items-center max-w-[1500px] mx-auto`}>
+				<div class="w-full flex flex-col md:flex-row gap-6 md:gap-16 items-center justify-center">
+					<h2 class={`text-2xl md:text-h2 font-heading font-bold ${textColor}`}>Data</h2>
+					<div class="flex gap-4 md:gap-6 flex-wrap justify-center flex-1">
 						{dataCards.map((card) => (
-							<div class="border-[2.241px] border-secondary-500 rounded-tl-[8px] rounded-tr-[8px] rounded-bl-[8px] p-4 flex flex-col gap-4 items-start w-[169px]">
+							<div class="border-[2.241px] border-secondary-500 rounded-tl-[8px] rounded-tr-[8px] rounded-bl-[8px] p-3 md:p-4 flex flex-col gap-3 md:gap-4 items-start w-full sm:w-[169px]">
 								<p class="text-h4 font-heading font-bold text-secondary-500">{card.percentage}</p>
 								<p class="font-body font-semibold text-body-md text-secondary-500">{card.label}</p>
 							</div>
@@ -397,14 +397,14 @@ function parseBoldText(text: string) {
 
 		<!-- Side Projects Section (solo en proyectos principales) -->
 		{!isSideProject && sideProjects && sideProjects.length > 0 && (
-			<section class="bg-secondary px-16 py-[120px] flex gap-[56px] items-start w-full">
-				<div class="flex flex-col gap-6 flex-1 items-start justify-end self-end pb-[24px]">
-					<h2 class="text-[64px] font-heading font-bold text-primary leading-tight">
+			<section class="bg-secondary px-4 md:px-16 py-12 md:py-[120px] flex flex-col md:flex-row gap-6 md:gap-[56px] items-start w-full">
+				<div class="flex flex-col gap-4 md:gap-6 flex-1 items-start md:justify-end md:self-end pb-4 md:pb-[24px]">
+					<h2 class="text-3xl md:text-[64px] font-heading font-bold text-primary leading-tight">
 						Side projects
 					</h2>
 					<p class="text-body-md font-body text-secondary-200">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation to learn, fail, and create without limits.</p>
 				</div>
-				<div class="flex flex-col gap-4 w-[530px] lg:w-[730px] xl:w-[830px]">
+				<div class="flex flex-col gap-4 w-full md:w-[530px] lg:w-[730px] xl:w-[830px]">
 					{sideProjects.map((sideProject, index) => (
 						<SideProjectItem
 							title={sideProject.title}
@@ -421,13 +421,13 @@ function parseBoldText(text: string) {
 
 		<!-- Main Projects Section (solo en side projects) -->
 		{isSideProject && mainProjects && mainProjects.length > 0 && (
-			<section class="bg-primary px-16 py-[120px] flex gap-[56px] items-start w-full">
-				<div class="flex flex-col flex-1 items-start self-end pb-[24px]">
-					<h2 class="text-[64px] font-heading font-bold text-secondary leading-tight">
+			<section class="bg-primary px-4 md:px-16 py-12 md:py-[120px] flex flex-col md:flex-row gap-6 md:gap-[56px] items-start w-full">
+				<div class="flex flex-col flex-1 items-start md:self-end pb-4 md:pb-[24px]">
+					<h2 class="text-3xl md:text-[64px] font-heading font-bold text-secondary leading-tight">
 						In house projects
 					</h2>
 				</div>
-				<div class="flex flex-col gap-4 w-[530px] lg:w-[730px] xl:w-[830px]">
+				<div class="flex flex-col gap-4 w-full md:w-[530px] lg:w-[730px] xl:w-[830px]">
 					{mainProjects.map((mainProject, index) => (
 						<SideProjectItem
 							title={mainProject.title}
