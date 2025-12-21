@@ -154,10 +154,31 @@ hr {
 
 @keyframes scroll-bento {
 	0% {
+		transform: translateX(calc(-50% - 32px));
+	}
+	100% {
+		transform: translateX(calc(0% - 32px));
+	}
+}
+
+.banner-scroll-container {
+	width: 100%;
+	overflow: hidden;
+}
+
+.banner-scroll-content {
+	display: flex;
+	width: fit-content;
+	gap: 48px;
+	animation: scroll-banner 20s linear infinite;
+}
+
+@keyframes scroll-banner {
+	0% {
 		transform: translateX(0);
 	}
 	100% {
-		transform: translateX(-50%);
+		transform: translateX(calc(-33.333% - 32px));
 	}
 }
 

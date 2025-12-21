@@ -11,11 +11,48 @@ interface Props {
 }
 
 const { imageSrc, category, title, description, tags, slug } = Astro.props;
+
+// Dividir tags en dos grupos: pocos en la primera línea, el resto en la segunda
+// Tomamos los primeros 2-3 tags para la primera línea, el resto para la segunda
+const firstLineTags = tags.slice(0, Math.min(4, Math.floor(tags.length / 2)));
+const secondLineTags = tags.slice(firstLineTags.length);
+
+// Función para parsear texto con negrita usando formato **texto**
+function parseBoldText(text: string) {
+	if (!text) return [];
+	
+	const parts: Array<{text: string, bold: boolean}> = [];
+	const regex = /\*\*(.*?)\*\*/g;
+	let lastIndex = 0;
+	let match;
+	
+	while ((match = regex.exec(text)) !== null) {
+		// Agregar texto antes del match
+		if (match.index > lastIndex) {
+			parts.push({ text: text.substring(lastIndex, match.index), bold: false });
+		}
+		// Agregar texto en negrita
+		parts.push({ text: match[1], bold: true });
+		lastIndex = regex.lastIndex;
+	}
+	
+	// Agregar texto restante
+	if (lastIndex < text.length) {
+		parts.push({ text: text.substring(lastIndex), bold: false });
+	}
+	
+	// Si no hay matches, devolver el texto completo
+	if (parts.length === 0) {
+		parts.push({ text, bold: false });
+	}
+	
+	return parts;
+}
 ---
 
 <a href={`/works/${slug}`} class="flex gap-6 h-[445px] items-center w-full hover:opacity-90 transition-opacity py-10">
 	<!-- Imagen a la izquierda -->
-	<div class="h-full relative rounded-2xl shrink-0 w-[512px] overflow-hidden">
+	<div class="h-full relative rounded-2xl shrink-0 w-[700px] overflow-hidden">
 		<div aria-hidden="true" class="absolute inset-0 pointer-events-none rounded-2xl">
 			<div class="absolute bg-black/20 inset-0 rounded-2xl"></div>
 			<div class="absolute inset-0 overflow-hidden rounded-2xl">
@@ -53,19 +90,34 @@ const { imageSrc, category, title, description, tags, slug } = Astro.props;
 				
 				<!-- Descripción -->
 				<p class="text-body-md font-body text-secondary-300 leading-normal w-full">
-					{description}
+					{parseBoldText(description).map((part, idx) => (
+						part.bold ? (
+							<span class="font-bold">{part.text}</span>
+						) : (
+							<span>{part.text}</span>
+						)
+					))}
 				</p>
 			</div>
 			
 			<!-- Sección inferior: Tags/Chips -->
-			<div class="flex flex-col gap-6 items-start w-full">
-				<div class="flex gap-[10px] items-center w-full">
-					<div class="flex flex-wrap gap-3 items-start w-full">
-						{tags.map((tag) => (
+			<div class="flex flex-col gap-3 w-full">
+				<!-- Primera línea: pocos tags -->
+				{firstLineTags.length > 0 && (
+					<div class="flex gap-3  w-full">
+						{firstLineTags.map((tag) => (
 							<Chips variant="outline" text={tag} />
 						))}
 					</div>
-				</div>
+				)}
+				<!-- Segunda línea: el resto de tags -->
+				{secondLineTags.length > 0 && (
+					<div class="flex flex-wrap gap-3 w-full">
+						{secondLineTags.map((tag) => (
+							<Chips variant="outline" text={tag} />
+						))}
+					</div>
+				)}
 			</div>
 		</div>
 	</div>

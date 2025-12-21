@@ -50,8 +50,17 @@ const sideProjects = projects.filter(p => p.isSideProject);
 
 
 			<!-- Banner Section -->
-			<section class="w-full bg-tertiary-300 px-4 py-10 flex items-center justify-center gap-6">
-				<h2 class="text-h2 font-heading font-bold text-primary text-center whitespace-nowrap">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
+			<section class="w-full bg-tertiary-300 py-10 overflow-hidden">
+				<div class="banner-scroll-container">
+					<div class="banner-scroll-content">
+						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
+						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0"> * </h2>
+						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
+						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0"> * </h2>
+						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0">CREATE DESIGN FROM HUMAN FOR HUMANS</h2>
+						<h2 class="text-h2 font-heading font-bold text-primary whitespace-nowrap flex-shrink-0"> * </h2>
+					</div>
+				</div>
 			</section>
 
 			<!-- Philosophy Section -->
@@ -71,7 +80,7 @@ const sideProjects = projects.filter(p => p.isSideProject);
 			<section class="w-full pl-16 py-[120px] flex flex-col gap-12">
 				<h2 class="text-h3 font-heading font-bold text-secondary">Projects</h2>
 				
-				<div class="flex flex-col w-full border-b-2 border-secondary">
+				<div class="flex flex-col w-full">
 					{mainProjects.map((project, index) => (
 						<div class="border-t-2 border-secondary-200">
 							<ProjectLarge 
@@ -101,13 +110,13 @@ const sideProjects = projects.filter(p => p.isSideProject);
 
 			<!-- Side Projects Section -->
 			<section class="w-full bg-secondary px-16 py-[120px] flex flex-col md:flex-row gap-14 items-end">
-				<div class="flex flex-col gap-6 max-w-[548px]">
+				<div class="flex flex-col gap-6">
 					<h2 class="text-h2 font-heading font-bold text-primary">
 						SIDE<br/>PROJECTS
 					</h2>
 					<p class="text-body-md font-body text-secondary-200 pb-4">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation — to learn, fail, and create without limits.</p>
 				</div>
-				<div class="flex-1 flex flex-col gap-0">
+				<div class="flex-1 flex flex-col gap-0 w-full md:w-[530px] lg:w-[730px] xl:w-[830px">
 					{sideProjects.map((project, index) => (
 						<SideProjectItem 
 							iconImage={project.iconImage || ''}
