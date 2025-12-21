@@ -89,7 +89,7 @@ export const projects: Project[] = [
 		link: {text: 'Cupra · SEAT', url: 'https://www.cupra.com'},
 		heroImage: '/projects/cupra/cupra.svg',
 		contentImages: ['/projects/cupra/cupra-content-1.svg', '/projects/cupra/cupra-content-2.svg'],
-		learningsImage: '/projects/cupra/cupra-learnings.svg',
+		learningsImage: '/projects/cupra/cupra-learnings.gif',
 		overview: 'This project **focused on the design and scalability of an automotive infotainment design system**. The system needed to support multiple car models, screen sizes, and interaction patterns while ensuring consistency, usability, and efficient collaboration across teams.\n\nThe work **required building a system capable of scaling within a large enterprise organization and under real world product constraints**, including embedded performance limitations and safety regulations.',
 		role: 'I acted as a **Product Designer focused on interface design and design system evolution, collaborating closely with UX, engineering, and hardware teams**.\n\n• Designing scalable UI solutions for in-car infotainment systems\n• Defining reusable components, layouts, and interaction patterns\n• Ensuring consistency, usability, and implementation readiness across products\n• Aligning design decisions with technical and regulatory constraints',
 		challenge: 'Designing an in car infotainment system at an advanced product stage required balancing scalability across multiple vehicle models and screen configurations with strict consistency, performance, and safety constraints, while making decisions that directly impacted vehicles shipped to market.',
