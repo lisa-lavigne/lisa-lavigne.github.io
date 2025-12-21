@@ -60,6 +60,8 @@ const datetextColor = isSideProject ? 'text-secondary-200' : 'text-[#B0AEAC]';
 const textSecondaryColor = isSideProject ? 'text-secondary-200' : 'text-secondary-300';
 const textTertiaryColor = isSideProject ? 'text-secondary-100' : 'text-secondary-400';
 const borderColor = isSideProject ? 'border-primary' : 'border-gray-200';
+const dataCardBorderColor = isSideProject ? 'border-primary' : 'border-secondary-500';
+const dataCardTextColor = isSideProject ? 'text-primary' : 'text-secondary-500';
 
 // Función para parsear texto con negrita usando formato **texto**
 function parseBoldText(text: string) {
@@ -107,11 +109,11 @@ function parseBoldText(text: string) {
 		<section class={`w-full px-4 md:px-16 py-8 md:py-[120px] flex flex-col gap-6 md:gap-14 items-start max-w-[1650px] mx-auto`}>
 			<div class="w-full flex flex-col md:flex-row items-start md:justify-between gap-6 md:gap-12">
 				<div class="flex items-start">
-					<h1 class={`text-2xl md:text-h2 font-heading font-bold ${textTertiaryColor}`}>
+					<h1 class={`text-2xl md:text-h2 font-heading font-bold leading-tight md:leading-[1.2] ${textTertiaryColor}`}>
 						{title.includes(' ') ? (
 							<>
-								{title.split(' ').slice(0, -1).join(' ')}<br />
-								{title.split(' ').slice(-1)[0]}
+								{title.split(' ')[0]}<br />
+								{title.split(' ').slice(1).join(' ')}
 							</>
 						) : (
 							title
@@ -385,9 +387,9 @@ function parseBoldText(text: string) {
 					<h2 class={`text-2xl md:text-h2 font-heading font-bold ${textColor}`}>Data</h2>
 					<div class="flex gap-4 md:gap-6 flex-wrap justify-center flex-1">
 						{dataCards.map((card) => (
-							<div class="border-[2.241px] border-secondary-500 rounded-tl-[8px] rounded-tr-[8px] rounded-bl-[8px] p-3 md:p-4 flex flex-col gap-3 md:gap-4 items-start min-w-[170px] w-fit">
-								<p class="text-h4 font-heading font-bold text-secondary-500">{card.percentage}</p>
-								<p class="font-body font-semibold text-body-md text-secondary-500">{card.label}</p>
+							<div class={`border-[2.241px] ${dataCardBorderColor} rounded-tl-[8px] rounded-tr-[8px] rounded-bl-[8px] p-3 md:p-4 flex flex-col gap-3 md:gap-4 items-start min-w-[170px] w-fit`}>
+								<p class={`text-h4 font-heading font-bold ${dataCardTextColor}`}>{card.percentage}</p>
+								<p class={`font-body font-semibold text-body-md ${dataCardTextColor}`}>{card.label}</p>
 							</div>
 						))}
 					</div>
