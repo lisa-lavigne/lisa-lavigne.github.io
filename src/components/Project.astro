@@ -1,0 +1,456 @@
+---
+import BaseHead from './BaseHead.astro';
+import Header from './news/Header.astro';
+import Footer from './news/Footer.astro';
+import SideProjectItem from './news/SideProjectItem.astro';
+import CustomCursor from './CustomCursor.astro';
+import { SITE_TITLE } from '../consts';
+import HeroAnimation from '../components/HeroAnimation.astro';
+
+interface Props {
+	isSideProject?: boolean;
+	iconImage?: string;
+	title: string;
+	description: string;
+	dateRange?: string;
+	industry?: string;
+	services?: string;
+	link?: {text: string, url: string};
+	heroImage?: string;
+	contentImages?: string[];
+	learnings?: string;
+	learningsImage?: string;
+	overview?: string;
+	role?: string;
+	challenge?: string;
+	solution?: string;
+	dataCards?: Array<{percentage: string, label: string}>;
+	galleryImages?: string[];
+	galleryTitle?: string;
+	sideProjects?: Array<{slug: string, title: string, description: string, iconImage?: string}>;
+	mainProjects?: Array<{slug: string, title: string, description: string, iconImage?: string}>;
+}
+
+const { 
+	isSideProject = false,
+	iconImage,
+	title,
+	description,
+	dateRange,
+	industry,
+	services,
+	link,
+	heroImage,
+	contentImages,
+	learnings,
+	learningsImage,
+	overview,
+	role,
+	challenge,
+	solution,
+	dataCards,
+	galleryImages,
+	galleryTitle,
+	sideProjects = [],
+	mainProjects = []
+} = Astro.props;
+
+const bgColor = isSideProject ? 'bg-secondary' : 'bg-primary';
+const textColor = isSideProject ? 'text-primary' : 'text-secondary';
+
+const datetextColor = isSideProject ? 'text-secondary-200' : 'text-[#B0AEAC]';
+const textSecondaryColor = isSideProject ? 'text-secondary-200' : 'text-secondary-300';
+const textTertiaryColor = isSideProject ? 'text-secondary-100' : 'text-secondary-400';
+const borderColor = isSideProject ? 'border-primary' : 'border-gray-200';
+const dataCardBorderColor = isSideProject ? 'border-primary' : 'border-secondary-500';
+const dataCardTextColor = isSideProject ? 'text-primary' : 'text-secondary-500';
+
+// Función para parsear texto con negrita usando formato **texto**
+function parseBoldText(text: string) {
+	if (!text) return [];
+	
+	const parts: Array<{text: string, bold: boolean}> = [];
+	const regex = /\*\*(.*?)\*\*/g;
+	let lastIndex = 0;
+	let match;
+	
+	while ((match = regex.exec(text)) !== null) {
+		// Agregar texto antes del match
+		if (match.index > lastIndex) {
+			parts.push({ text: text.substring(lastIndex, match.index), bold: false });
+		}
+		// Agregar texto en negrita
+		parts.push({ text: match[1], bold: true });
+		lastIndex = regex.lastIndex;
+	}
+	
+	// Agregar texto restante
+	if (lastIndex < text.length) {
+		parts.push({ text: text.substring(lastIndex), bold: false });
+	}
+	
+	// Si no hay matches, devolver el texto completo
+	if (parts.length === 0) {
+		parts.push({ text, bold: false });
+	}
+	
+	return parts;
+}
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} - ${SITE_TITLE}`} description={description} />
+	</head>
+	<body class={`${bgColor} min-h-screen flex flex-col`}>
+	<Header theme={isSideProject ? 'dark' : 'light'} />
+	
+	<main class="w-full flex flex-col">
+		<!-- Header Section -->
+		<section class={`w-full px-4 md:px-16 py-8 md:py-[120px] flex flex-col gap-6 md:gap-14 items-start max-w-[1650px] mx-auto`}>
+			<div class="w-full flex flex-col md:flex-row items-start md:justify-between gap-6 md:gap-12">
+				<div class="flex items-start">
+					<h1 id="hero-title" class={`text-2xl md:text-h2 font-heading font-bold leading-tight md:leading-[1.2] ${textTertiaryColor}`}>
+						{title.includes(' ') ? (
+							<>
+								{title.split(' ')[0]}<br />
+								{title.split(' ').slice(1).join(' ')}
+							</>
+						) : (
+							title
+						)}
+					</h1>
+				</div>
+				<div class="flex flex-col gap-6 md:gap-12 w-full md:w-[641px]">
+					<div class="flex flex-col gap-6">
+						{dateRange && (
+							<div class="flex items-start">
+								<h3 class={`text-body-sm font-body ${datetextColor}`}>{dateRange}</h3>
+							</div>
+						)}
+						<div class={`text-body-md font-body ${textTertiaryColor}`}>
+							{description.split('\n').map((para) => {
+								if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
+								const parts = parseBoldText(para);
+								return (
+									<p class="mb-0">
+										{parts.map((part, idx) => (
+											part.bold ? (
+												<span class="font-bold">{part.text}</span>
+											) : (
+												<span>{part.text}</span>
+											)
+										))}
+									</p>
+								);
+							})}
+						</div>
+					</div>
+					<div class="flex flex-col md:flex-row items-start md:justify-between gap-4 md:gap-0">
+						{industry && (
+							<div class="flex flex-col gap-2">
+								<h3 class={`text-body-md font-body font-semibold text-accent`}>Industry</h3>
+								<p class={`text-body-md font-body ${textSecondaryColor}`}>{industry}</p>
+							</div>
+						)}
+						{services && (
+							<div class="flex flex-col gap-2">
+								<h3 class={`text-body-md font-body font-semibold text-accent`}>Scope</h3>
+								<p class={`text-body-md font-body ${textSecondaryColor}`}>{services}</p>
+							</div>
+						)}
+						{link && (
+							<div class="flex flex-col gap-2">
+								<h3 class={`text-body-md font-body font-semibold text-accent`}>Link</h3>
+								<a href={link.url} target="_blank" rel="noopener noreferrer" class={`text-body-md font-body ${textSecondaryColor} underline`}>
+									{link.text}
+								</a>
+							</div>
+						)}
+					</div>
+				</div>
+			</div>
+			{heroImage && (
+				<div class="w-full rounded-xl bg-tertiary-100">
+					<img src={heroImage} alt={title} class="w-full h-full object-cover rounded-xl" />
+				</div>
+			)}
+		</section>
+
+		<!-- Content Section -->
+		{(overview || role || challenge || solution) && (
+			<section class={`w-full px-4 md:px-16 py-6 md:py-10 flex flex-col gap-12 md:gap-[120px] items-center`}>
+				<div class="w-full max-w-[1500px] flex flex-col gap-8 md:gap-12">
+					{overview && (
+						<>
+							<div class="flex flex-col md:flex-row gap-6 md:gap-24 items-start w-full">
+								<div class="flex-1 flex justify-start">
+									<h2 class={`text-xl md:text-sb1 font-body font-semibold ${textTertiaryColor}`}>Overview</h2>
+								</div>
+								<div class="flex flex-col gap-0 w-full md:w-[641px]">
+									<div class={`text-body-md font-body ${textSecondaryColor}`}>
+										{overview.split('\n').map((para) => {
+											if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
+											const parts = parseBoldText(para);
+											return (
+												<p class="mb-0">
+													{parts.map((part, idx) => (
+														part.bold ? (
+															<span class="font-bold">{part.text}</span>
+														) : (
+															<span>{part.text}</span>
+														)
+													))}
+												</p>
+											);
+										})}
+									</div>
+								</div>
+							</div>
+							<div class="h-0 w-full relative">
+								<div class="absolute inset-0 -top-[2px]">
+									<div class="h-px w-full bg-gray-200"></div>
+								</div>
+							</div>
+						</>
+					)}
+					{role && (
+						<>
+							<div class="flex flex-col md:flex-row gap-6 md:gap-24 items-start w-full">
+								<div class="flex-1 flex justify-start">
+									<h2 class={`text-xl md:text-sb1 font-body font-semibold ${textTertiaryColor}`}>Role</h2>
+								</div>
+								<div class="flex flex-col gap-0 w-full md:w-[641px]">
+									<div class={`text-body-md font-body ${textSecondaryColor}`}>
+										{role.split('\n').map((para) => {
+											if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
+											// Manejar bullets que empiezan con "•"
+											if (para.trim().startsWith('•')) {
+												const parts = parseBoldText(para.trim().substring(1).trim());
+												return (
+													<p class="mb-0">
+														<span>• </span>
+														{parts.map((part, idx) => (
+															part.bold ? (
+																<span class="font-bold">{part.text}</span>
+															) : (
+																<span>{part.text}</span>
+															)
+														))}
+													</p>
+												);
+											}
+											const parts = parseBoldText(para);
+											return (
+												<p class="mb-0">
+													{parts.map((part, idx) => (
+														part.bold ? (
+															<span class="font-bold">{part.text}</span>
+														) : (
+															<span>{part.text}</span>
+														)
+													))}
+												</p>
+											);
+										})}
+									</div>
+								</div>
+							</div>
+							<div class="h-0 w-full relative">
+								<div class="absolute inset-0 -top-[2px]">
+									<div class="h-px w-full bg-gray-200"></div>
+								</div>
+							</div>
+						</>
+					)}
+					{challenge && (
+						<>
+							<div class="flex flex-col md:flex-row gap-6 md:gap-24 items-start w-full">
+								<div class="flex-1 flex justify-start">
+									<h2 class={`text-xl md:text-sb1 font-body font-semibold ${textTertiaryColor}`}>Challenge</h2>
+								</div>
+								<div class="flex flex-col gap-0 w-full md:w-[641px]">
+									<div class={`text-body-md font-body ${textSecondaryColor}`}>
+										{challenge.split('\n').map((para) => {
+											if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
+											const parts = parseBoldText(para);
+											return (
+												<p class="mb-0">
+													{parts.map((part, idx) => (
+														part.bold ? (
+															<span class="font-bold">{part.text}</span>
+														) : (
+															<span>{part.text}</span>
+														)
+													))}
+												</p>
+											);
+										})}
+									</div>
+								</div>
+							</div>
+							<div class="h-0 w-full relative">
+								<div class="absolute inset-0 -top-[2px]">
+									<div class="h-px w-full bg-gray-200"></div>
+								</div>
+							</div>
+						</>
+					)}
+					{solution && (
+						<div class="flex flex-col md:flex-row gap-6 md:gap-24 items-start w-full">
+							<div class="flex-1 flex justify-start">
+								<h2 class={`text-xl md:text-sb1 font-body font-semibold ${textTertiaryColor}`}>Solution</h2>
+							</div>
+							<div class="flex flex-col gap-0 w-full md:w-[641px]">
+								<div class={`text-body-md font-body ${textSecondaryColor}`}>
+									{solution.split('\n').map((para) => {
+										if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
+										const parts = parseBoldText(para);
+										return (
+											<p class="mb-0">
+												{parts.map((part, idx) => (
+													part.bold ? (
+														<span class="font-bold">{part.text}</span>
+													) : (
+														<span>{part.text}</span>
+													)
+												))}
+											</p>
+										);
+									})}
+								</div>
+							</div>
+						</div>
+					)}
+				</div>
+				<!-- Images Section - Always 2 images -->
+				{contentImages && contentImages.length >= 2 ? (
+					<div class="w-full max-w-[1500px] flex flex-col md:flex-row gap-4 md:gap-[48px]">
+						<div class="flex-1 rounded-xl bg-tertiary-100">
+							<img src={contentImages[0]} alt={`${title} content 1`} class="w-full h-full object-cover rounded-xl" />
+						</div>
+						<div class="flex-1 rounded-xl bg-tertiary-100">
+							<img src={contentImages[1]} alt={`${title} content 2`} class="w-full h-full object-cover rounded-xl" />
+						</div>
+					</div>
+				) : contentImages && contentImages.length === 1 ? (
+					<div class="w-full max-w-[1500px] flex flex-col md:flex-row gap-4 md:gap-[48px]">
+						<div class="flex-1 rounded-xl bg-tertiary-100">
+							<img src={contentImages[0]} alt={`${title} content 1`} class="w-full h-full object-cover rounded-xl" />
+						</div>
+						<div class="flex-1 rounded-xl bg-tertiary-100">
+							<img src={contentImages[0]} alt={`${title} content 2`} class="w-full h-full object-cover rounded-xl" />
+						</div>
+					</div>
+				) : null}
+			</section>
+		)}
+
+		<!-- Learnings Section -->
+		{learnings && (
+			<section class={`w-full px-4 md:px-16 pb-12 md:pb-[120px] pt-8 md:pt-[80px] flex flex-col md:flex-row gap-6 md:gap-[56px] items-start md:items-end max-w-[1650px] mx-auto`}>
+				<div class="flex flex-col gap-4 md:gap-6 flex-1">
+					<div class="flex items-start">
+						<h2 class={`text-2xl md:text-h4 font-heading font-bold ${textTertiaryColor}`}>Learnings</h2>
+					</div>
+					<div class={`text-body-md font-body ${textSecondaryColor}`}>
+						{learnings.split('\n').map((para) => {
+							if (!para.trim()) return <p class="mb-0">&nbsp;</p>;
+							const parts = parseBoldText(para);
+							return (
+								<p class="mb-0">
+									{parts.map((part, idx) => (
+										part.bold ? (
+											<span class="font-bold">{part.text}</span>
+										) : (
+											<span>{part.text}</span>
+										)
+									))}
+								</p>
+							);
+						})}
+					</div>
+				</div>
+				<div class="flex-1  rounded-xl">
+					{learningsImage ? (
+						<img src={learningsImage} alt={`${title} learnings`} class="w-full h-full object-cover rounded-xl" />
+					) : (
+						<div class="w-full h-full bg-secondary-300 rounded-xl"></div>
+					)}
+				</div>
+			</section>
+		)}
+
+		<!-- Data Section -->
+		{dataCards && dataCards.length > 0 && (
+			<section class={`w-full ${bgColor} px-4 md:px-14 py-8 md:py-20 flex flex-col gap-8 md:gap-16 items-center max-w-[1500px] mx-auto`}>
+				<div class="w-full flex flex-col md:flex-row gap-6 md:gap-16 items-center justify-center">
+					<h2 class={`text-2xl md:text-h2 font-heading font-bold ${textColor}`}>Data</h2>
+					<div class="flex gap-4 md:gap-6 flex-wrap justify-center flex-1">
+						{dataCards.map((card) => (
+							<div class={`border-[2.241px] ${dataCardBorderColor} rounded-tl-[8px] rounded-tr-[8px] rounded-bl-[8px] p-3 md:p-4 flex flex-col gap-3 md:gap-4 items-start min-w-[170px] w-fit`}>
+								<p class={`text-h4 font-heading font-bold ${dataCardTextColor}`}>{card.percentage}</p>
+								<p class={`font-body font-semibold text-body-md ${dataCardTextColor}`}>{card.label}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+		)}
+
+		<!-- Side Projects Section (solo en proyectos principales) -->
+		{!isSideProject && sideProjects && sideProjects.length > 0 && (
+			<section class="bg-secondary px-4 md:px-16 py-12 md:py-[120px] flex flex-col md:flex-row gap-6 md:gap-[56px] items-start w-full">
+				<div class="flex flex-col gap-4 md:gap-6 flex-1 items-start md:justify-end md:self-end pb-4 md:pb-[24px]">
+					<h2 class="text-3xl md:text-[64px] font-heading font-bold text-primary leading-tight">
+						Side projects
+					</h2>
+					<p class="text-body-md font-body text-primary">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation to learn, fail, and create without limits.</p>
+				</div>
+				<div class="flex flex-col gap-4 w-full md:w-[530px] lg:w-[730px] xl:w-[830px]">
+					{sideProjects.map((sideProject, index) => (
+						<SideProjectItem
+							title={sideProject.title}
+							iconImage={sideProject.iconImage || ''}
+							description={sideProject.description}
+							slug={sideProject.slug}
+							isLast={index === sideProjects.length - 1}
+							theme="dark"
+						/>
+					))}
+				</div>
+			</section>
+		)}
+
+		<!-- Main Projects Section (solo en side projects) -->
+		{isSideProject && mainProjects && mainProjects.length > 0 && (
+			<section class="bg-primary px-4 md:px-16 py-12 md:py-[120px] flex flex-col md:flex-row gap-6 md:gap-[56px] items-start w-full">
+				<div class="flex flex-col flex-1 items-start md:self-end pb-4 md:pb-[24px]">
+					<h2 class="text-3xl md:text-[64px] font-heading font-bold text-secondary leading-tight">
+						In house projects
+					</h2>
+				</div>
+				<div class="flex flex-col gap-4 w-full md:w-[530px] lg:w-[730px] xl:w-[830px]">
+					{mainProjects.map((mainProject, index) => (
+						<SideProjectItem
+							title={mainProject.title}
+							iconImage={mainProject.iconImage || ''}
+							description={mainProject.description}
+							slug={mainProject.slug}
+							isLast={index === mainProjects.length - 1}
+							theme="light"
+						/>
+					))}
+				</div>
+			</section>
+		)}
+
+	</main>
+
+	<Footer theme={'dark'} />
+	<HeroAnimation />
+	<CustomCursor />
+	</body>
+</html>
+

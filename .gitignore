@@ -131,3 +131,12 @@ dist
 
 .idea
 .vscode
+
+.astro/*
+.cursor/*
+
+pnpm-workspace.yaml
+
+
+.DS_Store
+**/.DS_Store

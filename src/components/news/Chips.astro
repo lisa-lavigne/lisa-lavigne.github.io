@@ -1,0 +1,21 @@
+---
+interface Props {
+	variant?: 'outline' | 'filled';
+	text?: string;
+}
+
+const { variant = 'outline', text = 'UX/UI' } = Astro.props;
+
+const isOutline = variant === 'outline';
+---
+
+<span 
+	class={`inline-flex items-center h-8 rounded-[8px] text-center font-body text-[12px] leading-normal whitespace-nowrap ${
+		isOutline 
+			? 'border border-accent-100 text-accent-100 bg-transparent px-2 py-1' 
+			: 'bg-tertiary-200 text-secondary border-0 px-2 py-1'
+	}`}
+>
+	{text}
+</span>
+

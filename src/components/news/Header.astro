@@ -1,0 +1,48 @@
+---
+interface Props {
+	theme?: 'dark' | 'light';
+}
+
+const { theme = 'dark' } = Astro.props;
+
+const isDark = theme === 'dark';
+const bgColor = isDark ? 'bg-secondary' : 'bg-white';
+const textColor = isDark ? 'text-white' : 'text-secondary';
+const borderColor = isDark ? 'border-white' : 'border-secondary';
+---
+
+<header class={`${bgColor} sticky top-0 z-50 w-full h-[78px] flex items-center justify-between pr-8`}>
+	<!-- Logo a la izquierda -->
+	<div class="flex items-center ml-16">
+		<a href="/" class="flex items-center">
+			<img 
+				src="/favicon.svg" 
+				alt="Miriam Laina" 
+				class={`w-auto h-8 ${isDark ? 'brightness-0 invert' : ''}`}
+			/>
+		</a>
+	</div>
+
+	<!-- Separador vertical y navegación a la derecha -->
+	<div class="flex items-center gap-8">
+		
+		<!-- Navegación -->
+		<nav class="flex items-center gap-16 mr-16">
+			<!-- Contenedor para Works con líneas decorativas -->
+			<div class="flex items-center">
+				
+				<!-- Item Works -->
+				<a href="/works" class={`${textColor} font-body font-semibold text-base hover:opacity-70 transition-opacity`}>
+					Works
+				</a>
+			</div>
+		<a href="/about" class={`${textColor} font-body font-semibold text-base hover:opacity-70 transition-opacity`}>
+			About
+		</a>
+		<a href="/cv-mlaina.pdf" download class={`${textColor} font-body font-semibold text-base hover:opacity-70 transition-opacity`}>
+			CV
+		</a>
+		</nav>
+	</div>
+</header>
+

@@ -1,39 +1,127 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, RECOMENDATIONS } from '../consts';
-import Recomendation from "../components/Recomendation.astro";
-import Notion from "../components/notion/Notion.astro";
+import Header from '../components/news/Header.astro';
+import NewsHeader from '../components/news/Header.astro';
+import NewsButton from '../components/news/Button.astro';
+import DataItem from '../components/news/DataItem.astro';
+import Footer from '../components/news/Footer.astro';
+import ProjectLarge from '../components/news/ProjectLarge.astro';
+import SideProjectItem from '../components/news/SideProjectItem.astro';
+import Chips from '../components/news/Chips.astro';
+import BentoGrid from '../components/news/BentoGrid.astro';
+import HeroAnimation from '../components/HeroAnimation.astro';
+import CustomCursor from '../components/CustomCursor.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { projects } from '../data/projects';
+
+const mainProjects = projects.filter(p => !p.isSideProject);
+const sideProjects = projects.filter(p => p.isSideProject);
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body >
-		<Header />
-		<main class="bg-white pt-20 mt-2">
-			<section class="flex gap-4 items-center">
-				<img src="/ll.jpeg" alt="Lisa Lavigne" class='w-96 object-cover lisa' />
-				<h3 class="text-end text-4xl font-bold text-secondary">{SITE_DESCRIPTION}</h3>
+	<body class="bg-primary min-h-screen flex flex-col">
+		<!-- Noise overlay que está por encima de todo -->
+		<!-- <div class="noise-overlay"></div> -->
+		<Header theme="light" />
+		
+		<main class="w-full flex flex-col">
+		<!-- Hero Section -->
+		<section class="w-full px-4 md:px-16 py-8 md:py-20 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 min-h-[400px] md:min-h-[758px]">
+			<div class="flex flex-col gap-4 md:gap-6 max-w-[764px] w-full">
+				<div class="flex flex-col gap-4 md:gap-6">
+					<div class="w-full md:w-[200px]">
+						<Chips variant="outline" text="Product Designer" />
+					</div>
+					<h2 id="hero-title" class="text-2xl md:text-h2 font-heading font-bold leading-tight md:leading-[1.2] text-secondary">Merging design, strategy and technology to craft products.</h2>
+				</div>
+				<div class="flex flex-col font-bold text-base md:text-sb1 font-sb text-secondary-300">
+					<p id="hero-subtitle">Harnessing technology to make life better.</p>
+				</div>
+			</div>
+			<div id="hero-image" class="w-full md:w-[420px] h-[300px] md:h-[420px] flex-shrink-0">
+				<svg id="hero-svg" width="418" height="420" viewBox="0 0 418 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+					<path id="hero-path" d="M210 0C323.325 0 415.684 89.7654 419.853 202.071H208V209H420V420H211V419.997C210.667 419.999 210.334 420 210 420C94.0202 420 0 325.98 0 210C0 94.0202 94.0202 0 210 0Z" fill="#0A0908"/>
+				</svg>
+			</div>
+		</section>
+
+		<!-- Bento Grid Section -->
+		<BentoGrid />
+
+			<!-- Philosophy Section -->
+			<section class="w-full px-4 md:px-16 py-12 md:py-[120px] flex flex-col items-start gap-8 md:gap-14">
+				<h2 class="text-2xl md:text-h2 font-heading font-bold text-secondary text-start">Create design from human for humans</h2>
+				<div class="flex flex-col gap-4 max-w-[1152px] text-sm md:text-body-md font-body text-secondary-300 text-start">
+					<p>
+						<strong>Behind the pixels:</strong> I always begin with the real problem before falling in love with the visual solution, because design isn't just about aesthetics. It's about solving challenges grounded in data so others don't have to face the complexity. It's about distilling the difficult into a clear guiding principle. 
+						<br/> 
+					</p>
+					<p class="font-bold font-body">It's about creating memorable, distinctive experiences so seamless they're simply enjoyable to use.</p>
+				</div>
+				<NewsButton href="/about" text="Read about me" />
 			</section>
 
-			<section class="my-20">
-				<div class="grid grid-cols-1 gap-4">
-					{RECOMENDATIONS.map((recomendation) => (
-						<Recomendation {...recomendation} />
+			<!-- Projects Section -->
+			<section class="w-full px-4 md:pl-16 py-12 md:py-[120px] flex flex-col gap-8 md:gap-12">
+				<h2 class="text-2xl md:text-h3 font-heading font-bold text-secondary">Projects</h2>
+				
+				<div class="flex flex-col w-full">
+					{mainProjects.map((project, index) => (
+						<div class="border-t-2 border-secondary-200">
+							<ProjectLarge 
+								imageSrc={project.coverImage || '/placeholder-hero.jpg'}
+								category={project.industry || ''}
+								title={project.title}
+								description={project.intro.split('\n')[0]}
+								tags={project.tags || []}
+								slug={project.slug}
+							/>
+						</div>
 					))}
 				</div>
 			</section>
 
-			<section class="my-20">
-				<h2 class="text-center text-4xl font-bold text-secondary">Mon blog</h2>
-				<Notion pageId="1729a94d98e88070b331ddce00aea809" />
+			<!-- Industries Section -->
+			<section class="w-full bg-secondary px-4 md:px-14 py-12 md:py-[120px] flex flex-col items-center gap-8 md:gap-16">
+				<h2 class="text-xl md:text-h2 font-heading font-bold text-primary text-center">INDUSTRIES OF EXPERTISE</h2>
+				<div class="flex gap-4 md:gap-6 flex-wrap justify-center">
+					<DataItem variant="icon" cardStyle="filled" title="Security" />
+					<DataItem variant="icon" cardStyle="filled" title="Energy" />
+					<DataItem variant="icon" cardStyle="filled" title="Telco" />
+					<DataItem variant="icon" cardStyle="filled" title="Automotive" />
+					<DataItem variant="icon" cardStyle="filled" title="AI" />
+				</div>
 			</section>
 
+			<!-- Side Projects Section -->
+			<section class="w-full bg-secondary px-4 md:px-16 py-12 md:py-[120px] flex flex-col md:flex-row gap-8 md:gap-14 items-start md:items-end">
+				<div class="flex flex-col gap-4 md:gap-6 max-w-[750px] w-full">
+					<h2 class="text-2xl md:text-h2 font-heading font-bold leading-tight md:leading-[1.2] text-primary">
+						Side projects
+					</h2>
+					<p class="text-sm md:text-body-md font-body text-primary pb-4">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation — to learn, fail, and create without limits.</p>
+				</div>
+				<div class="flex-1 flex flex-col gap-0 w-full md:w-[530px] lg:w-[730px] xl:w-[830px]">
+					{sideProjects.map((project, index) => (
+						<SideProjectItem 
+							iconImage={project.iconImage || ''}
+							title={project.title}
+							description={project.intro.split('\n')[0]}
+							slug={project.slug}
+							isLast={index === sideProjects.length - 1}
+						/>
+					))}
+				</div>
+			</section>
 		</main>
-		<Footer />
-	</body>
+
+	<Footer />
+
+	<HeroAnimation />
+	<CustomCursor />
+</body>
 </html>

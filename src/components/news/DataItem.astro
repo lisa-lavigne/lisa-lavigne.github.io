@@ -1,0 +1,55 @@
+---
+interface Props {
+	variant?: 'icon' | 'text';
+	cardStyle?: 'outline' | 'filled';
+	title?: string;
+	value?: string;
+}
+
+const { variant = 'icon', cardStyle = 'filled', title = 'Security', value = '50%' } = Astro.props;
+
+const isOutline = cardStyle === 'outline';
+
+// Función para obtener la ruta del icono según el título
+function getIconSrc(title: string): string {
+	const titleLower = title.toLowerCase();
+	if (titleLower.includes('security')) {
+		return "/icons/security.svg";
+	} else if (titleLower.includes('energy')) {
+		return "/icons/energy.svg";
+	} else if (titleLower.includes('telco')) {
+		return "/icons/telco.svg";
+	} else if (titleLower.includes('automotive') || titleLower.includes('auto')) {
+		return "/icons/automative.svg";
+	} else if (titleLower.includes('ai')) {
+		return "/icons/ai.svg";
+	}
+	// Default: security
+	return "/icons/security.svg";
+}
+
+const iconSrc = getIconSrc(title);
+---
+
+<div 
+	class={`border-2 border-primary-100 flex flex-col gap-6 items-start p-4 rounded-tl-[8px] rounded-tr-[8px] rounded-bl-[8px] w-[158px] ${
+		isOutline ? 'bg-primary border-2 border-secondary' : 'bg-transparent'
+	}`}
+>
+	{variant === 'icon' ? (
+		<!-- Card con icono -->
+		<>
+			<div class="w-8 h-8 flex-shrink-0">
+				<img src={iconSrc} alt={title} class="w-full h-full" />
+			</div>
+			<p class="font-body font-semibold text-body-md text-primary">{title}</p>
+		</>
+	) : (
+		<!-- Card con texto -->
+		<>
+			<p class="text-h4 font-heading font-bold text-primary">{value}</p>
+			<p class="font-body font-semibold text-body-md text-primary">{title}</p>
+		</>
+	)}
+</div>
+

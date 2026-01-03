@@ -1,0 +1,137 @@
+---
+import Chips from './Chips.astro';
+
+interface Props {
+	imageSrc: string;
+	category: string;
+	title: string;
+	description: string;
+	tags: string[];
+	slug: string;
+}
+
+const { imageSrc, category, title, description, tags, slug } = Astro.props;
+
+// Dividir tags en dos grupos: pocos en la primera línea, el resto en la segunda
+// Tomamos los primeros 2-3 tags para la primera línea, el resto para la segunda
+const firstLineTags = tags.slice(0, Math.min(4, Math.floor(tags.length / 2)));
+const secondLineTags = tags.slice(firstLineTags.length);
+
+// Función para parsear texto con negrita usando formato **texto**
+function parseBoldText(text: string) {
+	if (!text) return [];
+	
+	const parts: Array<{text: string, bold: boolean}> = [];
+	const regex = /\*\*(.*?)\*\*/g;
+	let lastIndex = 0;
+	let match;
+	
+	while ((match = regex.exec(text)) !== null) {
+		// Agregar texto antes del match
+		if (match.index > lastIndex) {
+			parts.push({ text: text.substring(lastIndex, match.index), bold: false });
+		}
+		// Agregar texto en negrita
+		parts.push({ text: match[1], bold: true });
+		lastIndex = regex.lastIndex;
+	}
+	
+	// Agregar texto restante
+	if (lastIndex < text.length) {
+		parts.push({ text: text.substring(lastIndex), bold: false });
+	}
+	
+	// Si no hay matches, devolver el texto completo
+	if (parts.length === 0) {
+		parts.push({ text, bold: false });
+	}
+	
+	return parts;
+}
+---
+
+<a href={`/works/${slug}`} class="flex flex-col md:flex-row gap-4 md:gap-6 min-h-[445px] md:h-[445px] items-start md:items-center w-full hover:opacity-90 transition-opacity py-6 md:py-10">
+	<!-- Imagen a la izquierda -->
+	<div class="w-full md:w-[500px] h-[300px] md:h-[500px] relative rounded-[16px] shrink-0 overflow-hidden">
+		<div aria-hidden="true" class="absolute inset-0 pointer-events-none rounded-[16px]">
+			<div class="absolute bg-black/20 inset-0 rounded-[16px] my-[56px]"></div>
+			<div class="absolute inset-0 overflow-hidden rounded-[16px] my-[56px]">
+				<img 
+					src={imageSrc} 
+					alt={title} 
+					class="w-full h-full object-cover rounded-[16px]"
+				/>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Contenido de texto a la derecha -->
+	<div class="flex-1 flex flex-col md:h-[500px] items-start md:items-center justify-between w-full md:pl-6 md:pr-10 md:py-16">
+		<div class="flex-1 flex flex-col items-start justify-between w-full gap-4 md:gap-0">
+			<!-- Sección superior: Título y descripción -->
+			<div class="flex flex-col gap-4 md:gap-6 items-start w-full">
+				<!-- Título con categoría y flecha -->
+				<div class="flex items-start justify-between gap-[10px] w-full">
+					<div class="flex flex-col gap-2 flex-1">
+						<h3 class="text-sm md:text-sb1 font-subheading font-semibold text-secondary-200 leading-normal">{category}</h3>
+						<div class="font-heading font-bold text-lg md:text-2xl text-secondary-400 leading-normal">
+							{title.split('\n').map((line) => (
+								<h3 class="block mb-0">{line}</h3>
+							))}
+						</div>
+					</div>
+					<!-- Ícono de flecha en esquina superior derecha (arrow-up-right) -->
+					<div class="w-8 h-8 md:w-12 md:h-12 flex-shrink-0 arrow-container">
+						<svg class="w-full h-full text-secondary-500 arrow-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5L19.5 4.5M19.5 4.5H9M19.5 4.5V15" />
+						</svg>
+					</div>
+				</div>
+				
+				<!-- Descripción -->
+				<p class="text-sm md:text-body-md font-body text-secondary-300 leading-normal w-full">
+					{parseBoldText(description).map((part, idx) => (
+						part.bold ? (
+							<span class="font-bold">{part.text}</span>
+						) : (
+							<span>{part.text}</span>
+						)
+					))}
+				</p>
+			</div>
+			
+			<!-- Sección inferior: Tags/Chips -->
+			<div class="flex flex-col gap-2 md:gap-3 w-full">
+				<!-- Primera línea: pocos tags -->
+				{firstLineTags.length > 0 && (
+					<div class="flex gap-2 md:gap-3 w-full flex-wrap">
+						{firstLineTags.map((tag) => (
+							<Chips variant="outline" text={tag} />
+						))}
+					</div>
+				)}
+				<!-- Segunda línea: el resto de tags -->
+				{secondLineTags.length > 0 && (
+					<div class="flex flex-wrap gap-2 md:gap-3 w-full">
+						{secondLineTags.map((tag) => (
+							<Chips variant="outline" text={tag} />
+						))}
+					</div>
+				)}
+			</div>
+		</div>
+	</div>
+</a>
+
+<style>
+	a:hover .arrow-icon {
+		transform: rotate(45deg);
+		transition: transform 0.3s ease-out, color 0.3s ease-out;
+		color: #6F5AD7;
+	}
+	
+	.arrow-icon {
+		transform-origin: center;
+		transition: transform 0.3s ease-out, color 0.3s ease-out;
+	}
+</style>
