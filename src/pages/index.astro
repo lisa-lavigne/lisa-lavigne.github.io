@@ -10,6 +10,7 @@ import SideProjectItem from '../components/news/SideProjectItem.astro';
 import Chips from '../components/news/Chips.astro';
 import BentoGrid from '../components/news/BentoGrid.astro';
 import HeroAnimation from '../components/HeroAnimation.astro';
+import CustomCursor from '../components/CustomCursor.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { projects } from '../data/projects';
 
@@ -118,8 +119,9 @@ const sideProjects = projects.filter(p => p.isSideProject);
 			</section>
 		</main>
 
-		<Footer />
+	<Footer />
 
-		<HeroAnimation />
-	</body>
+	<HeroAnimation />
+	<CustomCursor />
+</body>
 </html>

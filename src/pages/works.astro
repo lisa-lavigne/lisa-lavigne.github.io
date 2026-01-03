@@ -4,6 +4,7 @@ import Header from '../components/news/Header.astro';
 import Footer from '../components/news/Footer.astro';
 import SideProjectItem from '../components/news/SideProjectItem.astro';
 import ProjectItem from '../components/news/ProjectItem.astro';
+import CustomCursor from '../components/CustomCursor.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { projects } from '../data/projects';
 import BentoGrid from '../components/news/BentoGrid.astro';
@@ -105,7 +106,8 @@ const sideProjects = projects.filter(p => p.isSideProject);
 			</section>
 		</main>
 
-		<Footer />
-	</body>
+	<Footer />
+	<CustomCursor />
+</body>
 </html>
 

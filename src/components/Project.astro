@@ -3,6 +3,7 @@ import BaseHead from './BaseHead.astro';
 import Header from './news/Header.astro';
 import Footer from './news/Footer.astro';
 import SideProjectItem from './news/SideProjectItem.astro';
+import CustomCursor from './CustomCursor.astro';
 import { SITE_TITLE } from '../consts';
 
 interface Props {
@@ -447,6 +448,7 @@ function parseBoldText(text: string) {
 	</main>
 
 	<Footer theme={'dark'} />
+	<CustomCursor />
 	</body>
 </html>
 
