@@ -1,0 +1,70 @@
+---
+// Componente de script para la animación del hero
+---
+
+<script>
+	import { animate, splitText, stagger } from 'animejs';
+
+	// Esperar a que el DOM esté listo
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initAnimation);
+	} else {
+		// Pequeño delay para asegurar que el DOM esté completamente renderizado
+		setTimeout(initAnimation, 0);
+	}
+
+	function initAnimation() {
+		// Animación del título principal sin texto gris
+		const target = document.getElementById('hero-title');
+		if (target) {
+			// Dividir el texto en palabras
+			const { words } = splitText(target, {
+				words: true
+			});
+
+			// Animar el texto principal
+			animate(words, {
+				opacity: [0, 1],
+				y: ['100%', '0%'],
+				duration: 1500,
+				ease: 'outSine',
+				delay: stagger(200),
+			});
+		}
+
+		// Animación del subtítulo sin texto gris
+		const subtitle = document.getElementById('hero-subtitle');
+		if (subtitle) {
+			// Dividir el texto en palabras
+			const { words: subtitleWords } = splitText(subtitle, {
+				words: true
+			});
+
+			// Animar el subtítulo desde más abajo
+			animate(subtitleWords, {
+				opacity: [0, 1],
+				y: ['200%', '0%'],
+				duration: 1500,
+				ease: 'outSine',
+				delay: stagger(200),
+			});
+		}
+
+		// Animación del SVG: moverse y rotar suavemente
+		const heroSvg = document.getElementById('hero-svg');
+		if (heroSvg) {
+			setTimeout(() => {
+				animate(heroSvg, {
+					translateY: [0, -18, 0],
+					translateX: [0, 8, 0],
+					rotate: ['0deg', '6deg', '-4deg', '0deg'],
+					duration: 1800,
+					ease: 'easeInOutSine',
+					loop: true,
+					delay: 200,
+				});
+			}, 200);
+		}
+	}
+</script>
+
