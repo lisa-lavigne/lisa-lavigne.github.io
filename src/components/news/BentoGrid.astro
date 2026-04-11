@@ -1,0 +1,583 @@
+---
+import { projects } from '../../data/projects';
+
+// Mapeo de imágenes a proyectos basado en los nombres de archivo
+const imageToProjectMap: Record<string, string> = {
+	'/images/bento/10.svg': 'roam-rider',
+	'/images/bento/2.svg': 'cupra-seat',
+	'/images/bento/5.svg': 'imagins-ai',
+	'/images/bento/11.svg': 'roam-rider',
+	'/images/bento/8.svg': 'movistar-prosegur-alarms',
+	'/images/bento/1.svg': 'selectra',
+	'/images/bento/13.svg': 'selectra',
+	'/images/bento/3.svg': 'cupra-seat',
+	'/images/bento/6.svg': 'imagins-ai',
+	'/images/bento/12.svg': 'roam-rider',
+	'/images/bento/4.svg': 'cupra-seat',
+	'/images/bento/9.svg': 'movistar-prosegur-alarms',
+};
+
+function getProjectForImage(imageSrc: string) {
+	const slug = imageToProjectMap[imageSrc];
+	if (!slug) return null;
+	return projects.find(p => p.slug === slug) || null;
+}
+---
+<section class="w-full py-10 overflow-hidden">
+	<div class="bento-scroll-container group">
+		<div class="bento-scroll-content">
+			<!-- Spacer for initial padding -->
+			<div class="w-8 flex-shrink-0"></div>
+			<!-- First set of images (duplicated set) -->
+			<div class="flex gap-[18px] items-start flex-shrink-0">
+				{(() => {
+					const project = getProjectForImage('/images/bento/10.svg');
+					return project ? (
+						<a href={`/works/${project.slug}`} class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[591px] group/image relative isolate">
+							<img src="/images/bento/10.svg" alt="Bento grid image 1" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102 origin-center" />
+							<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+								{project.iconImage && (
+									<div class="w-[79px] h-[79px] flex-shrink-0">
+										<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+									</div>
+								)}
+								<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+									{project.title}
+								</p>
+							</div>
+						</a>
+					) : (
+						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[591px]">
+							<img src="/images/bento/10.svg" alt="Bento grid image 1" class="w-full h-full object-cover" />
+						</div>
+					);
+				})()}
+				
+				<!-- Middle column with 2 images -->
+				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
+					{(() => {
+						const project = getProjectForImage('/images/bento/2.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative isolate">
+								<img src="/images/bento/2.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102 origin-center" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/2.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+					{(() => {
+						const project = getProjectForImage('/images/bento/5.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative isolate">
+								<img src="/images/bento/5.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102 origin-center" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/5.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+				</div>
+				
+				<!-- Right column with 2 images of different sizes -->
+				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[290px]">
+					{(() => {
+						const project = getProjectForImage('/images/bento/11.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[292.5px] rounded-xl overflow-hidden w-full group/image relative isolate">
+								<img src="/images/bento/11.svg" alt="Bento grid image 4" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102 origin-center" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[292.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/11.svg" alt="Bento grid image 4" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+					{(() => {
+						const project = getProjectForImage('/images/bento/8.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[130.9px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/8.svg" alt="Bento grid image 5" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-1">
+									{project.iconImage && (
+										<div class="w-[79px] h-[60px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+								</div>
+							</a>
+						) : (
+							<div class="h-[130.9px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/8.svg" alt="Bento grid image 5" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+				</div>
+				
+				<!-- Right large image -->
+				{(() => {
+					const project = getProjectForImage('/images/bento/1.svg');
+					return project ? (
+						<a href={`/works`} class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px] group/image relative">
+							<img src="/images/bento/1.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+								<p class="text-[30px] font-sb1 font-semibold text-white leading-tight md:leading-[1.2] whitespace-nowrap uppercase">
+									Christophe 
+									<br />
+									delcourt
+								</p>
+							</div>
+						</a>
+					) : (
+						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px]">
+							<img src="/images/bento/1.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+						</div>
+					);
+				})()}
+				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
+					{(() => {
+						const project = getProjectForImage('/images/bento/13.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/13.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/13.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+					{(() => {
+						const project = getProjectForImage('/images/bento/3.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/3.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/3.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+				</div>
+				{(() => {
+					const project = getProjectForImage('/images/bento/6.svg');
+					return project ? (
+						<a href={`/works/${project.slug}`} class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px] group/image relative">
+							<img src="/images/bento/6.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+								{project.iconImage && (
+									<div class="w-[79px] h-[79px] flex-shrink-0">
+										<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+									</div>
+								)}
+								<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+									{project.title}
+								</p>
+							</div>
+						</a>
+					) : (
+						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px]">
+							<img src="/images/bento/6.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+						</div>
+					);
+				})()}
+				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
+					{(() => {
+						const project = getProjectForImage('/images/bento/12.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/12.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/12.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+					{(() => {
+						const project = getProjectForImage('/images/bento/4.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/4.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/4.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+				</div>
+				
+				{(() => {
+					const project = getProjectForImage('/images/bento/9.svg');
+					return project ? (
+						<a href={`/works/${project.slug}`} class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px] group/image relative">
+							<img src="/images/bento/9.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+								{project.iconImage && (
+									<div class="w-[79px] h-[79px] flex-shrink-0">
+										<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+									</div>
+								)}
+							</div>
+						</a>
+					) : (
+						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px]">
+							<img src="/images/bento/9.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+						</div>
+					);
+				})()}
+			</div>
+			
+			<!-- Spacer for seamless loop -->
+			<div class="w-4 flex-shrink-0"></div>
+			<!-- Second set of images (original set) -->
+			<div class="flex gap-[18px] items-start flex-shrink-0">
+				{(() => {
+					const project = getProjectForImage('/images/bento/10.svg');
+					return project ? (
+						<a href={`/works/${project.slug}`} class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[591px] group/image relative isolate">
+							<img src="/images/bento/10.svg" alt="Bento grid image 1" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102 origin-center" />
+							<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+								{project.iconImage && (
+									<div class="w-[79px] h-[79px] flex-shrink-0">
+										<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+									</div>
+								)}
+								<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+									{project.title}
+								</p>
+							</div>
+						</a>
+					) : (
+						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[591px]">
+							<img src="/images/bento/10.svg" alt="Bento grid image 1" class="w-full h-full object-cover" />
+						</div>
+					);
+				})()}
+				
+				<!-- Middle column with 2 images -->
+				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
+					{(() => {
+						const project = getProjectForImage('/images/bento/2.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative isolate">
+								<img src="/images/bento/2.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102 origin-center" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/2.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+					{(() => {
+						const project = getProjectForImage('/images/bento/5.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative isolate">
+								<img src="/images/bento/5.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102 origin-center" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/5.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+				</div>
+				
+				<!-- Right column with 2 images of different sizes -->
+				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[290px]">
+					{(() => {
+						const project = getProjectForImage('/images/bento/11.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[292.5px] rounded-xl overflow-hidden w-full group/image relative isolate">
+								<img src="/images/bento/11.svg" alt="Bento grid image 4" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102 origin-center" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[292.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/11.svg" alt="Bento grid image 4" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+					{(() => {
+						const project = getProjectForImage('/images/bento/8.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[130.9px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/8.svg" alt="Bento grid image 5" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-1">
+									{project.iconImage && (
+										<div class="w-[79px] h-[60px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+								</div>
+							</a>
+						) : (
+							<div class="h-[130.9px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/8.svg" alt="Bento grid image 5" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+				</div>
+				
+				<!-- Right large image -->
+				{(() => {
+					const project = getProjectForImage('/images/bento/1.svg');
+					return project ? (
+						<a href={`/works`} class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px] group/image relative">
+							<img src="/images/bento/1.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+								<p class="text-[30px] font-sb1 font-semibold text-white leading-tight md:leading-[1.2] whitespace-nowrap uppercase">
+									Christophe 
+									<br />
+									delcourt
+								</p>
+							</div>
+						</a>
+					) : (
+						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px]">
+							<img src="/images/bento/1.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+						</div>
+					);
+				})()}
+				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
+					{(() => {
+						const project = getProjectForImage('/images/bento/13.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/13.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/13.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+					{(() => {
+						const project = getProjectForImage('/images/bento/3.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/3.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/3.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+				</div>
+				{(() => {
+					const project = getProjectForImage('/images/bento/6.svg');
+					return project ? (
+						<a href={`/works/${project.slug}`} class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px] group/image relative">
+							<img src="/images/bento/6.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+								{project.iconImage && (
+									<div class="w-[79px] h-[79px] flex-shrink-0">
+										<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+									</div>
+								)}
+								<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+									{project.title}
+								</p>
+							</div>
+						</a>
+					) : (
+						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px]">
+							<img src="/images/bento/6.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+						</div>
+					);
+				})()}
+				<div class="flex flex-col gap-[18px] items-start relative flex-shrink-0 w-[284px]">
+					{(() => {
+						const project = getProjectForImage('/images/bento/12.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/12.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/12.svg" alt="Bento grid image 2" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+					{(() => {
+						const project = getProjectForImage('/images/bento/4.svg');
+						return project ? (
+							<a href={`/works/${project.slug}`} class="h-[212.5px] rounded-xl overflow-hidden w-full group/image relative">
+								<img src="/images/bento/4.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+								<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+									{project.iconImage && (
+										<div class="w-[79px] h-[79px] flex-shrink-0">
+											<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+										</div>
+									)}
+									<p class="text-[25px] font-subheading font-semibold text-white leading-[19px] whitespace-nowrap">
+										{project.title}
+									</p>
+								</div>
+							</a>
+						) : (
+							<div class="h-[212.5px] rounded-xl overflow-hidden w-full">
+								<img src="/images/bento/4.svg" alt="Bento grid image 3" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							</div>
+						);
+					})()}
+				</div>
+				
+				{(() => {
+					const project = getProjectForImage('/images/bento/9.svg');
+					return project ? (
+						<a href={`/works/${project.slug}`} class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px] group/image relative">
+							<img src="/images/bento/9.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+							<div class="absolute inset-0 bg-black/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl flex flex-col items-center justify-center gap-6">
+								{project.iconImage && (
+									<div class="w-[79px] h-[79px] flex-shrink-0">
+										<img src={project.iconImage} alt={project.title} class="w-full h-full object-contain brightness-0 invert" />
+									</div>
+								)}
+							</div>
+						</a>
+					) : (
+						<div class="h-[443px] rounded-xl overflow-hidden flex-shrink-0 w-[557px]">
+							<img src="/images/bento/9.svg" alt="Bento grid image 6" class="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-102" />
+						</div>
+					);
+				})()}
+			</div>
+		</div>
+	</div>
+</section>
+

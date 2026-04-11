@@ -1,0 +1,47 @@
+---
+interface Props {
+	imageSrc: string;
+	title: string;
+	description: string;
+	slug: string;
+}
+
+const { imageSrc, title, description, slug } = Astro.props;
+---
+
+<a href={`/works/${slug}`} class="bg-tertiary-100 border-2 border-accent rounded-lg flex items-center h-[188px] w-full hover:opacity-90 transition-opacity">
+	<!-- Imagen a la izquierda -->
+	<div class="w-[273px] h-full flex-shrink-0 rounded-l-lg overflow-hidden">
+		<img 
+			src={imageSrc} 
+			alt={title} 
+			class="w-full h-full object-cover"
+		/>
+	</div>
+	
+	<!-- Contenido a la derecha -->
+	<div class="flex-1 flex items-center justify-between px-6 py-[22px] h-full">
+		<div class="flex flex-col gap-[22px] w-full">
+			<h3 class="text-h4 font-heading font-bold text-accent">{title}</h3>
+			<p class="text-body-md font-body text-accent">
+				{description}
+			</p>
+		</div>
+		
+		<!-- Flecha de navegación -->
+		<div class="w-[61px] h-full flex flex-col items-end justify-end pb-3">
+			<!-- Líneas decorativas -->
+			<div class="w-[61px] h-[13px] mb-2 flex flex-col gap-1">
+				<div class="w-full h-px bg-accent"></div>
+				<div class="w-full h-px bg-accent"></div>
+			</div>
+			<!-- Ícono de flecha -->
+			<div class="w-[37px] h-[37px] flex items-center justify-center">
+				<svg class="w-full h-full text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+				</svg>
+			</div>
+		</div>
+	</div>
+</a>
+

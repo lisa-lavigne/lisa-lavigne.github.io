@@ -1,35 +1,52 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/news/Header.astro';
+import Footer from '../components/news/Footer.astro';
+import NewsButton from '../components/news/Button.astro';
+import CustomCursor from '../components/CustomCursor.astro';
+import TextScrollAnimation from '../components/TextScrollAnimation.astro';
+import HeroAnimation from '../components/HeroAnimation.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout
-	title="A propos de moi"
-	description="Consultante en business management"
-	pubDate={new Date('November 01 2024')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Je suis Lisa, consultante en business management,
-		passionnée par l'accompagnement des petites
-		entreprises.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-primary min-h-screen flex flex-col">
+		<Header theme="light" />
+		
+		<main class="w-full flex flex-col">
+			<!-- About Section -->
+			<section class="w-full bg-primary px-16 pt-[120px] pb-[180px] flex flex-col gap-14 items-start">
+				<!-- Title -->
+				<div class="flex flex-col gap-4 items-start w-full">
+					<h1 id="hero-title" class="text-h1 font-heading font-bold text-secondary">About me</h1>
+				</div>
+				
+				<!-- Content -->
+				<div class="flex flex-col gap-4 items-start w-full">
+					<div id="text-container" class="text-sb1 font-body text-secondary relative min-h-[200px]">
+						<div id="text-original" class="absolute top-0 left-0 w-full" style="opacity: 0; transform: translateY(50px);">
+							<p class="mb-0">I discovered minimalism, photography, and design as languages to make sense of my own chaos.</p>
+							<p class="mb-0">&nbsp;</p>
+							<p class="mb-0">My influences range goes from Carlo Scarpa, Tokujin Yoshioka, John Maeda to Hans Zimmer, Quentin Tarantino, Jony Ive, Tom Hegen, Bofill, Dieter Rams and Vignelli.</p>
+						</div>
+						<div id="text-new">
+							<p class="mb-0">I grew up between mountains and an endless curiosity for how things work. I love skiing and surfing, allthough the waves have taught me more humility than any book. Nature is where I reset and find clarity.</p>
+							<p class="mb-0">&nbsp;</p>
+							<p class="mb-0">I stand firmly for functional design and keep about 40 browser tabs open.</p>
+						</div>
+					</div>
+				</div>
+				<NewsButton href="mailto:mirilaina@gmail.com" text="Contact me!" />
+			</section>
+		</main>
 
-	<p>
-		Ma mission ? Vous aider à retrouver votre cap, à
-		garder le gouvernail solide, même en pleine tempête, et
-		à profiter pleinement du voyage entrepreneurial.
-	</p>
-
-	<p>
-		Concrètement, j’optimise vos processus, maximise
-		votre efficacité et vous guide dans la gestion de votre
-		temps pour que vous vous concentriez sur ce qui
-		compte vraiment.
-	</p>
-
-	<p>
-		Vous êtes prêt à naviguer sereinement et atteindre
-		vos objectifs ? Ensemble, nous mettons le cap sur
-		votre succès.
-	</p>
-</Layout>
+	<Footer theme="dark" />
+	<CustomCursor />
+	<HeroAnimation />
+	<TextScrollAnimation />
+</body>
+</html>

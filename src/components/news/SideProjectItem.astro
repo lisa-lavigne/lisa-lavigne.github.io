@@ -1,0 +1,78 @@
+---
+interface Props {
+	title: string;
+	iconImage: string;
+	description: string;
+	slug: string;
+	isLast?: boolean;
+	theme?: 'dark' | 'light';
+}
+
+const { title, iconImage, description, slug, isLast = false, theme = 'dark' } = Astro.props;
+
+const isLight = theme === 'light';
+const titleColor = isLight ? 'text-secondary' : 'text-primary';
+const descriptionColor = isLight ? 'text-secondary-300' : 'text-primary';
+const borderColor = isLight ? 'border-secondary-300' : 'border-secondary-100';
+
+// Si el tema es light, usar la versión -light.svg del icono
+const iconSrc = isLight && iconImage.endsWith('icon.svg') 
+	? iconImage.replace('.svg', '-dark.svg')
+	: iconImage;
+
+// Función para parsear texto con negrita usando formato **texto**
+function parseBoldText(text: string) {
+	if (!text) return [];
+	
+	const parts: Array<{text: string, bold: boolean}> = [];
+	const regex = /\*\*(.*?)\*\*/g;
+	let lastIndex = 0;
+	let match;
+	
+	while ((match = regex.exec(text)) !== null) {
+		// Agregar texto antes del match
+		if (match.index > lastIndex) {
+			parts.push({ text: text.substring(lastIndex, match.index), bold: false });
+		}
+		// Agregar texto en negrita
+		parts.push({ text: match[1], bold: true });
+		lastIndex = regex.lastIndex;
+	}
+	
+	// Agregar texto restante
+	if (lastIndex < text.length) {
+		parts.push({ text: text.substring(lastIndex), bold: false });
+	}
+	
+	// Si no hay matches, devolver el texto completo
+	if (parts.length === 0) {
+		parts.push({ text, bold: false });
+	}
+	
+	return parts;
+}
+---
+
+<a href={`/works/${slug}`} class={`flex flex-col gap-6 py-8 ${!isLast ? `border-b-2 ${borderColor}` : ''} hover:opacity-90 transition-opacity`}>
+	<div class="flex items-start justify-between gap-2">
+		<div class="flex flex-col gap-3">
+			<div class="flex items-center justify-between gap-2">
+				<h3 class={`text-sb1 font-body mt-2 font-semibold ${titleColor}`}>{title}</h3>
+				<div class="w-10 h-10 mr-8">
+					<img src={iconSrc} alt={title} class="w-full h-full" />
+				</div>
+			</div>
+			<p class={`text-body-md font-body ${descriptionColor}`}>
+				{parseBoldText(description).map((part, idx) => (
+					part.bold ? (
+						<span class="font-bold">{part.text}</span>
+					) : (
+						<span>{part.text}</span>
+					)
+				))}
+			</p>
+		</div>
+		
+	</div>
+</a>
+

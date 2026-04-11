@@ -1,0 +1,66 @@
+---
+import Project from '../../components/Project.astro';
+import { projects } from '../../data/projects';
+
+export async function getStaticPaths() {
+	const { projects } = await import('../../data/projects');
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+
+if (!project) {
+	return Astro.redirect('/works');
+}
+
+// Si es un proyecto principal, obtener todos los side projects para mostrar
+// Si es un side project, obtener todos los proyectos principales para mostrar
+const sideProjects = project.isSideProject 
+	? [] 
+	: projects
+		.filter(p => p.isSideProject)
+		.map(p => ({
+			slug: p.slug,
+			title: p.title,
+			description: p.description.split('\n')[0],
+			iconImage: p.iconImage
+		}));
+
+const mainProjects = project.isSideProject
+	? projects
+		.filter(p => !p.isSideProject)
+		.map(p => ({
+			slug: p.slug,
+			title: p.title,
+			description: p.description.split('\n')[0],
+			iconImage: p.iconImage
+		}))
+	: [];
+---
+
+<Project 
+	isSideProject={project.isSideProject}
+	title={project.title}
+	description={project.description}
+	dateRange={project.dateRange}
+	industry={project.industry}
+	services={project.services}
+	link={project.link}
+	heroImage={project.heroImage}
+	contentImages={project.contentImages}
+	learnings={project.learnings}
+	learningsImage={project.learningsImage}
+	overview={project.overview}
+	role={project.role}
+	challenge={project.challenge}
+	solution={project.solution}
+	dataCards={project.dataCards}
+	galleryImages={project.galleryImages}
+	galleryTitle={project.galleryTitle}
+	sideProjects={sideProjects}
+	mainProjects={mainProjects}
+/>
+

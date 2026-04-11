@@ -1,0 +1,96 @@
+---
+import Chips from './Chips.astro';
+
+interface Props {
+	category: string;
+	type?: string;
+	title: string;
+	description: string;
+	slug: string;
+}
+
+const { category, type, title, description, slug } = Astro.props;
+
+// Función para parsear texto con negrita usando formato **texto**
+function parseBoldText(text: string) {
+	if (!text) return [];
+	
+	const parts: Array<{text: string, bold: boolean}> = [];
+	const regex = /\*\*(.*?)\*\*/g;
+	let lastIndex = 0;
+	let match;
+	
+	while ((match = regex.exec(text)) !== null) {
+		// Agregar texto antes del match
+		if (match.index > lastIndex) {
+			parts.push({ text: text.substring(lastIndex, match.index), bold: false });
+		}
+		// Agregar texto en negrita
+		parts.push({ text: match[1], bold: true });
+		lastIndex = regex.lastIndex;
+	}
+	
+	// Agregar texto restante
+	if (lastIndex < text.length) {
+		parts.push({ text: text.substring(lastIndex), bold: false });
+	}
+	
+	// Si no hay matches, devolver el texto completo
+	if (parts.length === 0) {
+		parts.push({ text, bold: false });
+	}
+	
+	return parts;
+}
+
+const descriptionParts = parseBoldText(description);
+---
+
+<a href={`/works/${slug}`} class="bg-secondary-500 flex flex-col gap-6 pt-6 w-full hover:opacity-90 transition-opacity">
+	<div class="flex items-start justify-between pl-6 pr-0">
+		<!-- Contenido de texto -->
+		<div class="flex flex-col gap-6 w-full py-6">
+			<div class="flex flex-col gap-3">
+				<!-- Categoría con type -->
+				<div class="flex gap-3 items-center">
+					<h3 class="text-sb1 mb-0 font-sb1 font-semibold text-secondary-200 whitespace-nowrap">{category}</h3>
+					{type && (
+						<Chips variant="filled" text={type} />
+					)}
+				</div>
+				<!-- Título -->
+				<h3 class="text-h3 mb-0 font-body font-semibold text-secondary-100">{title}</h3>
+			</div>
+			<!-- Descripción -->
+			<p class="text-body-md font-body text-primary">
+				{descriptionParts.map((part, idx) => (
+					part.bold ? (
+						<span class="font-bold">{part.text}</span>
+					) : (
+						<span>{part.text}</span>
+					)
+				))}
+			</p>
+		</div>
+		
+		<!-- Ícono de flecha en esquina superior derecha (arrow-up-right) -->
+		<div class="w-12 h-12 flex-shrink-0 arrow-container">
+			<svg class="w-full h-full text-primary arrow-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5L19.5 4.5M19.5 4.5H9M19.5 4.5V15" />
+			</svg>
+		</div>
+	</div>
+</a>
+
+<style>
+	a:hover .arrow-icon {
+		transform: rotate(45deg);
+		transition: transform 0.3s ease-out, color 0.3s ease-out;
+		color: #D6CEFE;
+	}
+	
+	.arrow-icon {
+		transform-origin: center;
+		transition: transform 0.3s ease-out, color 0.3s ease-out;
+	}
+</style>
