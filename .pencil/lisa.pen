@@ -1,0 +1,4631 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "PEh2J",
+      "x": 1640,
+      "y": 0,
+      "name": "Lisa Lavigne - Trabajar Juntos",
+      "width": 1440,
+      "fill": "$beige-chaud",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "cv8nw",
+          "name": "header",
+          "width": "fill_container",
+          "padding": [
+            20,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "sbJcG",
+              "name": "Logo",
+              "clip": true,
+              "width": 80,
+              "height": 80,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "ygqLB",
+              "name": "nav",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QxJgN",
+                  "name": "nav1",
+                  "fill": "$gris-texte",
+                  "content": "Beneficios",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "UBHSa",
+                  "name": "nav2",
+                  "fill": "$gris-texte",
+                  "content": "Cómo trabajo",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "zhxtN",
+                  "name": "nav4",
+                  "fill": "$gris-texte",
+                  "content": "Testimonios",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "wpG1G",
+                  "name": "ctaBtn",
+                  "fill": "$corail",
+                  "cornerRadius": 8,
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bOuRh",
+                      "name": "ctaText",
+                      "fill": "$blanc",
+                      "content": "Reservar una llamada",
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "FSlAu",
+          "name": "pourQui",
+          "width": "fill_container",
+          "fill": "$beige-fonce",
+          "layout": "vertical",
+          "gap": 60,
+          "padding": 80,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "KN0Za",
+              "name": "pourWrapper",
+              "width": "fill_container",
+              "gap": 60,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xD4LI",
+                  "name": "pourLeft",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fHfWL",
+                      "name": "pourTitle",
+                      "fill": "$bleu-fonce",
+                      "content": "Es para ti si...",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 40,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5vHu8",
+                      "name": "pourNote",
+                      "fill": "$gris-texte",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "No necesitas tener el 100% de las respuestas — si has sonreído al leer al menos 3 de estas frases porque te has sentido identificada, entonces es para ti.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "AC Real Adult",
+                      "fontSize": 15,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qphMq",
+                      "name": "esPhoto",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 320,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./fotos/Julie corpo 29-01-202622713r.jpg",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 16
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "r4aLd",
+                  "name": "pourRight",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rcaUZ",
+                      "name": "c1",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "GQXAJ",
+                          "name": "c1icon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "check",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Gdgy3",
+                          "name": "c1text",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Trabajas con tres herramientas diferentes y pasas un tiempo enorme reconstruyendo todo a mano",
+                          "lineHeight": 1.5,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ky2jZ",
+                      "name": "c2",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "MAxRr",
+                          "name": "c2icon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "check",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LMGpw",
+                          "name": "c2text",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Reinventas la rueda con cada nuevo cliente",
+                          "lineHeight": 1.5,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ekC8J",
+                      "name": "c3",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "5AySu",
+                          "name": "c3icon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "check",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uL0ov",
+                          "name": "c3text",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Sonríes cuando te pregunto cuál es tu recorrido de cliente, porque te adaptas caso por caso",
+                          "lineHeight": 1.5,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Rgnae",
+                      "name": "c4",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "J3HMp",
+                          "name": "c4icon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "check",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "iSdFo",
+                          "name": "c4text",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Pones los ojos en blanco cuando se habla de mails, drives o facturas",
+                          "lineHeight": 1.5,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1cIhg",
+                      "name": "c4new",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "odE8c",
+                          "name": "newIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "check",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "BBFl2",
+                          "name": "newText",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Respondes \"depende\" cuando te pregunto cómo organizas tus semanas",
+                          "lineHeight": 1.5,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EdhVZ",
+                      "name": "c5",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "nGayZ",
+                          "name": "c5icon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "check",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "gGWrm",
+                          "name": "c5text",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Empiezas tu día con una to-do... que nunca terminas de escribir",
+                          "lineHeight": 1.5,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "zJaAG",
+              "name": "divider",
+              "opacity": 0.15,
+              "fill": "$bleu-fonce",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "GO0X3",
+              "name": "Ce qu'on fait ensemble",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "5QDRQ",
+                  "name": "esTitleIcon",
+                  "width": 36,
+                  "height": 36,
+                  "iconFontName": "handshake",
+                  "iconFontFamily": "lucide",
+                  "fill": "$corail"
+                },
+                {
+                  "type": "text",
+                  "id": "5lFrX",
+                  "name": "sectionTitle",
+                  "fill": "$bleu-fonce",
+                  "content": "Lo que hacemos juntos",
+                  "fontFamily": "TAN Meringue",
+                  "fontSize": 32,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "mDnmP",
+                  "name": "sectionBody",
+                  "fill": "$gris-texte",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Partimos del recorrido del cliente y desplegamos los procesos del negocio. Son sesiones en vivo de 3h.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "FBgG0",
+                  "name": "sectionDetail",
+                  "fill": "$gris-texte",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Concretamente una sesión: Soy curiosa, te hago preguntas y abrimos cajas de Pandora.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ePAsU",
+          "name": "Photo Strip P2",
+          "clip": true,
+          "width": "fill_container",
+          "height": 280,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "./fotos/Julie corpo 29-01-202622567r 1.jpg",
+            "mode": "fill"
+          }
+        },
+        {
+          "type": "frame",
+          "id": "tH3gc",
+          "name": "casReussite",
+          "width": "fill_container",
+          "fill": "$beige-chaud",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "children": [
+            {
+              "type": "frame",
+              "id": "lb9WH",
+              "name": "casesHeader",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "S8wEG",
+                  "name": "casesTitle",
+                  "fill": "$bleu-fonce",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Casos de éxito",
+                  "textAlign": "center",
+                  "fontFamily": "TAN Meringue",
+                  "fontSize": 40,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "RfmSy",
+                  "name": "casesSub",
+                  "fill": "$gris-texte",
+                  "content": "Resultados concretos, no promesas.",
+                  "textAlign": "center",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zkdxo",
+              "name": "casesGrid",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "8yDcM",
+                  "name": "cas1",
+                  "clip": true,
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ocmkv",
+                      "name": "cas1img",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "silverkblack",
+                        "link": "https://unsplash.com/@silverkblack",
+                        "author": "Vitaly Gariev"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./fotos/Julie corpo 29-01-202622595r.jpg",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": [
+                        12,
+                        12,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ZwnYW",
+                      "name": "cas1content",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": [
+                        0,
+                        0,
+                        12,
+                        12
+                      ],
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#03187410"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 28,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Zpfll",
+                          "name": "cas1name",
+                          "fill": "$bleu-fonce",
+                          "content": "Almudena",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "QpeHd",
+                          "name": "cas1result",
+                          "fill": "$corail",
+                          "content": "Ofertas a 1.000€",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "NIlAJ",
+                          "name": "cas1desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Reestructuró su oferta para pasar de una tarifa por hora a paquetes premium, alcanzando ofertas de 1.000€.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Hibg3",
+                  "name": "cas2",
+                  "clip": true,
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "fcTL1",
+                      "name": "cas2img",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "videodeck",
+                        "link": "https://unsplash.com/@videodeck",
+                        "author": "Videodeck .co"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./fotos/Julie corpo 29-01-202622640r.jpg",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": [
+                        12,
+                        12,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e0jzw",
+                      "name": "cas2content",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": [
+                        0,
+                        0,
+                        12,
+                        12
+                      ],
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#03187410"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 28,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Z1RYq",
+                          "name": "cas2name",
+                          "fill": "$bleu-fonce",
+                          "content": "Julie",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "L4LPh",
+                          "name": "cas2result",
+                          "fill": "$corail",
+                          "content": "Su organización diaria",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "jL25s",
+                          "name": "cas2desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Transformó su organización diaria gracias a la automatización de procesos y al reenfoque en la pasión de su oficio.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cgcI8",
+                  "name": "cas3",
+                  "clip": true,
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "A9I5I",
+                      "name": "cas3img",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "anna_c_wilhelm",
+                        "link": "https://unsplash.com/@anna_c_wilhelm",
+                        "author": "Anna"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./fotos/Julie corpo 29-01-202622688r 1.jpg",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": [
+                        12,
+                        12,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rpGWQ",
+                      "name": "cas3content",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": [
+                        0,
+                        0,
+                        12,
+                        12
+                      ],
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#03187410"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 28,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "9q796",
+                          "name": "cas3name",
+                          "fill": "$bleu-fonce",
+                          "content": "Los arquitectos",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "83fmr",
+                          "name": "cas3result",
+                          "fill": "$corail",
+                          "content": "Pueden delegar",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "3qlcB",
+                          "name": "cas3desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Por fin pudieron delegar gracias a la implementación de un sistema de seguimiento de prospectos que aumentó su facturación.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "I38In",
+          "name": "temoignages",
+          "width": "fill_container",
+          "fill": "$beige-fonce",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "children": [
+            {
+              "type": "frame",
+              "id": "NEoxP",
+              "name": "temoHeader",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FbHIr",
+                  "name": "temoTitle",
+                  "fill": "$bleu-fonce",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Lo que dicen de mí",
+                  "textAlign": "center",
+                  "fontFamily": "TAN Meringue",
+                  "fontSize": 40,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "OQf4B",
+              "name": "temoGrid",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zsiEM",
+                  "name": "t1",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0318740D",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 20
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "hbItu",
+                      "name": "eqi1",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "quote",
+                      "iconFontFamily": "lucide",
+                      "fill": "$corail"
+                    },
+                    {
+                      "type": "text",
+                      "id": "w7R31",
+                      "name": "t1quote",
+                      "fill": "$bleu-fonce",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\" Lisa me permitió volver a poner en el centro de mi actividad el placer y esa pasión que me impulsó a lanzarme en esta aventura. \"",
+                      "lineHeight": 1.5,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SrdxR",
+                      "name": "t1author",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "tKlaj",
+                          "name": "t1avatar",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "$corail",
+                          "cornerRadius": 20
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wc5vZ",
+                          "name": "t1info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "MRYK3",
+                              "name": "t1name",
+                              "fill": "$bleu-fonce",
+                              "content": "Julie",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "uX16q",
+                              "name": "t1role",
+                              "fill": "$gris-texte",
+                              "content": "Fundadora, Self-Love Club",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gpUbl",
+                  "name": "t2",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0318740D",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 20
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "gr6SU",
+                      "name": "eqi2",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "quote",
+                      "iconFontFamily": "lucide",
+                      "fill": "$corail"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qhZ5a",
+                      "name": "t2quote",
+                      "fill": "$bleu-fonce",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\" Su capacidad de escucha, su reactividad y su eficacia la convierten en una profesional fiable y comprometida. Una aliada valiosa para cualquier organización. \"",
+                      "lineHeight": 1.5,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JuGk7",
+                      "name": "t2author",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Rnqv6",
+                          "name": "t2avatar",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "$corail",
+                          "cornerRadius": 20
+                        },
+                        {
+                          "type": "frame",
+                          "id": "gbnB0",
+                          "name": "t2info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "xkmvb",
+                              "name": "t2name",
+                              "fill": "$bleu-fonce",
+                              "content": "Circé",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "dtc1P",
+                              "name": "t2role",
+                              "fill": "$gris-texte",
+                              "content": "Fundadora, Mazette",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Ye5S5",
+                  "name": "t3",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0318740D",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 20
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "lV58A",
+                      "name": "eqi3",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "quote",
+                      "iconFontFamily": "lucide",
+                      "fill": "$corail"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dVrlz",
+                      "name": "t3quote",
+                      "fill": "$bleu-fonce",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\" Tu acompañamiento me aportó claridad y tranquilidad mental. Herramientas y procesos fáciles de usar. \"",
+                      "lineHeight": 1.5,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kb2Xs",
+                      "name": "t3author",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Ptsi8",
+                          "name": "t3avatar",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "$corail",
+                          "cornerRadius": 20
+                        },
+                        {
+                          "type": "frame",
+                          "id": "zRnOR",
+                          "name": "t3info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "6EdQe",
+                              "name": "t3name",
+                              "fill": "$bleu-fonce",
+                              "content": "Malika",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "F3tcg",
+                              "name": "t3role",
+                              "fill": "$gris-texte",
+                              "content": "Coach independiente",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bREud",
+          "name": "ctaFinal",
+          "width": "fill_container",
+          "fill": "$bleu-fonce",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            100,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "2HumX",
+              "name": "ctaTitle",
+              "fill": "$blanc",
+              "textGrowth": "fixed-width",
+              "width": 800,
+              "content": "¿Lista para estructurar tu negocio?",
+              "textAlign": "center",
+              "fontFamily": "TAN Meringue",
+              "fontSize": 44,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "iZ646",
+              "name": "ctaSub",
+              "fill": "$blanc",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "Reserva una llamada de descubrimiento gratuita. Hablamos de ti, de tu negocio, y vemos si podemos avanzar juntos.",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "TT Commons Pro",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "SMpHO",
+              "name": "ctaButton",
+              "fill": "$corail",
+              "cornerRadius": 8,
+              "padding": [
+                18,
+                40
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "em8KX",
+                  "name": "ctaBtnText",
+                  "fill": "$blanc",
+                  "content": "Reservar mi llamada de descubrimiento",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 17,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "86WPQ",
+          "name": "footer",
+          "width": "fill_container",
+          "fill": "$bleu-fonce",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            48,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "m1t2e",
+              "name": "footerTop",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "2WY2o",
+                  "name": "footerBrand",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "26xuV",
+                      "name": "footerLogo",
+                      "fill": "$blanc",
+                      "content": "Lisa Lavigne",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "VFiI5",
+                      "name": "footerTagline",
+                      "fill": "$beige-fonce",
+                      "content": "Consultora en estructuración de negocios",
+                      "fontFamily": "AC Real Adult",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4G4nY",
+                  "name": "footerNav",
+                  "gap": 48,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "G89BI",
+                      "name": "footerCol1",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "htd8d",
+                          "name": "fc1title",
+                          "fill": "$corail",
+                          "content": "Navegación",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "S7iKZ",
+                          "name": "fc1l1",
+                          "fill": "$beige-fonce",
+                          "content": "Inicio",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "1rYIT",
+                          "name": "fc1l2",
+                          "fill": "$beige-fonce",
+                          "content": "Servicios",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "c4ZOr",
+                          "name": "fc1l3",
+                          "fill": "$beige-fonce",
+                          "content": "Testimonios",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xDQbK",
+                          "name": "fc1l4",
+                          "fill": "$beige-fonce",
+                          "content": "Sobre mí",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3ZWlq",
+                      "name": "footerCol2",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "P1Sss",
+                          "name": "fc2title",
+                          "fill": "$corail",
+                          "content": "Contacto",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bKymq",
+                          "name": "fc2l1",
+                          "fill": "$beige-fonce",
+                          "content": "LinkedIn",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "M3x9I",
+                          "name": "fc2l2",
+                          "fill": "$beige-fonce",
+                          "content": "Instagram",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "HhgRB",
+                          "name": "fc2l3",
+                          "fill": "$beige-fonce",
+                          "content": "Email",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "E7bt3",
+              "name": "footerBottom",
+              "width": "fill_container",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0vQAj",
+                  "name": "copyright",
+                  "fill": "#FFFFFF60",
+                  "content": "© 2026 Lisa Lavigne. Todos los derechos reservados.",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "LNjl0",
+      "x": 3280,
+      "y": 0,
+      "name": "Lisa Lavigne - Sobre Mí",
+      "width": 1440,
+      "fill": "$beige-chaud",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "HSkUe",
+          "name": "header",
+          "width": "fill_container",
+          "padding": [
+            20,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Kxov4",
+              "name": "Logo",
+              "clip": true,
+              "width": 80,
+              "height": 80,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "JpEGI",
+              "name": "nav",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "47ywH",
+                  "name": "nav1",
+                  "fill": "$gris-texte",
+                  "content": "Beneficios",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "kl8BV",
+                  "name": "nav2",
+                  "fill": "$gris-texte",
+                  "content": "Cómo trabajo",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Ryoox",
+                  "name": "nav3",
+                  "fill": "$gris-texte",
+                  "content": "Para quién",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "tcE2t",
+                  "name": "nav4",
+                  "fill": "$gris-texte",
+                  "content": "Testimonios",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "ZKNrJ",
+                  "name": "nav5",
+                  "fill": "$gris-texte",
+                  "content": "Sobre mí",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "z4QQK",
+                  "name": "ctaBtn",
+                  "fill": "$corail",
+                  "cornerRadius": 8,
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XmrgZ",
+                      "name": "ctaText",
+                      "fill": "$blanc",
+                      "content": "Reservar una llamada",
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "L9d8I",
+          "name": "about",
+          "width": "fill_container",
+          "fill": "$bleu-fonce",
+          "gap": 60,
+          "padding": 80,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "vSYSI",
+              "name": "About Image",
+              "metadata": {
+                "type": "unsplash",
+                "username": "krivitskiy",
+                "link": "https://unsplash.com/@krivitskiy",
+                "author": "Alexander Krivitskiy"
+              },
+              "clip": true,
+              "width": 480,
+              "height": 560,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./fotos/Julie corpo 29-01-202622529r 1.jpg",
+                "mode": "fill"
+              },
+              "cornerRadius": 12
+            },
+            {
+              "type": "frame",
+              "id": "zbsiK",
+              "name": "aboutRight",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UfnwF",
+                  "name": "aboutTag",
+                  "fill": "$blanc",
+                  "content": "Mis valores",
+                  "fontFamily": "TAN Meringue",
+                  "fontSize": 34,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "tUNjS",
+                  "name": "valuesRow",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "78eyG",
+                      "name": "v1",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF10",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        18,
+                        22
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "6aBnE",
+                          "name": "v1icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "bird",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RDfyM",
+                          "name": "v1text",
+                          "fill": "$blanc",
+                          "content": "Libertad",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ymcor",
+                          "name": "tag1",
+                          "fill": "$beige-fonce",
+                          "content": "Atreverse a ser uno mismo, sin filtros",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PrI6f",
+                      "name": "v2",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF10",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        18,
+                        22
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "nsFTK",
+                          "name": "v2icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "sparkles",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "B0k9Y",
+                          "name": "v2text",
+                          "fill": "$blanc",
+                          "content": "Exigencia",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "NaM8M",
+                          "name": "tag2",
+                          "fill": "$beige-fonce",
+                          "content": "Apuntar bien, no perfecto",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hIq4z",
+                      "name": "v3",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF10",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        18,
+                        22
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "K10vw",
+                          "name": "v3icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "link",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "4keoo",
+                          "name": "v3text",
+                          "fill": "$blanc",
+                          "content": "Coherencia",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "XbekD",
+                          "name": "tag3",
+                          "fill": "$beige-fonce",
+                          "content": "Alinear actos y palabras",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "RYXAA",
+                      "name": "v4",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF10",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        18,
+                        22
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "Y4oZa",
+                          "name": "v4icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "smile",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "bguWN",
+                          "name": "v4text",
+                          "fill": "$blanc",
+                          "content": "Humor",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "YJUnE",
+                          "name": "tag4",
+                          "fill": "$beige-fonce",
+                          "content": "Reír, incluso cuando es serio",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "fX68e",
+                  "name": "aboutDesc",
+                  "fill": "$corail",
+                  "content": "MI HISTORIA",
+                  "lineHeight": 1.4,
+                  "fontFamily": "AC Real Adult",
+                  "fontSize": 14,
+                  "fontWeight": "500",
+                  "letterSpacing": 2.5
+                },
+                {
+                  "type": "text",
+                  "id": "Y4oYM",
+                  "name": "aboutDesc2",
+                  "fill": "$blanc",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Siempre tuve un pie en dos mundos: el racional… y el emocional.\n\nCon el bachillerato científico en mano, me orienté hacia la psicología — porque entender a las personas siempre me fascinó. Luego me hice profesora de matemáticas, y ahí entendí algo esencial: el problema nunca son las mates. Es la confianza, la organización, el método.\n\nDespués, trabajé en ventas y atención al cliente. Ahí aprendí el rigor, la escucha y el arte de transformar una necesidad en una solución concreta.\n\nHoy, combino todo eso.\n\nAyudo a emprendedores a poner orden, sentido y fluidez en su actividad — con lucidez, ligereza y una verdadera comprensión de lo que pasa en su cabeza y en su negocio.",
+                  "lineHeight": 1.8,
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 17,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ukGle",
+          "name": "Photo Strip",
+          "clip": true,
+          "width": "fill_container",
+          "height": 280,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "./fotos/Julie corpo 29-01-202622445r.jpg",
+            "mode": "fill"
+          }
+        },
+        {
+          "type": "frame",
+          "id": "2cMrU",
+          "name": "philo",
+          "width": "fill_container",
+          "fill": "$beige-chaud",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": 80,
+          "children": [
+            {
+              "type": "text",
+              "id": "e90wN",
+              "name": "philoTitle",
+              "fill": "$bleu-fonce",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Mi forma de ver el trabajo",
+              "textAlign": "center",
+              "fontFamily": "TAN Meringue",
+              "fontSize": 42,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "cUZW5",
+              "name": "philoGrid",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nXLXv",
+                  "name": "row1",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "m6005",
+                      "name": "q1",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "lRvBZ",
+                          "name": "epi1",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "zap",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "C45nn",
+                          "name": "q1text",
+                          "fill": "$bleu-fonce",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "\"Si sabes algo pero no lo aplicas, entonces realmente no lo sabes.\"",
+                          "lineHeight": 1.4,
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 22,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "X6ws9",
+                          "name": "q1desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Demasiado a menudo acumulamos conocimientos sin ponerlos en práctica. Mi rol es escucharte, desafiarte y ayudarte a pasar a la acción de manera concreta.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XXVNx",
+                      "name": "q2",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "ttXFF",
+                          "name": "epi2",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "heart-handshake",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "0duuJ",
+                          "name": "q2text",
+                          "fill": "$bleu-fonce",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "\"¡Se pule!\"",
+                          "lineHeight": 1.4,
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 22,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "EZqrL",
+                          "name": "q2desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Porque cada acción que realizas puede ser reutilizada y optimizada. Una buena idea, un buen contenido, un buen proceso: se adapta, se mejora, se sistematiza. Nada debe perderse.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pANzI",
+                  "name": "row2",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "dtz4i",
+                      "name": "q3",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "zlhsW",
+                          "name": "epi3",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "rocket",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "4gibQ",
+                          "name": "q3text",
+                          "fill": "$bleu-fonce",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "\"Tu empresa no debe ser una prisión, sino un trampolín.\"",
+                          "lineHeight": 1.4,
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 22,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "0Bdfr",
+                          "name": "q3desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Creaste tu empresa para darte libertad, no para estar sumergido/a en tareas. Juntos, implementamos estrategias que liberan tiempo y energía.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lz7A3",
+                      "name": "q4",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "o7D9J",
+                          "name": "epi4",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "puzzle",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "F13CI",
+                          "name": "q4title",
+                          "fill": "$bleu-fonce",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "\"¡El objetivo, siempre el objetivo!\"",
+                          "lineHeight": 1.4,
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 22,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "JB7EG",
+                          "name": "q4desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Dispersarse es fácil. Pero si cada acción está guiada por un objetivo preciso, todo se vuelve más claro. Mi rol es recentrarte en cada etapa.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DfnCe",
+                  "name": "row3",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "0KF94",
+                      "name": "q5",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "6jGZw",
+                          "name": "epi5",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "lightbulb",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VoP3I",
+                          "name": "q5title",
+                          "fill": "$bleu-fonce",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "\"Automatizar es liberar tiempo para lo esencial: crear, vender y respirar.\"",
+                          "lineHeight": 1.4,
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 22,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "7SYNd",
+                          "name": "q5desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Te ayudo a implementar procesos y herramientas que simplifican tu día a día para que puedas concentrarte en lo que realmente importa.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2S2vx",
+                      "name": "q6",
+                      "width": "fill_container",
+                      "fill": "$blanc",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "qva2f",
+                          "name": "epi6",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "target",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uTs38",
+                          "name": "q6title",
+                          "fill": "$bleu-fonce",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "\"Me encanta, lo adopto\"",
+                          "lineHeight": 1.4,
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 22,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "X89lT",
+                          "name": "q6desc",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Si leo, escucho, veo o entiendo un consejo que me encanta, lo adopto inmediatamente. Sin filtro, sin demora.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "j2VH9",
+                  "name": "row4",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "AaOWp",
+                      "name": "q7",
+                      "width": "fill_container",
+                      "fill": "$bleu-fonce",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "22pW8",
+                          "name": "epi7",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "sparkles",
+                          "iconFontFamily": "lucide",
+                          "fill": "$corail"
+                        },
+                        {
+                          "type": "text",
+                          "id": "CKbPl",
+                          "name": "q7title",
+                          "fill": "$blanc",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "\"Encuentra tus cajas de Pandora, ábrelas, gestiona lo que hay dentro y ciérralas.\"",
+                          "lineHeight": 1.4,
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 22,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "41PLB",
+                          "name": "q7desc",
+                          "fill": "$blanc",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Todas las cosas que evitas, que te dan miedo, que te hacen decir «ah sí, eso no está muy claro» — ahí es donde empieza mi trabajo.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "8wnGB",
+          "name": "footer",
+          "width": "fill_container",
+          "fill": "$bleu-fonce",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            48,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "3jK6o",
+              "name": "footerTop",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "4gwfM",
+                  "name": "footerBrand",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "7mo7V",
+                      "name": "footerLogo",
+                      "fill": "$blanc",
+                      "content": "Lisa Lavigne",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "4cZfI",
+                      "name": "footerTagline",
+                      "fill": "$beige-fonce",
+                      "content": "Consultora en estructuración de negocios",
+                      "fontFamily": "AC Real Adult",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pPv5V",
+                  "name": "footerNav",
+                  "gap": 48,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rMbdx",
+                      "name": "footerCol1",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Sdl4D",
+                          "name": "fc1title",
+                          "fill": "$corail",
+                          "content": "Navegación",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "PeGh0",
+                          "name": "fc1l1",
+                          "fill": "$beige-fonce",
+                          "content": "Inicio",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Yzvex",
+                          "name": "fc1l2",
+                          "fill": "$beige-fonce",
+                          "content": "Servicios",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ksnJE",
+                          "name": "fc1l3",
+                          "fill": "$beige-fonce",
+                          "content": "Testimonios",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kLyKb",
+                          "name": "fc1l4",
+                          "fill": "$beige-fonce",
+                          "content": "Sobre mí",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Uf0Xm",
+                      "name": "footerCol2",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "bAaEx",
+                          "name": "fc2title",
+                          "fill": "$corail",
+                          "content": "Contacto",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "IxzwA",
+                          "name": "fc2l1",
+                          "fill": "$beige-fonce",
+                          "content": "LinkedIn",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FzlFs",
+                          "name": "fc2l2",
+                          "fill": "$beige-fonce",
+                          "content": "Instagram",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "EhA0s",
+                          "name": "fc2l3",
+                          "fill": "$beige-fonce",
+                          "content": "Email",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gCs62",
+              "name": "footerBottom",
+              "width": "fill_container",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VCAly",
+                  "name": "copyright",
+                  "fill": "#FFFFFF60",
+                  "content": "© 2026 Lisa Lavigne. Todos los derechos reservados.",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OwSQD",
+      "x": 26,
+      "y": 0,
+      "name": "Paleta 4 - Rojo #FF5757",
+      "width": 1440,
+      "fill": "#f8f3f3",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "CxRV5",
+          "name": "Header",
+          "width": "fill_container",
+          "padding": [
+            20,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "U75Rc",
+              "name": "Logo",
+              "clip": true,
+              "width": 80,
+              "height": 80,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "GNzSb",
+              "name": "nav",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yrsch",
+                  "name": "nav1",
+                  "fill": "$gris-texte",
+                  "content": "Beneficios",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "CwUUZ",
+                  "name": "nav2",
+                  "fill": "$gris-texte",
+                  "content": "Cómo trabajo",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "7EgDS",
+                  "name": "nav4",
+                  "fill": "$gris-texte",
+                  "content": "Testimonios",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "32xP1",
+                  "name": "ctaBtn",
+                  "fill": "#FF5757",
+                  "cornerRadius": 8,
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Dbwe5",
+                      "name": "ctaText",
+                      "fill": "$blanc",
+                      "content": "Reservar una llamada",
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jUDsW",
+          "name": "Hero",
+          "width": "fill_container",
+          "fill": "#f8f3f3",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": 80,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "QqP1k",
+              "name": "Hero Wrapper",
+              "width": "fill_container",
+              "gap": 60,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "l1z11",
+                  "name": "Hero Text",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "0o9Mm",
+                      "name": "heroTitle",
+                      "fill": "#1E293B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Estructuramos donde se atasca,",
+                      "lineHeight": 1.1,
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 44,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ScFMT",
+                      "name": "heroTitle2",
+                      "fill": "#FF5757",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Decidimos donde se estanca",
+                      "lineHeight": 1.1,
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 44,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PakX6",
+                      "name": "heroCtas",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "cOOBG",
+                          "name": "heroCta1",
+                          "fill": "#FF5757",
+                          "cornerRadius": 8,
+                          "padding": [
+                            16,
+                            32
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "55nkP",
+                              "name": "heroCta1Text",
+                              "fill": "$blanc",
+                              "content": "Agenda tu llamada",
+                              "fontFamily": "TT Commons Pro",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "T927F",
+                  "name": "Hero Image",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "adeleshafiee",
+                    "link": "https://unsplash.com/@adeleshafiee",
+                    "author": "Adele Shafiee"
+                  },
+                  "clip": true,
+                  "width": 420,
+                  "height": 480,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "tmpbegl5vqq.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 12,
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "55uF2",
+                      "layoutPosition": "absolute",
+                      "x": 0,
+                      "y": 292,
+                      "name": "grad",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 180,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#FFF4EF00",
+                            "position": 0
+                          },
+                          {
+                            "color": "#fdefe7",
+                            "position": 1
+                          }
+                        ]
+                      },
+                      "width": 420,
+                      "height": 200
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "i32B7",
+              "name": "Hero Blocks",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yTwyA",
+                  "name": "esIntro",
+                  "fill": "$gris-texte",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Acompaño a solopreneurs (y dúos) que alcanzan su primer techo de cristal.",
+                  "lineHeight": 1.7,
+                  "textAlign": "center",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "4k0Mb",
+                  "name": "title",
+                  "fill": "#1E293B",
+                  "content": "Rompiendo el Techo de Cristal",
+                  "textAlign": "center",
+                  "fontFamily": "TAN Meringue",
+                  "fontSize": 28,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "vUIVO",
+                  "name": "Acompaño a solopreneurs (y dúos) que alcanzan su primer techo de cristal. - visual selection.svg",
+                  "clip": true,
+                  "width": 864,
+                  "height": 260,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "Glt0P",
+                      "x": 0,
+                      "y": -210,
+                      "children": [
+                        {
+                          "type": "group",
+                          "id": "OMUNA",
+                          "x": 0,
+                          "y": 0,
+                          "children": [
+                            {
+                              "type": "group",
+                              "id": "bCge7",
+                              "x": 266,
+                              "y": 398.01,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "RLRVX",
+                                  "x": 10,
+                                  "y": 10.000030517578125,
+                                  "geometry": "M0 5.99697c3.73294-0.00075 7.24958-1.75167 9.5-4.73 0.58395-0.79643 1.51243-1.26697 2.5-1.26697 0.98757 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51243-1.26697 2.5-1.26697 0.98757 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51243-1.26697 2.5-1.26697 0.98757 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51243-1.26697 2.5-1.26697 0.98757 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51243-1.26697 2.5-1.26697 0.98757 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51244-1.26697 2.5-1.26697 0.98756 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51244-1.26697 2.5-1.26697 0.98756 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51244-1.26697 2.5-1.26697 0.98756 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51244-1.26697 2.5-1.26697 0.98756 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24892-1.74969 9.5-4.72682 0.58395-0.79643 1.51244-1.26697 2.5-1.26697 0.98756 0 1.91605 0.47054 2.5 1.26697 2.25108 2.97713 5.76762 4.72682 9.5 4.72682 3.73238 0 7.24893-1.74969 9.5-4.72682 0.58395-0.79643 1.51242-1.26697 2.5-1.26697 0.98758 0 1.91605 0.47054 2.5 1.26697 2.25107 2.97713 5.76761 4.72682 9.5 4.72682 3.73239 0 7.24893-1.74969 9.5-4.72682 0.58395-0.79643 1.51242-1.26697 2.5-1.26697 0.98758 0 1.91605 0.47054 2.5 1.26697 2.25107 2.97713 5.76761 4.72682 9.5 4.72682 3.73239 0 7.24893-1.74969 9.5-4.72682 0.58395-0.79643 1.51242-1.26697 2.5-1.26697 0.98758 0 1.91605 0.47054 2.5 1.26697 2.25104 2.9772 5.76758 4.72696 9.5 4.727",
+                                  "width": 312,
+                                  "height": 5.996969223022461,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#1E293B"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "sKBk5",
+                              "x": 14,
+                              "y": 248.005,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "ZBzQ4",
+                                  "x": 46,
+                                  "y": 10,
+                                  "geometry": "M0 156l216 0-20-13.5 7-41-8.5-6.5-6-38.5-8.5-5.5 0.34-51-23.773 0-25.061 9.36-5.844 4.12-17.167 1.43-35.47101 33.32 0 6.71-36.23499 19.62-14.224 57.83-20.099 14.36-2.466 9.25z",
+                                  "fill": "#1E293B",
+                                  "width": 216,
+                                  "height": 156
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "juZEU",
+                              "x": 14,
+                              "y": 248.005,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "jH8eu",
+                                  "x": 10,
+                                  "y": 10,
+                                  "geometry": "M36 156l-36 0m36 0l216 0-71.32001-48-16.938 3.23-25.319-29.76999 13.284-10.73-7.21201-11.1 28.924-37.82 16.037-4.21 26.88402-17.60001-23.773 0-25.061 9.36-5.844 4.12-17.167 1.43-35.47101 33.32 0 6.71-36.23499 19.62-14.224 57.83-20.098 14.36-2.467 9.25z m26-36l7.57 0 33.13 35.79001m86.16-138.19001l7.59 22.02 28.27 16.66 6.39 39.32 7.72 5.61-6.64999 41.58001m-38.45-77.56l9.2 4.88 21.78999-13.83m-168.72 86.54999l2.59-10.44m10.41-12.39l-1.68 24.04001m83.41999-73.31l0 19.5m21.92999-68.42l-4.24 71.49m0.86-14.5l25.36999 29.43m36.45-12.63l-13.52-9.83m-1.58997-85.77001l0 51.14m-13.07001 18.97l3.35001 36.91",
+                                  "width": 252,
+                                  "height": 156,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#f8f3f3"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "54Omz",
+                              "x": 578,
+                              "y": 248.005,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "HYqrB",
+                                  "x": 10,
+                                  "y": 10,
+                                  "geometry": "M216 156l-216 0 20-13.5-7-41 8.5-6.5 6-38.5 8.5-5.5-0.34-51 23.773 0 25.061 9.36 5.844 4.12 17.167 1.43 35.47101 33.32 0 6.71 36.235 19.62001 14.224 57.83 20.09801 14.36001 2.46698 9.24998z",
+                                  "fill": "#1E293B",
+                                  "width": 216,
+                                  "height": 156
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "6s2oh",
+                              "x": 578,
+                              "y": 248.005,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "wV6Cg",
+                                  "x": 10,
+                                  "y": 10,
+                                  "geometry": "M216 156l36 0m-36 0l-216 0 71.32-48 16.938 3.23 25.319-29.76999-13.284-10.73 7.212-11.1-28.925-37.82001-16.037-4.21-26.883-17.6 23.773 0 25.061 9.36 5.84401 4.12 17.16699 1.43 35.47101 33.32 0 6.71 36.235 19.62001 14.224 57.83 20.099 14.36001 2.46599 9.24998z m-26-36l-7.57001 0-33.13 35.79001m-86.15999-138.19001l-7.59 22.02-28.27 16.66-6.39 39.32-7.72 5.61 6.65 41.58001m38.45-77.56l-9.2 4.88-21.79-13.83m168.72 86.54999l-2.59-10.44m-10.41-12.39l1.67999 24.04001m-83.42-73.31l0 19.5m-21.92999-68.42001l4.24 71.49m-0.86-14.5l-25.37 29.43m-36.45-12.63l13.52-9.83m1.59-85.77l0 51.14m13.07 18.97l-3.35 36.91",
+                                  "width": 252,
+                                  "height": 156,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#f8f3f3"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "jH4xo",
+                              "x": 236,
+                              "y": 248.005,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "VmFRY",
+                                  "x": 10,
+                                  "y": 10,
+                                  "geometry": "M372 0l-372 0",
+                                  "width": 372,
+                                  "height": 0,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#1E293B"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "qcuRU",
+                              "x": 196,
+                              "y": 218.005,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "WbDL9",
+                                  "x": 10,
+                                  "y": 10,
+                                  "geometry": "M310 24.04l0 11.96m-168-11.96l0 11.96m291.54999-28.66c1.95498 0 3.54001-1.643 3.54001-3.67 0-2.027-1.585-3.67-3.54001-3.67-1.95502 0-3.54001 1.643-3.54001 3.67 0 2.027 1.58499 3.67 3.54001 3.67m0.75-0.08c0.99624 4.84241 1.33264 9.79737 1 14.73m-4.31998 8.01c1.5-6.6 4.41-9.11 4.41-9.11 0 0 1.34 2.38 2.43 9.11m-2.38001-11.59c-2.18539-0.09277-4.09421-1.50656-4.82-3.57-0.09211-0.23526-0.11637-0.49164-0.07001-0.74 0.45898-2.22781 2.01846-4.06979 4.14001-4.89 1.98203 0.18689 3.79529 1.19506 5 2.78 0.43003 0.56776 0.43003 1.35224 0 1.92-1.14609 1.6212-2.58392 3.01493-4.23999 4.11m-425.05001-9.68c2.02689 0 3.67-1.64312 3.67-3.67 0-2.02689-1.64311-3.67-3.67-3.67-2.02688 0-3.67 1.64311-3.67 3.67 0 2.02688 1.64312 3.67 3.67 3.67m0.53 0c0 0 4.86 8.15 0 21.11l4.52 0m-2.36-10.97l4.21-1c0.28216-0.06771 0.57969 0.00321 0.80097 0.19091 0.22129 0.1877 0.33979 0.46967 0.31903 0.75909l-0.46 6.38c-0.03295 0.26157 0.05176 0.52429 0.2313 0.71734 0.17954 0.19305 0.43543 0.29657 0.6987 0.28266 1.35215-0.17982 2.64684 0.60699 3.11 1.89m-22-16.79c4.52-1.69 12.07 0.21 12.07 0.21 2.78358-1.4161 6.07642-1.4161 8.86 0",
+                                  "width": 440.01251220703125,
+                                  "height": 36,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#1E293B"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "ycD8E",
+                              "x": 224,
+                              "y": 242.005,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "j5LOO",
+                                  "x": 10,
+                                  "y": 10,
+                                  "geometry": "M12 6c0 3.31371-2.68629 6-6 6-3.31371 0-6-2.68629-6-6 0-3.31371 2.68629-6 6-6 3.31371 0 6 2.68629 6 6",
+                                  "fill": "#FF5757",
+                                  "width": 12,
+                                  "height": 12
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "5Jv7R",
+                                  "x": 394,
+                                  "y": 10,
+                                  "geometry": "M12 6c0 3.31371-2.68628 6-6 6-3.31372 0-6-2.68629-6-6 0-3.31371 2.68628-6 6-6 3.31372 0 6 2.68629 6 6",
+                                  "fill": "#FF5757",
+                                  "width": 12,
+                                  "height": 12
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "Pyfrm",
+                              "x": 224,
+                              "y": 242.005,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "jEEZe",
+                                  "x": 10,
+                                  "y": 10,
+                                  "geometry": "M12 6c0 3.31371-2.68629 6-6 6-3.31371 0-6-2.68629-6-6 0-3.31371 2.68629-6 6-6 3.31371 0 6 2.68629 6 6",
+                                  "width": 12,
+                                  "height": 12,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#f8f3f3"
+                                  }
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "Nmumf",
+                                  "x": 394,
+                                  "y": 10,
+                                  "geometry": "M12 6c0 3.31371-2.68628 6-6 6-3.31372 0-6-2.68629-6-6 0-3.31371 2.68628-6 6-6 3.31372 0 6 2.68629 6 6",
+                                  "width": 12,
+                                  "height": 12,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#f8f3f3"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wEpB7",
+                  "name": "row",
+                  "width": "fill_container",
+                  "gap": 40,
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QoZ2h",
+                      "name": "col1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "NDmjC",
+                          "name": "ic1",
+                          "width": 28,
+                          "height": 28,
+                          "iconFontName": "glass-water",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FF5757"
+                        },
+                        {
+                          "type": "text",
+                          "id": "56JHA",
+                          "name": "t1",
+                          "fill": "#1E293B",
+                          "content": "El techo de cristal",
+                          "textAlign": "center",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kawkT",
+                          "name": "d1",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "El flujo de clientes aumenta, las decisiones se acumulan y el funcionamiento empieza a mostrar sus límites.",
+                          "lineHeight": 1.5,
+                          "textAlign": "center",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "U3E0F",
+                      "name": "col2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "PspSb",
+                          "name": "ic2",
+                          "width": 28,
+                          "height": 28,
+                          "iconFontName": "compass",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FF5757"
+                        },
+                        {
+                          "type": "text",
+                          "id": "OgpVZ",
+                          "name": "t2",
+                          "fill": "#1E293B",
+                          "content": "Mi rol: Estructurar",
+                          "textAlign": "center",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "o28a6",
+                          "name": "d2",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Ayudarte a estructurar tu negocio sin desnaturalizarlo. Oferta, Venta, Organización: todo se trabaja.",
+                          "lineHeight": 1.5,
+                          "textAlign": "center",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OG3OF",
+                      "name": "col3",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "H2cp7",
+                          "name": "ic3",
+                          "width": 28,
+                          "height": 28,
+                          "iconFontName": "circle-check",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FF5757"
+                        },
+                        {
+                          "type": "text",
+                          "id": "3Lp19",
+                          "name": "t3",
+                          "fill": "#1E293B",
+                          "content": "El resultado",
+                          "textAlign": "center",
+                          "fontFamily": "TAN Meringue",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "C53Ho",
+                          "name": "d3",
+                          "fill": "$gris-texte",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Reflexionamos juntos, decidimos juntos, y te vas con decisiones claras y acciones concretas.",
+                          "lineHeight": 1.5,
+                          "textAlign": "center",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cWTig",
+          "name": "Bénéfices",
+          "width": "fill_container",
+          "fill": "#1E293B",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "children": [
+            {
+              "type": "frame",
+              "id": "HYYHM",
+              "name": "benefitsHeader",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3Ezaz",
+                  "name": "benefitsTitle",
+                  "fill": "$blanc",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Si estás buscando...",
+                  "textAlign": "center",
+                  "fontFamily": "TAN Meringue",
+                  "fontSize": 40,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "6Q92V",
+              "name": "contentRow",
+              "width": "fill_container",
+              "gap": 48,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "rppBK",
+                  "name": "Frame",
+                  "clip": true,
+                  "width": 550,
+                  "height": 350,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "0Rx0y",
+                      "x": 0,
+                      "y": -116,
+                      "children": [
+                        {
+                          "type": "group",
+                          "id": "IJ9b2",
+                          "x": 0,
+                          "y": 0,
+                          "children": [
+                            {
+                              "type": "group",
+                              "id": "npn0T",
+                              "x": 254.262,
+                              "y": 116,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "LvHdX",
+                                  "x": 35.01416778564453,
+                                  "y": 10,
+                                  "geometry": "M1.14883 138.44501c3.27 5.46299 17.19 3.266 17.996 5.46299 1.594 4.34801 1.122 9.79801-0.806 11.97901-1.928 2.181-4.835 5.087 2.986 12.701-2.18 0.584-5.764 4.01401-1.776 12.008 0.703 1.40899 3.039 3.99699 1.19 8.358-1.849 4.36-1.594 21.049 15.993 21.049 42.173 0.515 42.548 30.906 33.09099 52.352l101.98202 0c-3.18701-6.49701-8.59-18.58499-10.52902-32.40201-0.54401-3.901-0.85199-7.65699-0.823-11.42599 0.19202-16.648 7.13699-33.51801 29.53201-64.012 18.79599-25.595 23.72901-53.64199 18.51801-78.70999-8.73801-42.05402-46.021-75.80502-94.43601-75.80502-55.933 0-97.005 29.41-95.728 82.391 0.323 13.45 2.939 16.892-1.928 26.25699-1.913 3.68001-5.707 11.05901-9.085 14.59801-5.218 5.467-9.447 9.735-6.177 15.19901",
+                                  "fill": "#5B7B95",
+                                  "width": 210.4515609741211,
+                                  "height": 262.3550109863281
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "KsfSv",
+                              "x": 254.262,
+                              "y": 116,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "xxAwR",
+                                  "x": 10,
+                                  "y": 10,
+                                  "geometry": "M26.163 138.44501c3.27 5.46299 17.19 3.266 17.996 5.46299 1.594 4.34801 1.122 9.79801-0.806 11.97901-1.928 2.181-4.835 5.087 2.986 12.7-2.18 0.585-5.764 4.015-1.776 12.009 0.703 1.40899 3.04 3.99699 1.18999 8.35699-1.85 4.36-1.594 21.05001 15.99301 21.05001 42.17299 0.515 42.54799 30.906 33.09 52.352l101.98401 0c-3.187-6.49701-8.59-18.58499-10.53-32.40201-0.543-3.901-0.85001-7.65699-0.82201-11.427 0.192-16.647 7.137-33.517 29.532-64.01001 18.79601-25.59601 23.729-53.643 18.51801-78.711-8.739-42.05499-46.02201-75.80499-94.43801-75.80499-55.933 0-97.005 29.41-95.728 82.39 0.323 13.45 2.94 16.893-1.928 26.25799-1.913 3.68001-5.707 11.06-9.085 14.59801-5.218 5.467-9.447 9.735-6.177 15.19901m115.909-46.488c2.03046 0.00551 3.67276 1.65453 3.67 3.68499 0 3.542-2.877 6.43-6.405 6.43-3.53 0-6.40601-2.888-6.40601-6.43 0-5.052 4.097-9.177 9.14-9.177 5.045 0 9.142 4.113 9.142 9.177 0 6.573-5.328 11.91-11.86501 11.91-6.53599 0-11.865-5.349-11.865-11.91 0-8.083 6.549-14.657 14.60001-14.657 8.05299 0 14.60099 6.574 14.60099 14.657 0 9.592-7.768 17.39-17.324 17.39-9.556 0-17.32401-7.798-17.32401-17.39 0-11.103 9-20.137 20.06-20.137 11.06 0 20.05901 9.034 20.05901 20.137 0 12.612-10.22 22.882-22.795 22.882-12.575 0-22.794-10.258-22.794-22.882 0-14.122 11.45-25.616 25.518-25.616 14.067 0 25.518 11.494 25.518 25.616 0 15.643-12.67 28.362-28.254 28.362-15.583 0-28.25299-12.72-28.25299-28.362 0-17.153 13.902-31.108 30.989-31.108 17.08701 0 30.98801 13.955 30.98801 31.108 0 18.662-15.12 33.84199-33.71201 33.84199-18.58999 0-33.712-15.18-33.712-33.84199 0-20.172 16.35299-36.588 36.448-36.588 20.095 0 36.447 16.416 36.447 36.588 0 21.681-17.572 39.33301-39.183 39.33301-21.61 0-39.183-17.64-39.183-39.333 0-23.192 18.80401-42.068 41.907-42.068 23.103 0 41.90599 18.876 41.90599 42.068 0 24.713-20.024 44.81299-44.642 44.81299-24.61799 0-44.64099-20.1-44.64099-44.813 0-26.223 21.25499-47.548 47.36499-47.548 26.11 0 47.36501 21.337 47.36501 47.548 0 27.73199-22.47501 50.293-50.09999 50.293-27.626 0-50.1-22.56101-50.1-50.293 0-29.242 23.694-53.04 52.835-53.04 29.14101 0 52.836 23.798 52.836 53.04 0 30.75101-24.926 55.77299-55.56 55.77299-30.633 0-55.547-25.00999-55.547-55.761 0-32.273 26.146-58.52 58.295-58.52 32.149 0 58.29401 26.247 58.29401 58.52 0 32.272-27.377 61.26401-61.03 61.26401-33.653 0-61.01801-27.494-61.01801-61.264 0-33.77 28.597-64.011 63.754-64.011 35.157 0 63.75299 28.707 63.75299 63.999 0 35.29199-29.828 66.744-66.489 66.744-36.66 0-66.489-29.93001-66.48899-66.732 0-36.80199 31.06-69.49 69.225-69.49 38.16501 0 69.21201 31.166 69.21201 69.49 0 38.324-32.28 72.22399-71.948 72.22399-14.5 0-28.012-4.33-39.321-11.767-35.86301-23.588-59.61201-70.09299-100.03801-84.52599",
+                                  "width": 235.46673583984375,
+                                  "height": 262.3550109863281,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#fff"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "ZdTw7",
+                              "x": 15,
+                              "y": 116,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "TbFqE",
+                                  "x": 10.000127792358398,
+                                  "y": 10,
+                                  "geometry": "M209.30188 138.44501c-3.27 5.46299-17.189 3.266-17.995 5.46299-1.595 4.34801-1.123 9.79801 0.806 11.97901 1.928 2.17999 4.83501 5.087-2.98599 12.701 2.17999 0.584 5.76401 4.01401 1.775 12.008-0.70301 1.40899-3.03901 3.99699-1.19001 8.358 1.85001 4.36 1.595 21.049-15.992 21.049-42.174 0.515-42.549 30.906-33.091 52.352l-101.98301 0c3.187-6.49701 8.59-18.58499 10.53-32.40201 0.543-3.901 0.851-7.65699 0.822-11.42599-0.192-16.648-7.137-33.51801-29.531-64.012-18.797-25.595-23.729-53.64199-18.518-78.70999 8.737-42.05402 46.021-75.80502 94.435-75.80502 55.93301 0 97.00601 29.41 95.72901 82.391-0.324 13.45-2.94 16.892 1.928 26.25699 1.912 3.68001 5.70599 11.05901 9.084 14.59801 5.218 5.467 9.448 9.735 6.177 15.19901",
+                                  "fill": "#FF5757",
+                                  "width": 210.4511203765869,
+                                  "height": 262.3550109863281
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "id": "QFElm",
+                              "x": 15,
+                              "y": 116,
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "qsZmp",
+                                  "x": 9.999710083007812,
+                                  "y": 10,
+                                  "geometry": "M209.30229 138.44501c-3.27 5.46299-17.19 3.266-17.99499 5.46299-1.594 4.34801-1.122 9.79801 0.806 11.97901 1.92799 2.181 4.835 5.087-2.986 12.7 2.18 0.585 5.76401 4.015 1.775 12.009-0.703 1.40899-3.039 3.99699-1.19 8.35699 1.84899 4.36 1.595 21.05001-15.99201 21.05001-42.17399 0.515-42.54899 30.906-33.091 52.352l-101.983 0c3.188-6.49701 8.59-18.58499 10.53-32.40201 0.543-3.901 0.851-7.65699 0.822-11.427-0.192-16.647-7.137-33.517-29.531-64.01001-18.797-25.59601-23.73-53.643-18.518-78.711 8.737-42.05499 46.02-75.80499 94.435-75.80499 55.933 0 97.006 29.41 95.72901 82.39-0.32401 13.45-2.94001 16.893 1.92799 26.25799 1.912 3.68001 5.70599 11.06 9.084 14.59801 5.218 5.467 9.448 9.735 6.177 15.19901m-83.00101-104.46901c-7.587-0.088-13.514 2.147-18.14399 5.736-14.652-20.19-44.825-8.715-51.197 5.415-1.34 2.968-2.03 5.857-2.207 8.68-12.133 11.41-16.182 26.886-11.615 39.193-5.56 2.578-9.602 7.212-11.553 15.07-4.55 18.338 18.542 33.715 34.92499 26.507 3.55 5.56599 9.693 9.033 16.614 10.253q0.434 1.39301 1.10501 2.73601c5.55 11.084 26.16999 14.536 44.05199 0.66 8.14301-6.322 12.224-13.293 13.468-19.79699 9.792-7.60801 16.543-18.11701 19.01601-28.917 3.212-14.027 0.972-25.522-3.895-33.767 0.77-15.453-12.273-31.553-30.57001-31.769m-34.61699 51.99398c0 0-0.18-6.034 0.996-13.991m0 0c0.892-6.035 2.564-13.177 5.685-19.62999m-5.685 19.62999c-3.648-0.72-7.3-1.093-10.872-0.87m10.872 0.87c3.025 0.597 6.048 1.433 9.02001 2.367m-3.335-21.998q0.66-1.366 1.40799-2.683m-1.40799 2.683c0.9346-0.41672 1.89215-0.77998 2.86799-1.088m-2.868 1.088c-1.24538 0.55483-2.44859 1.19988-3.6 1.93-6.285 3.981-10.585 10.02-12.957 16.83m17.965-21.443c2.167-3.806 4.91001-7.26 8.38501-9.953 1.10833 1.53675 2.08226 3.16611 2.91099 4.87 0.88127 1.79095 1.59304 3.66043 2.126 5.584m-13.422-0.501c-9.112-8.919-27.797-10.25-42.66 2.06-0.80797 0.66908-1.5947 1.36342-2.359 2.082-0.558 8.94 4.043 17.216 9.53299 25.223m35.486-29.365q0.779 0.761 1.46 1.595m21.81301 42.038c2.20428-0.28381 4.39505-0.66418 6.56599-1.14 18.728-4.135 26.694-15.1 27.25901-26.413-6.51801-11.041-17.74601-16.256-26.905-13.924-1.91401 0.488-3.502 1.177-4.81 2.046m-2.11 39.43c-6.795 0.883-13.736 0.924-20.612 0.55899m20.612-0.55799c0.406 3.285 0.705 6.633 0.78 9.993m-0.78-9.993c-0.538-4.353-1.263-8.597-1.90199-12.612m-18.71 13.17c-5.6-0.298-11.157-0.865-16.555-1.467m16.555 1.467c3.06199-5.458 5.90799-10.992 8.053-16.535m-8.053 16.535c-2.184 3.893-4.477 7.748-6.70201 11.53701m-9.85299-13.004q-2.842-0.32-5.618-0.637m5.618 0.637c6.178-5.839 12.171-11.794 15.82199-18.043m-15.822 18.04399c-1.478 1.397-2.967 2.788-4.43801 4.174m-1.18-4.811c-2.52193-0.29084-5.046-0.56285-7.57199-0.816m7.572 0.816c-1.232-6.832-0.734-14.094 1.547-20.643m-1.547 20.643c0.29356 1.6265 0.68764 3.23325 1.18 4.811m-8.752-5.627c-4.963-0.487-9.68-0.819-14.042-0.771m14.042 0.771c2.02 2.984 3.86 5.958 5.28 8.943m-5.28-8.943c-2.664-3.934-5.645-7.887-8.402-11.90599m-5.64 11.135c-5.912 0.064-11.172 0.824-15.508 2.835 1.963 5.291 5.52 9.997 10.71201 13.54 1.947 1.329 4.094 2.231 6.40599 2.79799m-1.61-19.173c-1.188 5.8-0.682 12.551 1.61 19.173m-1.61-19.173c0.9-4.387 2.767-8.23 5.56601-11.06l0.07399-0.07499m9.73001 49.932c-2.207 2.567-4.762 4.407-7.506 5.61501-1.879-2.94701-3.031-6.482-3.188-10.584-0.078-2.05499 0.282-4.086 0.99199-6.1m9.70201 11.06899c2.79-3.24699 5.022-7.656 6.36699-13.413 0.546-2.337 0.62-4.646 0.326-6.936m-6.693 20.349c2.65073 2.15395 5.53558 4.0026 8.6 5.51099m-8.6-5.511c-3.83258-3.11873-7.11246-6.86075-9.702-11.069m16.395-9.28c-0.378-2.936-1.363-5.84-2.74-8.734m2.74 8.734c2.049-0.39 4.135-0.832 6.247-1.293m-6.247 1.293c-4.204 0.801-8.253 1.388-12.042 1.495m9.302-10.229c1.14864-1.11405 2.30567-2.21942 3.471-3.316m-3.471 3.316c-3.51 3.41201-6.76 6.81-9.302 10.23m-4.38-31.08c5.304-5.33 11.291-7.531 17.52001-7.92m31.387-20.943c2.456 8.866 0.82599 18.021-2.708 27.155m2.708-27.155c4.25599 0.485 8.34099 1.826 11.962 3.701m-11.962-3.701c-3.918-0.446-7.982-0.166-11.962 1.094m9.254 26.06c-2.845-0.993-5.79-2.033-8.78601-2.974m8.78601 2.975c3.764 1.314 7.35299 2.547 10.657 3.365m-25.41201 24.707c-1.34235 2.27437-2.66241 4.56181-3.96 6.862m3.96-6.862c9.54-2.026 19.25-3.617 28.094-2.102m-28.09401 2.102c-2.952 0.627-5.887 1.29599-8.775 1.927m4.81501 4.935c-4.402 7.84599-8.015 15.332-9.155 22.218m9.155-22.218c-1.79426-1.44907-3.41052-3.10562-4.815-4.935m4.815 4.935c1.35359 1.08971 2.80743 2.04866 4.342 2.864 8.826 4.684 17.437 5.548 25.935 3.95001m-39.432 15.404c-0.6 3.631-0.513 7.09501 0.50801 10.357 7.896 1.393 16.805-0.13699 24.032-4.804m-24.54001-5.553c3.079 1.52001 6.456 2.77001 10.138 3.683 4.967 1.23101 9.77999 1.82601 14.40201 1.87m31.99299-27.15c2.554 4.277 3.71401 9.728 2.60001 15.553-9.193 7.142-21.066 11.72799-34.593 11.597m31.99299-27.15c-2.248-3.765-5.57699-6.62001-9.38499-8.019-1.92789-0.7017-3.9158-1.22588-5.93901-1.56601m15.324 9.585c-5.669 2.908-11.35899 5.112-17.1 6.192m17.1-6.192c36.55501-18.757 52.133-53.909 99.22301-41.291m-114.54701 31.704c0.11799 5.297-0.32001 10.623-1.777 15.777m-35.092-11.747c-2.445-3.172-4.287-6.838-5.516-10.757m-12.773 13.545c-2.98 0.084-5.8-0.13-8.41-0.76999m8.41001 0.76999c-1.916 2.57701-3.43 5.167-4.353 7.78501m-4.058-8.555c1.03734 2.99082 2.39806 5.85948 4.05799 8.55499m36.918-66.633c2.09201 2.559 3.474 5.616 3.904 9.06199 0.607 4.871-0.807 9.524-3.436 14.024m5.45601 65.68001c1.98246-1.27647 3.80915-2.77997 5.44299-4.47999 4.878-5.086 7.81-10.67301 9.45-16.478m-0.90601-38.382c-1.925-12.088-3.07201-22.107 4.013-26.81901m-4.013 26.819c8.22 2.034 14.666 1.49 17.606-6.803 2.276-6.422-4.046-15.072-13.593-20.016",
+                                  "width": 238.37229919433594,
+                                  "height": 262.3550109863281,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 2,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "#fff"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EOXKQ",
+                  "name": "rightList",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Rg2qw",
+                      "name": "b1",
+                      "width": "fill_container",
+                      "fill": "#FF575715",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": {
+                          "left": 2
+                        },
+                        "fill": "#FF5757"
+                      },
+                      "gap": 16,
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "sMnLt",
+                          "name": "b1icon",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "target",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FF5757"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "fih6F",
+                          "name": "b1text",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Ae3eT",
+                              "name": "b1title",
+                              "fill": "$blanc",
+                              "content": "Coherencia",
+                              "fontFamily": "TAN Meringue",
+                              "fontSize": 20,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "pEeLw",
+                              "name": "b1desc",
+                              "fill": "#f6eedf",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Lo que ofreces, lo que vendes y la forma en que trabajas están por fin alineados.\nSe acabó la diferencia entre tu discurso y la realidad de tu día a día.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "TT Commons Pro",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "t0qu1",
+                      "name": "b2",
+                      "width": "fill_container",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": {
+                          "left": 2
+                        },
+                        "fill": "#FF5757"
+                      },
+                      "gap": 16,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "2NDoS",
+                          "name": "b2icon",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "zap",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FF5757"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "8JNAf",
+                          "name": "b2text",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "VVGKd",
+                              "name": "b2title",
+                              "fill": "$blanc",
+                              "content": "Fluidez",
+                              "fontFamily": "TAN Meringue",
+                              "fontSize": 20,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "e9QjO",
+                              "x": 0,
+                              "y": 31,
+                              "name": "b2desc",
+                              "enabled": false,
+                              "fill": "#f6eedf",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container(618)",
+                              "content": "Tu recorrido de cliente se vuelve claro, lógico y bajo control.\nMenos confusión, menos idas y vueltas, una experiencia más simple — para ti y para tu cliente.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "TT Commons Pro",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lFvQl",
+                      "name": "b3",
+                      "width": "fill_container",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": {
+                          "left": 2
+                        },
+                        "fill": "#FF5757"
+                      },
+                      "gap": 16,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "Oiokf",
+                          "name": "b3icon",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "timer",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FF5757"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "DbUKi",
+                          "name": "b3text",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "2UlJS",
+                              "name": "b3title",
+                              "fill": "$blanc",
+                              "content": "Ahorrar tiempo",
+                              "fontFamily": "TAN Meringue",
+                              "fontSize": 20,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "6DDdh",
+                              "x": 0,
+                              "y": 31,
+                              "name": "b3desc",
+                              "enabled": false,
+                              "fill": "#f6eedf",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container(618)",
+                              "content": "Dejas de empezar desde cero en cada proyecto.\nTus procesos están definidos, estructurados y son lo suficientemente sólidos como para ahorrarte tiempo en el día a día.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "TT Commons Pro",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zLF0V",
+                      "name": "b4",
+                      "width": "fill_container",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": {
+                          "left": 2
+                        },
+                        "fill": "#FF5757"
+                      },
+                      "gap": 16,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "4qc0R",
+                          "name": "b4icon",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "trending-up",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FF5757"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "BcXFF",
+                          "name": "b4text",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fteaw",
+                              "name": "b4title",
+                              "fill": "$blanc",
+                              "content": "Aumentar facturación",
+                              "fontFamily": "TAN Meringue",
+                              "fontSize": 20,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "i1zKP",
+                              "x": 0,
+                              "y": 31,
+                              "name": "b4desc",
+                              "enabled": false,
+                              "fill": "#f6eedf",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container(618)",
+                              "content": "Tus ofertas son claras, asumidas y más fáciles de vender.\nHaces seguimiento sin fricción y facturas con más tranquilidad.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "TT Commons Pro",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "O9xez",
+                      "name": "b5",
+                      "width": "fill_container",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": {
+                          "left": 2
+                        },
+                        "fill": "#FF5757"
+                      },
+                      "gap": 16,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "01pLf",
+                          "name": "b5icon",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontName": "heart",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FF5757"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "D9aUd",
+                          "name": "b5text",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "KhF6I",
+                              "name": "b5title",
+                              "fill": "$blanc",
+                              "content": "Un espacio seguro",
+                              "fontFamily": "TAN Meringue",
+                              "fontSize": 20,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "mDbG2",
+                              "x": 0,
+                              "y": 31,
+                              "name": "b5desc",
+                              "enabled": false,
+                              "fill": "#f6eedf",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container(618)",
+                              "content": "No nos quedamos en la superficie.\nTienes el espacio para abordar los temas importantes, profundizarlos y avanzar con decisiones claras.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "TT Commons Pro",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "2DOYN",
+              "name": "conclusionText",
+              "fill": "$blanc",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "...estás en el lugar indicado.",
+              "textAlign": "center",
+              "fontFamily": "TAN Meringue",
+              "fontSize": 28,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rcZau",
+          "name": "Comment je travaille",
+          "width": "fill_container",
+          "fill": "#f8f3f3",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZH9p9",
+              "name": "howHeader",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9CvRL",
+                  "name": "howTagline",
+                  "fill": "#FF5757",
+                  "content": "MI MÉTODO",
+                  "fontFamily": "AC Real Adult",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "OAcaQ",
+                  "name": "howTitle",
+                  "fill": "#1E293B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "¿Cómo trabajo?",
+                  "textAlign": "center",
+                  "fontFamily": "TAN Meringue",
+                  "fontSize": 40,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "dwnud",
+                  "name": "howSub",
+                  "fill": "$gris-texte",
+                  "textGrowth": "fixed-width",
+                  "width": 600,
+                  "content": "Tres pilares. Un método. Resultados.",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "AC Real Adult",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Xra9o",
+              "name": "howGrid",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "LXqOt",
+                  "name": "step1",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#1E293B10"
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 40,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "9uSP7",
+                      "name": "step1num",
+                      "fill": "#FF5757",
+                      "content": "01",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 48,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "Vx5Qo",
+                      "name": "esic1",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "users",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FF5757"
+                    },
+                    {
+                      "type": "text",
+                      "id": "b1qBT",
+                      "name": "step1title",
+                      "fill": "#1E293B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Contigo",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 22,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "lAoML",
+                      "name": "step1desc",
+                      "fill": "$gris-texte",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Co-construcción al 100%. No hago por ti, hago contigo. Reflexionamos juntos, nos desafiamos juntos.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "IKSYb",
+                  "name": "step2",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#1E293B10"
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 40,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "HZsc4",
+                      "name": "step2num",
+                      "fill": "#FF5757",
+                      "content": "02",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 48,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "pef3s",
+                      "name": "esic2",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "video",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FF5757"
+                    },
+                    {
+                      "type": "text",
+                      "id": "QVWa1",
+                      "name": "step2title",
+                      "fill": "#1E293B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "En sesiones en vivo",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 22,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "07xa4",
+                      "name": "step2desc",
+                      "fill": "$gris-texte",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Sesiones de trabajo en directo. Nada de slides enviadas por email. Nos sentamos, avanzamos, decidimos.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "R2Gcs",
+                  "name": "step3",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#1E293B10"
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 40,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cUnSC",
+                      "name": "step3num",
+                      "fill": "#FF5757",
+                      "content": "03",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 48,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "8nHb4",
+                      "name": "esic3",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "rocket",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FF5757"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wxORl",
+                      "name": "step3title",
+                      "fill": "#1E293B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Te vas con acciones",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 22,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "hL6LK",
+                      "name": "step3desc",
+                      "fill": "$gris-texte",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Reflexionamos, decidimos, y te vas con un plan de acción concreto. Nada de bla bla, solo lo concreto.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v7Fz8",
+          "name": "Photo Strip",
+          "clip": true,
+          "width": "fill_container",
+          "height": 300,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "./fotos/Julie corpo 29-01-202622567r 1.jpg",
+            "mode": "fill"
+          }
+        },
+        {
+          "type": "frame",
+          "id": "KzGk4",
+          "name": "Témoignages",
+          "width": "fill_container",
+          "fill": "#f6eedf",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "children": [
+            {
+              "type": "frame",
+              "id": "2Hmcm",
+              "name": "temoHeader",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GQtVW",
+                  "name": "temoTitle",
+                  "fill": "#1E293B",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Lo que dicen de mí",
+                  "textAlign": "center",
+                  "fontFamily": "TAN Meringue",
+                  "fontSize": 40,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zVt2X",
+              "name": "temoGrid",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "WXKMX",
+                  "name": "t1",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0318740D",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 20
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "G3vYY",
+                      "name": "esp1q1",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "quote",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FF5757"
+                    },
+                    {
+                      "type": "text",
+                      "id": "bdwzk",
+                      "name": "t1quote",
+                      "fill": "#1E293B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\" Lisa me permitió volver a poner en el centro de mi actividad el placer y esa pasión que me impulsó a lanzarme en esta aventura. \"",
+                      "lineHeight": 1.5,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NWdde",
+                      "name": "t1author",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "gp88S",
+                          "name": "t1avatar",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "#FF5757",
+                          "cornerRadius": 20
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xmOEJ",
+                          "name": "t1info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "DuHI4",
+                              "name": "t1name",
+                              "fill": "#1E293B",
+                              "content": "Julie",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "qP7un",
+                              "name": "t1role",
+                              "fill": "$gris-texte",
+                              "content": "Fundadora, Self-Love Club",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pPP2N",
+                  "name": "t2",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0318740D",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 20
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "g3BMH",
+                      "name": "esp1q2",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "quote",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FF5757"
+                    },
+                    {
+                      "type": "text",
+                      "id": "c8ngf",
+                      "name": "t2quote",
+                      "fill": "#1E293B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\" Su capacidad de escucha, su reactividad y su eficacia la convierten en una profesional fiable y comprometida. Una aliada valiosa para cualquier organización. \"",
+                      "lineHeight": 1.5,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vw92k",
+                      "name": "t2author",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "icN9F",
+                          "name": "t2avatar",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "#FF5757",
+                          "cornerRadius": 20
+                        },
+                        {
+                          "type": "frame",
+                          "id": "L4y53",
+                          "name": "t2info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "oSSw6",
+                              "name": "t2name",
+                              "fill": "#1E293B",
+                              "content": "Circé",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "bZq0Z",
+                              "name": "t2role",
+                              "fill": "$gris-texte",
+                              "content": "Fundadora, Mazette",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "uDnjT",
+                  "name": "t3",
+                  "width": "fill_container",
+                  "fill": "$blanc",
+                  "cornerRadius": 12,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0318740D",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 20
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "kWsqk",
+                      "name": "esp1q3",
+                      "width": 28,
+                      "height": 28,
+                      "iconFontName": "quote",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FF5757"
+                    },
+                    {
+                      "type": "text",
+                      "id": "baahv",
+                      "name": "t3quote",
+                      "fill": "#1E293B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\" Tu acompañamiento me aportó claridad y tranquilidad mental. Herramientas y procesos fáciles de usar. \"",
+                      "lineHeight": 1.5,
+                      "fontFamily": "TT Commons Pro",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LhCa9",
+                      "name": "t3author",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "JcjWP",
+                          "name": "t3avatar",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "#FF5757",
+                          "cornerRadius": 20
+                        },
+                        {
+                          "type": "frame",
+                          "id": "76vA8",
+                          "name": "t3info",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "wKOmj",
+                              "name": "t3name",
+                              "fill": "#1E293B",
+                              "content": "Malika",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "fu9wH",
+                              "name": "t3role",
+                              "fill": "$gris-texte",
+                              "content": "Coach independiente",
+                              "fontFamily": "AC Real Adult",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "PQ50P",
+          "name": "CTA Final",
+          "width": "fill_container",
+          "fill": "#1E293B",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            100,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "zPN2Z",
+              "name": "ctaTitle",
+              "fill": "$blanc",
+              "textGrowth": "fixed-width",
+              "width": 800,
+              "content": "¿Lista para estructurar tu negocio?",
+              "textAlign": "center",
+              "fontFamily": "TAN Meringue",
+              "fontSize": 44,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "PqCf8",
+              "name": "ctaSub",
+              "fill": "$blanc",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "Reserva una llamada de descubrimiento gratuita. Hablamos de ti, de tu negocio, y vemos si podemos avanzar juntos.",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "TT Commons Pro",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "0PBsI",
+              "name": "ctaButton",
+              "fill": "#FF5757",
+              "cornerRadius": 8,
+              "padding": [
+                18,
+                40
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Nf1Iy",
+                  "name": "ctaBtnText",
+                  "fill": "$blanc",
+                  "content": "Reservar mi llamada de descubrimiento",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 17,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "8Ve4c",
+          "name": "Pie de página",
+          "width": "fill_container",
+          "fill": "#1E293B",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            48,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "WjrTi",
+              "name": "footerTop",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tbuCM",
+                  "name": "footerBrand",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RXBfO",
+                      "name": "footerLogo",
+                      "fill": "$blanc",
+                      "content": "Lisa Lavigne",
+                      "fontFamily": "TAN Meringue",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ncVip",
+                      "name": "footerTagline",
+                      "fill": "#f6eedf",
+                      "content": "Consultora en estructuración de negocios",
+                      "fontFamily": "AC Real Adult",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "uuJLY",
+                  "name": "footerNav",
+                  "gap": 48,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MRCAH",
+                      "name": "footerCol1",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "eWFod",
+                          "name": "fc1title",
+                          "fill": "#FF5757",
+                          "content": "Navegación",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "axekI",
+                          "name": "fc1l1",
+                          "fill": "#f6eedf",
+                          "content": "Inicio",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "50w7d",
+                          "name": "fc1l2",
+                          "fill": "#f6eedf",
+                          "content": "Servicios",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "9RqBO",
+                          "name": "fc1l3",
+                          "fill": "#f6eedf",
+                          "content": "Testimonios",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "x18kt",
+                          "name": "fc1l4",
+                          "fill": "#f6eedf",
+                          "content": "Sobre mí",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ZfRxW",
+                      "name": "footerCol2",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6mzks",
+                          "name": "fc2title",
+                          "fill": "#FF5757",
+                          "content": "Contacto",
+                          "fontFamily": "AC Real Adult",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "7ZkEk",
+                          "name": "fc2l1",
+                          "fill": "#f6eedf",
+                          "content": "LinkedIn",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "wRnY8",
+                          "name": "fc2l2",
+                          "fill": "#f6eedf",
+                          "content": "Instagram",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "pR4ML",
+                          "name": "fc2l3",
+                          "fill": "#f6eedf",
+                          "content": "Email",
+                          "fontFamily": "TT Commons Pro",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "4rk4b",
+              "name": "footerBottom",
+              "width": "fill_container",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "v9rXb",
+                  "name": "copyright",
+                  "fill": "#FFFFFF60",
+                  "content": "© 2026 Lisa Lavigne. Todos los derechos reservados.",
+                  "fontFamily": "TT Commons Pro",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "gfqZV",
+      "x": -634,
+      "y": 0,
+      "name": "📋 Textos Beneficios - Referencia",
+      "width": 560,
+      "fill": "#FFFFFF",
+      "cornerRadius": 12,
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 32,
+      "children": [
+        {
+          "type": "text",
+          "id": "CqdSq",
+          "name": "refTitle",
+          "fill": "#1E293B",
+          "content": "TEXTOS BENEFICIOS",
+          "fontFamily": "TT Commons Pro",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "letterSpacing": 2
+        },
+        {
+          "type": "line",
+          "id": "NhnHF",
+          "name": "sep1",
+          "width": "fill_container",
+          "height": 1,
+          "stroke": {
+            "align": "center",
+            "thickness": 1,
+            "fill": "#E0E0E0"
+          }
+        },
+        {
+          "type": "text",
+          "id": "jE9wI",
+          "name": "t1title",
+          "fill": "#FF5757",
+          "content": "1. Coherencia",
+          "fontFamily": "TAN Meringue",
+          "fontSize": 18,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "7LTOB",
+          "name": "t1desc",
+          "fill": "#4A4A4A",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Lo que ofreces, lo que vendes y la forma en que trabajas están por fin alineados.\nSe acabó la diferencia entre tu discurso y la realidad de tu día a día.",
+          "lineHeight": 1.6,
+          "fontFamily": "TT Commons Pro",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "BZzdz",
+          "name": "t2title",
+          "fill": "#FF5757",
+          "content": "2. Fluidez",
+          "fontFamily": "TAN Meringue",
+          "fontSize": 18,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "fqpWm",
+          "name": "t2desc",
+          "fill": "#4A4A4A",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Tu recorrido de cliente se vuelve claro, lógico y bajo control.\nMenos confusión, menos idas y vueltas, una experiencia más simple — para ti y para tu cliente.",
+          "lineHeight": 1.6,
+          "fontFamily": "TT Commons Pro",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "zi59n",
+          "name": "t3title",
+          "fill": "#FF5757",
+          "content": "3. Ahorrar tiempo",
+          "fontFamily": "TAN Meringue",
+          "fontSize": 18,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "ivynk",
+          "name": "t3desc",
+          "fill": "#4A4A4A",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Dejas de empezar desde cero en cada proyecto.\nTus procesos están definidos, estructurados y son lo suficientemente sólidos como para ahorrarte tiempo en el día a día.",
+          "lineHeight": 1.6,
+          "fontFamily": "TT Commons Pro",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "poKuZ",
+          "name": "t4title",
+          "fill": "#FF5757",
+          "content": "4. Aumentar facturación",
+          "fontFamily": "TAN Meringue",
+          "fontSize": 18,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "vOTQK",
+          "name": "t4desc",
+          "fill": "#4A4A4A",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Tus ofertas son claras, asumidas y más fáciles de vender.\nHaces seguimiento sin fricción y facturas con más tranquilidad.",
+          "lineHeight": 1.6,
+          "fontFamily": "TT Commons Pro",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "J1s8p",
+          "name": "t5title",
+          "fill": "#FF5757",
+          "content": "5. Un espacio seguro",
+          "fontFamily": "TAN Meringue",
+          "fontSize": 18,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "dXo6A",
+          "name": "t5desc",
+          "fill": "#4A4A4A",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "No nos quedamos en la superficie.\nTienes el espacio para abordar los temas importantes, profundizarlos y avanzar con decisiones claras.",
+          "lineHeight": 1.6,
+          "fontFamily": "TT Commons Pro",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "beige-chaud": {
+      "type": "color",
+      "value": "#FFF4EF"
+    },
+    "beige-fonce": {
+      "type": "color",
+      "value": "#F5E6DC"
+    },
+    "blanc": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "bleu-clair": {
+      "type": "color",
+      "value": "#0A2A9E"
+    },
+    "bleu-fonce": {
+      "type": "color",
+      "value": "#031874"
+    },
+    "corail": {
+      "type": "color",
+      "value": "#FF986B"
+    },
+    "corail-hover": {
+      "type": "color",
+      "value": "#FF7A45"
+    },
+    "gris-texte": {
+      "type": "color",
+      "value": "#4A4A4A"
+    },
+    "noir": {
+      "type": "color",
+      "value": "#1A1A1A"
+    }
+  }
+}
