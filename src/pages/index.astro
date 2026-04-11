@@ -15,9 +15,12 @@ import Notion from "../components/notion/Notion.astro";
 	<body >
 		<Header />
 		<main class="bg-white pt-20 mt-2">
-			<section class="flex gap-4 items-center">
+			<h1 class="text-center text-4xl font-bold text-secondary">{SITE_DESCRIPTION}</h1>
+			<section class="flex gap-4 items-center mt-4">
 				<img src="/ll.jpeg" alt="Lisa Lavigne" class='w-96 object-cover lisa' />
-				<h3 class="text-end text-4xl font-bold text-secondary">{SITE_DESCRIPTION}</h3>
+				<div>
+					<p class="text-end text-lg text-primary"> blablablab bla </p>
+				</div>
 			</section>
 
 			<section class="my-20">
@@ -29,7 +32,7 @@ import Notion from "../components/notion/Notion.astro";
 			</section>
 
 			<section class="my-20">
-				<h2 class="text-center text-4xl font-bold text-secondary">Mon blog</h2>
+				<h2 class="text-center text-4xl font-bold text-secondary">Blog</h2>
 				<Notion pageId="1729a94d98e88070b331ddce00aea809" />
 			</section>
 
