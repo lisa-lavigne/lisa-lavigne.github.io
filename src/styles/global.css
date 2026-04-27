@@ -965,6 +965,183 @@ hr {
 	background: var(--lisa-warm);
 }
 
+.work-fit-section {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	padding: 80px 32px;
+	background: var(--lisa-warm);
+}
+
+.fit-card {
+	display: grid;
+	grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1.45fr);
+	gap: 28px;
+	width: min(1376px, 100%);
+	margin: 0 auto;
+	border: 1px solid var(--lisa-coral);
+	border-radius: 18px;
+	padding: 32px;
+	background: var(--lisa-cream);
+}
+
+.fit-card h1 {
+	font-size: clamp(2.3rem, 4vw, 3rem);
+}
+
+.fit-card ul {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.fit-card li {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+	gap: 10px;
+	color: var(--lisa-ink);
+	font-size: 0.9rem;
+	line-height: 1.45;
+}
+
+.fit-card li span,
+.work-process-intro > span,
+.flow-arrow,
+.process-flow strong,
+.work-case-card strong {
+	color: var(--lisa-coral);
+}
+
+.fit-card > p {
+	grid-column: 2;
+	color: var(--lisa-ink);
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.05rem;
+	font-style: italic;
+	line-height: 1.45;
+}
+
+.work-process-intro {
+	display: flex;
+	width: min(1376px, 100%);
+	flex-direction: column;
+	gap: 24px;
+	margin: 0 auto;
+}
+
+.work-process-intro h2 {
+	font-size: 2.3rem;
+}
+
+.work-process-intro > p {
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.process-flow {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 12px;
+	align-items: center;
+}
+
+.process-flow article {
+	display: flex;
+	min-height: 132px;
+	flex-direction: column;
+	gap: 8px;
+	border: 1px solid #e0e0e0;
+	border-radius: 12px;
+	padding: 18px;
+	background: #fff;
+}
+
+.process-flow article:first-of-type {
+	border-color: var(--lisa-coral);
+	border-left-width: 3px;
+}
+
+.process-flow article:last-of-type {
+	border-color: var(--lisa-coral);
+	border-right-width: 3px;
+}
+
+.process-flow h3 {
+	font-size: 1.15rem;
+}
+
+.process-flow p {
+	font-size: 0.82rem;
+	line-height: 1.45;
+}
+
+.flow-arrow {
+	display: none;
+}
+
+.work-strip {
+	height: 220px;
+	object-position: center 38%;
+}
+
+.work-cases-section {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	padding: 80px;
+	background: var(--lisa-cream);
+}
+
+.work-cases-section .center-heading {
+	margin-bottom: 0;
+}
+
+.work-case-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 28px;
+	width: min(1280px, 100%);
+	margin: 0 auto;
+}
+
+.work-case-card {
+	display: flex;
+	min-height: 220px;
+	flex-direction: column;
+	gap: 14px;
+	border: 1px solid #e0e0e0;
+	border-radius: 14px;
+	padding: 28px;
+	background: #fff;
+}
+
+.work-case-card:nth-child(1),
+.work-case-card:nth-child(4) {
+	border-color: var(--lisa-coral);
+}
+
+.work-case-card:nth-child(1) {
+	border-left-width: 3px;
+}
+
+.work-case-card:nth-child(4) {
+	border-right-width: 3px;
+}
+
+.work-case-card h3 {
+	font-size: 1.45rem;
+	line-height: 1.25;
+}
+
+.work-case-card p,
+.work-case-card strong {
+	font-size: 0.9rem;
+	line-height: 1.45;
+}
+
 .about-hero {
 	display: grid;
 	grid-template-columns: 480px minmax(0, 1fr);
@@ -1096,6 +1273,9 @@ hr {
 	.hero-wrap,
 	.benefits-layout,
 	.method-grid,
+	.fit-card,
+	.process-flow,
+	.work-case-grid,
 	.compact-grid.four,
 	.compact-grid.three {
 		grid-template-columns: 1fr;
@@ -1104,9 +1284,15 @@ hr {
 	.home-hero,
 	.problem-section,
 	.benefits-section,
-	.method-section {
+	.method-section,
+	.work-fit-section,
+	.work-cases-section {
 		padding-right: 24px;
 		padding-left: 24px;
+	}
+
+	.fit-card > p {
+		grid-column: auto;
 	}
 
 	.hero-image {
@@ -1161,7 +1347,9 @@ hr {
 
 	.problem-section,
 	.benefits-section,
-	.method-section {
+	.method-section,
+	.work-fit-section,
+	.work-cases-section {
 		padding-top: 56px;
 		padding-bottom: 56px;
 	}

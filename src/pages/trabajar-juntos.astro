@@ -1,0 +1,194 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const checklist = [
+	'Pierdes tiempo rehaciendo en bucle cosas que podrías estandarizar.',
+	'Tienes un recorrido cliente claro en tu cabeza, pero en la realidad te sales del marco con demasiada facilidad.',
+	'Sonríes un poco cuando te pregunto por qué hiciste una excepción con tu último cliente.',
+	'Te gustaría delegar una etapa, pero acabas pensando que habría sido más rápido hacerlo tú.',
+	'Respondes “depende” cuando te preguntan cómo organizas tus semanas.',
+	'Usas varias herramientas distintas y no siempre tienes claro qué papel cumple cada una.',
+	'Te encanta tu trabajo y tus clientes están contentos, pero necesitas ver mejor cuál es el siguiente paso.',
+];
+
+const process = [
+	{
+		number: '01',
+		title: 'Punto de partida',
+		body: 'Partimos de algo real: un cliente, una situación, un momento de tu negocio.',
+	},
+	{
+		number: '02',
+		title: 'Detectamos',
+		body: 'Vemos qué se repite, qué te frena o qué no está tan claro como debería.',
+	},
+	{
+		number: '03',
+		title: 'Decidimos',
+		body: 'Lo hablamos, lo cuestionamos… y tomamos decisiones concretas.',
+	},
+	{
+		number: '04',
+		title: 'Pasamos a la acción',
+		body: 'Sales con acciones claras, y muchas veces ya avanzadas durante la sesión.',
+	},
+];
+
+const cases = [
+	{
+		problem: 'Quería lanzar una nueva oferta… pero no sabía cómo posicionarla ni cuánto cobrar',
+		work: 'Construimos juntas la oferta, el precio (1.000€) y el discurso de venta.',
+		result: 'Vendió su primera misión y consiguió 2 clientes más en los meses siguientes.',
+	},
+	{
+		problem: 'Tenían muchos prospectos… pero perdían tiempo y regalaban parte de su trabajo',
+		work: 'Redefinimos su recorrido cliente y sus criterios de cualificación.',
+		result: 'Empezaron a filtrar mejor, ahorrar tiempo y cobrar etapas que antes no facturaban.',
+	},
+	{
+		problem: 'Tenía clientes… pero su seguimiento era irregular y perdía oportunidades',
+		work: 'Estructuramos sus hábitos y su organización diaria.',
+		result: 'Hoy tiene un seguimiento claro de sus prospectos y sus finanzas.',
+	},
+	{
+		problem: 'Tenía una base de clientes… pero no la estaba activando',
+		work: 'Creamos una nueva oferta y una estrategia de reactivación.',
+		result: 'Consiguió relanzar una parte importante de sus antiguos clientes.',
+	},
+];
+
+const testimonials = [
+	{
+		quote: 'Lisa me permitió volver a poner en el centro de mi actividad el placer y esa pasión que me impulsó a lanzarme en esta aventura.',
+		name: 'Julie',
+		role: 'Fundadora, Self-Love Club',
+	},
+	{
+		quote: 'Su capacidad de escucha, su reactividad y su eficacia la convierten en una profesional fiable y comprometida. Una aliada valiosa para cualquier organización.',
+		name: 'Circé',
+		role: 'Fundadora, Mazette',
+	},
+	{
+		quote: 'Tu acompañamiento me aportó claridad y tranquilidad mental. Herramientas y procesos fáciles de usar.',
+		name: 'Malika',
+		role: 'Coach independiente',
+	},
+];
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={`Trabajar juntos - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="lisa-page work-together-page">
+		<header class="site-header">
+			<a class="brand-mark" href="/" aria-label="Lisa Lavigne">
+				<img src="/lisa/logo.png" alt="" />
+			</a>
+			<nav aria-label="Navegación principal">
+				<a href="/trabajar-juntos">Trabajar juntos</a>
+				<a href="/about">Sobre mí</a>
+				<a class="button button-small" href="#contacto">Reservar una llamada</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="work-fit-section">
+				<div class="fit-card">
+					<h1>Es para ti si...</h1>
+					<ul>
+						{checklist.map((item) => (
+							<li>
+								<span aria-hidden="true">✓</span>
+								{item}
+							</li>
+						))}
+					</ul>
+					<p>NB: No hace falta que te identifiques con el 100%. Si has sonreído al leer al menos 3 de estas frases porque te has reconocido, entonces es para ti.</p>
+				</div>
+
+				<div class="divider"></div>
+
+				<div class="work-process-intro">
+					<span aria-hidden="true">♡</span>
+					<h2>Lo que hacemos juntos</h2>
+					<p>Tenemos sesiones en vivo en las cuales partimos de un punto concreto de tu negocio… y no lo soltamos hasta que esté claro y accionable.</p>
+					<div class="process-flow">
+						{process.map((step, index) => (
+							<>
+								<article>
+									<strong>{step.number}</strong>
+									<h3>{step.title}</h3>
+									<p>{step.body}</p>
+								</article>
+								{index < process.length - 1 && <span class="flow-arrow" aria-hidden="true">→</span>}
+							</>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<img class="photo-strip work-strip" src="/lisa/fotos/Julie corpo 29-01-202622688r 1.jpg" alt="" />
+
+			<section class="work-cases-section">
+				<div class="center-heading">
+					<h2>Lo que ayudé a desbloquear</h2>
+					<p>Casos de éxito</p>
+				</div>
+				<div class="work-case-grid">
+					{cases.map((item) => (
+						<article class="work-case-card">
+							<h3>{item.problem}</h3>
+							<p>→ {item.work}</p>
+							<strong>→ {item.result}</strong>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section id="testimonios" class="section testimonial-section">
+				<div class="center-heading">
+					<h2>Lo que dicen de mí</h2>
+				</div>
+				<div class="testimonial-grid">
+					{testimonials.map((item) => (
+						<article class="testimonial-card">
+							<span class="quote-mark" aria-hidden="true">"</span>
+							<p>“{item.quote}”</p>
+							<div class="author">
+								<span aria-hidden="true"></span>
+								<div>
+									<strong>{item.name}</strong>
+									<small>{item.role}</small>
+								</div>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section id="contacto" class="final-cta">
+				<h2>¿Lista para estructurar tu <span>negocio</span>?</h2>
+				<p>Reserva una llamada de descubrimiento gratuita.</p>
+				<a class="button" href="mailto:hola@lisalavigne.com">Reservar mi llamada de descubrimiento</a>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div>
+				<h2>Lisa Lavigne</h2>
+			</div>
+			<nav aria-label="Pie de página">
+				<a href="/">Inicio</a>
+				<a href="/trabajar-juntos">Servicios</a>
+				<a href="#testimonios">Testimonios</a>
+				<a href="/about">Sobre mí</a>
+				<a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+				<a href="mailto:hola@lisalavigne.com">Email</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne. Todos los derechos reservados.</p>
+		</footer>
+	</body>
+</html>
