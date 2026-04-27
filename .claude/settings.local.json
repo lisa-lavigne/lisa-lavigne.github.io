@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git pull:*)",
+      "Bash(where python:*)",
+      "Bash(ls /c/Python*)",
+      "Read(//usr/**)",
+      "Bash(git status:*)"
+    ]
+  }
+}
