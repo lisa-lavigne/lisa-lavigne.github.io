@@ -970,7 +970,7 @@ hr {
 	flex-direction: column;
 	gap: 60px;
 	padding: 80px 32px;
-	background: var(--lisa-warm);
+	background: var(--lisa-cream);
 }
 
 .fit-card {
