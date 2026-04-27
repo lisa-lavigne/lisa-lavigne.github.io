@@ -1,127 +1,257 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/news/Header.astro';
-import NewsHeader from '../components/news/Header.astro';
-import NewsButton from '../components/news/Button.astro';
-import DataItem from '../components/news/DataItem.astro';
-import Footer from '../components/news/Footer.astro';
-import ProjectLarge from '../components/news/ProjectLarge.astro';
-import SideProjectItem from '../components/news/SideProjectItem.astro';
-import Chips from '../components/news/Chips.astro';
-import BentoGrid from '../components/news/BentoGrid.astro';
-import HeroAnimation from '../components/HeroAnimation.astro';
-import CustomCursor from '../components/CustomCursor.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { projects } from '../data/projects';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-const mainProjects = projects.filter(p => !p.isSideProject);
-const sideProjects = projects.filter(p => p.isSideProject);
+const painPoints = [
+	{
+		icon: '◷',
+		text: 'Pierdes tiempo en tareas repetitivas o de poco valor',
+	},
+	{
+		icon: '✦',
+		text: 'Sientes que deberías delegar o profesionalizar ciertas áreas, pero no sabes por dónde empezar',
+	},
+	{
+		icon: '⇄',
+		text: 'Te adaptas a cada cliente porque aún no tienes una forma clara y estructurada de trabajar',
+	},
+	{
+		icon: '!',
+		text: 'Y, por encima de todo, el miedo a que la cantidad de trabajo te supere',
+	},
+];
+
+const solutionCards = [
+	{
+		icon: '⌕',
+		text: 'Identificar con precisión qué está frenando tu crecimiento y por dónde empezar',
+	},
+	{
+		icon: '↬',
+		text: 'Definir cómo seleccionas, recibes y acompañas a tus clientes sin improvisaciones',
+	},
+	{
+		icon: '⌖',
+		text: 'Alinear tu forma de trabajar con la visión del negocio que quieres tener',
+	},
+];
+
+const benefits = [
+	{
+		title: 'Coherencia',
+		body: 'Lo que ofreces, lo que vendes y la forma en que trabajas están por fin alineados. Se acabó la diferencia entre tu discurso y la realidad de tu día a día.',
+	},
+	{
+		title: 'Fluidez',
+		body: 'Tu recorrido de cliente se vuelve claro, lógico y bajo control. Menos confusión, menos idas y vueltas, una experiencia más simple para ti y para tu cliente.',
+	},
+	{
+		title: 'Ahorrar tiempo',
+		body: 'Dejas de empezar desde cero en cada proyecto. Tus procesos están definidos, estructurados y son lo suficientemente sólidos como para ahorrarte tiempo en el día a día.',
+	},
+	{
+		title: 'Aumentar facturación',
+		body: 'Tus ofertas son claras, asumidas y más fáciles de vender. Haces seguimiento sin fricción y facturas con más tranquilidad.',
+	},
+	{
+		title: 'Un espacio seguro',
+		body: 'No nos quedamos en la superficie. Tienes el espacio para abordar los temas importantes, profundizarlos y avanzar con decisiones claras.',
+	},
+];
+
+const steps = [
+	{
+		number: '01',
+		icon: '♙',
+		title: 'Contigo',
+		body: 'Co-construcción al 100%. No hago por ti, hago contigo. Reflexionamos juntos, nos desafiamos juntos.',
+	},
+	{
+		number: '02',
+		icon: '▣',
+		title: 'En sesiones en vivo',
+		body: 'Sesiones de trabajo en directo. Nada de slides enviadas por email. Nos sentamos, avanzamos, decidimos.',
+	},
+	{
+		number: '03',
+		icon: '↗',
+		title: 'Te vas con acciones',
+		body: 'Reflexionamos, decidimos, y te vas con un plan de acción concreto. Nada de bla bla, solo lo concreto.',
+	},
+];
+
+const testimonials = [
+	{
+		quote: 'Lisa me permitió volver a poner en el centro de mi actividad el placer y esa pasión que me impulsó a lanzarme en esta aventura.',
+		name: 'Julie',
+		role: 'Fundadora, Self-Love Club',
+	},
+	{
+		quote: 'Su capacidad de escucha, su reactividad y su eficacia la convierten en una profesional fiable y comprometida. Una aliada valiosa para cualquier organización.',
+		name: 'Circé',
+		role: 'Fundadora, Mazette',
+	},
+	{
+		quote: 'Tu acompañamiento me aportó claridad y tranquilidad mental. Herramientas y procesos fáciles de usar.',
+		name: 'Malika',
+		role: 'Coach independiente',
+	},
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-primary min-h-screen flex flex-col">
-		<!-- Noise overlay que está por encima de todo -->
-		<!-- <div class="noise-overlay"></div> -->
-		<Header theme="light" />
-		
-		<main class="w-full flex flex-col">
-		<!-- Hero Section -->
-		<section class="w-full px-4 md:px-16 py-8 md:py-20 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 min-h-[400px] md:min-h-[758px]">
-			<div class="flex flex-col gap-4 md:gap-6 max-w-[764px] w-full">
-				<div class="flex flex-col gap-4 md:gap-6">
-					<div class="w-full md:w-[200px]">
-						<Chips variant="outline" text="Product Designer" />
-					</div>
-					<h2 id="hero-title" class="text-2xl md:text-h2 font-heading font-bold leading-tight md:leading-[1.2] text-secondary">Merging design, strategy and technology to craft products.</h2>
-				</div>
-				<div class="flex flex-col font-bold text-base md:text-sb1 font-sb text-secondary-300">
-					<p id="hero-subtitle">Harnessing technology to make life better.</p>
-				</div>
-			</div>
-			<div id="hero-image" class="w-full md:w-[420px] h-[300px] md:h-[420px] flex-shrink-0">
-				<svg id="hero-svg" width="418" height="420" viewBox="0 0 418 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-					<path id="hero-path" d="M210 0C323.325 0 415.684 89.7654 419.853 202.071H208V209H420V420H211V419.997C210.667 419.999 210.334 420 210 420C94.0202 420 0 325.98 0 210C0 94.0202 94.0202 0 210 0Z" fill="#0A0908"/>
-				</svg>
-			</div>
-		</section>
+	<body class="lisa-page lisa-home">
+		<header class="site-header">
+			<a class="brand-mark" href="/" aria-label="Lisa Lavigne">
+				<img src="/lisa/logo.png" alt="" />
+			</a>
+			<nav aria-label="Navegación principal">
+				<a href="#beneficios">Beneficios</a>
+				<a href="#metodo">Cómo trabajo</a>
+				<a href="#testimonios">Testimonios</a>
+				<a class="button button-small" href="#contacto">Reservar una llamada</a>
+			</nav>
+		</header>
 
-		<!-- Bento Grid Section -->
-		<BentoGrid />
-
-			<!-- Philosophy Section -->
-			<section class="w-full px-4 md:px-16 py-12 md:py-[120px] flex flex-col items-start gap-8 md:gap-14">
-				<h2 class="text-2xl md:text-h2 font-heading font-bold text-secondary text-start">Create design from human for humans</h2>
-				<div class="flex flex-col gap-4 max-w-[1152px] text-sm md:text-body-md font-body text-secondary-300 text-start">
-					<p>
-						<strong>Behind the pixels:</strong> I always begin with the real problem before falling in love with the visual solution, because design isn't just about aesthetics. It's about solving challenges grounded in data so others don't have to face the complexity. It's about distilling the difficult into a clear guiding principle. 
-						<br/> 
-					</p>
-					<p class="font-bold font-body">It's about creating memorable, distinctive experiences so seamless they're simply enjoyable to use.</p>
-				</div>
-				<NewsButton href="/about" text="Read about me" />
-			</section>
-
-			<!-- Projects Section -->
-			<section class="w-full px-4 md:pl-16 py-12 md:py-[120px] flex flex-col gap-8 md:gap-12">
-				<h2 class="text-2xl md:text-h3 font-heading font-bold text-secondary">Projects</h2>
-				
-				<div class="flex flex-col w-full">
-					{mainProjects.map((project, index) => (
-						<div class="border-t-2 border-secondary-200">
-							<ProjectLarge 
-								imageSrc={project.coverImage || '/placeholder-hero.jpg'}
-								category={project.industry || ''}
-								title={project.title}
-								description={project.intro.split('\n')[0]}
-								tags={project.tags || []}
-								slug={project.slug}
-							/>
+		<main>
+			<section class="home-hero">
+				<div class="hero-wrap">
+					<div class="hero-copy">
+						<h1>
+							Tu <span>negocio</span> no necesita más esfuerzo.<br />
+							Necesita un <span>sistema</span>.
+						</h1>
+						<p class="hero-lead">Te ayudo a estructurar tu negocio para que te dé lo que viniste a buscar: tiempo, libertad y claridad para disfrutar de lo que haces.</p>
+						<p>Soy Lisa. Ayudo a emprendedores en crecimiento a estructurar su negocio. Trabajamos juntos para que ganes claridad en tus decisiones, coherencia en tu oferta y fluidez en tu día a día.</p>
+						<div class="hero-action">
+							<a class="button" href="#contacto">Reserva tu diagnóstico</a>
+							<small>30 minutos para entender dónde estás y ver si tiene sentido trabajar juntos.</small>
 						</div>
+					</div>
+					<img class="hero-image" src="/lisa/fotos/Hero Image.png" alt="Lisa Lavigne sentada y sonriendo" />
+				</div>
+			</section>
+
+			<section class="problem-section">
+				<p>Cuando tu negocio empieza a crecer, la forma intuitiva en la que lo gestionabas deja de ser suficiente. Lo que antes funcionaba empieza a mostrar sus límites.</p>
+				<h2 class="small-heading">Empiezas a notar que:</h2>
+				<div class="compact-grid four">
+					{painPoints.map((item) => (
+						<article class="mini-card">
+							<span aria-hidden="true">{item.icon}</span>
+							<p>{item.text}</p>
+						</article>
+					))}
+				</div>
+				<p class="red-statement">Ese es tu primer techo de cristal.<br />Y es una buena señal: significa que has crecido.</p>
+				<div class="mountains" aria-hidden="true">
+					<span></span>
+					<span></span>
+				</div>
+				<h2>Ahí es donde entro yo.</h2>
+				<p>Trabajamos juntos, en sesiones en vivo, para:</p>
+				<div class="compact-grid three">
+					{solutionCards.map((item) => (
+						<article class="solution-card">
+							<span aria-hidden="true">{item.icon}</span>
+							<p>{item.text}</p>
+						</article>
+					))}
+				</div>
+				<p>Pensamos juntos. Decidimos juntos.<br />Y sales de cada sesión con acciones concretas que puedes implementar desde el día siguiente.</p>
+				<a class="button centered" href="#contacto">Reservar mi llamada</a>
+			</section>
+
+			<section id="beneficios" class="benefits-section">
+				<div class="center-heading">
+					<h2>Si estás buscando...</h2>
+				</div>
+				<div class="benefits-layout">
+					<div class="brain-illustration" aria-hidden="true">
+						<div class="brain brain-red">☷</div>
+						<div class="brain brain-blue">☷</div>
+					</div>
+					<div class="benefit-list">
+						{benefits.map((item, index) => (
+							<article class:list={['benefit-item', { active: index === 0 }]}>
+								<span aria-hidden="true">{['⌖', '✦', '◷', '↗', '♡'][index]}</span>
+								<div>
+									<h3>{item.title}</h3>
+									<p>{item.body}</p>
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+				<p class="benefits-close">...estás en el lugar indicado.</p>
+			</section>
+
+			<section id="metodo" class="method-section">
+				<div class="center-heading">
+					<p class="eyebrow">Mi método</p>
+					<h2>¿Cómo trabajo?</h2>
+					<p>Tres pilares. Un método. Resultados.</p>
+				</div>
+				<div class="method-grid">
+					{steps.map((step) => (
+						<article class="method-card">
+							<strong>{step.number}</strong>
+							<span aria-hidden="true">{step.icon}</span>
+							<h3>{step.title}</h3>
+							<p>{step.body}</p>
+						</article>
 					))}
 				</div>
 			</section>
 
-			<!-- Industries Section -->
-			<section class="w-full bg-secondary px-4 md:px-14 py-12 md:py-[120px] flex flex-col items-center gap-8 md:gap-16">
-				<h2 class="text-xl md:text-h2 font-heading font-bold text-primary text-center">INDUSTRIES OF EXPERTISE</h2>
-				<div class="flex gap-4 md:gap-6 flex-wrap justify-center">
-					<DataItem variant="icon" cardStyle="filled" title="Security" />
-					<DataItem variant="icon" cardStyle="filled" title="Energy" />
-					<DataItem variant="icon" cardStyle="filled" title="Telco" />
-					<DataItem variant="icon" cardStyle="filled" title="Automotive" />
-					<DataItem variant="icon" cardStyle="filled" title="AI" />
+			<img class="photo-strip home-strip" src="/lisa/fotos/Julie corpo 29-01-202622567r 1.jpg" alt="Retrato de Lisa Lavigne sonriendo" />
+
+			<section id="testimonios" class="section testimonial-section">
+				<div class="center-heading">
+					<h2>Lo que dicen de mí</h2>
+				</div>
+				<div class="testimonial-grid">
+					{testimonials.map((item) => (
+						<article class="testimonial-card">
+							<span class="quote-mark" aria-hidden="true">"</span>
+							<p>“{item.quote}”</p>
+							<div class="author">
+								<span aria-hidden="true"></span>
+								<div>
+									<strong>{item.name}</strong>
+									<small>{item.role}</small>
+								</div>
+							</div>
+						</article>
+					))}
 				</div>
 			</section>
 
-			<!-- Side Projects Section -->
-			<section class="w-full bg-secondary px-4 md:px-16 py-12 md:py-[120px] flex flex-col md:flex-row gap-8 md:gap-14 items-start md:items-end">
-				<div class="flex flex-col gap-4 md:gap-6 max-w-[750px] w-full">
-					<h2 class="text-2xl md:text-h2 font-heading font-bold leading-tight md:leading-[1.2] text-primary">
-						Side projects
-					</h2>
-					<p class="text-sm md:text-body-md font-body text-primary pb-4">Personal projects where I explore ideas, technologies, and narratives that inspire me. Spaces for experimentation — to learn, fail, and create without limits.</p>
-				</div>
-				<div class="flex-1 flex flex-col gap-0 w-full md:w-[530px] lg:w-[730px] xl:w-[830px]">
-					{sideProjects.map((project, index) => (
-						<SideProjectItem 
-							iconImage={project.iconImage || ''}
-							title={project.title}
-							description={project.intro.split('\n')[0]}
-							slug={project.slug}
-							isLast={index === sideProjects.length - 1}
-						/>
-					))}
-				</div>
+			<section id="contacto" class="final-cta">
+				<h2>¿Lista para estructurar tu <span>negocio</span>?</h2>
+				<p>Reserva una llamada de descubrimiento gratuita. Hablamos de ti, de tu negocio, y vemos si podemos avanzar juntos.</p>
+				<a class="button" href="mailto:hola@lisalavigne.com">Reservar mi llamada de descubrimiento</a>
 			</section>
 		</main>
 
-	<Footer />
-
-	<HeroAnimation />
-	<CustomCursor />
-</body>
+		<footer class="site-footer">
+			<div>
+				<h2>Lisa Lavigne</h2>
+				<p>Consultora en estructuración de negocios</p>
+			</div>
+			<nav aria-label="Pie de página">
+				<a href="/">Inicio</a>
+				<a href="#beneficios">Servicios</a>
+				<a href="#testimonios">Testimonios</a>
+				<a href="/about">Sobre mí</a>
+				<a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+				<a href="mailto:hola@lisalavigne.com">Email</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne. Todos los derechos reservados.</p>
+		</footer>
+	</body>
 </html>

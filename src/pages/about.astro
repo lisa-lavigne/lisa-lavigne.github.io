@@ -1,52 +1,120 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/news/Header.astro';
-import Footer from '../components/news/Footer.astro';
-import NewsButton from '../components/news/Button.astro';
-import CustomCursor from '../components/CustomCursor.astro';
-import TextScrollAnimation from '../components/TextScrollAnimation.astro';
-import HeroAnimation from '../components/HeroAnimation.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const values = [
+	'Estructura sin rigidez',
+	'Claridad antes que ruido',
+	'Procesos humanos',
+	'Ligereza mental',
+];
+
+const principles = [
+	{
+		icon: '✦',
+		title: '"Si sabes algo pero no lo aplicas, entonces realmente no lo sabes."',
+		body: 'Demasiado a menudo acumulamos conocimientos sin ponerlos en práctica. Mi rol es escucharte, desafiarte y ayudarte a pasar a la acción de manera concreta.',
+	},
+	{
+		icon: '♡',
+		title: '"¡Se pule!"',
+		body: 'Cada acción puede ser reutilizada y optimizada. Una buena idea, un contenido, un proceso: se adapta, se mejora, se sistematiza.',
+	},
+	{
+		icon: '↗',
+		title: '"Tu empresa no debe ser una prisión, sino un trampolín."',
+		body: 'Creaste tu empresa para darte libertad, no para estar sumergido/a en tareas. Implementamos estrategias que liberan tiempo y energía.',
+	},
+	{
+		icon: '◎',
+		title: '"¡El objetivo, siempre el objetivo!"',
+		body: 'Dispersarse es fácil. Pero si cada acción está guiada por un objetivo preciso, todo se vuelve más claro.',
+	},
+	{
+		icon: '!',
+		title: '"Automatizar es liberar tiempo para lo esencial: crear, vender y respirar."',
+		body: 'Te ayudo a implementar procesos y herramientas que simplifican tu día a día para que puedas concentrarte en lo que realmente importa.',
+	},
+	{
+		icon: '●',
+		title: '"Me encanta, lo adopto"',
+		body: 'Si leo, escucho, veo o entiendo un consejo que me encanta, lo adopto inmediatamente. Sin filtro, sin demora.',
+	},
+	{
+		icon: '✹',
+		title: '"Encuentra tus cajas de Pandora, ábrelas, gestiona lo que hay dentro y ciérralas."',
+		body: 'Todas las cosas que evitas, que te dan miedo, que te hacen decir "ah sí, eso no está muy claro": ahí es donde empieza mi trabajo.',
+		featured: true,
+	},
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
-		<BaseHead title={`About - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`Sobre mí - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-primary min-h-screen flex flex-col">
-		<Header theme="light" />
-		
-		<main class="w-full flex flex-col">
-			<!-- About Section -->
-			<section class="w-full bg-primary px-16 pt-[120px] pb-[180px] flex flex-col gap-14 items-start">
-				<!-- Title -->
-				<div class="flex flex-col gap-4 items-start w-full">
-					<h1 id="hero-title" class="text-h1 font-heading font-bold text-secondary">About me</h1>
-				</div>
-				
-				<!-- Content -->
-				<div class="flex flex-col gap-4 items-start w-full">
-					<div id="text-container" class="text-sb1 font-body text-secondary relative min-h-[200px]">
-						<div id="text-original" class="absolute top-0 left-0 w-full" style="opacity: 0; transform: translateY(50px);">
-							<p class="mb-0">I discovered minimalism, photography, and design as languages to make sense of my own chaos.</p>
-							<p class="mb-0">&nbsp;</p>
-							<p class="mb-0">My influences range goes from Carlo Scarpa, Tokujin Yoshioka, John Maeda to Hans Zimmer, Quentin Tarantino, Jony Ive, Tom Hegen, Bofill, Dieter Rams and Vignelli.</p>
-						</div>
-						<div id="text-new">
-							<p class="mb-0">I grew up between mountains and an endless curiosity for how things work. I love skiing and surfing, allthough the waves have taught me more humility than any book. Nature is where I reset and find clarity.</p>
-							<p class="mb-0">&nbsp;</p>
-							<p class="mb-0">I stand firmly for functional design and keep about 40 browser tabs open.</p>
-						</div>
+	<body class="lisa-page">
+		<header class="site-header">
+			<a class="brand-mark" href="/" aria-label="Lisa Lavigne">
+				<img src="/lisa/logo.png" alt="" />
+			</a>
+			<nav aria-label="Navegación principal">
+				<a href="/">Beneficios</a>
+				<a href="/#trabajo">Cómo trabajo</a>
+				<a href="/#testimonios">Testimonios</a>
+				<a href="/about">Sobre mí</a>
+				<a class="button button-small" href="mailto:hola@lisalavigne.com">Reservar una llamada</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="about-hero">
+				<img src="/lisa/fotos/Julie corpo 29-01-202622529r 1.jpg" alt="Retrato de Lisa Lavigne" />
+				<div class="about-copy">
+					<h1>Mis valores</h1>
+					<div class="values-row">
+						{values.map((value) => <span>{value}</span>)}
 					</div>
+					<p class="eyebrow">Mi historia</p>
+					<p>Siempre tuve un pie en dos mundos: el racional… y el emocional.</p>
+					<p>Con el bachillerato científico en mano, me orienté hacia la psicología — porque entender a las personas siempre me fascinó. Luego me hice profesora de matemáticas, y ahí entendí algo esencial: el problema nunca son las mates. Es la confianza, la organización, el método.</p>
+					<p>Después, trabajé en ventas y atención al cliente. Ahí aprendí el rigor, la escucha y el arte de transformar una necesidad en una solución concreta.</p>
+					<p>Hoy, combino todo eso.</p>
+					<p>Ayudo a emprendedores a poner orden, sentido y fluidez en su actividad — con lucidez, ligereza y una verdadera comprensión de lo que pasa en su cabeza y en su negocio.</p>
 				</div>
-				<NewsButton href="mailto:mirilaina@gmail.com" text="Contact me!" />
+			</section>
+
+			<img class="photo-strip about-strip" src="/lisa/fotos/Julie corpo 29-01-202622445r.jpg" alt="" />
+
+			<section class="section section-soft philosophy-section">
+				<div class="center-heading">
+					<h2>Mi forma de ver el trabajo</h2>
+				</div>
+				<div class="principle-grid">
+					{principles.map((item) => (
+						<article class:list={['principle-card', { featured: item.featured }]}>
+							<span aria-hidden="true">{item.icon}</span>
+							<h3>{item.title}</h3>
+							<p>{item.body}</p>
+						</article>
+					))}
+				</div>
 			</section>
 		</main>
 
-	<Footer theme="dark" />
-	<CustomCursor />
-	<HeroAnimation />
-	<TextScrollAnimation />
-</body>
+		<footer class="site-footer">
+			<div>
+				<img src="/lisa/logo.png" alt="Lisa Lavigne" />
+				<p>Acompañamiento estratégico para ordenar tu negocio.</p>
+			</div>
+			<nav aria-label="Pie de página">
+				<a href="/">Beneficios</a>
+				<a href="/#trabajo">Método</a>
+				<a href="/about">Sobre mí</a>
+				<a href="mailto:hola@lisalavigne.com">Contacto</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne. Todos los derechos reservados.</p>
+		</footer>
+	</body>
 </html>
