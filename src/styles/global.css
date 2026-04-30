@@ -971,6 +971,47 @@ hr {
 	background: var(--lisa-warm);
 }
 
+.work-hero {
+	display: flex;
+	align-items: center;
+	padding: 72px 80px;
+	background: var(--lisa-cream);
+}
+
+.work-hero-copy {
+	display: flex;
+	width: min(1280px, 100%);
+	flex-direction: column;
+	gap: 24px;
+	margin: 0 auto;
+}
+
+.work-hero-copy h1 {
+	max-width: 860px;
+	font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+	line-height: 1.12;
+}
+
+.work-hero-copy > p:not(.eyebrow) {
+	max-width: 820px;
+	color: var(--lisa-ink);
+	font-size: 1.15rem;
+	line-height: 1.6;
+}
+
+.work-hero-action {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: flex-start;
+}
+
+.work-hero-action small {
+	color: var(--lisa-ink);
+	font-size: 0.82rem;
+	line-height: 1.5;
+}
+
 .work-fit-section {
 	display: flex;
 	flex-direction: column;
@@ -1436,6 +1477,7 @@ hr {
 	.problem-section,
 	.benefits-section,
 	.method-section,
+	.work-hero,
 	.work-fit-section,
 	.work-cases-section,
 	.about-draft-hero,
@@ -1505,6 +1547,7 @@ hr {
 	.problem-section,
 	.benefits-section,
 	.method-section,
+	.work-hero,
 	.work-fit-section,
 	.work-cases-section,
 	.about-draft-hero,
