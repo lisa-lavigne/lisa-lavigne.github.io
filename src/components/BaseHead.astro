@@ -28,6 +28,27 @@ const { title, description, image = '/lisa/logo.png' } = Astro.props;
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script is:inline>
+	const calendlyWidgetSrc = 'https://assets.calendly.com/assets/external/widget.js';
+
+	const loadCalendlyWidget = () => new Promise((resolve, reject) => {
+		if (window.Calendly) {
+			resolve();
+			return;
+		}
+
+		const existingScript = document.querySelector(`script[src="${calendlyWidgetSrc}"]`);
+		const script = existingScript || document.createElement('script');
+
+		script.addEventListener('load', () => resolve(), { once: true });
+		script.addEventListener('error', reject, { once: true });
+
+		if (!existingScript) {
+			script.src = calendlyWidgetSrc;
+			script.async = true;
+			document.head.appendChild(script);
+		}
+	});
+
 	document.addEventListener('click', (event) => {
 		const target = event.target;
 		const link = target instanceof Element ? target.closest('[data-calendly-popup]') : null;
@@ -35,11 +56,13 @@ const { title, description, image = '/lisa/logo.png' } = Astro.props;
 
 		event.preventDefault();
 		const url = link.getAttribute('href');
-		if (window.Calendly && url) {
-			window.Calendly.initPopupWidget({ url });
-			return;
-		}
-		if (url) window.location.href = url;
+		if (!url) return;
+
+		loadCalendlyWidget()
+			.then(() => window.Calendly.initPopupWidget({ url }))
+			.catch(() => {
+				window.location.href = url;
+			});
 	});
 </script>
 
