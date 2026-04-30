@@ -1148,6 +1148,149 @@ hr {
 	line-height: 1.45;
 }
 
+.about-draft-page {
+	background: var(--lisa-cream);
+}
+
+.about-draft-hero {
+	display: grid;
+	grid-template-columns: 360px minmax(0, 1fr);
+	gap: 52px;
+	align-items: center;
+	padding: 96px 80px;
+	background: var(--lisa-cream);
+}
+
+.about-draft-hero > img {
+	width: 100%;
+	height: 560px;
+	border: 1px solid #e0e0e0;
+	border-radius: 24px;
+	object-fit: cover;
+	object-position: center 42%;
+}
+
+.about-draft-copy {
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
+}
+
+.about-draft-copy h1 {
+	font-size: 2.4rem;
+}
+
+.draft-values-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.draft-values-grid article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 22px 24px;
+	background: #fff;
+	text-align: center;
+}
+
+.draft-values-grid span,
+.about-principle-list > article > span {
+	color: var(--lisa-coral);
+	font-size: 1.5rem;
+	line-height: 1;
+}
+
+.draft-values-grid h2 {
+	font-size: 1.15rem;
+}
+
+.draft-values-grid p {
+	color: var(--lisa-ink);
+	font-size: 0.78rem;
+	letter-spacing: 0.02em;
+	line-height: 1.35;
+}
+
+.story-card {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	border: 1px solid #e0e0e0;
+	border-radius: 18px;
+	padding: 30px;
+	background: #fff;
+}
+
+.story-card p {
+	color: var(--lisa-ink);
+	font-size: 1rem;
+	line-height: 1.75;
+}
+
+.about-draft-strip {
+	height: 340px;
+	object-position: center 46%;
+}
+
+.about-philosophy-draft {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	padding: 80px;
+	background: #fff4ef;
+}
+
+.about-philosophy-draft > h2 {
+	text-align: center;
+	font-size: 3rem;
+}
+
+.about-principle-list {
+	display: flex;
+	width: min(1280px, 100%);
+	flex-direction: column;
+	gap: 16px;
+	margin: 0 auto;
+}
+
+.about-principle-list article {
+	display: grid;
+	grid-template-columns: 32px minmax(280px, 0.6fr) minmax(0, 1fr);
+	gap: 18px;
+	align-items: start;
+	min-height: 170px;
+	border: 1px solid #e0e0e0;
+	border-radius: 12px;
+	padding: 28px;
+	background: #fff;
+}
+
+.about-principle-list article.edge-card:first-child {
+	border-left: 3px solid var(--lisa-coral);
+}
+
+.about-principle-list article.edge-card:last-child {
+	border-right: 3px solid var(--lisa-coral);
+}
+
+.about-principle-list h3 {
+	color: #031874;
+	font-size: 1.55rem;
+	font-style: italic;
+	line-height: 1.4;
+}
+
+.about-principle-list p {
+	color: var(--lisa-ink);
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
 .about-hero {
 	display: grid;
 	grid-template-columns: 480px minmax(0, 1fr);
@@ -1282,6 +1425,8 @@ hr {
 	.fit-card,
 	.process-flow,
 	.work-case-grid,
+	.about-draft-hero,
+	.about-principle-list article,
 	.compact-grid.four,
 	.compact-grid.three {
 		grid-template-columns: 1fr;
@@ -1292,7 +1437,9 @@ hr {
 	.benefits-section,
 	.method-section,
 	.work-fit-section,
-	.work-cases-section {
+	.work-cases-section,
+	.about-draft-hero,
+	.about-philosophy-draft {
 		padding-right: 24px;
 		padding-left: 24px;
 	}
@@ -1318,6 +1465,10 @@ hr {
 
 	.about-hero > img {
 		height: min(560px, 115vw);
+	}
+
+	.about-draft-hero > img {
+		height: min(620px, 125vw);
 	}
 
 	.values-row {
@@ -1355,9 +1506,19 @@ hr {
 	.benefits-section,
 	.method-section,
 	.work-fit-section,
-	.work-cases-section {
+	.work-cases-section,
+	.about-draft-hero,
+	.about-philosophy-draft {
 		padding-top: 56px;
 		padding-bottom: 56px;
+	}
+
+	.draft-values-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.about-principle-list article {
+		min-height: auto;
 	}
 
 	.mini-card,

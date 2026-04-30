@@ -3,10 +3,26 @@ import BaseHead from '../components/BaseHead.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const values = [
-	'Estructura sin rigidez',
-	'Claridad antes que ruido',
-	'Procesos humanos',
-	'Ligereza mental',
+	{
+		icon: '♧',
+		title: 'Libertad',
+		tagline: 'Atreverse a ser uno mismo, sin filtros',
+	},
+	{
+		icon: '✦',
+		title: 'Exigencia',
+		tagline: 'Apuntar bien, no perfecto',
+	},
+	{
+		icon: '⌁',
+		title: 'Coherencia',
+		tagline: 'Alinear actos y palabras',
+	},
+	{
+		icon: '☺',
+		title: 'Humor',
+		tagline: 'Reír, incluso cuando es serio',
+	},
 ];
 
 const principles = [
@@ -18,33 +34,22 @@ const principles = [
 	{
 		icon: '♡',
 		title: '"¡Se pule!"',
-		body: 'Cada acción puede ser reutilizada y optimizada. Una buena idea, un contenido, un proceso: se adapta, se mejora, se sistematiza.',
-	},
-	{
-		icon: '↗',
-		title: '"Tu empresa no debe ser una prisión, sino un trampolín."',
-		body: 'Creaste tu empresa para darte libertad, no para estar sumergido/a en tareas. Implementamos estrategias que liberan tiempo y energía.',
+		body: 'Porque cada acción que realizas puede ser reutilizada y optimizada. Una buena idea, un buen contenido, un buen proceso: se adapta, se mejora, se sistematiza. Nada debe perderse.',
 	},
 	{
 		icon: '◎',
 		title: '"¡El objetivo, siempre el objetivo!"',
-		body: 'Dispersarse es fácil. Pero si cada acción está guiada por un objetivo preciso, todo se vuelve más claro.',
+		body: 'Dispersarse es fácil. Pero si cada acción está guiada por un objetivo preciso, todo se vuelve más claro. Mi rol es recentrarte en cada etapa.',
 	},
 	{
-		icon: '!',
-		title: '"Automatizar es liberar tiempo para lo esencial: crear, vender y respirar."',
-		body: 'Te ayudo a implementar procesos y herramientas que simplifican tu día a día para que puedas concentrarte en lo que realmente importa.',
-	},
-	{
-		icon: '●',
+		icon: '⌖',
 		title: '"Me encanta, lo adopto"',
 		body: 'Si leo, escucho, veo o entiendo un consejo que me encanta, lo adopto inmediatamente. Sin filtro, sin demora.',
 	},
 	{
 		icon: '✹',
 		title: '"Encuentra tus cajas de Pandora, ábrelas, gestiona lo que hay dentro y ciérralas."',
-		body: 'Todas las cosas que evitas, que te dan miedo, que te hacen decir "ah sí, eso no está muy claro": ahí es donde empieza mi trabajo.',
-		featured: true,
+		body: 'Todas las cosas que evitas, que te dan miedo, que te hacen decir «ah sí, eso no está muy claro» — ahí es donde empieza mi trabajo.',
 	},
 ];
 ---
@@ -54,7 +59,7 @@ const principles = [
 	<head>
 		<BaseHead title={`Sobre mí - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="lisa-page">
+	<body class="lisa-page about-draft-page">
 		<header class="site-header">
 			<a class="brand-mark" href="/" aria-label="Lisa Lavigne">
 				<img src="/lisa/logo.png" alt="" />
@@ -67,31 +72,37 @@ const principles = [
 		</header>
 
 		<main>
-			<section class="about-hero">
-				<img src="/lisa/fotos/Julie corpo 29-01-202622529r 1.jpg" alt="Retrato de Lisa Lavigne" />
-				<div class="about-copy">
+			<section class="about-draft-hero">
+				<img src="/lisa/fotos/Julie corpo 29-01-202622445r.jpg" alt="Retrato de Lisa Lavigne" />
+				<div class="about-draft-copy">
 					<h1>Mis valores</h1>
-					<div class="values-row">
-						{values.map((value) => <span>{value}</span>)}
+					<div class="draft-values-grid">
+						{values.map((value) => (
+							<article>
+								<span aria-hidden="true">{value.icon}</span>
+								<h2>{value.title}</h2>
+								<p>{value.tagline}</p>
+							</article>
+						))}
 					</div>
-					<p class="eyebrow">Mi historia</p>
-					<p>Siempre tuve un pie en dos mundos: el racional… y el emocional.</p>
-					<p>Con el bachillerato científico en mano, me orienté hacia la psicología — porque entender a las personas siempre me fascinó. Luego me hice profesora de matemáticas, y ahí entendí algo esencial: el problema nunca son las mates. Es la confianza, la organización, el método.</p>
-					<p>Después, trabajé en ventas y atención al cliente. Ahí aprendí el rigor, la escucha y el arte de transformar una necesidad en una solución concreta.</p>
-					<p>Hoy, combino todo eso.</p>
-					<p>Ayudo a emprendedores a poner orden, sentido y fluidez en su actividad — con lucidez, ligereza y una verdadera comprensión de lo que pasa en su cabeza y en su negocio.</p>
+					<div class="story-card">
+						<p class="eyebrow">Mi historia</p>
+						<p>Siempre tuve un pie en dos mundos: el racional… y el emocional.</p>
+						<p>Con el bachillerato científico en mano, me orienté hacia la psicología — porque entender a las personas siempre me fascinó. Luego me hice profesora de matemáticas, y ahí entendí algo esencial: el problema nunca son las mates. Es la confianza, la organización, el método.</p>
+						<p>Después, trabajé en ventas y atención al cliente. Ahí aprendí el rigor, la escucha y el arte de transformar una necesidad en una solución concreta.</p>
+						<p>Hoy, combino todo eso.</p>
+						<p>Ayudo a emprendedores a poner orden, sentido y fluidez en su actividad — con lucidez, ligereza y una verdadera comprensión de lo que pasa en su cabeza y en su negocio.</p>
+					</div>
 				</div>
 			</section>
 
-			<img class="photo-strip about-strip" src="/lisa/fotos/Julie corpo 29-01-202622445r.jpg" alt="" />
+			<img class="photo-strip about-draft-strip" src="/lisa/fotos/Julie corpo 29-01-202622595r.jpg" alt="" />
 
-			<section class="section section-soft philosophy-section">
-				<div class="center-heading">
-					<h2>Mi forma de ver el trabajo</h2>
-				</div>
-				<div class="principle-grid">
-					{principles.map((item) => (
-						<article class:list={['principle-card', { featured: item.featured }]}>
+			<section class="about-philosophy-draft">
+				<h2>Mi forma de ver el trabajo</h2>
+				<div class="about-principle-list">
+					{principles.map((item, index) => (
+						<article class={index === 0 || index === principles.length - 1 ? 'edge-card' : ''}>
 							<span aria-hidden="true">{item.icon}</span>
 							<h3>{item.title}</h3>
 							<p>{item.body}</p>
@@ -103,14 +114,15 @@ const principles = [
 
 		<footer class="site-footer">
 			<div>
-				<img src="/lisa/logo.png" alt="Lisa Lavigne" />
-				<p>Acompañamiento estratégico para ordenar tu negocio.</p>
+				<h2>Lisa Lavigne</h2>
 			</div>
 			<nav aria-label="Pie de página">
-				<a href="/">Beneficios</a>
-				<a href="/#trabajo">Método</a>
+				<a href="/">Inicio</a>
+				<a href="/trabajar-juntos">Servicios</a>
+				<a href="/#testimonios">Testimonios</a>
 				<a href="/about">Sobre mí</a>
-				<a href="mailto:hola@lisalavigne.com">Contacto</a>
+				<a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+				<a href="mailto:hola@lisalavigne.com">Email</a>
 			</nav>
 			<p class="copyright">© 2026 Lisa Lavigne. Todos los derechos reservados.</p>
 		</footer>
