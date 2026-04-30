@@ -868,9 +868,13 @@ hr {
 	border-left: 2px solid var(--lisa-coral);
 	border-radius: 8px;
 	padding: 8px 16px;
+	outline: none;
+	transition: background 160ms ease, padding 160ms ease;
 }
 
-.benefit-item.active {
+.benefit-item:hover,
+.benefit-item:focus,
+.benefit-item:focus-within {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	background: rgba(255, 87, 87, 0.15);
@@ -892,7 +896,9 @@ hr {
 	line-height: 1.6;
 }
 
-.benefit-item.active p {
+.benefit-item:hover p,
+.benefit-item:focus p,
+.benefit-item:focus-within p {
 	display: block;
 }
 

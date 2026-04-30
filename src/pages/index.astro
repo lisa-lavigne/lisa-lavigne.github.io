@@ -54,7 +54,7 @@ const benefits = [
 		body: 'Tus ofertas son claras, asumidas y más fáciles de vender. Haces seguimiento sin fricción y facturas con más tranquilidad.',
 	},
 	{
-		title: 'Un espacio seguro',
+		title: 'No quedarte en la superficie',
 		body: 'No nos quedamos en la superficie. Tienes el espacio para abordar los temas importantes, profundizarlos y avanzar con decisiones claras.',
 	},
 ];
@@ -176,7 +176,7 @@ const testimonials = [
 					</div>
 					<div class="benefit-list">
 						{benefits.map((item, index) => (
-							<article class:list={['benefit-item', { active: index === 0 }]}>
+							<article class="benefit-item" tabindex="0">
 								<span aria-hidden="true">{['⌖', '✦', '◷', '↗', '♡'][index]}</span>
 								<div>
 									<h3>{item.title}</h3>
