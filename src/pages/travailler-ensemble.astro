@@ -1,0 +1,207 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const checklist = [
+	'Tu perds du temps à refaire en boucle des choses que tu pourrais standardiser.',
+	'Tu as un parcours client clair dans ta tête, mais dans la réalité tu sors trop facilement du cadre.',
+	'Tu souris un peu quand je te demande pourquoi tu as fait une exception avec ton dernier client.',
+	'Tu aimerais déléguer une étape, mais tu finis par te dire que cela aurait été plus rapide de le faire toi-même.',
+	'Tu réponds “ça dépend” quand on te demande comment tu organises tes semaines.',
+	'Tu utilises plusieurs outils différents et tu ne sais pas toujours très bien quel rôle chacun doit jouer.',
+	'Ton travail te plaît et tes clients sont satisfaits, mais tu as besoin de mieux voir quelle est la prochaine étape.',
+];
+
+const process = [
+	{
+		number: '01',
+		title: 'Point de départ',
+		body: 'On part de quelque chose de réel : un client, une situation, un moment de ton activité.',
+	},
+	{
+		number: '02',
+		title: 'On détecte',
+		body: 'On regarde ce qui se répète, ce qui te freine ou ce qui n’est pas aussi clair que cela devrait l’être.',
+	},
+	{
+		number: '03',
+		title: 'On décide',
+		body: 'On en parle, on questionne… et on prend des décisions concrètes.',
+	},
+	{
+		number: '04',
+		title: 'On passe à l’action',
+		body: 'Tu repars avec des actions claires, et souvent déjà avancées pendant la séance.',
+	},
+];
+
+const cases = [
+	{
+		problem: 'Elle voulait lancer une nouvelle offre… mais ne savait pas comment la positionner ni combien la facturer',
+		work: 'Nous avons construit ensemble l’offre, le prix (1 000 €) et le discours de vente.',
+		result: 'Elle a vendu sa première mission et obtenu 2 clientes supplémentaires dans les mois suivants.',
+	},
+	{
+		problem: 'Ils avaient beaucoup de prospects… mais perdaient du temps et offraient une partie de leur travail',
+		work: 'Nous avons redéfini leur parcours client et leurs critères de qualification.',
+		result: 'Ils ont commencé à mieux filtrer, gagner du temps et facturer des étapes qui ne l’étaient pas avant.',
+	},
+	{
+		problem: 'Elle avait des clients… mais son suivi était irrégulier et elle perdait des opportunités',
+		work: 'Nous avons structuré ses habitudes et son organisation quotidienne.',
+		result: 'Aujourd’hui, elle a un suivi clair de ses prospects et de ses finances.',
+	},
+	{
+		problem: 'Elle avait une base de clients… mais ne l’activait pas',
+		work: 'Nous avons créé une nouvelle offre et une stratégie de réactivation.',
+		result: 'Elle a réussi à relancer une partie importante de ses anciens clients.',
+	},
+];
+
+const testimonials = [
+	{
+		quote: 'Lisa m’a permis de remettre au cœur de mon activité le plaisir et cette passion qui m’a poussée à me lancer dans cette aventure.',
+		name: 'Julie',
+		role: 'Fondatrice du Self Love Club',
+	},
+	{
+		quote: 'Son sens de l’écoute, sa réactivité et son efficacité en font une professionnelle fiable et engagée. Une alliée précieuse pour toute organisation.',
+		name: 'Circé',
+		role: 'Fondatrice, Mazette',
+	},
+	{
+		quote: 'Son accompagnement m’a apporté de la clarté et une vraie tranquillité d’esprit. Des outils et des processus faciles à utiliser.',
+		name: 'Malika',
+		role: 'Coach indépendante',
+	},
+];
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={`Travailler ensemble - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="lisa-page work-together-page">
+		<header class="site-header">
+			<a class="brand-mark" href="/" aria-label="Lisa Lavigne">
+				<img src="/lisa/logo.png" alt="" />
+			</a>
+			<nav aria-label="Navigation principale">
+				<a href="/travailler-ensemble">Travailler ensemble</a>
+				<a href="/a-propos">À propos</a>
+				<a class="language-link" href="/es" hreflang="es">Español</a>
+				<a class="button button-small" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver un appel</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="work-hero">
+				<div class="work-hero-copy">
+					<p class="eyebrow">Travailler ensemble</p>
+					<h1>Travailler ensemble pour ordonner ce qui fonctionne déjà</h1>
+					<p>Une séance non pas pour ajouter plus de tâches, mais pour regarder une partie concrète de ton activité, comprendre ce qui bloque l’avancée et repartir avec des décisions claires.</p>
+					<div class="work-hero-action">
+						<a class="button" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver un appel</a>
+						<small>Si tu sens que ton activité fonctionne, mais dépend encore trop de toi, on commence par là.</small>
+					</div>
+				</div>
+			</section>
+
+			<section class="work-fit-section">
+				<div class="fit-card">
+					<h1>C’est pour toi si...</h1>
+					<ul>
+						{checklist.map((item) => (
+							<li>
+								<span aria-hidden="true">✓</span>
+								{item}
+							</li>
+						))}
+					</ul>
+					<p>NB : Pas besoin de te reconnaître à 100 %. Si tu as souri en lisant au moins 3 de ces phrases parce que tu t’es reconnue, alors c’est pour toi.</p>
+				</div>
+
+				<div class="divider"></div>
+
+				<div class="work-process-intro">
+					<span aria-hidden="true">♡</span>
+					<h2>Ce que l’on fait ensemble</h2>
+					<p>Nous avons des séances en direct pendant lesquelles nous partons d’un point concret de ton activité… et nous ne le lâchons pas tant qu’il n’est pas clair et actionnable.</p>
+					<div class="process-flow">
+						{process.map((step, index) => (
+							<>
+								<article>
+									<strong>{step.number}</strong>
+									<h3>{step.title}</h3>
+									<p>{step.body}</p>
+								</article>
+								{index < process.length - 1 && <span class="flow-arrow" aria-hidden="true">→</span>}
+							</>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<img class="photo-strip work-strip" src="/lisa/fotos/Julie corpo 29-01-202622688r 1.jpg" alt="" />
+
+			<section class="work-cases-section">
+				<div class="center-heading">
+					<h2>Ce que j’ai aidé à débloquer</h2>
+					<p>Cas concrets</p>
+				</div>
+				<div class="work-case-grid">
+					{cases.map((item) => (
+						<article class="work-case-card">
+							<h3>{item.problem}</h3>
+							<p>→ {item.work}</p>
+							<strong>→ {item.result}</strong>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section id="temoignages" class="section testimonial-section">
+				<div class="center-heading">
+					<h2>Ce qu’on dit de moi</h2>
+				</div>
+				<div class="testimonial-grid">
+					{testimonials.map((item) => (
+						<article class="testimonial-card">
+							<span class="quote-mark" aria-hidden="true">"</span>
+							<p>“{item.quote}”</p>
+							<div class="author">
+								<span aria-hidden="true"></span>
+								<div>
+									<strong>{item.name}</strong>
+									<small>{item.role}</small>
+								</div>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section id="contact" class="final-cta">
+				<h2>Prête à structurer ton <span>activité</span> ?</h2>
+				<p>Réserve un appel découverte gratuit.</p>
+				<a class="button" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver mon appel découverte</a>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div>
+				<h2>Lisa Lavigne</h2>
+			</div>
+			<nav aria-label="Pied de page">
+				<a href="/">Accueil</a>
+				<a href="/travailler-ensemble">Services</a>
+				<a href="#temoignages">Témoignages</a>
+				<a href="/a-propos">À propos</a>
+				<a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+				<a href="mailto:hola@lisalavigne.com">E-mail</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne. Tous droits réservés.</p>
+		</footer>
+	</body>
+</html>

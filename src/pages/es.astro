@@ -1,0 +1,321 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const painPoints = [
+	{
+		icon: '◷',
+		text: 'Pierdes tiempo en tareas repetitivas o de poco valor',
+	},
+	{
+		icon: '✦',
+		text: 'Sientes que deberías delegar o profesionalizar ciertas áreas, pero no sabes por dónde empezar',
+	},
+	{
+		icon: '⇄',
+		text: 'Te adaptas a cada cliente porque aún no tienes una forma clara y estructurada de trabajar',
+	},
+	{
+		icon: '!',
+		text: 'Y, por encima de todo, el miedo a que la cantidad de trabajo te supere',
+	},
+];
+
+const solutionCards = [
+	{
+		icon: '⌕',
+		text: 'Identificar con precisión qué está frenando tu crecimiento y por dónde empezar',
+	},
+	{
+		icon: '↬',
+		text: 'Definir cómo seleccionas, recibes y acompañas a tus clientes sin improvisaciones',
+	},
+	{
+		icon: '⌖',
+		text: 'Alinear tu forma de trabajar con la visión del negocio que quieres tener',
+	},
+];
+
+const benefits = [
+	{
+		title: 'Coherencia',
+		body: 'Lo que ofreces, lo que vendes y la forma en que trabajas están por fin alineados. Se acabó la diferencia entre tu discurso y la realidad de tu día a día.',
+	},
+	{
+		title: 'Fluidez',
+		body: 'Tu recorrido de cliente se vuelve claro, lógico y bajo control. Menos confusión, menos idas y vueltas, una experiencia más simple para ti y para tu cliente.',
+	},
+	{
+		title: 'Ahorrar tiempo',
+		body: 'Dejas de empezar desde cero en cada proyecto. Tus procesos están definidos, estructurados y son lo suficientemente sólidos como para ahorrarte tiempo en el día a día.',
+	},
+	{
+		title: 'Aumentar facturación',
+		body: 'Tus ofertas son claras, asumidas y más fáciles de vender. Haces seguimiento sin fricción y facturas con más tranquilidad.',
+	},
+	{
+		title: 'No quedarte en la superficie',
+		body: 'Tienes el espacio para abordar los temas importantes, profundizarlos y avanzar con decisiones claras.',
+	},
+];
+
+const steps = [
+	{
+		number: '01',
+		icon: '♙',
+		title: 'Contigo',
+		body: 'Co-construcción al 100%. No hago por ti, hago contigo. Reflexionamos juntos, nos desafiamos juntos.',
+	},
+	{
+		number: '02',
+		icon: '▣',
+		title: 'En sesiones en vivo',
+		body: 'Sesiones de trabajo en directo. Nada de slides enviadas por email. Nos sentamos, avanzamos, decidimos.',
+	},
+	{
+		number: '03',
+		icon: '↗',
+		title: 'Te vas con acciones',
+		body: 'Reflexionamos, decidimos, y te vas con un plan de acción concreto. Nada de bla bla, solo lo concreto.',
+	},
+];
+
+const testimonials = [
+	{
+		quote: 'Más allá de su buen humor contagioso, Lisa ofrece un acompañamiento realmente pertinente y estructurado, que cambia concretamente la forma en que nos organizamos. Tiene esa capacidad rara de hacerte reflexionar con suavidad, sin forzar nunca, para ayudarte a avanzar en tus decisiones y ver con más claridad tu día a día.\n\nSus citas semanales son una verdadera bocanada de aire, un momento en el que por fin se respira.\n\nSi estás atravesando una etapa en la que la carga de trabajo se desborda, en la que los días pasan sin saber por dónde empezar, y tienes ganas de recuperar claridad y ritmo… es el buen momento para contactar con Lisa.',
+		name: 'Clément',
+		role: 'Cofundador, Mon architecto',
+	},
+	{
+		quote: 'Tuve el inmenso privilegio de ser acompañada por Lisa en el desarrollo de mi empresa. Llevaba dos años y medio trabajando por mi cuenta, y la parte operativa estaba empezando a ocupar demasiado espacio en el día a día de mi negocio, con una carga mental que empezaba a pesarme. Lisa supo identificar muy rápido mis bloqueos exactos y, después de una auditoría ultra cualitativa, me acompañó con un plan preciso y enfocado. Trabajamos en profundidad mi estrategia de comunicación y, sobre todo, nunca agradeceré lo suficiente a Lisa todos los procesos que automatizó y puso en marcha en Self-Love Club. Si tuviera que resumirlo, Lisa me permitió volver a poner en el centro de mi actividad el placer y esa pasión que me impulsó a lanzarme en esta aventura, a veces difícil. Recomiendo a cualquier emprendedor apasionado recurrir a su expertise, su inteligencia, su proactividad y su creatividad con los ojos cerrados.',
+		name: 'Julie',
+		role: 'Fundadora de Self Love Club',
+	},
+	{
+		quote: '¿Su apodo? La Joya. Porque es preciosa. Su capacidad de escucha, su reactividad y su eficacia la convierten en una profesional fiable y comprometida. Polivalente y resolutiva, sabe abordar tanto retos humanos como tecnológicos, con una visión orientada a resultados. Me enseñó que se puede ser exigente y profundamente benevolente a la vez. Estructurada e intuitiva. Leal y ambiciosa. Contribuye directamente a mejorar el rendimiento operativo de la empresa y a optimizar la experiencia cliente. Reforzó Mazette. Pero, sobre todo, me reforzó a mí. En el emprendimiento se habla mucho de visión. Se habla menos de quienes nos ayudan a sostenerla. Una aliada preciosa para cualquier organización que busque un crecimiento estructurado y una relación cliente duradera. Gracias Lisa.',
+		name: 'Circé',
+		role: 'Fundadora, Mazette',
+	},
+	{
+		quote: 'Lo que más aprecié de Lisa fue su escucha atenta y su comprensión de mi necesidad. No se limita a aplicar recetas o herramientas que funcionan para ella o para otras personas: pregunta para aportar una respuesta adaptada a quién soy, a mi necesidad de ser guiada con herramientas IT sencillas y a mi contexto como coach independiente. Esa escucha atenta me dio el espacio para entender mejor mi propia necesidad y enfocar mis prioridades de organización. Su acompañamiento me aportó claridad y una verdadera tranquilidad mental, especialmente gracias a la herramienta que ahora utilizo regularmente para hacer seguimiento de mis facturas y de los importes que debo presupuestar para la URSSAF. En resumen, herramientas y procesos fáciles de usar, que me ayudan a anticipar y me aportan tranquilidad. Todo con mucho dinamismo y un toque de humor, lo que hace que las sesiones sean tan útiles como agradables.',
+		name: 'Malika',
+		role: 'Coach independiente',
+	},
+	{
+		quote: 'Tuve la suerte de trabajar tanto en el desarrollo estratégico de un proyecto como en la optimización de nuestros procesos internos. Trabajar con Lisa es regalarse una colaboración preciosa: entiende los retos al instante, se mete en tu cabeza y encarna plenamente los proyectos que acompaña. Su eficacia, su lucidez y su capacidad para ocupar siempre el lugar justo la convierten en una aliada de confianza. Aporta un verdadero alivio en términos de carga mental y una mirada estructurante en cada etapa. No puedo más que recomendar trabajar con ella.',
+		name: 'Blanche',
+		role: '',
+	},
+	{
+		quote: 'No trabajamos juntas durante mucho tiempo, pero aprecié mucho nuestros intercambios con Lisa. Como emprendedora, muchas veces estás en tu cabeza dando vueltas a las cosas, y hace mucho bien tener una mirada externa, con ideas concretas y pistas en las que quizá no habrías pensado. También me gustó mucho su personalidad, muy cercana: entendió enseguida mi proyecto, mis ideas, y eso se agradece muchísimo.',
+		name: 'Diana',
+		role: 'Fundadora de Izina Hair',
+	},
+];
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="lisa-page lisa-home">
+		<header class="site-header">
+			<a class="brand-mark" href="/es" aria-label="Lisa Lavigne">
+				<img src="/lisa/logo.png" alt="" />
+			</a>
+			<nav aria-label="Navegación principal">
+				<a href="/trabajar-juntos">Trabajar juntos</a>
+				<a href="/about">Sobre mí</a>
+				<a class="language-link" href="/" hreflang="fr">Français</a>
+				<a class="button button-small" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Reservar una llamada</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="home-hero">
+				<div class="hero-wrap">
+					<div class="hero-copy">
+						<h1>
+							Tu <span>negocio</span> no necesita más esfuerzo.<br />
+							Necesita un <span>sistema</span>.
+						</h1>
+						<p class="hero-lead">Te ayudo a estructurar tu negocio para que te dé lo que viniste a buscar: tiempo, libertad y claridad para disfrutar de lo que haces.</p>
+						<p>Soy Lisa. Ayudo a emprendedores en crecimiento a estructurar su negocio. Trabajamos juntos para que ganes claridad en tus decisiones, coherencia en tu oferta y fluidez en tu día a día.</p>
+						<div class="hero-action">
+							<a class="button" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Reserva tu diagnóstico</a>
+							<small>30 minutos para entender dónde estás y ver si tiene sentido trabajar juntos.</small>
+						</div>
+					</div>
+					<img class="hero-image" src="/lisa/fotos/Hero Image.png" alt="Lisa Lavigne sentada y sonriendo" />
+				</div>
+			</section>
+
+			<section class="problem-section">
+				<p>Cuando tu negocio empieza a crecer, la forma intuitiva en la que lo gestionabas deja de ser suficiente. Lo que antes funcionaba empieza a mostrar sus límites.</p>
+				<h2 class="small-heading">Empiezas a notar que:</h2>
+				<div class="compact-grid four">
+					{painPoints.map((item) => (
+						<article class="mini-card">
+							<span aria-hidden="true">{item.icon}</span>
+							<p>{item.text}</p>
+						</article>
+					))}
+				</div>
+				<p class="red-statement">Ese es tu primer techo de cristal.<br />Y es una buena señal: significa que has crecido.</p>
+				<div class="mountains" aria-hidden="true">
+					<span></span>
+					<span></span>
+				</div>
+				<h2>Ahí es donde entro yo.</h2>
+				<p>Trabajamos juntos, en sesiones en vivo, para:</p>
+				<div class="compact-grid three">
+					{solutionCards.map((item) => (
+						<article class="solution-card">
+							<span aria-hidden="true">{item.icon}</span>
+							<p>{item.text}</p>
+						</article>
+					))}
+				</div>
+				<p>Pensamos juntos. Decidimos juntos.<br />Y sales de cada sesión con acciones concretas que puedes implementar desde el día siguiente.</p>
+				<a class="button centered" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Reservar mi llamada</a>
+			</section>
+
+			<section id="beneficios" class="benefits-section">
+				<div class="center-heading">
+					<h2>Si estás buscando...</h2>
+				</div>
+				<div class="benefits-layout">
+					<div class="brain-illustration" aria-hidden="true">
+						<div class="brain brain-red">☷</div>
+						<div class="brain brain-blue">☷</div>
+					</div>
+					<div class="benefit-list">
+						{benefits.map((item, index) => (
+							<article class="benefit-item" tabindex="0">
+								<span aria-hidden="true">{['⌖', '✦', '◷', '↗', '♡'][index]}</span>
+								<div>
+									<h3>{item.title}</h3>
+									<p>{item.body}</p>
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+				<p class="benefits-close">...estás en el lugar indicado.</p>
+			</section>
+
+			<section id="metodo" class="method-section">
+				<div class="center-heading">
+					<p class="eyebrow">Mi método</p>
+					<h2>¿Cómo trabajo?</h2>
+					<p>Tres pilares. Un método. Resultados.</p>
+				</div>
+				<div class="method-grid">
+					{steps.map((step) => (
+						<article class="method-card">
+							<strong>{step.number}</strong>
+							<span aria-hidden="true">{step.icon}</span>
+							<h3>{step.title}</h3>
+							<p>{step.body}</p>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<img class="photo-strip home-strip" src="/lisa/fotos/Julie corpo 29-01-202622567r 1.jpg" alt="Retrato de Lisa Lavigne sonriendo" />
+
+			<section id="testimonios" class="section testimonial-section testimonial-carousel-section">
+				<div class="center-heading">
+					<h2>Lo que dicen de mí</h2>
+				</div>
+				<div class="testimonial-carousel" aria-label="Testimonios">
+					{testimonials.map((item) => (
+						<article class="testimonial-card">
+							<span class="quote-mark" aria-hidden="true">"</span>
+							<p>“{item.quote}”</p>
+							<div class="author">
+								<span aria-hidden="true"></span>
+								<div>
+									<strong>{item.name}</strong>
+									{item.role && <small>{item.role}</small>}
+								</div>
+							</div>
+						</article>
+					))}
+				</div>
+				<div class="testimonial-carousel-controls" aria-label="Controles de testimonios">
+					<button class="testimonial-arrow" type="button" data-carousel-prev aria-label="Testimonio anterior">‹</button>
+					<button class="testimonial-arrow testimonial-arrow-next" type="button" data-carousel-next aria-label="Testimonio siguiente">›</button>
+				</div>
+			</section>
+
+			<section id="contacto" class="final-cta">
+				<h2>¿Lista para estructurar tu <span>negocio</span>?</h2>
+				<p>Reserva una llamada de descubrimiento gratuita. Hablamos de ti, de tu negocio, y vemos si podemos avanzar juntos.</p>
+				<a class="button" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Reservar mi llamada de descubrimiento</a>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div>
+				<h2>Lisa Lavigne</h2>
+				<p>Consultora en estructuración de negocios</p>
+			</div>
+			<nav aria-label="Pie de página">
+				<a href="/es">Inicio</a>
+				<a href="#beneficios">Servicios</a>
+				<a href="#testimonios">Testimonios</a>
+				<a href="/about">Sobre mí</a>
+				<a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+				<a href="mailto:hola@lisalavigne.com">Email</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne. Todos los derechos reservados.</p>
+		</footer>
+		<script is:inline>
+			const carousel = document.querySelector('.testimonial-carousel');
+			const previousButton = document.querySelector('[data-carousel-prev]');
+			const nextButton = document.querySelector('[data-carousel-next]');
+			const testimonialCards = carousel ? Array.from(carousel.querySelectorAll('.testimonial-card')) : [];
+			let activeTestimonial = 0;
+			let testimonialScrollTimer;
+
+			const getActiveTestimonial = () => {
+				if (!carousel || testimonialCards.length === 0) return 0;
+				return testimonialCards.reduce((closestIndex, card, index) => {
+					const closestCard = testimonialCards[closestIndex];
+					const currentDistance = Math.abs(card.offsetLeft - carousel.scrollLeft);
+					const closestDistance = Math.abs(closestCard.offsetLeft - carousel.scrollLeft);
+					return currentDistance < closestDistance ? index : closestIndex;
+				}, 0);
+			};
+
+			const resetTestimonials = () => {
+				if (!carousel) return;
+				activeTestimonial = 0;
+				carousel.scrollTo({ left: 0, behavior: 'auto' });
+			};
+
+			const scrollTestimonials = (direction) => {
+				if (!carousel || testimonialCards.length === 0) return;
+				activeTestimonial = (activeTestimonial + direction + testimonialCards.length) % testimonialCards.length;
+				carousel.scrollTo({
+					left: testimonialCards[activeTestimonial].offsetLeft,
+					behavior: 'smooth',
+				});
+			};
+
+			carousel?.addEventListener('scroll', () => {
+				window.clearTimeout(testimonialScrollTimer);
+				testimonialScrollTimer = window.setTimeout(() => {
+					activeTestimonial = getActiveTestimonial();
+				}, 120);
+			});
+
+			window.addEventListener('pageshow', resetTestimonials);
+			window.requestAnimationFrame(resetTestimonials);
+			previousButton?.addEventListener('click', () => scrollTestimonials(-1));
+			nextButton?.addEventListener('click', () => scrollTestimonials(1));
+		</script>
+	</body>
+</html>

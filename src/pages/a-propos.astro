@@ -1,0 +1,131 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const values = [
+	{
+		icon: '♧',
+		title: 'Liberté',
+		tagline: 'Oser être soi-même, sans filtre',
+	},
+	{
+		icon: '✦',
+		title: 'Exigence',
+		tagline: 'Viser juste, pas parfait',
+	},
+	{
+		icon: '⌁',
+		title: 'Cohérence',
+		tagline: 'Aligner les actes et les mots',
+	},
+	{
+		icon: '☺',
+		title: 'Humour',
+		tagline: 'Rire, même quand c’est sérieux',
+	},
+];
+
+const principles = [
+	{
+		icon: '✦',
+		title: '"Si tu sais quelque chose mais que tu ne l’appliques pas, alors tu ne le sais pas vraiment."',
+		body: 'Trop souvent, nous accumulons des connaissances sans les mettre en pratique. Mon rôle est de t’écouter, de te challenger et de t’aider à passer à l’action de manière concrète.',
+	},
+	{
+		icon: '♡',
+		title: '"On ponce !"',
+		body: 'Parce que chaque action que tu réalises peut être réutilisée et optimisée. Une bonne idée, un bon contenu, un bon processus : ça s’adapte, ça s’améliore, ça se systématise. Rien ne doit se perdre.',
+	},
+	{
+		icon: '◎',
+		title: '"L’objectif, toujours l’objectif !"',
+		body: 'Se disperser est facile. Mais si chaque action est guidée par un objectif précis, tout devient plus clair. Mon rôle est de te recentrer à chaque étape.',
+	},
+	{
+		icon: '⌖',
+		title: '"J’adore, j’adopte"',
+		body: 'Si je lis, écoute, vois ou comprends un conseil que j’adore, je l’adopte immédiatement. Sans filtre, sans délai.',
+	},
+	{
+		icon: '✹',
+		title: '"Trouve tes boîtes de Pandore, ouvre-les, gère ce qu’il y a dedans et referme-les."',
+		body: 'Toutes les choses que tu évites, qui te font peur, qui te font dire “ah oui, ça ce n’est pas très clair” — c’est là que mon travail commence.',
+	},
+];
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={`À propos - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="lisa-page about-draft-page">
+		<header class="site-header">
+			<a class="brand-mark" href="/" aria-label="Lisa Lavigne">
+				<img src="/lisa/logo.png" alt="" />
+			</a>
+			<nav aria-label="Navigation principale">
+				<a href="/travailler-ensemble">Travailler ensemble</a>
+				<a href="/a-propos">À propos</a>
+				<a class="language-link" href="/es" hreflang="es">Español</a>
+				<a class="button button-small" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver un appel</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="about-draft-hero">
+				<img src="/lisa/fotos/Julie corpo 29-01-202622445r.jpg" alt="Portrait de Lisa Lavigne" />
+				<div class="about-draft-copy">
+					<h1>Mes valeurs</h1>
+					<div class="draft-values-grid">
+						{values.map((value) => (
+							<article>
+								<span aria-hidden="true">{value.icon}</span>
+								<h2>{value.title}</h2>
+								<p>{value.tagline}</p>
+							</article>
+						))}
+					</div>
+					<div class="story-card">
+						<p class="eyebrow">Mon histoire</p>
+						<p>J’ai toujours eu un pied dans deux mondes : le rationnel… et l’émotionnel.</p>
+						<p>Avec un bac scientifique en poche, je me suis orientée vers la psychologie — parce que comprendre les personnes m’a toujours fascinée. Puis je suis devenue professeure de mathématiques, et j’ai compris quelque chose d’essentiel : le problème, ce ne sont jamais les maths. C’est la confiance, l’organisation, la méthode.</p>
+						<p>Ensuite, j’ai travaillé dans la vente et la relation client. J’y ai appris la rigueur, l’écoute et l’art de transformer un besoin en solution concrète.</p>
+						<p>Aujourd’hui, je combine tout cela.</p>
+						<p>J’aide les entrepreneurs à mettre de l’ordre, du sens et de la fluidité dans leur activité — avec lucidité, légèreté et une vraie compréhension de ce qui se passe dans leur tête et dans leur entreprise.</p>
+					</div>
+				</div>
+			</section>
+
+			<img class="photo-strip about-draft-strip" src="/lisa/fotos/Julie corpo 29-01-202622595r.jpg" alt="" />
+
+			<section class="about-philosophy-draft">
+				<h2>Ma philosophie de travail</h2>
+				<div class="about-principle-list">
+					{principles.map((item, index) => (
+						<article class={index === 0 || index === principles.length - 1 ? 'edge-card' : ''}>
+							<span aria-hidden="true">{item.icon}</span>
+							<h3>{item.title}</h3>
+							<p>{item.body}</p>
+						</article>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div>
+				<h2>Lisa Lavigne</h2>
+			</div>
+			<nav aria-label="Pied de page">
+				<a href="/">Accueil</a>
+				<a href="/travailler-ensemble">Services</a>
+				<a href="/#temoignages">Témoignages</a>
+				<a href="/a-propos">À propos</a>
+				<a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+				<a href="mailto:hola@lisalavigne.com">E-mail</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne. Tous droits réservés.</p>
+		</footer>
+	</body>
+</html>
