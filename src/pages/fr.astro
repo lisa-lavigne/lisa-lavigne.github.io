@@ -82,19 +82,34 @@ const steps = [
 
 const testimonials = [
 	{
-		quote: 'Au-delà de sa bonne humeur communicative, Lisa offre un accompagnement vraiment pertinent et structuré, qui change concrètement la façon dont on s’organise. Elle a cette capacité rare de vous faire réfléchir en douceur, sans jamais brusquer, pour vous aider à avancer dans vos choix et à y voir plus clair dans votre quotidien.',
+		quote: 'Au-delà de sa bonne humeur communicative, Lisa offre un accompagnement vraiment pertinent et structuré, qui change concrètement la façon dont on s’organise. Elle a cette capacité rare de vous faire réfléchir en douceur, sans jamais brusquer, pour vous aider à avancer dans vos choix et à y voir plus clair dans votre quotidien.\n\nSes rendez-vous hebdomadaires sont une vraie bouffée d’oxygène, un moment où l’on respire enfin.\n\nSi vous traversez une période où la charge de travail déborde, où vos journées filent sans que vous sachiez par où commencer, et que vous avez envie de retrouver de la clarté et du rythme… c’est le bon moment pour contacter Lisa !',
 		name: 'Clément',
-		role: 'Mon architecto',
+		role: 'Co-fondateur, Mon architecto',
 	},
 	{
-		quote: 'Lisa m’a permis de remettre au centre de mon activité le plaisir et cette passion qui m’a poussée à me lancer dans cette aventure.',
+		quote: 'J’ai eu l’immense privilège d’être accompagnée par Lisa dans le développement de mon entreprise. À mon compte depuis 2 ans et demi, l’opérationnel était en train de prendre trop de place dans le quotidien de mon entreprise, et la charge mentale qui va avec commençait à m’écraser. Lisa a su très rapidement identifier exactement mes freins et, suite à son audit - ultra qualitatif -, m’a accompagnée avec un plan précis et ciblé. Nous avons travaillé en profondeur ma stratégie de communication et, surtout, je ne remercierai jamais assez Lisa pour tous les processus qu’elle a automatisés et mis en place au Self-Love Club. Si je devais résumer, Lisa m’a permis de remettre au cœur de mon activité du plaisir et cette passion qui m’a poussée à me lancer dans cette aventure parfois difficile. Je recommande à tout(e) entrepreneur passionné(e) de faire appel à son expertise, son intelligence, sa proactivité et sa créativité les yeux fermés.',
 		name: 'Julie',
-		role: 'Fondatrice, Self-Love Club',
+		role: 'Fondatrice du Self Love Club',
 	},
 	{
-		quote: 'Son écoute, sa réactivité et son efficacité en font une professionnelle fiable et engagée. Une alliée précieuse pour toute organisation.',
+		quote: 'Son surnom ? La Joya. Parce qu’elle est précieuse. Son sens de l’écoute, sa réactivité et son efficacité en font une professionnelle fiable et engagée. Polyvalente et résolutive, elle sait adresser aussi bien des enjeux humains que technologiques, avec une vision orientée résultats. Elle m’a appris qu’on peut être à la fois exigeante et profondément bienveillante. Structurée et intuitive. Loyale et ambitieuse. Elle contribue directement à l’amélioration de la performance opérationnelle de l’entreprise et à l’optimisation de l’expérience client. Elle a renforcé Mazette. Mais surtout, elle m’a renforcée moi. Dans l’entrepreneuriat, on parle souvent de vision. On parle moins de celles qui nous aident à la tenir. Une alliée précieuse pour toute organisation en quête de croissance structurée et de relation client durable. Merci Lisa',
 		name: 'Circé',
 		role: 'Fondatrice, Mazette',
+	},
+	{
+		quote: 'Ce que j’ai particulièrement apprécié chez Lisa, c’est son écoute attentive et sa compréhension de mon besoin. Elle ne se contente pas d’appliquer des recettes ou des outils qui fonctionnent pour elle ou pour d’autres : elle questionne pour apporter une réponse adaptée à qui je suis, à mon besoin d’être guidée sur des outils IT simples et à mon contexte de coach indépendante. Cette écoute attentive m’a donné l’espace pour mieux comprendre mon propre besoin et cibler mes priorités en matière d’organisation. Son accompagnement m’a apporté de la clarté et une vraie tranquillité d’esprit, notamment grâce à l’outil que j’utilise désormais régulièrement pour suivre mes factures et les montants à budgétiser pour l’URSSAF. En bref, des outils et des processus faciles d’utilisation, qui m’aident à anticiper et m’apportent une tranquillité d’esprit. Le tout avec beaucoup de dynamisme et une touche d’humour, ce qui rend les sessions aussi utiles qu’agréables.',
+		name: 'Malika',
+		role: 'Coach indépendante',
+	},
+	{
+		quote: 'J’ai eu la chance de travailler à la fois sur le développement stratégique d’un projet et sur l’optimisation de nos process internes. Travailler avec Lisa, c’est s’offrir un partenariat précieux : elle comprend instantanément les enjeux, se met dans votre tête et incarne pleinement les projets qu’elle accompagne. Son efficacité, sa lucidité et sa capacité à toujours prendre la juste place en font une alliée de confiance. Elle apporte un vrai soulagement en termes de charge mentale et un regard structurant à chaque étape. Je ne peux que recommander de faire appel à elle.',
+		name: 'Blanche',
+		role: '',
+	},
+	{
+		quote: 'Nous n’avons pas travaillé ensemble très longtemps, mais j’ai vraiment apprécié nos échanges avec Lisa. En tant qu’entrepreneure, on est souvent dans sa tête à cogiter, et cela fait du bien d’avoir un regard extérieur, avec des idées concrètes et des pistes auxquelles on n’aurait pas forcément pensé. J’ai aussi beaucoup aimé sa personnalité très sympa : elle a tout de suite compris mon projet, mes idées, et ça, ça fait vraiment plaisir.',
+		name: 'Diana',
+		role: 'Fondatrice de Izina Hair',
 	},
 ];
 ---
@@ -224,7 +239,7 @@ const testimonials = [
 								<span aria-hidden="true"></span>
 								<div>
 									<strong>{item.name}</strong>
-									<small>{item.role}</small>
+									{item.role && <small>{item.role}</small>}
 								</div>
 							</div>
 						</article>
@@ -262,15 +277,44 @@ const testimonials = [
 			const carousel = document.querySelector('.testimonial-carousel');
 			const previousButton = document.querySelector('[data-carousel-prev]');
 			const nextButton = document.querySelector('[data-carousel-next]');
+			const testimonialCards = carousel ? Array.from(carousel.querySelectorAll('.testimonial-card')) : [];
+			let activeTestimonial = 0;
+			let testimonialScrollTimer;
 
-			const scrollTestimonials = (direction) => {
-				if (!carousel) return;
-				const card = carousel.querySelector('.testimonial-card');
-				const gap = 28;
-				const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth;
-				carousel.scrollBy({ left: direction * distance, behavior: 'smooth' });
+			const getActiveTestimonial = () => {
+				if (!carousel || testimonialCards.length === 0) return 0;
+				return testimonialCards.reduce((closestIndex, card, index) => {
+					const closestCard = testimonialCards[closestIndex];
+					const currentDistance = Math.abs(card.offsetLeft - carousel.scrollLeft);
+					const closestDistance = Math.abs(closestCard.offsetLeft - carousel.scrollLeft);
+					return currentDistance < closestDistance ? index : closestIndex;
+				}, 0);
 			};
 
+			const resetTestimonials = () => {
+				if (!carousel) return;
+				activeTestimonial = 0;
+				carousel.scrollTo({ left: 0, behavior: 'auto' });
+			};
+
+			const scrollTestimonials = (direction) => {
+				if (!carousel || testimonialCards.length === 0) return;
+				activeTestimonial = (activeTestimonial + direction + testimonialCards.length) % testimonialCards.length;
+				carousel.scrollTo({
+					left: testimonialCards[activeTestimonial].offsetLeft,
+					behavior: 'smooth',
+				});
+			};
+
+			carousel?.addEventListener('scroll', () => {
+				window.clearTimeout(testimonialScrollTimer);
+				testimonialScrollTimer = window.setTimeout(() => {
+					activeTestimonial = getActiveTestimonial();
+				}, 120);
+			});
+
+			window.addEventListener('pageshow', resetTestimonials);
+			window.requestAnimationFrame(resetTestimonials);
 			previousButton?.addEventListener('click', () => scrollTestimonials(-1));
 			nextButton?.addEventListener('click', () => scrollTestimonials(1));
 		</script>
