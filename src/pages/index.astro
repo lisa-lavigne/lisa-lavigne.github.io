@@ -82,19 +82,34 @@ const steps = [
 
 const testimonials = [
 	{
-		quote: 'Lisa me permitió volver a poner en el centro de mi actividad el placer y esa pasión que me impulsó a lanzarme en esta aventura.',
-		name: 'Julie',
-		role: 'Fundadora, Self-Love Club',
+		quote: 'Más allá de su buen humor contagioso, Lisa ofrece un acompañamiento realmente pertinente y estructurado, que cambia concretamente la forma en que nos organizamos. Tiene esa capacidad rara de hacerte reflexionar con suavidad, sin forzar nunca, para ayudarte a avanzar en tus decisiones y ver con más claridad tu día a día.\n\nSus citas semanales son una verdadera bocanada de aire, un momento en el que por fin se respira.\n\nSi estás atravesando una etapa en la que la carga de trabajo se desborda, en la que los días pasan sin saber por dónde empezar, y tienes ganas de recuperar claridad y ritmo… es el buen momento para contactar con Lisa.',
+		name: 'Clément',
+		role: 'Cofundador, Mon architecto',
 	},
 	{
-		quote: 'Su capacidad de escucha, su reactividad y su eficacia la convierten en una profesional fiable y comprometida. Una aliada valiosa para cualquier organización.',
+		quote: 'Tuve el inmenso privilegio de ser acompañada por Lisa en el desarrollo de mi empresa. Llevaba dos años y medio trabajando por mi cuenta, y la parte operativa estaba empezando a ocupar demasiado espacio en el día a día de mi negocio, con una carga mental que empezaba a pesarme. Lisa supo identificar muy rápido mis bloqueos exactos y, después de una auditoría ultra cualitativa, me acompañó con un plan preciso y enfocado. Trabajamos en profundidad mi estrategia de comunicación y, sobre todo, nunca agradeceré lo suficiente a Lisa todos los procesos que automatizó y puso en marcha en Self-Love Club. Si tuviera que resumirlo, Lisa me permitió volver a poner en el centro de mi actividad el placer y esa pasión que me impulsó a lanzarme en esta aventura, a veces difícil. Recomiendo a cualquier emprendedor apasionado recurrir a su expertise, su inteligencia, su proactividad y su creatividad con los ojos cerrados.',
+		name: 'Julie',
+		role: 'Fundadora de Self Love Club',
+	},
+	{
+		quote: '¿Su apodo? La Joya. Porque es preciosa. Su capacidad de escucha, su reactividad y su eficacia la convierten en una profesional fiable y comprometida. Polivalente y resolutiva, sabe abordar tanto retos humanos como tecnológicos, con una visión orientada a resultados. Me enseñó que se puede ser exigente y profundamente benevolente a la vez. Estructurada e intuitiva. Leal y ambiciosa. Contribuye directamente a mejorar el rendimiento operativo de la empresa y a optimizar la experiencia cliente. Reforzó Mazette. Pero, sobre todo, me reforzó a mí. En el emprendimiento se habla mucho de visión. Se habla menos de quienes nos ayudan a sostenerla. Una aliada preciosa para cualquier organización que busque un crecimiento estructurado y una relación cliente duradera. Gracias Lisa.',
 		name: 'Circé',
 		role: 'Fundadora, Mazette',
 	},
 	{
-		quote: 'Tu acompañamiento me aportó claridad y tranquilidad mental. Herramientas y procesos fáciles de usar.',
+		quote: 'Lo que más aprecié de Lisa fue su escucha atenta y su comprensión de mi necesidad. No se limita a aplicar recetas o herramientas que funcionan para ella o para otras personas: pregunta para aportar una respuesta adaptada a quién soy, a mi necesidad de ser guiada con herramientas IT sencillas y a mi contexto como coach independiente. Esa escucha atenta me dio el espacio para entender mejor mi propia necesidad y enfocar mis prioridades de organización. Su acompañamiento me aportó claridad y una verdadera tranquilidad mental, especialmente gracias a la herramienta que ahora utilizo regularmente para hacer seguimiento de mis facturas y de los importes que debo presupuestar para la URSSAF. En resumen, herramientas y procesos fáciles de usar, que me ayudan a anticipar y me aportan tranquilidad. Todo con mucho dinamismo y un toque de humor, lo que hace que las sesiones sean tan útiles como agradables.',
 		name: 'Malika',
 		role: 'Coach independiente',
+	},
+	{
+		quote: 'Tuve la suerte de trabajar tanto en el desarrollo estratégico de un proyecto como en la optimización de nuestros procesos internos. Trabajar con Lisa es regalarse una colaboración preciosa: entiende los retos al instante, se mete en tu cabeza y encarna plenamente los proyectos que acompaña. Su eficacia, su lucidez y su capacidad para ocupar siempre el lugar justo la convierten en una aliada de confianza. Aporta un verdadero alivio en términos de carga mental y una mirada estructurante en cada etapa. No puedo más que recomendar trabajar con ella.',
+		name: 'Blanche',
+		role: '',
+	},
+	{
+		quote: 'No trabajamos juntas durante mucho tiempo, pero aprecié mucho nuestros intercambios con Lisa. Como emprendedora, muchas veces estás en tu cabeza dando vueltas a las cosas, y hace mucho bien tener una mirada externa, con ideas concretas y pistas en las que quizá no habrías pensado. También me gustó mucho su personalidad, muy cercana: entendió enseguida mi proyecto, mis ideas, y eso se agradece muchísimo.',
+		name: 'Diana',
+		role: 'Fundadora de Izina Hair',
 	},
 ];
 ---
@@ -210,11 +225,11 @@ const testimonials = [
 
 			<img class="photo-strip home-strip" src="/lisa/fotos/Julie corpo 29-01-202622567r 1.jpg" alt="Retrato de Lisa Lavigne sonriendo" />
 
-			<section id="testimonios" class="section testimonial-section">
+			<section id="testimonios" class="section testimonial-section testimonial-carousel-section">
 				<div class="center-heading">
 					<h2>Lo que dicen de mí</h2>
 				</div>
-				<div class="testimonial-grid">
+				<div class="testimonial-carousel" aria-label="Testimonios">
 					{testimonials.map((item) => (
 						<article class="testimonial-card">
 							<span class="quote-mark" aria-hidden="true">"</span>
@@ -223,11 +238,15 @@ const testimonials = [
 								<span aria-hidden="true"></span>
 								<div>
 									<strong>{item.name}</strong>
-									<small>{item.role}</small>
+									{item.role && <small>{item.role}</small>}
 								</div>
 							</div>
 						</article>
 					))}
+				</div>
+				<div class="testimonial-carousel-controls" aria-label="Controles de testimonios">
+					<button class="testimonial-arrow" type="button" data-carousel-prev aria-label="Testimonio anterior">‹</button>
+					<button class="testimonial-arrow testimonial-arrow-next" type="button" data-carousel-next aria-label="Testimonio siguiente">›</button>
 				</div>
 			</section>
 
@@ -253,5 +272,50 @@ const testimonials = [
 			</nav>
 			<p class="copyright">© 2026 Lisa Lavigne. Todos los derechos reservados.</p>
 		</footer>
+		<script is:inline>
+			const carousel = document.querySelector('.testimonial-carousel');
+			const previousButton = document.querySelector('[data-carousel-prev]');
+			const nextButton = document.querySelector('[data-carousel-next]');
+			const testimonialCards = carousel ? Array.from(carousel.querySelectorAll('.testimonial-card')) : [];
+			let activeTestimonial = 0;
+			let testimonialScrollTimer;
+
+			const getActiveTestimonial = () => {
+				if (!carousel || testimonialCards.length === 0) return 0;
+				return testimonialCards.reduce((closestIndex, card, index) => {
+					const closestCard = testimonialCards[closestIndex];
+					const currentDistance = Math.abs(card.offsetLeft - carousel.scrollLeft);
+					const closestDistance = Math.abs(closestCard.offsetLeft - carousel.scrollLeft);
+					return currentDistance < closestDistance ? index : closestIndex;
+				}, 0);
+			};
+
+			const resetTestimonials = () => {
+				if (!carousel) return;
+				activeTestimonial = 0;
+				carousel.scrollTo({ left: 0, behavior: 'auto' });
+			};
+
+			const scrollTestimonials = (direction) => {
+				if (!carousel || testimonialCards.length === 0) return;
+				activeTestimonial = (activeTestimonial + direction + testimonialCards.length) % testimonialCards.length;
+				carousel.scrollTo({
+					left: testimonialCards[activeTestimonial].offsetLeft,
+					behavior: 'smooth',
+				});
+			};
+
+			carousel?.addEventListener('scroll', () => {
+				window.clearTimeout(testimonialScrollTimer);
+				testimonialScrollTimer = window.setTimeout(() => {
+					activeTestimonial = getActiveTestimonial();
+				}, 120);
+			});
+
+			window.addEventListener('pageshow', resetTestimonials);
+			window.requestAnimationFrame(resetTestimonials);
+			previousButton?.addEventListener('click', () => scrollTestimonials(-1));
+			nextButton?.addEventListener('click', () => scrollTestimonials(1));
+		</script>
 	</body>
 </html>
