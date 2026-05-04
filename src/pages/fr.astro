@@ -1,0 +1,278 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const painPoints = [
+	{
+		icon: '◷',
+		text: 'Tu perds du temps sur des tâches répétitives ou à faible valeur ajoutée',
+	},
+	{
+		icon: '✦',
+		text: 'Tu sens qu’il faudrait déléguer ou professionnaliser certaines zones, mais tu ne sais pas par où commencer',
+	},
+	{
+		icon: '⇄',
+		text: 'Tu t’adaptes à chaque client parce que tu n’as pas encore une façon claire et structurée de travailler',
+	},
+	{
+		icon: '!',
+		text: 'Et surtout, tu as peur que la quantité de travail finisse par te dépasser',
+	},
+];
+
+const solutionCards = [
+	{
+		icon: '⌕',
+		text: 'Identifier précisément ce qui freine ta croissance et par où commencer',
+	},
+	{
+		icon: '↬',
+		text: 'Définir comment tu choisis, accueilles et accompagnes tes clients sans improviser',
+	},
+	{
+		icon: '⌖',
+		text: 'Aligner ta façon de travailler avec la vision de l’entreprise que tu veux construire',
+	},
+];
+
+const benefits = [
+	{
+		title: 'Cohérence',
+		body: 'Ce que tu proposes, ce que tu vends et ta façon de travailler sont enfin alignés. Finie la différence entre ton discours et la réalité de ton quotidien.',
+	},
+	{
+		title: 'Fluidité',
+		body: 'Ton parcours client devient clair, logique et sous contrôle. Moins de confusion, moins d’allers-retours, une expérience plus simple pour toi et pour ton client.',
+	},
+	{
+		title: 'Gagner du temps',
+		body: 'Tu arrêtes de repartir de zéro à chaque projet. Tes processus sont définis, structurés et assez solides pour te faire gagner du temps au quotidien.',
+	},
+	{
+		title: 'Augmenter ton chiffre d’affaires',
+		body: 'Tes offres sont claires, assumées et plus faciles à vendre. Tu fais tes suivis avec moins de friction et tu factures avec plus de sérénité.',
+	},
+	{
+		title: 'Un espace sûr',
+		body: 'On ne reste pas en surface. Tu as l’espace pour aborder les sujets importants, les approfondir et avancer avec des décisions claires.',
+	},
+];
+
+const steps = [
+	{
+		number: '01',
+		icon: '♙',
+		title: 'Avec toi',
+		body: 'Co-construction à 100 %. Je ne fais pas à ta place, je fais avec toi. On réfléchit ensemble, on se challenge ensemble.',
+	},
+	{
+		number: '02',
+		icon: '▣',
+		title: 'En séances en direct',
+		body: 'Séances de travail en direct. Pas de slides envoyées par email. On s’assoit, on avance, on décide.',
+	},
+	{
+		number: '03',
+		icon: '↗',
+		title: 'Tu repars avec des actions',
+		body: 'On réfléchit, on décide, et tu repars avec un plan d’action concret. Pas de bla-bla, que du concret.',
+	},
+];
+
+const testimonials = [
+	{
+		quote: 'Au-delà de sa bonne humeur communicative, Lisa offre un accompagnement vraiment pertinent et structuré, qui change concrètement la façon dont on s’organise. Elle a cette capacité rare de vous faire réfléchir en douceur, sans jamais brusquer, pour vous aider à avancer dans vos choix et à y voir plus clair dans votre quotidien.',
+		name: 'Clément',
+		role: 'Mon architecto',
+	},
+	{
+		quote: 'Lisa m’a permis de remettre au centre de mon activité le plaisir et cette passion qui m’a poussée à me lancer dans cette aventure.',
+		name: 'Julie',
+		role: 'Fondatrice, Self-Love Club',
+	},
+	{
+		quote: 'Son écoute, sa réactivité et son efficacité en font une professionnelle fiable et engagée. Une alliée précieuse pour toute organisation.',
+		name: 'Circé',
+		role: 'Fondatrice, Mazette',
+	},
+];
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<BaseHead title={`Accueil FR - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="lisa-page lisa-home">
+		<header class="site-header">
+			<a class="brand-mark" href="/fr" aria-label="Lisa Lavigne">
+				<img src="/lisa/logo.png" alt="" />
+			</a>
+			<nav aria-label="Navigation principale">
+				<a href="/trabajar-juntos">Travailler ensemble</a>
+				<a href="/about">À propos</a>
+				<a class="language-link" href="/" hreflang="es">Español</a>
+				<a class="button button-small" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver un appel</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="home-hero">
+				<div class="hero-wrap">
+					<div class="hero-copy">
+						<h1>
+							Ton <span>entreprise</span> n’a pas besoin de plus d’efforts.<br />
+							Elle a besoin d’un <span>système</span>.
+						</h1>
+						<p class="hero-lead">Je t’aide à structurer ton organisation pour qu’elle te donne ce que tu es venu chercher : du temps, de la liberté et de la clarté pour profiter de ce que tu fais.</p>
+						<p>Je suis Lisa. J’aide les entrepreneurs en croissance à structurer leur organisation. Nous travaillons ensemble pour que tu gagnes en clarté dans tes décisions, en cohérence dans ton offre et en fluidité au quotidien.</p>
+						<div class="hero-action">
+							<a class="button" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver ton diagnostic</a>
+							<small>30 minutes pour comprendre où tu en es et voir si cela a du sens de travailler ensemble.</small>
+						</div>
+					</div>
+					<img class="hero-image" src="/lisa/fotos/Hero Image.png" alt="Lisa Lavigne assise et souriante" />
+				</div>
+			</section>
+
+			<section class="problem-section">
+				<p>Quand ton activité commence à grandir, la façon intuitive dont tu la gérais ne suffit plus. Ce qui fonctionnait avant commence à montrer ses limites.</p>
+				<h2 class="small-heading">Tu commences à remarquer que :</h2>
+				<div class="compact-grid four">
+					{painPoints.map((item) => (
+						<article class="mini-card">
+							<span aria-hidden="true">{item.icon}</span>
+							<p>{item.text}</p>
+						</article>
+					))}
+				</div>
+				<p class="red-statement">C’est ton premier plafond de verre.<br />Et c’est une bonne nouvelle : cela veut dire que tu as grandi.</p>
+				<div class="mountains" aria-hidden="true">
+					<span></span>
+					<span></span>
+				</div>
+				<h2>C’est là que j’interviens.</h2>
+				<p>Je t’aide à comprendre comment fonctionne ton activité pour prendre des décisions difficiles avec sens et clarté.</p>
+				<p>Nous travaillons ensemble, en sessions en direct, pour :</p>
+				<div class="compact-grid three">
+					{solutionCards.map((item) => (
+						<article class="solution-card">
+							<span aria-hidden="true">{item.icon}</span>
+							<p>{item.text}</p>
+						</article>
+					))}
+				</div>
+				<p>On réfléchit ensemble. On décide ensemble.<br />Et tu repars de chaque session avec des actions concrètes à mettre en place dès le lendemain.</p>
+				<a class="button centered" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver ton diagnostic</a>
+			</section>
+
+			<section id="benefices" class="benefits-section">
+				<div class="center-heading">
+					<h2>Si tu cherches...</h2>
+				</div>
+				<div class="benefits-layout">
+					<div class="brain-illustration" aria-hidden="true">
+						<div class="brain brain-red">☷</div>
+						<div class="brain brain-blue">☷</div>
+					</div>
+					<div class="benefit-list">
+						{benefits.map((item, index) => (
+							<article class="benefit-item" tabindex="0">
+								<span aria-hidden="true">{['⌖', '✦', '◷', '↗', '♡'][index]}</span>
+								<div>
+									<h3>{item.title}</h3>
+									<p>{item.body}</p>
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+				<p class="benefits-close">...tu es au bon endroit.</p>
+			</section>
+
+			<section id="methode" class="method-section">
+				<div class="center-heading">
+					<p class="eyebrow">Ma méthode</p>
+					<h2>Comment je travaille ?</h2>
+					<p>Trois piliers. Une méthode. Des résultats.</p>
+				</div>
+				<div class="method-grid">
+					{steps.map((step) => (
+						<article class="method-card">
+							<strong>{step.number}</strong>
+							<span aria-hidden="true">{step.icon}</span>
+							<h3>{step.title}</h3>
+							<p>{step.body}</p>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<img class="photo-strip home-strip" src="/lisa/fotos/Julie corpo 29-01-202622567r 1.jpg" alt="Portrait de Lisa Lavigne souriante" />
+
+			<section id="temoignages" class="section testimonial-section testimonial-carousel-section">
+				<div class="center-heading">
+					<h2>Ce qu’on dit de moi</h2>
+				</div>
+				<div class="testimonial-carousel" aria-label="Témoignages">
+					{testimonials.map((item) => (
+						<article class="testimonial-card">
+							<span class="quote-mark" aria-hidden="true">"</span>
+							<p>“{item.quote}”</p>
+							<div class="author">
+								<span aria-hidden="true"></span>
+								<div>
+									<strong>{item.name}</strong>
+									<small>{item.role}</small>
+								</div>
+							</div>
+						</article>
+					))}
+				</div>
+				<div class="testimonial-carousel-controls" aria-label="Contrôles des témoignages">
+					<button class="testimonial-arrow" type="button" data-carousel-prev aria-label="Témoignage précédent">‹</button>
+					<button class="testimonial-arrow testimonial-arrow-next" type="button" data-carousel-next aria-label="Témoignage suivant">›</button>
+				</div>
+			</section>
+
+			<section id="contact" class="final-cta">
+				<h2>Prête à structurer ton <span>activité</span> ?</h2>
+				<p>Réserve un appel découverte gratuit. On parle de toi, de ton activité, et on voit si on peut avancer ensemble.</p>
+				<a class="button" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver mon appel découverte</a>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div>
+				<h2>Lisa Lavigne</h2>
+				<p>Consultante en structuration d’activité</p>
+			</div>
+			<nav aria-label="Pied de page">
+				<a href="/fr">Accueil</a>
+				<a href="#benefices">Services</a>
+				<a href="#temoignages">Témoignages</a>
+				<a href="/about">À propos</a>
+				<a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+				<a href="mailto:hola@lisalavigne.com">E-mail</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne. Tous droits réservés.</p>
+		</footer>
+		<script is:inline>
+			const carousel = document.querySelector('.testimonial-carousel');
+			const previousButton = document.querySelector('[data-carousel-prev]');
+			const nextButton = document.querySelector('[data-carousel-next]');
+
+			const scrollTestimonials = (direction) => {
+				if (!carousel) return;
+				const card = carousel.querySelector('.testimonial-card');
+				const gap = 28;
+				const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth;
+				carousel.scrollBy({ left: direction * distance, behavior: 'smooth' });
+			};
+
+			previousButton?.addEventListener('click', () => scrollTestimonials(-1));
+			nextButton?.addEventListener('click', () => scrollTestimonials(1));
+		</script>
+	</body>
+</html>
