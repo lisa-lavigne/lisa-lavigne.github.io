@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnostic · Lisa Consultante Business</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F5F0E8; --ink: #1A1714; --rust: #B85C38;
+    --warm-mid: #8C7B6B; --border: #D4C9B8; --bg-card: #FDFAF5;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .intro { text-align: center; animation: fadeUp .6s ease both; }
+  .intro-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin-bottom: 20px; }
+  .intro h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 5vw, 36px); line-height: 1.25; margin-bottom: 20px; }
+  .intro h1 em { font-style: italic; color: var(--rust); }
+  .intro-sub { font-size: 15px; color: var(--warm-mid); line-height: 1.7; max-width: 520px; margin: 0 auto 36px; }
+  .btn-start { background: var(--ink); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: .06em; padding: 16px 40px; border: none; cursor: pointer; transition: background .2s; }
+  .btn-start:hover { background: var(--rust); }
+  .intro-note { margin-top: 16px; font-size: 12px; color: var(--warm-mid); }
+
+  .progress-wrap { margin-bottom: 40px; }
+  .progress-meta { display: flex; justify-content: space-between; margin-bottom: 10px; }
+  .progress-label { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--warm-mid); }
+  .progress-count { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--warm-mid); }
+  .progress-bar { height: 2px; background: var(--border); }
+  .progress-fill { height: 100%; background: var(--rust); transition: width .4s ease; }
+
+  .q-card { background: var(--bg-card); border: 1px solid var(--border); padding: 40px; margin-bottom: 24px; animation: fadeUp .4s ease both; }
+  .q-number { font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; }
+  .q-text { font-family: 'Playfair Display', serif; font-size: clamp(17px, 3vw, 21px); line-height: 1.45; margin-bottom: 32px; }
+  .options { display: flex; flex-direction: column; gap: 12px; }
+  .multi-hint { font-size: 12px; color: var(--warm-mid); font-style: italic; margin-bottom: 20px; }
+  .option-btn { display: flex; align-items: flex-start; gap: 14px; background: transparent; border: 1px solid var(--border); padding: 16px 20px; cursor: pointer; text-align: left; transition: border-color .2s, background .2s; font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.6; color: var(--ink); }
+  .option-btn:hover { border-color: var(--rust); background: rgba(184,92,56,.05); }
+  .option-btn.selected { border-color: var(--rust); background: rgba(184,92,56,.08); }
+  .option-letter { flex-shrink: 0; width: 22px; height: 22px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--warm-mid); margin-top: 1px; transition: background .2s, color .2s, border-color .2s; }
+  .option-btn.selected .option-letter { background: var(--rust); color: white; border-color: var(--rust); }
+
+  .nav-row { display: flex; justify-content: flex-end; }
+  .btn-next { background: var(--ink); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: .06em; padding: 14px 32px; border: none; cursor: pointer; opacity: .3; pointer-events: none; transition: background .2s, opacity .2s; }
+  .btn-next.active { opacity: 1; pointer-events: auto; }
+  .btn-next.active:hover { background: var(--rust); }
+
+  .result { animation: fadeUp .6s ease both; }
+  .result-header { text-align: center; padding: 48px 40px 36px; background: var(--bg-card); border: 1px solid var(--border); margin-bottom: 2px; }
+  .result-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: white; background: var(--rust); padding: 6px 16px; margin-bottom: 24px; }
+  .result-name { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 32px); line-height: 1.25; margin-bottom: 20px; }
+  .result-desc { font-size: 15px; color: var(--warm-mid); line-height: 1.75; max-width: 520px; margin: 0 auto; }
+  .result-body { background: var(--bg-card); border: 1px solid var(--border); border-top: none; padding: 40px; margin-bottom: 2px; }
+  .reco-title { font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--rust); margin-bottom: 24px; }
+  .reco-list { display: flex; flex-direction: column; gap: 20px; }
+  .reco-item { display: flex; gap: 16px; align-items: flex-start; }
+  .reco-num { flex-shrink: 0; width: 28px; height: 28px; border: 1px solid var(--rust); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--rust); margin-top: 2px; }
+  .reco-text { font-size: 14px; line-height: 1.7; }
+  .reco-text strong { display: block; font-weight: 500; margin-bottom: 4px; }
+  .cta-block { background: var(--ink); padding: 40px; text-align: center; }
+  .cta-block h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin-bottom: 12px; }
+  .cta-block p { font-size: 14px; color: rgba(245,240,232,.7); line-height: 1.75; margin-bottom: 28px; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .btn-cta { display: inline-block; background: var(--rust); color: white; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: .06em; padding: 16px 36px; border: none; cursor: pointer; text-decoration: none; transition: opacity .2s; }
+  .btn-cta:hover { opacity: .85; }
+  .btn-restart { display: block; margin: 32px auto 0; background: transparent; border: none; font-size: 12px; color: var(--warm-mid); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="intro" class="intro">
+    <div class="intro-eyebrow">Diagnostic · Lisa Consultante Business</div>
+    <h1>Identifie ton vrai blocage de solopreneur &mdash;<br><em>avant de chercher une solution</em></h1>
+    <p class="intro-sub">10 questions. 5 minutes. Un regard clair sur ce qui bloque vraiment &mdash; avant d&rsquo;aller chercher une solution au mauvais endroit.</p>
+    <button class="btn-start" onclick="startDiag()">Commencer le diagnostic &rarr;</button>
+    <p class="intro-note">Sans inscription. Sans vente. Juste de la clart&eacute;.</p>
+  </div>
+
+  <div id="quiz" class="hidden">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label">Diagnostic</span>
+        <span class="progress-count" id="prog-count">1 / 10</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:10%"></div></div>
+    </div>
+    <div class="q-card" id="q-card">
+      <div class="q-number" id="q-num">Question 01</div>
+      <div class="q-text" id="q-text"></div>
+      <div id="q-hint"></div>
+      <div class="options" id="q-options"></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-next" id="btn-next" onclick="nextQ()">Suivant &rarr;</button>
+    </div>
+  </div>
+
+  <div id="result" class="hidden result"></div>
+</div>
+
+<script>
+var questions = [
+  {
+    text: "Quand tu penses \u00e0 ton business aujourd\u2019hui, qu\u2019est-ce qui occupe le plus ta t\u00eate\u00a0?",
+    multi: false,
+    options: [
+      { text: "Je fais les choses, j\u2019ai mes outils \u2014 et pourtant \u00e0 la fin de la journ\u00e9e, je me sens quand m\u00eame d\u00e9bord\u00e9\u00b7e.", score: 3 },
+      { text: "Trouver des clients. Sans \u00e7a, rien d\u2019autre ne peut avancer.", score: 1 },
+      { text: "Cette sensation d\u2019improviser \u00e0 chaque fois et de ne jamais me sentir vraiment stable.", score: 2 }
+    ]
+  },
+  {
+    text: "Tu as des clients ou des prospects en ce moment\u00a0?",
+    multi: false,
+    options: [
+      { text: "Oui, mais je suis d\u00e9bord\u00e9\u00b7e \u2014 j\u2019ai presque peur d\u2019en avoir de nouveaux tellement je ne sais pas comment je les g\u00e9rerais.", score: 3 },
+      { text: "Oui, mais quelque chose me p\u00e8se dans comment \u00e7a se passe avec eux.", score: 2 },
+      { text: "Non, ou tr\u00e8s peu. C\u2019est mon urgence num\u00e9ro un.", score: 1 }
+    ]
+  },
+  {
+    text: "La derni\u00e8re fois qu\u2019un client t\u2019a demand\u00e9 quelque chose qui n\u2019\u00e9tait pas pr\u00e9vu au d\u00e9part \u2014 comment tu as r\u00e9agi\u00a0?",
+    multi: false,
+    options: [
+      { text: "J\u2019ai recadr\u00e9, on a ren\u00e9goci\u00e9, \u00e7a s\u2019est bien pass\u00e9. Mais \u00e7a m\u2019a quand m\u00eame co\u00fbt\u00e9 de l\u2019\u00e9nergie.", score: 3 },
+      { text: "Ce genre de situation ne s\u2019est pas vraiment pos\u00e9, je manque encore de recul.", score: 1 },
+      { text: "J\u2019ai accept\u00e9. Le client est roi \u2014 je ne voulais pas cr\u00e9er de friction.", score: 2 }
+    ]
+  },
+  {
+    text: "La derni\u00e8re fois que tu as pr\u00e9sent\u00e9 tes offres \u00e0 un prospect, comment \u00e7a s\u2019est pass\u00e9\u00a0?",
+    multi: false,
+    options: [
+      { text: "J\u2019ai pr\u00e9sent\u00e9 mes offres, mais j\u2019ai senti que je perdais le client en route.", score: 2 },
+      { text: "C\u2019\u00e9tait cadr\u00e9, j\u2019\u00e9tais align\u00e9\u00b7e \u2014 mais apr\u00e8s coup je me suis quand m\u00eame demand\u00e9\u00b7e si j\u2019avais bien fait.", score: 3 },
+      { text: "J\u2019ai improvis\u00e9 le prix ou envoy\u00e9 quelque chose que je n\u2019assumais pas vraiment.", score: 1 }
+    ]
+  },
+  {
+    text: "Si on faisait ensemble un audit rapide de ton business, sur quoi est-ce que tu sourirais en coin \u2014 parce que tu sais que \u00e7a, \u00e7a ne va pas\u00a0?",
+    multi: true,
+    options: [
+      { text: "La fa\u00e7on dont je me vends \u2014 je sais quoi proposer, mais pas toujours comment le d\u00e9fendre.", score: 3 },
+      { text: "Mon organisation du temps \u2014 je r\u00e9agis plus que je ne planifie.", score: 2 },
+      { text: "Ma gestion administrative et financi\u00e8re \u2014 je bricole et je le sais.", score: 1 },
+      { text: "Des d\u00e9cisions que j\u2019aurais d\u00fb prendre depuis longtemps et que j\u2019ai repouss\u00e9es.", score: 3 },
+      { text: "La fa\u00e7on dont je g\u00e8re mes clients \u2014 j\u2019ai des r\u00e8gles, mais je les saute souvent.", score: 2 },
+      { text: "Mon offre ou mes tarifs \u2014 pas vraiment assum\u00e9s.", score: 2 }
+    ]
+  },
+  {
+    text: "Quand un nouveau client potentiel te contacte, qu\u2019est-ce qui se rapproche le plus de ta r\u00e9alit\u00e9\u00a0?",
+    multi: false,
+    options: [
+      { text: "J\u2019ai mon petit process\u2026 en th\u00e9orie. En pratique, la derni\u00e8re fois \u00e7a ne s\u2019est pas du tout pass\u00e9 comme \u00e7a.", score: 2 },
+      { text: "J\u2019ai un fonctionnement rod\u00e9 \u2014 ils prennent rendez-vous, on se parle, c\u2019est cadr\u00e9. \u00c7a tient.", score: 3 },
+      { text: "\u00c7a arrive peu ou pas \u2014 c\u2019est justement ce que j\u2019essaie de changer.", score: 1 }
+    ]
+  },
+  {
+    text: "Qu\u2019est-ce qui te frustre le plus dans ta vie de solopreneur en ce moment\u00a0?",
+    multi: false,
+    options: [
+      { text: "La sensation d\u2019\u00eatre tout le temps d\u00e9bord\u00e9\u00b7e et de devoir tout faire tout seul\u00b7e.", score: 2 },
+      { text: "La solitude des d\u00e9cisions. Je sais ce que je devrais faire \u2014 mais je tourne en rond.", score: 3 },
+      { text: "Le stress de trouver des clients et l\u2019incertitude financi\u00e8re que \u00e7a cr\u00e9e.", score: 1 }
+    ]
+  },
+  {
+    text: "Quand quelqu\u2019un te demande ce que tu fais, comment tu te pr\u00e9sentes\u00a0?",
+    multi: false,
+    options: [
+      { text: "Je parle de mon m\u00e9tier \u2014 \u00ab\u00a0je suis architecte\u00a0\u00bb, \u00ab\u00a0je suis coach\u00a0\u00bb, \u00ab\u00a0je suis consultante\u00a0\u00bb.", score: 2 },
+      { text: "Je dis que je suis freelance et que je cherche des missions.", score: 1 },
+      { text: "Je dis quel probl\u00e8me je r\u00e9sous et pour qui.", score: 3 }
+    ]
+  },
+  {
+    text: "Quand tu dois prendre une d\u00e9cision importante pour ton business, qu\u2019est-ce qui se passe\u00a0?",
+    multi: false,
+    options: [
+      { text: "Je cherche une m\u00e9thode, un exemple, ce que font les autres dans la m\u00eame situation.", score: 3 },
+      { text: "Je la repousse. Je n\u2019ai pas la t\u00eate \u00e0 \u00e7a, j\u2019ai des urgences plus imm\u00e9diates.", score: 1 },
+      { text: "Je tourne en rond. J\u2019ai souvent la r\u00e9ponse quelque part \u2014 mais je n\u2019arrive pas \u00e0 me l\u2019autoriser.", score: 2 }
+    ]
+  },
+  {
+    text: "Entre ces trois options, laquelle te procurerait le plus de tranquillit\u00e9 d\u2019esprit\u00a0?",
+    multi: false,
+    options: [
+      { text: "Avoir un fonctionnement clair \u2014 savoir quoi faire, quand, avec quels outils \u2014 et ne plus perdre d\u2019\u00e9nergie sur l\u2019organisation.", score: 2 },
+      { text: "Ne plus me sentir seul\u00b7e avec mes d\u00e9cisions. Avoir quelqu\u2019un qui conna\u00eet mon contexte et avec qui je peux enfin trancher.", score: 3 },
+      { text: "Avoir un flux r\u00e9gulier de clients et ne plus me demander d\u2019o\u00f9 viendra le prochain.", score: 1 }
+    ]
+  }
+];
+
+var profiles = {
+  A: {
+    name: "Ce qui te bloque, c\u2019est le flux de clients",
+    desc: "Avant de structurer, clarifier ou optimiser quoi que ce soit \u2014 tu as besoin d\u2019un flux commercial plus stable. Ce n\u2019est pas un jugement\u00a0: c\u2019est un constat de timing. Tu pourrais avoir toutes les bonnes pratiques du monde \u2014 si la t\u00eate est absorb\u00e9e par \u00ab\u00a0d\u2019o\u00f9 vient le prochain client\u00a0\u00bb, rien d\u2019autre ne peut vraiment s\u2019installer. La bonne nouvelle\u00a0: \u00e7a se travaille, et souvent c\u2019est plus simple qu\u2019on ne le pense.",
+    recos: [
+      { title: "Pense partenariats avant de penser prospection froide.", text: "Qui dans ton secteur ou autour de toi voit les m\u00eames clients que toi\u00a0? Un comptable, un designer, un autre freelance compl\u00e9mentaire\u00a0? Les premiers clients viennent rarement d\u2019inconnus \u2014 ils viennent de gens qui te font d\u00e9j\u00e0 confiance." },
+      { title: "Va simple sur ton offre.", text: "Pas besoin d\u2019une offre parfaite pour avoir des clients \u2014 besoin d\u2019une offre suffisamment claire. Une phrase sur ce que tu fais, pour qui, et ce que \u00e7a change pour eux. Un tarif. Une fa\u00e7on de te contacter. C\u2019est tout." },
+      { title: "Utilise ton entourage comme terrain d\u2019entra\u00eenement.", text: "M\u00eame s\u2019ils ne te payent pas, des missions pour des proches te permettent de tester ton fonctionnement, de comprendre ce qui te pla\u00eet vraiment \u2014 et de construire des t\u00e9moignages r\u00e9els. C\u2019est de la donn\u00e9e, pas de la charit\u00e9." }
+    ],
+    cta: false
+  },
+  B: {
+    name: "Ce qui te bloque, c\u2019est que tu t\u2019\u00e9parpilles",
+    desc: "Tu as des clients, tu fais ton travail \u2014 mais le quotidien est chaotique. Tu improvises, tu r\u00e9agis, tu n\u2019as pas de fonctionnement vraiment rod\u00e9. Et m\u00eame quand tout \u00ab\u00a0tourne\u00a0\u00bb, il y a cette sensation de d\u00e9sordre permanent qui \u00e9puise. Ce n\u2019est pas un probl\u00e8me de motivation \u2014 c\u2019est de la charge mentale qui s\u2019accumule parce que rien n\u2019est vraiment pos\u00e9. Ce dont tu as besoin\u00a0: des bases simples qui tiennent. Pas un syst\u00e8me complexe \u2014 juste un fonctionnement qui ne d\u00e9pend pas de toi \u00e0 100\u00a0% tout le temps.",
+    recos: [
+      { title: "Commence par traquer, pas par optimiser.", text: "Avant de chercher le meilleur outil ou le meilleur process \u2014 note ce que tu fais vraiment. \u00c9tape par \u00e9tape\u00a0: comment arrive un client, comment se passe un projet, comment tu factures. Souvent, juste \u00e9crire le r\u00e9el suffit \u00e0 voir o\u00f9 \u00e7a coince." },
+      { title: "Un seul truc \u00e0 r\u00e9gler \u00e0 la fois.", text: "Choisis le moment qui te co\u00fbte le plus d\u2019\u00e9nergie en ce moment \u2014 l\u2019accueil d\u2019un nouveau client, la relance des impay\u00e9s, la pr\u00e9paration d\u2019une proposition. R\u00e8gle ce truc-l\u00e0. Juste celui-l\u00e0. Ensuite le suivant." },
+      { title: "Utilise des blocs de temps d\u00e9di\u00e9s.", text: "Mails, factures, admin \u2014 ce ne sont pas des t\u00e2ches \u00e0 faire \u00ab\u00a0quand j\u2019ai le temps\u00a0\u00bb. Ton r\u00f4le de chef d\u2019entreprise m\u00e9rite des cr\u00e9neaux fixes. M\u00eame une heure par semaine d\u00e9di\u00e9e \u00e0 ces sujets change radicalement la charge mentale." }
+    ],
+    cta: false
+  },
+  C: {
+    name: "Ton vrai blocage est dans ta posture de chef d\u2019entreprise",
+    desc: "Tu es professionnel\u00b7le, tu aimes ton travail, tu prends soin de tes clients \u2014 et pourtant quelque chose t\u2019\u00e9puise. Il y a des d\u00e9cisions que tu repousses, des limites que tu ne poses pas, des choses que tu sais depuis longtemps et que tu n\u2019as pas chang\u00e9es. Tu as de bons r\u00e9flexes sur beaucoup de sujets \u2014 et malgr\u00e9 \u00e7a, quelque chose bloque en profondeur. Ce n\u2019est pas un probl\u00e8me d\u2019outil. Ce n\u2019est pas un probl\u00e8me d\u2019organisation. C\u2019est quelque chose dans ta fa\u00e7on d\u2019habiter ton r\u00f4le de chef d\u2019entreprise \u2014 et c\u2019est exactement l\u00e0 que je travaille.",
+    recos: [
+      { title: "Commence par traquer ce qui te pla\u00eet vraiment \u2014 et ce qui te sa\u00fble.", text: "Note avec quels clients tu es \u00e0 l\u2019aise, avec quels autres tu te sens \u00e9puis\u00e9\u00b7e apr\u00e8s chaque session. Regarde tes services\u00a0: lesquels te donnent de l\u2019\u00e9nergie\u00a0? Lesquels tu fais parce que \u00ab\u00a0\u00e7a se fait\u00a0\u00bb\u00a0? Ce travail d\u2019honn\u00eatet\u00e9 est le premier pas." },
+      { title: "Pose-toi la vraie question.", text: "Qu\u2019est-ce qui se passerait si tu arr\u00eatais de faire ce qui te sa\u00fble\u00a0? Qu\u2019est-ce qui te fait peur dans ce changement-l\u00e0\u00a0? Ce n\u2019est pas une question rh\u00e9torique \u2014 c\u2019est souvent l\u00e0 que se cache le vrai blocage." },
+      { title: "Ce dont tu as besoin, c\u2019est d\u2019un espace pour enfin trancher.", text: "Pas quelqu\u2019un qui d\u00e9cide \u00e0 ta place. Quelqu\u2019un qui conna\u00eet ton contexte r\u00e9el, qui peut se mettre dans ta logique \u2014 et avec qui tu peux aller au bout de ce que tu sais d\u00e9j\u00e0." }
+    ],
+    cta: true
+  }
+};
+
+var current = 0;
+var scores = [];
+var multiSelected = [];
+var selectedIndex = null;
+
+function startDiag() {
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  renderQ();
+}
+
+function renderQ() {
+  var q = questions[current];
+  document.getElementById('q-num').textContent = 'Question ' + String(current + 1).padStart(2, '0');
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('prog-count').textContent = (current + 1) + ' / ' + questions.length;
+  document.getElementById('prog-fill').style.width = (((current + 1) / questions.length) * 100) + '%';
+
+  var hint = document.getElementById('q-hint');
+  hint.innerHTML = q.multi ? '<p class="multi-hint">Plusieurs r\u00e9ponses possibles</p>' : '';
+
+  var opts = document.getElementById('q-options');
+  opts.innerHTML = '';
+  multiSelected = [];
+  selectedIndex = null;
+  document.getElementById('btn-next').classList.remove('active');
+
+  var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+  q.options.forEach(function(o, i) {
+    var btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = '<span class="option-letter">' + letters[i] + '</span><span>' + o.text + '</span>';
+    if (q.multi) {
+      btn.onclick = function() { toggleMulti(i, btn); };
+    } else {
+      btn.onclick = function() { selectSingle(i, btn); };
+    }
+    opts.appendChild(btn);
+  });
+}
+
+function selectSingle(i, btn) {
+  document.querySelectorAll('.option-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  selectedIndex = i;
+  document.getElementById('btn-next').classList.add('active');
+}
+
+function toggleMulti(i, btn) {
+  var idx = multiSelected.indexOf(i);
+  if (idx === -1) { multiSelected.push(i); btn.classList.add('selected'); }
+  else { multiSelected.splice(idx, 1); btn.classList.remove('selected'); }
+  document.getElementById('btn-next').classList.toggle('active', multiSelected.length > 0);
+}
+
+function nextQ() {
+  var q = questions[current];
+  if (q.multi) {
+    if (multiSelected.length === 0) return;
+    var total = 0;
+    multiSelected.forEach(function(i) { total += q.options[i].score; });
+    scores.push(Math.round(total / multiSelected.length));
+  } else {
+    if (selectedIndex === null) return;
+    scores.push(q.options[selectedIndex].score);
+  }
+  current++;
+  if (current < questions.length) { renderQ(); } else { showResult(); }
+}
+
+function showResult() {
+  document.getElementById('quiz').classList.add('hidden');
+  var total = scores.reduce(function(a, b) { return a + b; }, 0);
+  var profile = total <= 17 ? profiles.A : total <= 24 ? profiles.B : profiles.C;
+
+  var ctaHtml = profile.cta
+    ? '<div class="cta-block">' +
+      '<h3>Et si on en parlait\u00a0?</h3>' +
+      '<p>Un appel d\u00e9couverte de 30 minutes pour mettre des mots sur ce qui bloque \u2014 et voir ensemble si je suis la bonne personne pour t\u2019accompagner.</p>' +
+      '<a class="btn-cta" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone">R\u00e9server ton diagnostic \u2192</a>' +
+      '</div>'
+    : '';
+
+  var el = document.getElementById('result');
+  el.innerHTML =
+    '<div class="result-header">' +
+    '<div class="result-tag">Ton r\u00e9sultat</div>' +
+    '<h2 class="result-name">' + profile.name + '</h2>' +
+    '<p class="result-desc">' + profile.desc + '</p>' +
+    '</div>' +
+    '<div class="result-body">' +
+    '<div class="reco-title">Trois choses concr\u00e8tes \u00e0 faire maintenant</div>' +
+    '<div class="reco-list">' +
+    profile.recos.map(function(r, i) {
+      return '<div class="reco-item"><div class="reco-num">' + (i + 1) + '</div><div class="reco-text"><strong>' + r.title + '</strong>' + r.text + '</div></div>';
+    }).join('') +
+    '</div></div>' +
+    ctaHtml +
+    '<button class="btn-restart" onclick="restart()">Recommencer</button>';
+
+  el.classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function restart() {
+  current = 0; scores = []; multiSelected = []; selectedIndex = null;
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('result').innerHTML = '';
+  document.getElementById('intro').classList.remove('hidden');
+}
+</script>
+</body>
+</html>

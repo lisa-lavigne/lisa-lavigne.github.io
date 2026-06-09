@@ -351,6 +351,17 @@ hr {
 	font-size: 0.9rem;
 }
 
+.button-secondary {
+	border: 1px solid rgba(30, 41, 59, 0.22);
+	background: transparent;
+	color: var(--lisa-ink) !important;
+}
+
+.button-secondary:hover {
+	border-color: var(--lisa-coral);
+	color: var(--lisa-coral) !important;
+}
+
 .section {
 	padding: 80px;
 }
