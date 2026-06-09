@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico · Lisa Consultante Business</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F5F0E8; --ink: #1A1714; --rust: #B85C38;
+    --warm-mid: #8C7B6B; --border: #D4C9B8; --bg-card: #FDFAF5;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .intro { text-align: center; animation: fadeUp .6s ease both; }
+  .intro-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin-bottom: 20px; }
+  .intro h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 5vw, 36px); line-height: 1.25; margin-bottom: 20px; }
+  .intro h1 em { font-style: italic; color: var(--rust); }
+  .intro-sub { font-size: 15px; color: var(--warm-mid); line-height: 1.7; max-width: 520px; margin: 0 auto 36px; }
+  .btn-start { background: var(--ink); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: .06em; padding: 16px 40px; border: none; cursor: pointer; transition: background .2s; }
+  .btn-start:hover { background: var(--rust); }
+  .intro-note { margin-top: 16px; font-size: 12px; color: var(--warm-mid); }
+
+  .progress-wrap { margin-bottom: 40px; }
+  .progress-meta { display: flex; justify-content: space-between; margin-bottom: 10px; }
+  .progress-label { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--warm-mid); }
+  .progress-count { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--warm-mid); }
+  .progress-bar { height: 2px; background: var(--border); }
+  .progress-fill { height: 100%; background: var(--rust); transition: width .4s ease; }
+
+  .q-card { background: var(--bg-card); border: 1px solid var(--border); padding: 40px; margin-bottom: 24px; animation: fadeUp .4s ease both; }
+  .q-number { font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; }
+  .q-text { font-family: 'Playfair Display', serif; font-size: clamp(17px, 3vw, 21px); line-height: 1.45; margin-bottom: 32px; }
+  .options { display: flex; flex-direction: column; gap: 12px; }
+  .multi-hint { font-size: 12px; color: var(--warm-mid); font-style: italic; margin-bottom: 20px; }
+  .option-btn { display: flex; align-items: flex-start; gap: 14px; background: transparent; border: 1px solid var(--border); padding: 16px 20px; cursor: pointer; text-align: left; transition: border-color .2s, background .2s; font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.6; color: var(--ink); }
+  .option-btn:hover { border-color: var(--rust); background: rgba(184,92,56,.05); }
+  .option-btn.selected { border-color: var(--rust); background: rgba(184,92,56,.08); }
+  .option-letter { flex-shrink: 0; width: 22px; height: 22px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--warm-mid); margin-top: 1px; transition: background .2s, color .2s, border-color .2s; }
+  .option-btn.selected .option-letter { background: var(--rust); color: white; border-color: var(--rust); }
+
+  .nav-row { display: flex; justify-content: flex-end; }
+  .btn-next { background: var(--ink); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: .06em; padding: 14px 32px; border: none; cursor: pointer; opacity: .3; pointer-events: none; transition: background .2s, opacity .2s; }
+  .btn-next.active { opacity: 1; pointer-events: auto; }
+  .btn-next.active:hover { background: var(--rust); }
+
+  .result { animation: fadeUp .6s ease both; }
+  .result-header { text-align: center; padding: 48px 40px 36px; background: var(--bg-card); border: 1px solid var(--border); margin-bottom: 2px; }
+  .result-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: white; background: var(--rust); padding: 6px 16px; margin-bottom: 24px; }
+  .result-name { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 32px); line-height: 1.25; margin-bottom: 20px; }
+  .result-desc { font-size: 15px; color: var(--warm-mid); line-height: 1.75; max-width: 520px; margin: 0 auto; }
+  .result-body { background: var(--bg-card); border: 1px solid var(--border); border-top: none; padding: 40px; margin-bottom: 2px; }
+  .reco-title { font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--rust); margin-bottom: 24px; }
+  .reco-list { display: flex; flex-direction: column; gap: 20px; }
+  .reco-item { display: flex; gap: 16px; align-items: flex-start; }
+  .reco-num { flex-shrink: 0; width: 28px; height: 28px; border: 1px solid var(--rust); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; color: var(--rust); margin-top: 2px; }
+  .reco-text { font-size: 14px; line-height: 1.7; }
+  .reco-text strong { display: block; font-weight: 500; margin-bottom: 4px; }
+  .cta-block { background: var(--ink); padding: 40px; text-align: center; }
+  .cta-block h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin-bottom: 12px; }
+  .cta-block p { font-size: 14px; color: rgba(245,240,232,.7); line-height: 1.75; margin-bottom: 28px; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .btn-cta { display: inline-block; background: var(--rust); color: white; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: .06em; padding: 16px 36px; border: none; cursor: pointer; text-decoration: none; transition: opacity .2s; }
+  .btn-cta:hover { opacity: .85; }
+  .btn-restart { display: block; margin: 32px auto 0; background: transparent; border: none; font-size: 12px; color: var(--warm-mid); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="intro" class="intro">
+    <div class="intro-eyebrow">Diagn&oacute;stico &middot; Lisa Consultante Business</div>
+    <h1>Identifica tu verdadero bloqueo como solopreneur &mdash;<br><em>antes de buscar una soluci&oacute;n</em></h1>
+    <p class="intro-sub">10 preguntas. 5 minutos. Una mirada clara a lo que bloquea de verdad &mdash; antes de ir a buscar una soluci&oacute;n al lugar equivocado.</p>
+    <button class="btn-start" onclick="startDiag()">Empezar el diagn&oacute;stico &rarr;</button>
+    <p class="intro-note">Sin registro. Sin venta. Solo claridad.</p>
+  </div>
+
+  <div id="quiz" class="hidden">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label">Diagn&oacute;stico</span>
+        <span class="progress-count" id="prog-count">1 / 10</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:10%"></div></div>
+    </div>
+    <div class="q-card" id="q-card">
+      <div class="q-number" id="q-num">Pregunta 01</div>
+      <div class="q-text" id="q-text"></div>
+      <div id="q-hint"></div>
+      <div class="options" id="q-options"></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-next" id="btn-next" onclick="nextQ()">Siguiente &rarr;</button>
+    </div>
+  </div>
+
+  <div id="result" class="hidden result"></div>
+</div>
+
+<script>
+var questions = [
+  {
+    text: "Cuando piensas en tu negocio hoy, \u00bfqu\u00e9 es lo que m\u00e1s ocupa tu cabeza?",
+    multi: false,
+    options: [
+      { text: "Hago las cosas, tengo mis herramientas \u2014 y aun as\u00ed al final del d\u00eda me siento desbordado/a.", score: 3 },
+      { text: "Encontrar clientes. Sin eso, nada m\u00e1s puede avanzar.", score: 1 },
+      { text: "Esa sensaci\u00f3n de improvisar cada vez y de no sentirme nunca realmente estable.", score: 2 }
+    ]
+  },
+  {
+    text: "\u00bfTienes clientes o prospectos ahora mismo?",
+    multi: false,
+    options: [
+      { text: "S\u00ed, pero estoy desbordado/a \u2014 casi tengo miedo de tener nuevos porque no s\u00e9 c\u00f3mo los gestionaria.", score: 3 },
+      { text: "S\u00ed, pero algo me pesa en c\u00f3mo funciona la relaci\u00f3n con ellos.", score: 2 },
+      { text: "No, o muy pocos. Es mi urgencia n\u00famero uno.", score: 1 }
+    ]
+  },
+  {
+    text: "La \u00faltima vez que un cliente te pidi\u00f3 algo que no estaba previsto desde el principio \u2014 \u00bfc\u00f3mo reaccionaste?",
+    multi: false,
+    options: [
+      { text: "Reconduci la situaci\u00f3n, renegociamos y sali\u00f3 bien. Aunque me cost\u00f3 energ\u00eda.", score: 3 },
+      { text: "Este tipo de situaci\u00f3n no se ha dado realmente, me falta a\u00fan recorrido.", score: 1 },
+      { text: "Acept\u00e9. El cliente manda \u2014 no quer\u00eda crear fricci\u00f3n.", score: 2 }
+    ]
+  },
+  {
+    text: "La \u00faltima vez que presentaste tus servicios a un prospecto, \u00bfc\u00f3mo fue?",
+    multi: false,
+    options: [
+      { text: "Present\u00e9 mis servicios pero sent\u00ed que iba perdiendo al cliente por el camino.", score: 2 },
+      { text: "Estaba todo claro, me sent\u00eda alineado/a \u2014 aunque despu\u00e9s me pregunt\u00e9 si hab\u00eda hecho bien.", score: 3 },
+      { text: "Improvisc\u00e9 el precio o envi\u00e9 algo que no asumia del todo.", score: 1 }
+    ]
+  },
+  {
+    text: "Si hici\u00e9ramos juntos una auditor\u00eda r\u00e1pida de tu negocio, \u00bfsobre qu\u00e9 sonreir\u00edas con complicidad \u2014 porque sabes que eso no va bien?",
+    multi: true,
+    options: [
+      { text: "C\u00f3mo me vendo \u2014 s\u00e9 lo que propongo, pero no siempre c\u00f3mo defenderlo.", score: 3 },
+      { text: "Mi organizaci\u00f3n del tiempo \u2014 reacciono m\u00e1s de lo que planifico.", score: 2 },
+      { text: "Mi gesti\u00f3n administrativa y financiera \u2014 lo llevo como puedo y lo s\u00e9.", score: 1 },
+      { text: "Decisiones que tendria que haber tomado hace tiempo y he ido postergando.", score: 3 },
+      { text: "C\u00f3mo gestiono a mis clientes \u2014 tengo reglas, pero me las salto con frecuencia.", score: 2 },
+      { text: "Mis servicios o tarifas \u2014 no del todo asumidos.", score: 2 }
+    ]
+  },
+  {
+    text: "Cuando un cliente potencial nuevo te contacta, \u00bfqu\u00e9 se acerca m\u00e1s a tu realidad?",
+    multi: false,
+    options: [
+      { text: "Tengo mi proceso\u2026 en teor\u00eda. En la pr\u00e1ctica, la \u00faltima vez no fue para nada as\u00ed.", score: 2 },
+      { text: "Tengo un funcionamiento rodado \u2014 reservan una llamada, hablamos, est\u00e1 encuadrado. Funciona.", score: 3 },
+      { text: "Pasa poco o nada \u2014 es justamente lo que intento cambiar.", score: 1 }
+    ]
+  },
+  {
+    text: "\u00bfQu\u00e9 es lo que m\u00e1s te frustra de tu vida como solopreneur ahora mismo?",
+    multi: false,
+    options: [
+      { text: "La sensaci\u00f3n de estar siempre desbordado/a y tener que gestionarlo todo solo/a.", score: 2 },
+      { text: "La soledad de las decisiones. S\u00e9 lo que deber\u00eda hacer \u2014 pero doy vueltas sin llegar a ninguna parte.", score: 3 },
+      { text: "El estr\u00e9s de encontrar clientes y la incertidumbre financiera que genera.", score: 1 }
+    ]
+  },
+  {
+    text: "Cuando alguien te pregunta a qu\u00e9 te dedicas, \u00bfc\u00f3mo te presentas?",
+    multi: false,
+    options: [
+      { text: "Hablo de mi profesi\u00f3n \u2014 \u00absoy arquitecto\u00bb, \u00absoy coach\u00bb, \u00absoy consultora\u00bb.", score: 2 },
+      { text: "Digo que soy freelance y que busco proyectos.", score: 1 },
+      { text: "Digo qu\u00e9 problema resuelvo y para qui\u00e9n.", score: 3 }
+    ]
+  },
+  {
+    text: "Cuando tienes que tomar una decisi\u00f3n importante para tu negocio, \u00bfqu\u00e9 pasa?",
+    multi: false,
+    options: [
+      { text: "Busco un m\u00e9todo, un ejemplo, lo que hacen otros en la misma situaci\u00f3n.", score: 3 },
+      { text: "La pospongo. No tengo la cabeza para eso, tengo urgencias m\u00e1s inmediatas.", score: 1 },
+      { text: "Doy vueltas. A menudo tengo la respuesta en alg\u00fan lugar \u2014 pero no consigo autoriz\u00e1rmela.", score: 2 }
+    ]
+  },
+  {
+    text: "De estas tres opciones, \u00bfcu\u00e1l te dar\u00eda m\u00e1s tranquilidad?",
+    multi: false,
+    options: [
+      { text: "Tener un funcionamiento claro \u2014 saber qu\u00e9 hacer, cu\u00e1ndo, con qu\u00e9 herramientas \u2014 y no perder energ\u00eda en la organizaci\u00f3n.", score: 2 },
+      { text: "No sentirme solo/a con mis decisiones. Tener a alguien que conoce mi contexto y con quien pueda por fin decidir.", score: 3 },
+      { text: "Tener un flujo regular de clientes y no preguntarme de d\u00f3nde vendr\u00e1 el siguiente.", score: 1 }
+    ]
+  }
+];
+
+var profiles = {
+  A: {
+    name: "Lo que te bloquea es el flujo de clientes",
+    desc: "Antes de estructurar, clarificar u optimizar cualquier cosa \u2014 necesitas un flujo comercial m\u00e1s estable. No es un juicio: es un diagn\u00f3stico de momento. Podr\u00edas tener todas las buenas pr\u00e1cticas del mundo \u2014 si la cabeza est\u00e1 absorbida por \u00ab\u00bfde d\u00f3nde viene el pr\u00f3ximo cliente?\u00bb, nada m\u00e1s puede instalarse de verdad. La buena noticia: se trabaja, y a menudo es m\u00e1s sencillo de lo que parece.",
+    recos: [
+      { title: "Piensa en alianzas antes que en prospecci\u00f3n fr\u00eda.", text: "\u00bfQui\u00e9n en tu sector o en tu entorno ve a los mismos clientes que t\u00fa? Un gestor, un dise\u00f1ador, otro freelance complementario. Los primeros clientes rara vez vienen de desconocidos \u2014 vienen de personas que ya conf\u00edan en ti." },
+      { title: "Ve simple con tu oferta.", text: "No necesitas una oferta perfecta para tener clientes \u2014 necesitas una suficientemente clara. Una frase sobre lo que haces, para qui\u00e9n y qu\u00e9 cambia para ellos. Una tarifa. Una forma de contactarte. Eso es todo." },
+      { title: "Usa tu entorno como campo de entrenamiento.", text: "Aunque no te paguen, los encargos para personas cercanas te permiten probar tu forma de trabajar, entender lo que realmente te gusta \u2014 y construir testimonios reales. Son datos, no caridad." }
+    ],
+    cta: false
+  },
+  B: {
+    name: "Lo que te bloquea es que te dispersas",
+    desc: "Tienes clientes, haces tu trabajo \u2014 pero el d\u00eda a d\u00eda es ca\u00f3tico. Improvisas, reaccionas, no tienes un funcionamiento realmente rodado. Y aunque todo \u00abfuncione\u00bb, hay esa sensaci\u00f3n de desorden permanente que agota. No es un problema de motivaci\u00f3n \u2014 es carga mental que se acumula porque nada est\u00e1 realmente asentado. Lo que necesitas: unas bases simples que sostengan. No un sistema complejo \u2014 solo un funcionamiento que no dependa de ti al 100% todo el tiempo.",
+    recos: [
+      { title: "Empieza por registrar, no por optimizar.", text: "Antes de buscar la mejor herramienta o el mejor proceso \u2014 escribe lo que haces realmente. Paso a paso: c\u00f3mo llega un cliente, c\u00f3mo avanza un proyecto, c\u00f3mo facturas. A menudo, escribir la realidad es suficiente para ver d\u00f3nde falla." },
+      { title: "Una sola cosa a resolver cada vez.", text: "Elige el momento que m\u00e1s energ\u00eda te cuesta ahora mismo \u2014 la bienvenida a un nuevo cliente, el seguimiento de facturas, la preparaci\u00f3n de una propuesta. Res\u00fcelve eso. Solo eso. Luego el siguiente." },
+      { title: "Usa bloques de tiempo dedicados.", text: "Emails, facturas, admin \u2014 no son tareas para hacer \u00abcuando tenga tiempo\u00bb. Tu rol de jefe/a de empresa merece espacios fijos. Incluso una hora a la semana dedicada a estos temas cambia radicalmente la carga mental." }
+    ],
+    cta: false
+  },
+  C: {
+    name: "Tu verdadero bloqueo est\u00e1 en tu postura de jefe/a de empresa",
+    desc: "Eres profesional, amas tu trabajo, cuidas a tus clientes \u2014 y aun as\u00ed algo te agota. Hay decisiones que pospones, l\u00edmites que no pones, cosas que sabes desde hace tiempo y que no has cambiado. Tienes buenos reflejos en muchos \u00e1mbitos \u2014 y a pesar de eso, algo bloquea en profundidad. No es un problema de herramienta. No es un problema de organizaci\u00f3n. Es algo en la forma en que habitas tu rol de jefe/a de empresa \u2014 y es exactamente ah\u00ed donde yo trabajo.",
+    recos: [
+      { title: "Empieza por registrar lo que te gusta de verdad \u2014 y lo que te agota.", text: "Anota con qu\u00e9 clientes est\u00e1s c\u00f3modo/a y con cu\u00e1les sales agotado/a de cada sesi\u00f3n. Mira tus servicios: \u00bfcu\u00e1les te dan energ\u00eda? \u00bfCu\u00e1les haces porque \u00abas\u00ed toca\u00bb? Este trabajo de honestidad es el primer paso." },
+      { title: "H\u00e1zate la pregunta real.", text: "\u00bfQu\u00e9 pasar\u00eda si dejaras de hacer lo que te agota? \u00bfQu\u00e9 te da miedo de ese cambio? No es una pregunta ret\u00f3rica \u2014 es aqu\u00ed donde suele esconderse el verdadero bloqueo." },
+      { title: "Lo que necesitas es un espacio para por fin decidir.", text: "No alguien que decida por ti. Alguien que conozca tu contexto real, que pueda meterse en tu l\u00f3gica \u2014 y con quien puedas llegar al fondo de lo que ya sabes." }
+    ],
+    cta: true
+  }
+};
+
+var current = 0;
+var scores = [];
+var multiSelected = [];
+var selectedIndex = null;
+
+function startDiag() {
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  renderQ();
+}
+
+function renderQ() {
+  var q = questions[current];
+  document.getElementById('q-num').textContent = 'Pregunta ' + String(current + 1).padStart(2, '0');
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('prog-count').textContent = (current + 1) + ' / ' + questions.length;
+  document.getElementById('prog-fill').style.width = (((current + 1) / questions.length) * 100) + '%';
+
+  var hint = document.getElementById('q-hint');
+  hint.innerHTML = q.multi ? '<p class="multi-hint">Varias respuestas posibles</p>' : '';
+
+  var opts = document.getElementById('q-options');
+  opts.innerHTML = '';
+  multiSelected = [];
+  selectedIndex = null;
+  document.getElementById('btn-next').classList.remove('active');
+
+  var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+  q.options.forEach(function(o, i) {
+    var btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = '<span class="option-letter">' + letters[i] + '</span><span>' + o.text + '</span>';
+    if (q.multi) {
+      btn.onclick = function() { toggleMulti(i, btn); };
+    } else {
+      btn.onclick = function() { selectSingle(i, btn); };
+    }
+    opts.appendChild(btn);
+  });
+}
+
+function selectSingle(i, btn) {
+  document.querySelectorAll('.option-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  selectedIndex = i;
+  document.getElementById('btn-next').classList.add('active');
+}
+
+function toggleMulti(i, btn) {
+  var idx = multiSelected.indexOf(i);
+  if (idx === -1) { multiSelected.push(i); btn.classList.add('selected'); }
+  else { multiSelected.splice(idx, 1); btn.classList.remove('selected'); }
+  document.getElementById('btn-next').classList.toggle('active', multiSelected.length > 0);
+}
+
+function nextQ() {
+  var q = questions[current];
+  if (q.multi) {
+    if (multiSelected.length === 0) return;
+    var total = 0;
+    multiSelected.forEach(function(i) { total += q.options[i].score; });
+    scores.push(Math.round(total / multiSelected.length));
+  } else {
+    if (selectedIndex === null) return;
+    scores.push(q.options[selectedIndex].score);
+  }
+  current++;
+  if (current < questions.length) { renderQ(); } else { showResult(); }
+}
+
+function showResult() {
+  document.getElementById('quiz').classList.add('hidden');
+  var total = scores.reduce(function(a, b) { return a + b; }, 0);
+  var profile = total <= 17 ? profiles.A : total <= 24 ? profiles.B : profiles.C;
+
+  var ctaHtml = profile.cta
+    ? '<div class="cta-block">' +
+      '<h3>\u00bfY si lo hablamos?</h3>' +
+      '<p>Una llamada de descubrimiento de 30 minutos para poner palabras a lo que bloquea \u2014 y ver juntos si soy la persona adecuada para acompa\u00f1arte.</p>' +
+      '<a class="btn-cta" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone">Reservar diagnóstico \u2192</a>' +
+      '</div>'
+    : '';
+
+  var el = document.getElementById('result');
+  el.innerHTML =
+    '<div class="result-header">' +
+    '<div class="result-tag">Tu resultado</div>' +
+    '<h2 class="result-name">' + profile.name + '</h2>' +
+    '<p class="result-desc">' + profile.desc + '</p>' +
+    '</div>' +
+    '<div class="result-body">' +
+    '<div class="reco-title">Tres cosas concretas que hacer ahora</div>' +
+    '<div class="reco-list">' +
+    profile.recos.map(function(r, i) {
+      return '<div class="reco-item"><div class="reco-num">' + (i + 1) + '</div><div class="reco-text"><strong>' + r.title + '</strong>' + r.text + '</div></div>';
+    }).join('') +
+    '</div></div>' +
+    ctaHtml +
+    '<button class="btn-restart" onclick="restart()">Volver a empezar</button>';
+
+  el.classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function restart() {
+  current = 0; scores = []; multiSelected = []; selectedIndex = null;
+  document.getElementById('result').classList.add('hidden');
+  document.getElementById('result').innerHTML = '';
+  document.getElementById('intro').classList.remove('hidden');
+}
+</script>
+</body>
+</html>
