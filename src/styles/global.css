@@ -1145,6 +1145,25 @@ hr {
 	line-height: 1.45;
 }
 
+.diagnostic-prompt {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 22px;
+	width: min(920px, 100%);
+	margin: 0 auto;
+	text-align: center;
+}
+
+.diagnostic-prompt h2 {
+	font-size: clamp(2rem, 4vw, 3rem);
+	line-height: 1.1;
+}
+
+.diagnostic-prompt .button {
+	max-width: min(100%, 680px);
+}
+
 .work-process-intro {
 	display: flex;
 	width: min(1376px, 100%);
