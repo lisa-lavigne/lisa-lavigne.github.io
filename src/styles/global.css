@@ -645,11 +645,11 @@ hr {
 
 .site-footer {
 	display: grid;
-	grid-template-columns: minmax(0, 420px) minmax(0, 520px);
-	gap: 32px 48px;
-	align-items: start;
+	grid-template-columns: auto 1fr;
+	gap: 16px 36px;
+	align-items: center;
 	justify-content: space-between;
-	padding: 48px max(32px, calc((100vw - 1120px) / 2));
+	padding: 28px max(32px, calc((100vw - 1120px) / 2));
 	background: var(--lisa-blue);
 	color: rgba(255, 255, 255, 0.72);
 }
@@ -663,13 +663,14 @@ hr {
 .site-footer div {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 4px;
 }
 
 .site-footer nav {
-	display: grid;
-	grid-template-columns: repeat(2, auto);
-	gap: 10px 48px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 12px 24px;
 }
 
 .site-footer a {
@@ -679,14 +680,14 @@ hr {
 
 .copyright {
 	grid-column: 1 / -1;
-	justify-self: center;
+	justify-self: end;
 	color: rgba(255, 255, 255, 0.38);
 	font-size: 0.75rem;
 }
 
 .site-footer h2 {
 	color: #fff;
-	font-size: 1.6rem;
+	font-size: 1.35rem;
 }
 
 .lisa-home .site-header {
@@ -1690,10 +1691,13 @@ hr {
 
 	.site-footer {
 		grid-template-columns: 1fr;
+		gap: 18px;
+		padding-top: 32px;
+		padding-bottom: 32px;
 	}
 
 	.site-footer nav {
-		grid-template-columns: 1fr;
+		justify-content: flex-start;
 	}
 
 	.copyright {
