@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_TITLE } from '../consts';
 
 const checklist = [
 	'Pierdes tiempo rehaciendo en bucle cosas que podrías estandarizar.',
@@ -80,12 +80,17 @@ const testimonials = [
 <!doctype html>
 <html lang="es">
 	<head>
-		<BaseHead title={`Trabajar juntos - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title={`Trabajar juntos | Lisa Lavigne`}
+	description="Una sesión de trabajo para desbloquear una parte concreta de tu negocio, ordenar tus decisiones y salir con acciones claras."
+	alternates={[{ lang: 'fr', path: '/travailler-ensemble/' }, { lang: 'es', path: '/trabajar-juntos/' }]}
+	xDefault="/travailler-ensemble/"
+/>
 	</head>
 	<body class="lisa-page work-together-page">
 		<header class="site-header">
 			<a class="brand-mark" href="/es" aria-label="Lisa Lavigne">
-				<img src="/lisa/optimized/logo.webp" alt="" />
+				<img src="/lisa/optimized/logo.webp" alt="Logo Lisa Lavigne" width="360" height="540" />
 			</a>
 			<nav aria-label="Navegación principal">
 				<a href="/trabajar-juntos">Trabajar juntos</a>
@@ -110,7 +115,7 @@ const testimonials = [
 
 			<section class="work-fit-section">
 				<div class="fit-card">
-					<h1>Es para ti si...</h1>
+					<h2>Es para ti si...</h2>
 					<ul>
 						{checklist.map((item) => (
 							<li>
@@ -143,7 +148,7 @@ const testimonials = [
 				</div>
 			</section>
 
-			<img class="photo-strip work-strip" src="/lisa/optimized/work-strip.webp" alt="" />
+			<img class="photo-strip work-strip" src="/lisa/optimized/work-strip.webp" alt="Retrato de Lisa Lavigne" width="1400" height="2100" loading="lazy" />
 
 			<section class="work-cases-section">
 				<div class="center-heading">
@@ -196,7 +201,7 @@ const testimonials = [
 
 		<footer class="site-footer">
 			<div>
-				<h2>Lisa Lavigne</h2>
+				<p class="footer-title">Lisa Lavigne</p>
 			</div>
 			<nav aria-label="Pie de página">
 				<a href="/es">Inicio</a>

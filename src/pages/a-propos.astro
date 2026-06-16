@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_TITLE } from '../consts';
 
 const values = [
 	{
@@ -57,12 +57,17 @@ const principles = [
 <!doctype html>
 <html lang="fr">
 	<head>
-		<BaseHead title={`À propos - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title={`À propos de Lisa Lavigne | Consultante business`}
+	description="Découvre le parcours, les valeurs et la philosophie de travail de Lisa Lavigne, consultante en structuration d’activité."
+	alternates={[{ lang: 'fr', path: '/a-propos/' }, { lang: 'es', path: '/about/' }]}
+	xDefault="/a-propos/"
+/>
 	</head>
 	<body class="lisa-page about-draft-page">
 		<header class="site-header">
 			<a class="brand-mark" href="/" aria-label="Lisa Lavigne">
-				<img src="/lisa/optimized/logo.webp" alt="" />
+				<img src="/lisa/optimized/logo.webp" alt="Logo Lisa Lavigne" width="360" height="540" />
 			</a>
 			<nav aria-label="Navigation principale">
 				<a href="/travailler-ensemble">Travailler ensemble</a>
@@ -74,7 +79,7 @@ const principles = [
 
 		<main>
 			<section class="about-draft-hero">
-				<img src="/lisa/optimized/portrait-blue-jacket.webp" alt="Portrait de Lisa Lavigne" />
+				<img src="/lisa/optimized/portrait-blue-jacket.webp" alt="Portrait de Lisa Lavigne" width="1100" height="1650" />
 				<div class="about-draft-copy">
 					<h1>Mes valeurs</h1>
 					<div class="draft-values-grid">
@@ -97,7 +102,7 @@ const principles = [
 				</div>
 			</section>
 
-			<img class="photo-strip about-draft-strip" src="/lisa/optimized/about-strip.webp" alt="" />
+			<img class="photo-strip about-draft-strip" src="/lisa/optimized/about-strip.webp" alt="Lisa Lavigne en séance de travail" width="1800" height="1200" loading="lazy" />
 
 			<section class="about-philosophy-draft">
 				<h2>Ma philosophie de travail</h2>
@@ -115,7 +120,7 @@ const principles = [
 
 		<footer class="site-footer">
 			<div>
-				<h2>Lisa Lavigne</h2>
+				<p class="footer-title">Lisa Lavigne</p>
 			</div>
 			<nav aria-label="Pied de page">
 				<a href="/">Accueil</a>

@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_TITLE } from '../consts';
 
 const painPoints = [
 	{
@@ -127,12 +127,17 @@ Recomiendo a Lisa con los ojos cerrados a cualquier emprendedor o emprendedora q
 <!doctype html>
 <html lang="es">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title={`Lisa Lavigne | Estructura tu negocio de servicios`}
+	description="Lisa Lavigne ayuda a solopreneurs de servicios a ordenar su organización, ganar claridad y tomar decisiones con más fluidez."
+	alternates={[{ lang: 'fr', path: '/' }, { lang: 'es', path: '/es/' }]}
+	xDefault="/"
+/>
 	</head>
 	<body class="lisa-page lisa-home">
 		<header class="site-header">
 			<a class="brand-mark" href="/es" aria-label="Lisa Lavigne">
-				<img src="/lisa/optimized/logo.webp" alt="" />
+				<img src="/lisa/optimized/logo.webp" alt="Logo Lisa Lavigne" width="360" height="540" />
 			</a>
 			<nav aria-label="Navegación principal">
 				<a href="/trabajar-juntos">Trabajar juntos</a>
@@ -157,7 +162,7 @@ Recomiendo a Lisa con los ojos cerrados a cualquier emprendedor o emprendedora q
 							<small>30 minutos para entender dónde estás y ver si tiene sentido trabajar juntos.</small>
 						</div>
 					</div>
-					<img class="hero-image" src="/lisa/optimized/hero-image.webp" alt="Lisa Lavigne sentada y sonriendo" />
+					<img class="hero-image" src="/lisa/optimized/hero-image.webp" alt="Lisa Lavigne sentada y sonriendo" width="1100" height="1257" />
 				</div>
 			</section>
 
@@ -234,7 +239,7 @@ Recomiendo a Lisa con los ojos cerrados a cualquier emprendedor o emprendedora q
 				</div>
 			</section>
 
-			<img class="photo-strip home-strip" src="/lisa/optimized/home-strip.webp" alt="Retrato de Lisa Lavigne sonriendo" />
+			<img class="photo-strip home-strip" src="/lisa/optimized/home-strip.webp" alt="Retrato de Lisa Lavigne sonriendo" width="1400" height="2100" loading="lazy" />
 
 			<section id="testimonios" class="section testimonial-section testimonial-carousel-section">
 				<div class="center-heading">
@@ -270,7 +275,7 @@ Recomiendo a Lisa con los ojos cerrados a cualquier emprendedor o emprendedora q
 
 		<footer class="site-footer">
 			<div>
-				<h2>Lisa Lavigne</h2>
+				<p class="footer-title">Lisa Lavigne</p>
 				<p>Consultora en estructuración de negocios</p>
 			</div>
 			<nav aria-label="Pie de página">

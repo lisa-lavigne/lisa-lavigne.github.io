@@ -7,18 +7,24 @@ interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	alternates?: Array<{
+		lang: string;
+		path: string;
+	}>;
+	xDefault?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/lisa/optimized/logo.webp' } = Astro.props;
+const { title, description, image = '/lisa/optimized/logo.webp', alternates = [], xDefault } = Astro.props;
+const imageURL = new URL(image, Astro.site);
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/png" href="/lisa/optimized/favicon.png" />
-<meta name="generator" content={Astro. generator} />
+<meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,6 +74,10 @@ const { title, description, image = '/lisa/optimized/logo.webp' } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+{alternates.map((alternate) => (
+	<link rel="alternate" hreflang={alternate.lang} href={new URL(alternate.path, Astro.site)} />
+))}
+{xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault, Astro.site)} />}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -76,14 +86,14 @@ const { title, description, image = '/lisa/optimized/logo.webp' } = Astro.props;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={imageURL} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={imageURL} />
