@@ -645,10 +645,11 @@ hr {
 
 .site-footer {
 	display: grid;
-	grid-template-columns: 1fr auto;
+	grid-template-columns: minmax(0, 420px) minmax(0, 520px);
 	gap: 32px 48px;
 	align-items: start;
-	padding: 48px 80px;
+	justify-content: space-between;
+	padding: 48px max(32px, calc((100vw - 1120px) / 2));
 	background: var(--lisa-blue);
 	color: rgba(255, 255, 255, 0.72);
 }
