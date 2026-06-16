@@ -11,13 +11,13 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/lisa/logo.png' } = Astro.props;
+const { title, description, image = '/lisa/optimized/logo.webp' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" href="/lisa/logo.png" />
+<link rel="icon" type="image/png" href="/lisa/optimized/favicon.png" />
 <meta name="generator" content={Astro. generator} />
 
 <!-- Font preloads -->
