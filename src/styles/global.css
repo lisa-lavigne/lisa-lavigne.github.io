@@ -1155,6 +1155,14 @@ hr {
 	text-align: center;
 }
 
+.diagnostic-prompt-section {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding: 0 32px 90px;
+	background: var(--lisa-cream);
+}
+
 .diagnostic-prompt h2 {
 	font-size: clamp(2rem, 4vw, 3rem);
 	line-height: 1.1;
