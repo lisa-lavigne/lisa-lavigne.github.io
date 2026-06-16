@@ -293,27 +293,36 @@ Recomiendo a Lisa con los ojos cerrados a cualquier emprendedor o emprendedora q
 
 			const getActiveTestimonial = () => {
 				if (!carousel || testimonialCards.length === 0) return 0;
+				const carouselCenter = carousel.getBoundingClientRect().left + carousel.clientWidth / 2;
 				return testimonialCards.reduce((closestIndex, card, index) => {
 					const closestCard = testimonialCards[closestIndex];
-					const currentDistance = Math.abs(card.offsetLeft - carousel.scrollLeft);
-					const closestDistance = Math.abs(closestCard.offsetLeft - carousel.scrollLeft);
+					const cardRect = card.getBoundingClientRect();
+					const closestRect = closestCard.getBoundingClientRect();
+					const currentDistance = Math.abs(cardRect.left + cardRect.width / 2 - carouselCenter);
+					const closestDistance = Math.abs(closestRect.left + closestRect.width / 2 - carouselCenter);
 					return currentDistance < closestDistance ? index : closestIndex;
 				}, 0);
 			};
 
+			const goToTestimonial = (index, behavior = 'smooth') => {
+				if (!carousel || testimonialCards.length === 0) return;
+				activeTestimonial = (index + testimonialCards.length) % testimonialCards.length;
+				testimonialCards[activeTestimonial].scrollIntoView({
+					behavior,
+					block: 'nearest',
+					inline: 'center',
+				});
+			};
+
 			const resetTestimonials = () => {
-				if (!carousel) return;
-				activeTestimonial = 0;
-				carousel.scrollTo({ left: 0, behavior: 'auto' });
+				goToTestimonial(0, 'auto');
 			};
 
 			const scrollTestimonials = (direction) => {
-				if (!carousel || testimonialCards.length === 0) return;
-				activeTestimonial = (activeTestimonial + direction + testimonialCards.length) % testimonialCards.length;
-				carousel.scrollTo({
-					left: testimonialCards[activeTestimonial].offsetLeft,
-					behavior: 'smooth',
-				});
+				if (testimonialCards.length === 0) return;
+				const nextIndex = (activeTestimonial + direction + testimonialCards.length) % testimonialCards.length;
+				const isLooping = (direction > 0 && activeTestimonial === testimonialCards.length - 1) || (direction < 0 && activeTestimonial === 0);
+				goToTestimonial(nextIndex, isLooping ? 'auto' : 'smooth');
 			};
 
 			carousel?.addEventListener('scroll', () => {
