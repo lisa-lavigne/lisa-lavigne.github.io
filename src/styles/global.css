@@ -707,7 +707,11 @@ hr {
 .blog-index-hero {
 	display: grid;
 	gap: 24px;
+	box-sizing: border-box;
+	width: 100%;
 	max-width: 900px;
+	margin-right: auto;
+	margin-left: auto;
 	padding-top: 92px;
 	padding-bottom: 56px;
 }
@@ -733,6 +737,8 @@ hr {
 .blog-list {
 	display: grid;
 	gap: 22px;
+	margin-right: auto;
+	margin-left: auto;
 	max-width: 960px;
 }
 
@@ -771,7 +777,11 @@ hr {
 }
 
 .blog-article {
+	box-sizing: border-box;
+	width: 100%;
 	max-width: 940px;
+	margin-right: auto;
+	margin-left: auto;
 	padding-top: 72px;
 	padding-bottom: 104px;
 }
