@@ -12,6 +12,7 @@ const SITEMAP_PATHS = new Set([
     '/about/',
     '/travailler-ensemble/',
     '/trabajar-juntos/',
+    '/blog/',
     '/diagnostic-blocage-lisa.html',
     '/diagnostico-bloqueo-lisa.html',
 ]);
@@ -20,7 +21,10 @@ export default defineConfig({
     integrations: [
         tailwind(),
         sitemap({
-            filter: (page) => SITEMAP_PATHS.has(new URL(page).pathname),
+            filter: (page) => {
+                const pathname = new URL(page).pathname;
+                return SITEMAP_PATHS.has(pathname) || pathname.startsWith('/blog/');
+            },
             customPages: [
                 `${SITE_URL}/diagnostic-blocage-lisa.html`,
                 `${SITE_URL}/diagnostico-bloqueo-lisa.html`,

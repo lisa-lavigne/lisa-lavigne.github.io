@@ -693,6 +693,154 @@ hr {
 	font-weight: 700;
 }
 
+.lisa-blog {
+	background: var(--lisa-cream);
+}
+
+.blog-index-hero,
+.blog-list-section,
+.blog-article {
+	padding-right: 80px;
+	padding-left: 80px;
+}
+
+.blog-index-hero {
+	display: grid;
+	gap: 24px;
+	max-width: 900px;
+	padding-top: 92px;
+	padding-bottom: 56px;
+}
+
+.eyebrow {
+	color: var(--lisa-coral);
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.blog-index-hero > p:not(.eyebrow) {
+	max-width: 720px;
+	color: var(--lisa-ink);
+	font-size: 1.08rem;
+}
+
+.blog-list-section {
+	padding-bottom: 100px;
+}
+
+.blog-list {
+	display: grid;
+	gap: 22px;
+	max-width: 960px;
+}
+
+.blog-card {
+	display: grid;
+	gap: 12px;
+	border: 1px solid rgba(30, 41, 59, 0.1);
+	border-radius: 8px;
+	padding: 28px;
+	background: rgba(255, 255, 255, 0.72);
+}
+
+.blog-card time,
+.blog-article-header time {
+	color: var(--lisa-coral);
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+
+.blog-card h2 {
+	font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.blog-card h2 a {
+	color: var(--lisa-blue);
+	text-decoration: none;
+}
+
+.blog-card h2 a:hover {
+	color: var(--lisa-coral);
+}
+
+.blog-card p {
+	max-width: 760px;
+	color: var(--lisa-ink);
+}
+
+.blog-article {
+	max-width: 940px;
+	padding-top: 72px;
+	padding-bottom: 104px;
+}
+
+.blog-article-header {
+	display: grid;
+	gap: 18px;
+	margin-bottom: 44px;
+}
+
+.blog-article-header h1 {
+	max-width: 860px;
+}
+
+.blog-article-header p {
+	max-width: 760px;
+	font-size: 1.08rem;
+}
+
+.blog-back-link {
+	width: fit-content;
+	color: var(--lisa-coral);
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.blog-prose {
+	max-width: 760px;
+}
+
+.blog-prose p,
+.blog-prose li {
+	color: var(--lisa-ink);
+	font-size: 1.04rem;
+	line-height: 1.82;
+}
+
+.blog-prose p + p,
+.blog-prose p + h2,
+.blog-prose h2 + p,
+.blog-prose hr + p {
+	margin-top: 22px;
+}
+
+.blog-prose h2 {
+	margin-top: 48px;
+	margin-bottom: 16px;
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.blog-prose hr {
+	margin: 44px 0;
+	border-color: rgba(30, 41, 59, 0.12);
+}
+
+.blog-prose a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 16px;
+	border-radius: 8px;
+	padding: 16px 30px;
+	background: var(--lisa-coral);
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+}
+
 .lisa-home .site-header {
 	background: var(--lisa-cream);
 }
@@ -1587,7 +1735,10 @@ hr {
 	.work-fit-section,
 	.work-cases-section,
 	.about-draft-hero,
-	.about-philosophy-draft {
+	.about-philosophy-draft,
+	.blog-index-hero,
+	.blog-list-section,
+	.blog-article {
 		padding-right: 24px;
 		padding-left: 24px;
 	}
@@ -1657,9 +1808,16 @@ hr {
 	.work-fit-section,
 	.work-cases-section,
 	.about-draft-hero,
-	.about-philosophy-draft {
+	.about-philosophy-draft,
+	.blog-index-hero,
+	.blog-list-section,
+	.blog-article {
 		padding-top: 56px;
 		padding-bottom: 56px;
+	}
+
+	.blog-card {
+		padding: 22px;
 	}
 
 	.draft-values-grid {

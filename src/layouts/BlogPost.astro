@@ -1,83 +1,73 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/news/Header.astro';
-import Footer from '../components/news/Footer.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, date, slug } = Astro.props;
+
+const formatDate = (value: Date) =>
+	new Intl.DateTimeFormat('fr-FR', {
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric',
+	}).format(value);
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
+		<BaseHead
+			title={`${title} | Lisa Lavigne`}
+			description={description}
+			alternates={[{ lang: 'fr', path: `/blog/${slug}/` }]}
+			xDefault={`/blog/${slug}/`}
+		/>
 	</head>
 
-	<body>
-		<Header />
-		<main class="pt-12">
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on 
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
+	<body class="lisa-page lisa-blog">
+		<header class="site-header">
+			<a class="brand-mark" href="/fr" aria-label="Lisa Lavigne">
+				<img src="/lisa/optimized/logo.webp" alt="Logo Lisa Lavigne" width="360" height="540" />
+			</a>
+			<nav aria-label="Navigation principale">
+				<a href="/travailler-ensemble">Travailler ensemble</a>
+				<a href="/a-propos">À propos</a>
+				<a href="/blog/">Blog</a>
+				<a class="language-link" href="/es" hreflang="es">Español</a>
+				<a class="button button-small" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver ton diagnostic</a>
+			</nav>
+		</header>
+
+		<main>
+			<article class="blog-article">
+				<header class="blog-article-header">
+					<a class="blog-back-link" href="/blog/">Retour au blog</a>
+					<time datetime={date.toISOString()}>{formatDate(date)}</time>
+					<h1>{title}</h1>
+					<p>{description}</p>
+				</header>
+
+				<div class="blog-prose">
 					<slot />
 				</div>
 			</article>
 		</main>
-		<Footer />
+
+		<footer class="site-footer">
+			<div>
+				<img src="/lisa/optimized/logo.webp" alt="Logo Lisa Lavigne" width="360" height="540" />
+				<p class="footer-title">Lisa Lavigne</p>
+			</div>
+			<nav aria-label="Navigation secondaire">
+				<a href="/fr">Accueil</a>
+				<a href="/travailler-ensemble">Travailler ensemble</a>
+				<a href="/a-propos">À propos</a>
+				<a href="/blog/">Blog</a>
+				<a href="mailto:lisalavigneconsulting@gmail.com">Contact</a>
+				<a href="https://www.linkedin.com/in/lisa-lavigne-consulting/" target="_blank" rel="noreferrer">LinkedIn</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne Consulting</p>
+		</footer>
 	</body>
 </html>

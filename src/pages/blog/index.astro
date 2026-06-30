@@ -1,28 +1,79 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/news/Header.astro';
-import Footer from '../../components/news/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import Notion from '../../components/notion/Notion.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const formatDate = (date: Date) =>
+	new Intl.DateTimeFormat('fr-FR', {
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric',
+	}).format(date);
 ---
 
 <!doctype html>
 <html lang="fr">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-		</style>
+		<BaseHead
+			title="Blog | Lisa Lavigne"
+			description="Articles de Lisa Lavigne pour mieux comprendre la charge mentale, l'organisation et la structuration d'une activité de solopreneur."
+			alternates={[{ lang: 'fr', path: '/blog/' }]}
+			xDefault="/blog/"
+		/>
 	</head>
-	<body>
-		<Header />
+	<body class="lisa-page lisa-blog">
+		<header class="site-header">
+			<a class="brand-mark" href="/fr" aria-label="Lisa Lavigne">
+				<img src="/lisa/optimized/logo.webp" alt="Logo Lisa Lavigne" width="360" height="540" />
+			</a>
+			<nav aria-label="Navigation principale">
+				<a href="/travailler-ensemble">Travailler ensemble</a>
+				<a href="/a-propos">À propos</a>
+				<a href="/blog/">Blog</a>
+				<a class="language-link" href="/es" hreflang="es">Español</a>
+				<a class="button button-small" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone" data-calendly-popup>Réserver ton diagnostic</a>
+			</nav>
+		</header>
+
 		<main>
-			<section>
-				<Notion pageId="1729a94d98e88070b331ddce00aea809" />
+			<section class="blog-index-hero">
+				<p class="eyebrow">Blog</p>
+				<h1>Ressources pour alléger l'opérationnel</h1>
+				<p>Des articles pour comprendre ce qui déborde, remettre de la clarté et avancer avec plus de structure dans ton activité.</p>
+			</section>
+
+			<section class="blog-list-section" aria-label="Articles du blog">
+				<div class="blog-list">
+					{posts.map((post) => (
+						<article class="blog-card">
+							<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+							<h2>
+								<a href={`/blog/${post.data.slug}/`}>{post.data.title}</a>
+							</h2>
+							<p>{post.data.description}</p>
+						</article>
+					))}
+				</div>
 			</section>
 		</main>
-		<Footer />
+
+		<footer class="site-footer">
+			<div>
+				<img src="/lisa/optimized/logo.webp" alt="Logo Lisa Lavigne" width="360" height="540" />
+				<p class="footer-title">Lisa Lavigne</p>
+			</div>
+			<nav aria-label="Navigation secondaire">
+				<a href="/fr">Accueil</a>
+				<a href="/travailler-ensemble">Travailler ensemble</a>
+				<a href="/a-propos">À propos</a>
+				<a href="/blog/">Blog</a>
+				<a href="mailto:lisalavigneconsulting@gmail.com">Contact</a>
+				<a href="https://www.linkedin.com/in/lisa-lavigne-consulting/" target="_blank" rel="noreferrer">LinkedIn</a>
+			</nav>
+			<p class="copyright">© 2026 Lisa Lavigne Consulting</p>
+		</footer>
 	</body>
 </html>
