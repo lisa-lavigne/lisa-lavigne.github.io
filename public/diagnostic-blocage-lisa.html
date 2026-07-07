@@ -223,7 +223,9 @@ var profiles = {
       { title: "Va simple sur ton offre.", text: "Pas besoin d\u2019une offre parfaite pour avoir des clients \u2014 besoin d\u2019une offre suffisamment claire. Une phrase sur ce que tu fais, pour qui, et ce que \u00e7a change pour eux. Un tarif. Une fa\u00e7on de te contacter. C\u2019est tout." },
       { title: "Utilise ton entourage comme terrain d\u2019entra\u00eenement.", text: "M\u00eame s\u2019ils ne te payent pas, des missions pour des proches te permettent de tester ton fonctionnement, de comprendre ce qui te pla\u00eet vraiment \u2014 et de construire des t\u00e9moignages r\u00e9els. C\u2019est de la donn\u00e9e, pas de la charit\u00e9." }
     ],
-    cta: false
+    cta: true,
+    ctaLinkedIn: true,
+    ctaText: "Si tu veux des conseils et des r\u00e9flexions sur l\u2019entrepreneuriat, suis-moi sur LinkedIn \u2014 je serais ravie de connecter."
   },
   B: {
     name: "Ce qui te bloque, c\u2019est que tu t\u2019\u00e9parpilles",
@@ -233,7 +235,9 @@ var profiles = {
       { title: "Un seul truc \u00e0 r\u00e9gler \u00e0 la fois.", text: "Choisis le moment qui te co\u00fbte le plus d\u2019\u00e9nergie en ce moment \u2014 l\u2019accueil d\u2019un nouveau client, la relance des impay\u00e9s, la pr\u00e9paration d\u2019une proposition. R\u00e8gle ce truc-l\u00e0. Juste celui-l\u00e0. Ensuite le suivant." },
       { title: "Utilise des blocs de temps d\u00e9di\u00e9s.", text: "Mails, factures, admin \u2014 ce ne sont pas des t\u00e2ches \u00e0 faire \u00ab\u00a0quand j\u2019ai le temps\u00a0\u00bb. Ton r\u00f4le de chef d\u2019entreprise m\u00e9rite des cr\u00e9neaux fixes. M\u00eame une heure par semaine d\u00e9di\u00e9e \u00e0 ces sujets change radicalement la charge mentale." }
     ],
-    cta: false
+    cta: true,
+    ctaText: "Un appel d\u00e9couverte de 30 minutes pour d\u00e9finir une priorit\u00e9 \u2014 et voir comment je peux t\u2019aider \u00e0 avancer dessus.",
+    ctaLinkedIn: false
   },
   C: {
     name: "Ton vrai blocage est dans ta posture de chef d\u2019entreprise",
@@ -243,7 +247,9 @@ var profiles = {
       { title: "Pose-toi la vraie question.", text: "Qu\u2019est-ce qui se passerait si tu arr\u00eatais de faire ce qui te sa\u00fble\u00a0? Qu\u2019est-ce qui te fait peur dans ce changement-l\u00e0\u00a0? Ce n\u2019est pas une question rh\u00e9torique \u2014 c\u2019est souvent l\u00e0 que se cache le vrai blocage." },
       { title: "Ce dont tu as besoin, c\u2019est d\u2019un espace pour enfin trancher.", text: "Pas quelqu\u2019un qui d\u00e9cide \u00e0 ta place. Quelqu\u2019un qui conna\u00eet ton contexte r\u00e9el, qui peut se mettre dans ta logique \u2014 et avec qui tu peux aller au bout de ce que tu sais d\u00e9j\u00e0." }
     ],
-    cta: true
+    cta: true,
+    ctaText: "Un appel d\u00e9couverte de 30 minutes pour mettre des mots sur ce qui bloque \u2014 et voir ensemble si je suis la bonne personne pour t\u2019accompagner.",
+    ctaLinkedIn: false
   }
 };
 
@@ -322,13 +328,21 @@ function showResult() {
   var total = scores.reduce(function(a, b) { return a + b; }, 0);
   var profile = total <= 17 ? profiles.A : total <= 24 ? profiles.B : profiles.C;
 
-  var ctaHtml = profile.cta
-    ? '<div class="cta-block">' +
+  var ctaHtml = '';
+  if (profile.cta && profile.ctaLinkedIn) {
+    ctaHtml = '<div class="cta-block">' +
+      '<h3>Restons en contact</h3>' +
+      '<p>' + profile.ctaText + '</p>' +
+      '<a class="btn-cta" href="https://www.linkedin.com/in/lisa-lavigne-consulting/" target="_blank">Me suivre sur LinkedIn \u2192</a>' +
+      '</div>';
+  } else if (profile.cta) {
+    ctaHtml = '<div class="cta-block">' +
       '<h3>Et si on en parlait\u00a0?</h3>' +
-      '<p>Un appel d\u00e9couverte de 30 minutes pour mettre des mots sur ce qui bloque \u2014 et voir ensemble si je suis la bonne personne pour t\u2019accompagner.</p>' +
+      '<p>' + profile.ctaText + '</p>' +
       '<a class="btn-cta" href="https://calendly.com/lisalavigneconsulting/appel-decouverte-avec-lisa-clone">R\u00e9server ton diagnostic \u2192</a>' +
-      '</div>'
-    : '';
+      '<p style="margin-top:20px;font-size:13px;color:rgba(245,240,232,.5);">Tu peux aussi me retrouver sur <a href="https://www.linkedin.com/in/lisa-lavigne-consulting/" target="_blank" style="color:rgba(245,240,232,.7);text-decoration:underline;">LinkedIn</a>.</p>' +
+      '</div>';
+  }
 
   var el = document.getElementById('result');
   el.innerHTML =
